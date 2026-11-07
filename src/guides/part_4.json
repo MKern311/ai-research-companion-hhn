@@ -1,0 +1,182 @@
+{
+ "idee-5": {
+  "bring": "Abstracts of five to eight studies on your topic (or their open-access PDFs) and your draft research question.",
+  "steps": [
+   "Paste or attach the studies and your draft research question.",
+   "Ask for the gaps they leave, sorted by type, each with the studies that show it.",
+   "Ask which gap your research question addresses and how convincingly.",
+   "Open two of the cited studies and check they really say this."
+  ],
+  "prompt": "I am a postgraduate researcher in [discipline]. Using only the studies I provide, identify the research gaps they leave. Sort them by type: empirical (missing populations, settings, countries or periods), methodological (similar designs, missing methods or data sources), theoretical (phenomenon not yet explained or compared with certain theories), practical (missing evidence on implementation or use), and contradictory findings. Show a table: gap type, the gap in one sentence, studies that show it, and the passage that supports it. Then say which gap my draft research question addresses and how convincingly it does so. My question: [question]. Do not add studies I have not given you.\n\n[paste abstracts or attach files]",
+  "check": "Every supporting passage appears in the study it is attributed to, and each gap follows from what the studies say rather than from what they simply do not mention.",
+  "limit": "The assistant only sees the studies you give it; a gap in a handful of studies is not yet a gap in the field – confirm it with a database search."
+ },
+ "analyse-7": {
+  "bring": "Your research question, four to six categories with a one-line description each, and a short passage from an open-access paper or an invented text – never participants' data.",
+  "steps": [
+   "Paste your research question and categories.",
+   "Ask for a codebook with definitions, inclusion and exclusion rules and borderline rules.",
+   "Paste the sample passage and ask the assistant to code it with the codebook.",
+   "Ask a colleague to code the same passage with the codebook, compare decisions and tighten the rules."
+  ],
+  "prompt": "I am doing a qualitative content analysis (for example following Mayring or Kuckartz). Research question: [question]. Categories: [list with one-line descriptions]. Build a codebook: for each category give the name, a definition, an inclusion rule, an exclusion rule, and a rule for borderline cases. Do not invent anchor examples; write 'add anchor example from material' instead. Then code the passage below with this codebook: for each coded segment, give the category, the exact quote, whether the decision was clear, unclear or problematic, and how the codebook should change. Use only direct quotes from the passage.\n\n[paste passage]",
+  "check": "Every quote appears word for word in the passage, no category overlaps with another, and a second person coding the same passage with the codebook reaches mostly the same decisions."
+ },
+ "design-5": {
+  "bring": "Your finished questionnaire exported as a Word or PDF file with its routing (filters, skip and display logic) visible, on a non-sensitive topic.",
+  "steps": [
+   "Attach the exported questionnaire and describe the target group.",
+   "Ask the assistant to walk through it along three different answer paths.",
+   "Ask for a list of logic and answer-option problems, then a language check.",
+   "Test every flagged routing problem in the survey tool's preview."
+  ],
+  "prompt": "I have finished a questionnaire on [topic] for [target group]; it is attached with its routing. Act as a careful survey methodologist. First, walk through the questionnaire as three respondents taking different paths (for example someone who answers 'no' at the first filter, someone who answers 'yes' everywhere, and someone who skips optional questions), listing the questions each one sees. Then show a table of problems: question number, type of problem (broken or missing routing, question shown to people it does not apply to, answer options missing or overlapping, inconsistent scale direction or labels, reference to an earlier answer that may not exist, unclear instruction), and a suggested fix. Next, check the language: spelling, grammar, consistent terms and form of address, and wording that is hard to read for the target group. Finally, estimate the completion time. Do not change the meaning of any question.",
+  "check": "Each routing problem shows up when you follow the same path in the survey tool's preview, and each language fix keeps the question's meaning.",
+  "limit": "The assistant reads the exported text, not the live survey; logic that the export does not show cannot be checked, and a pilot with real respondents is still needed."
+ },
+ "literatur-7": {
+  "bring": "Your research question, a rough idea of how much literature exists, and your deadline for the review.",
+  "steps": [
+   "Paste your research question, the expected amount of literature and your deadline.",
+   "Ask your AI assistant to compare systematic, scoping, narrative and rapid reviews for your case.",
+   "Ask for a protocol outline with testable inclusion and exclusion criteria and borderline cases.",
+   "Apply the criteria to five abstracts you know and compare the outline with your field's reporting guideline."
+  ],
+  "prompt": "I am a postgraduate researcher in [discipline] planning a literature review. My research question: [question]. Expected amount of literature: [few / moderate / large, if known]. Time available: [weeks or months]. Compare a systematic review, a scoping review, a narrative review and a rapid review for my case in a table: purpose, what my question would need, effort, and risks. Recommend one type and name the conditions under which you would recommend another. Then draft a protocol outline: review question, its elements (for example PICOC), sources and databases, time span and languages, inclusion and exclusion criteria, screening stages, data extraction and synthesis approach, and whether registering the protocol (for example on PROSPERO or OSF) is usual in my field. For the inclusion and exclusion criteria, derive them from the research question only, show a table (criterion, include or exclude, judged at title-and-abstract or full-text stage, example of a borderline case) and say which criteria are too open, too strict or hard to judge from an abstract. Mark anything you are unsure about.",
+  "check": "The recommendation fits your question and your time, the criteria give the decisions you expect for five abstracts you know, and the outline covers the items of your field's reporting guideline (for example PRISMA-P or the JBI guidance for scoping reviews).",
+  "limit": "Choosing the review type is a methodological decision for you and your supervisors; the assistant's outline is a starting point, not a protocol."
+ },
+ "literatur-8": {
+  "bring": "A search log: databases, search dates, search strings and the number of records at each stage – from your own review or from a practice search.",
+  "steps": [
+   "Paste your search log and the counts per stage.",
+   "Ask for the PRISMA 2020 flow numbers in a table and a check that they add up, including duplicates removed.",
+   "Ask for a draft methods paragraph on search and selection.",
+   "Ask which PRISMA 2020 checklist items your report does not yet cover."
+  ],
+  "prompt": "I am documenting the search and selection for a literature review. Below is my search log: databases, search dates, search strings and the number of records at each stage, with exclusion reasons. Arrange the numbers for a PRISMA 2020 flow diagram in a table: identified per source, duplicates removed, screened, excluded at title and abstract, reports sought, not retrieved, assessed in full text, excluded with reasons, included. Check that the numbers add up and flag every inconsistency instead of correcting it. Then draft a methods paragraph on the search and selection, using only the facts in my log, and go through the 27 items of the PRISMA 2020 checklist and list which ones my log and draft do not yet cover. If I paste a list of records, mark likely duplicates (same DOI, or same title, year and first author) rather than deleting them.\n\n[paste search log]",
+  "check": "Every number in the table and the paragraph matches your log, and each inconsistency the assistant flags is real when you recount.",
+  "limit": "Draw the diagram itself with the official PRISMA 2020 template or a dedicated tool; the assistant prepares the numbers and the text, it does not produce a reliable diagram."
+ },
+ "idee-6": {
+  "bring": "Your research question, the two or three theories or models you are considering, and abstracts of three key studies.",
+  "steps": [
+   "Paste your research question, candidate theories and the abstracts.",
+   "Ask for a comparison of the theories for your question.",
+   "Ask for hypotheses or propositions, each with its reasoning and source.",
+   "Check every reasoning step against the original theory."
+  ],
+  "prompt": "I am a postgraduate researcher in [discipline]. My research question is: [question]. I am considering these theories or models: [theories]. Compare them for my question in a table: core idea, key constructs, what each would predict or help explain in my case, typical methods, and limitations. Then derive three to five hypotheses (or, for qualitative work, propositions or sensitising questions), each with a short line of reasoning that names the theory and, where possible, one of the studies I provide. Finally, describe the conceptual model in words: constructs, expected relationships and their direction, and possible moderators or mediators. Do not invent studies; mark any link you are unsure about.\n\n[paste abstracts]",
+  "check": "Each hypothesis follows from the theory as its authors describe it, and every study cited is one you provided and says what the assistant claims.",
+  "limit": "Building the theoretical argument is a core part of your own contribution; use the output to test your reasoning, not to replace it."
+ },
+ "literatur-9": {
+  "bring": "One open-access empirical paper as a PDF and the name of the appraisal checklist your field uses (for example CASP, MMAT or JBI) – or let the assistant suggest one.",
+  "steps": [
+   "Attach the paper and name the study design and checklist.",
+   "Ask for each checklist item with a rating and the supporting passage.",
+   "Rate the paper yourself on two or three items first.",
+   "Compare and look up every passage the assistant quotes."
+  ],
+  "prompt": "I am appraising studies for a literature review in [discipline]. The attached paper is a [study design]. Use [checklist, e.g. CASP for qualitative studies, MMAT for mixed studies, JBI for the design] – or, if I have not named one, suggest the most suitable established checklist and say why. Go through the checklist item by item: item, rating (yes, no, can't tell), the exact passage with page or section that supports the rating, and a one-line comment. Use 'can't tell' when the paper does not report enough; do not infer. Finally, summarise the main strengths and concerns in three sentences, without giving an overall score.",
+  "check": "Every quoted passage is in the paper at the place given, and on the items you rated yourself any disagreement can be explained.",
+  "limit": "Appraisal is a judgement that has to be yours (often with a second reviewer); checklists differ by design and field, so use the one your supervisors or guidelines expect."
+ },
+ "analyse-8": {
+  "bring": "Output from an analysis you ran on public or dummy data (for example a regression table, a reliability or factor analysis, or a model-fit summary), copied as text.",
+  "steps": [
+   "Paste the output and say which analysis and software produced it.",
+   "Ask for each number to be explained and the assumptions and quality criteria to be checked.",
+   "Ask which checks or analyses you may have missed, and decide which ones you need.",
+   "Ask for an APA-style results paragraph using only the numbers in the output.",
+   "Check every number in the paragraph against the output."
+  ],
+  "prompt": "I am a postgraduate researcher in [discipline]. Below is the output of a [analysis] I ran in [software] on [public or dummy] data, with [n] cases. 1) Explain each part of the output in plain language. 2) List the assumptions and quality criteria I should check for this analysis (for example normality, multicollinearity, reliability such as Cronbach's alpha or omega, model fit such as CFI, RMSEA and SRMR, or for PLS-SEM AVE and HTMT), say which ones the output shows and whether they meet common thresholds, and name the source of each threshold. 3) List checks or analyses I may have missed for this question and design (for example robustness checks, alternative models, sensitivity or subgroup analyses) and say briefly why each matters. 4) Draft a results paragraph in APA 7 style using only numbers from the output. Do not round differently, recompute or add numbers that are not in the output; mark anything you are unsure about.\n\n[paste output]",
+  "check": "Every number in the paragraph appears in the output, and the thresholds named match a methods textbook or the guidance your field uses. Each suggested extra analysis fits your research question; you decide which ones to run.",
+  "limit": "The assistant interprets what you paste; it cannot see your data or the code that produced the output, so check that the analysis itself was the right one."
+ },
+ "publikation-8": {
+  "bring": "A paragraph of your own writing with five to eight citations and the matching reference list entries.",
+  "steps": [
+   "Paste the paragraph and its references.",
+   "With web search switched on (if your tool offers it), ask the assistant to check that each reference exists, with a link or DOI.",
+   "Ask whether each source supports the sentence it is cited for.",
+   "Open each flagged source and decide yourself."
+  ],
+  "prompt": "I am checking the references in a paragraph of my [thesis or paper]. For each reference below: 1) search for it and give a working link or DOI; say 'not found' if you cannot find it, and flag differences in authors, year, title or journal. 2) For each sentence with a citation, say whether the cited source – as far as you can see from its abstract or full text – supports the claim, partly supports it, or does not, and quote the passage you rely on. Do not guess; if you cannot see enough of a source, say so.\n\nParagraph: [paste]\nReferences: [paste]",
+  "check": "Each 'found' reference opens the right paper, and for two sentences you read the source yourself to confirm the assistant's judgement.",
+  "limit": "The assistant searches the open web and may not see paywalled full texts; a connected database (for example OpenAlex, which can check whether references exist, or scite for citation statements) makes this more reliable."
+ },
+ "publikation-9": {
+  "bring": "Your own notes on a section you are about to write (bullet points are fine) and the sources each point relies on; not a co-author's material without their consent.",
+  "steps": [
+   "Check your university's rules on AI-assisted drafting first.",
+   "Paste your notes and sources and ask for an evidence map, then a first draft.",
+   "Check that every claim in the draft is in your notes and linked to a source.",
+   "Rewrite the section in your own words and log the AI use."
+  ],
+  "prompt": "I am writing the [section, e.g. literature review section on X] of my [thesis or paper] in [discipline]. Below are my own notes and the sources each point relies on. First, build an evidence map: the main points in a logical order, each with the source(s) that support it and any gaps where a point has no source. Then write a first draft of about [length] words that uses only my points and sources, cites them in [citation style], and marks with [GAP] every place where my notes do not support a sentence. Do not add claims, sources or numbers of your own. This is a draft that I will rework myself.\n\n[paste notes and sources]",
+  "check": "Every sentence in the draft can be traced to your notes and a source, nothing new has been added, and the [GAP] marks show where you still need evidence.",
+  "limit": "Use this only where your university allows AI-assisted drafting; the final text must be your own work, reworked by you, and the AI use declared."
+ },
+ "querschnitt-8": {
+  "bring": "A list of 10 to 20 new titles (with abstracts if possible) from a recent alert, for example from Google Scholar, a journal's table of contents or a database alert, and your research question.",
+  "steps": [
+   "Paste your research question and the new titles and abstracts.",
+   "Ask for a must-read, maybe and skip rating with a reason for each.",
+   "Ask how the must-reads relate to your work.",
+   "Open the must-reads and decide yourself what to read."
+  ],
+  "prompt": "I am a postgraduate researcher in [discipline]. My research question is: [question]. Below are new publications from this week's alerts. Sort them into must-read, maybe and skip, with one line on why, based only on the title and abstract given. For the must-reads, say in one sentence whether each supports, challenges or extends my work, or offers a method I could use. Finish with a short list of search terms worth adding to my alerts. Do not add papers that are not in the list.\n\n[paste titles and abstracts]",
+  "check": "For two papers you rated differently from the assistant, read the abstract again and decide who was right; nothing in the output is a paper you did not paste.",
+  "limit": "The assistant rates on title and abstract only; set up the alerts themselves in the databases you use. Connecting a source such as OpenAlex via MCP, so that new work is searched directly, is a level 4 step – check data protection and approval with your university first."
+ },
+ "design-6": {
+  "bring": "Your research question with three to six constructs and the expected relationships – or, for the practice version, the Forster et al. (2025) paper and two data files.",
+  "steps": [
+   "Describe the constructs, their definitions and the expected paths.",
+   "Ask the assistant for the model as Mermaid code, a table of every arrow with what it rests on, and a construct–indicator table.",
+   "Check every arrow and indicator in the tables against your theory and sources.",
+   "Optional: paste the code into draw.io (Arrange › Insert › Advanced) to view and edit the diagram."
+  ],
+  "prompt": "I am a postgraduate researcher in [discipline] working on [research question]. My constructs are: [construct – one-line definition, for each]. The expected relationships are: [e.g. A increases B; C moderates A→B]. 1) Draw the conceptual model as Mermaid flowchart code (left to right): constructs as nodes, hypothesised paths as labelled arrows (H1, H2 …), moderators as arrows pointing at a path. 2) Give a table of every arrow in the code: label, from, to, and the part of my description it rests on – or 'not in description'. 3) If I want a measurement model, add for each construct whether it is reflective or formative, with a one-line reason, and list 3–4 candidate indicators or survey items per construct in a table: construct, indicator, source or 'to be developed'. Do not invent published scales; if you suggest an existing scale, say how sure you are. 4) List any path that is not backed by my description.",
+  "check": "Every row of the arrow table matches your description or is flagged, each indicator really reflects (or forms) its construct, and any named scale exists with the items the assistant claims.",
+  "limit": "The assistant returns the model as code and as tables you check in the chat; to see the drawing you paste the code into draw.io or another Mermaid viewer, and drawing directly on the canvas needs a connection that your tool and your university must allow. The theory behind each arrow remains your argument."
+ },
+ "erhebung-7": {
+  "bring": "A clear, glare-free photo of a whiteboard, flipchart or card sort you made yourself – no faces or names. For the practice version: sticky notes, a flipchart and a phone to photograph the 12 practice paper titles you sorted.",
+  "steps": [
+   "Photograph the board straight on, in good light, in one or two shots.",
+   "Upload the photo (JPEG or PNG; convert other formats first if your tool does not accept them) – from your assistant's mobile app or via your cloud storage – and ask the assistant to transcribe every card before interpreting anything.",
+   "Ask for the clusters or the card-to-category mapping as a table, with uncertain readings flagged.",
+   "Compare the transcription and mapping with the board itself."
+  ],
+  "prompt": "The attached photo shows the result of a [card sort / item-sorting task / brainstorming] from a [workshop or experiment] on [topic]. 1) Transcribe every card or note exactly as written, numbered, with its position (column or cluster). Mark any word you cannot read as [illegible] instead of guessing. 2) Give a table: card number, text, the group or category it was placed in, and any arrow or line connecting it to another card. 3) If the task assigned items to predefined categories ([list categories]), count for each item how many placements fall in the intended category. 4) Only then suggest a short label for each cluster and say which cards fit poorly. Keep observation (steps 1–3) and interpretation (step 4) separate.",
+  "check": "Count the cards on the board and in the table – the numbers must match – and compare five transcriptions word for word; every [illegible] or misread card is a reason to re-photograph or type it in yourself.",
+  "limit": "Handwriting, glare and overlapping notes cause misreadings; photos may contain personal data (faces, names, handwriting), so use only photos you are allowed to process and remove identifying details first."
+ },
+ "design-7": {
+  "bring": "Your hypothesis with the factor you manipulate and the outcome you measure – or, for the practice version, the attribution papers B2 and C4.",
+  "steps": [
+   "State the manipulated factor, its levels and what must stay identical across conditions.",
+   "Ask the assistant for the stimulus texts or a simple HTML mock-up per condition, plus a manipulation check.",
+   "Ask for the survey flow: consent, random assignment, stimulus, measures, debrief – with variable names.",
+   "Compare the conditions side by side: only the manipulated element may differ."
+  ],
+  "prompt": "I am planning a between-subjects experiment in [discipline]. Hypothesis: [e.g. a message framed as a loss changes intentions more than the same message framed as a gain]. Manipulated factor: [factor] with the levels [level A] and [level B]. Outcome measures: [measures]. 1) Create the stimulus for each condition: [e.g. a short case vignette, a public information message or a mock web page, as a single self-contained HTML page]. Keep everything identical except the manipulated element and list every difference between the conditions. 2) Write one manipulation-check question. 3) Draft the full study flow for a survey tool – consent, random assignment, stimulus, measures, manipulation check, demographics, debrief – as a table with variable names and coding, so the export can be analysed directly. Use no real organisations, brands, people or logos.",
+  "check": "Put the conditions side by side: apart from the manipulated element, texts, images, layout and length must be identical; the variable names in the flow must match what your analysis plan expects.",
+  "limit": "Stimuli need ethics approval, a debrief when they mislead, and labelling of AI-generated images; check copyright and platform terms, use fictional names and organisations, and pilot the realism with real people before the main study."
+ },
+ "erhebung-8": {
+  "bring": "A question about what language models say or how they respond – not a question about real people – or, for the practice version, the UK heat attribution paper B2 to check the answers against (do not attach it).",
+  "steps": [
+   "Formulate a research question about the model, not about people.",
+   "Fix the prompt, then collect several answers in fresh chats and note date and model.",
+   "Code the answers against a reference (the source paper) or a codebook.",
+   "Report variability and limits – never generalise to a human population."
+  ],
+  "prompt": "I am studying how a language model answers a question in [field] – the model's answers are my data, not a stand-in for people. Answer the following question as you normally would, in about 120 words, and cite your sources: [question]. [Repeat this exact prompt in five new chats, on the same day, and save each answer with date, time and the model name shown.]",
+  "check": "Code each saved answer against your reference: correct, partly correct, wrong, no source. Variability across the five runs is itself a finding; do not average answers into a 'typical respondent'.",
+  "limit": "Model answers change with prompt wording, model version and time; they are not valid data about real people and may misrepresent groups. In an ordinary chat you cannot fix the model version or settings – serious studies use documented model APIs and record all parameters."
+ }
+}

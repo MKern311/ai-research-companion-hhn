@@ -1,0 +1,201 @@
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="hlogo"><img src="assets/brand/hhn-logo.png" alt="Hochschule Heilbronn" width="534" height="201"></span>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="title">AI in the Research Process</span>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <button role="tab" id="tab-agenda" data-view="agenda" aria-selected="true">Start</button>
+      <button role="tab" id="tab-cases" data-view="cases" aria-selected="false">Use cases</button>
+      <button role="tab" id="tab-data" data-view="data" aria-selected="false">Practice data</button>
+      <button role="tab" id="tab-results" data-view="results" aria-selected="false">Results</button>
+      <button role="tab" id="tab-tools" data-view="tools" aria-selected="false">Academic Extensions &amp; Tools</button>
+    </nav>
+    <div class="ident" id="ident"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="view-agenda" aria-labelledby="tab-agenda">
+    <div class="view-head">
+      <div><span class="kicker">Working basis · Heilbronn University of Applied Sciences</span><h1>AI in the Research Process</h1>
+        <p>For researchers and doctoral candidates: where AI genuinely helps along the research process – and where it does not. 67 use cases from the first idea to transfer, each with a starter prompt, a check and practice data. The guides work with any general AI assistant your university provides or permits (e.g. Copilot, ChatGPT, Claude or Gemini).</p></div>
+    </div>
+    <div class="panel steps-ov">
+      <h2>How this tool works</h2>
+      <p class="sub">Two steps: first decide what is worth it for your research, then try it – on your own or with a group in a workshop.</p>
+      <div class="ov-grid">
+        <div class="ov">
+          <span class="ov-n">Step 1</span><h3>Research value</h3>
+          <p>Enter your discipline and go through the phases of the research process from that point of view: how valuable for your research, what kind of gain, how feasible. Star what you want to try, flag what is “not an AI task” or needs a rules check, and add missing use cases.</p>
+          <p class="ov-out">→ Results: the value × feasibility matrix shows which use cases win.</p>
+        </div>
+        <div class="ov">
+          <span class="ov-n">Step 2</span><h3>Try it with AI</h3>
+          <p>Pick one to three use cases and test them with your AI assistant – with a short guide, a starter prompt, a check and the practice data. Climb the levels from a single chat to a project, a custom assistant and, where it adds something, automation or your own code. Record how it went and what you noticed.</p>
+          <p><button type="button" class="linkbtn" data-view="data">Open the practice data →</button></p>
+        </div>
+        <div class="ov ov-after">
+          <span class="ov-n">Alongside</span><h3>Data and tools</h3>
+          <p>Open papers and raw datasets to use instead of your own unpublished work, and an overview of academic extensions and tools – including how they connect to an AI assistant.</p>
+          <p><button type="button" class="linkbtn" data-view="tools">Academic Extensions &amp; Tools →</button></p>
+        </div>
+      </div>
+      <div class="row"><button type="button" class="btn btn-primary" data-view="cases">Start with Step 1 →</button></div>
+    </div>
+    <div class="st-grid">
+      <div class="panel">
+        <h2>Alone or in a workshop</h2>
+        <ul class="st-list">
+          <li><b>On your own:</b> just start – ratings, tests and findings are saved in this browser only.</li>
+          <li><b>In a workshop:</b> each group works on one laptop and gives it a group name in the menu (gear icon, top right). Afterwards each group copies its data and one laptop merges them – Results then compares groups and disciplines.</li>
+          <li><b>Export:</b> the menu downloads the results as .csv or .json; Results has a report you can save as PDF or Markdown.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>Before you upload anything</h2>
+        <ul class="st-list">
+          <li>Use the assistant your university provides or permits, signed in with your university account where possible.</li>
+          <li>Personal, confidential or unpublished data only go into approved tools – otherwise use the practice data or anonymised material.</li>
+          <li>Check every number, quote and reference against the source. You remain responsible for the result and for disclosing AI use.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-cases" aria-labelledby="tab-cases" hidden>
+    <div class="view-head">
+      <div><h1>Where does AI really help your research?</h1>
+        <p>Choose a phase, open a use case and rate it. Step 1 is about the value for your research; in Step 2 you try one to three use cases with your AI assistant. Work from the point of view of your discipline.</p></div>
+    </div>
+{{INTRO}}
+    <div class="stepbar">
+      <div class="seg" role="group" aria-label="Assessment step">
+        <button type="button" data-lens="1" aria-pressed="true">Step 1 · Research value</button>
+        <button type="button" data-lens="2" aria-pressed="false">Step 2 · Try it with AI</button>
+      </div>
+      <p id="lensHint"></p>
+    </div>
+    <div class="discbar" id="discBar" hidden></div>
+    <div class="panel levels" id="levels" hidden></div>
+    <div class="phases" id="phases" role="tablist" aria-label="Research phases"></div>
+    <details class="intro" id="intro"></details>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="view-data" aria-labelledby="tab-data" hidden>
+    <div id="dataBack"></div>
+    <div class="view-head">
+      <div><h1>Practice data</h1>
+        <p>Open papers and raw datasets on weather and climate change for Step 2 – use them instead of your own unpublished data. Everything here may be shared and uploaded to an AI assistant under the licence shown for each item.</p></div>
+    </div>
+    <div class="dl-grid">
+      <div class="panel dl-main" id="dlMain"></div>
+      <div class="panel"><h2>How to use it with an AI assistant</h2>
+        <ol class="howto">
+          <li>Download papers and data and unzip the pack – or download single files below.</li>
+          <li>Pick a test idea below, or any paper or data file that fits your use case.</li>
+          <li>In a chat with your AI assistant, upload the paper or data file you need for your prompt.</li>
+          <li>For a data file, first ask the assistant to describe it: columns, units, missing-value codes. Check this against the file.</li>
+          <li>Then run your use case – and check every number, quote and citation against the data or the PDF.</li>
+        </ol>
+        <p class="sub">Assistants often read a PDF as text, so tables, figures and equations are easily misread – check them in the paper itself. If your assistant does not accept a .txt file, rename it to .csv or paste its content into the chat.</p>
+      </div>
+    </div>
+    <div class="panel" id="dlPairs"></div>
+    <div class="panel" id="dlPapers"></div>
+    <div class="panel" id="dlData"></div>
+  </section>
+
+  <section id="view-results" aria-labelledby="tab-results" hidden>
+    <div class="view-head">
+      <div><h1>Results</h1><p id="resSub">Value against feasibility, top use cases, and what you or each group found.</p></div>
+      <div class="scopebar">
+        <div class="seg dark" role="group" aria-label="Scope">
+          <button type="button" data-scope="room" aria-pressed="true">All groups</button>
+          <button type="button" data-scope="table" aria-pressed="false" id="scopeTable">My group</button>
+        </div>
+        <select id="scopePick" class="scopepick no-print" aria-label="Show results of one group" hidden></select>
+      </div>
+    </div>
+    <div class="tchips" id="resPhase" role="group" aria-label="Filter by phase"></div>
+    <div class="tchips" id="resDisc" role="group" aria-label="Filter by discipline" hidden></div>
+    <div class="panel" id="groups" hidden></div>
+    <div class="res-grid">
+      <div class="panel">
+        <div class="ptools"><h2>Value × feasibility</h2></div>
+        <div id="matrix"></div>
+      </div>
+      <div class="panel">
+        <h2>Top use cases</h2><p class="sub" id="rankSub">By value × feasibility. Select one to open it.</p>
+        <ol class="rank" id="rank"></ol>
+      </div>
+    </div>
+    <div class="panel" id="tests" style="margin-top:16px"></div>
+    <div class="lists" id="lists"></div>
+    <div class="fd-grid">
+      <div class="panel" id="fdForm"></div>
+      <div class="panel" id="fdAll"></div>
+    </div>
+    <div class="panel report" id="report">
+      <div class="ptools"><div><h2>Results report</h2><p class="sub">Fills automatically – save it as PDF or Markdown.</p></div>
+        <div class="row no-print"><button type="button" class="btn btn-primary btn-sm" id="pdfBtn">Save results as PDF</button> <button type="button" class="btn btn-ghost btn-sm" id="repCopy">Copy report</button> <button type="button" class="btn btn-ghost btn-sm" id="repDl">Download (.md)</button></div></div>
+      <div id="reportBody"></div>
+    </div>
+  </section>
+
+  <section id="view-tools" aria-labelledby="tab-tools" hidden>
+    <div id="toolsBack"></div>
+    <div class="view-head">
+      <div><h1>Academic Extensions &amp; Tools</h1>
+        <p>Tools commonly used in academic work, mapped to the research phases – for orientation, not recommendations. They complement a general AI assistant rather than replace it: subject databases, reference managers and analysis software do things a general assistant cannot. Many of them can also be connected to an assistant, most flexibly through the <b>Model Context Protocol (MCP)</b>, an open standard that lets an assistant call another tool and use its results.</p>
+        <p><b>Example:</b> an assistant connected to scite’s MCP server can check, while you draft a literature review, whether later studies support or contrast a finding you cite – and answers with the actual citation statements and DOIs instead of guessing.</p>
+        <p class="sub">Ratings: by students at a German university, 2024/25 (greyed out with fewer than three ratings); tools without a rating were added later. <span class="mcpb o">MCP</span> official server from the provider · <span class="mcpb c">MCP</span> community server, review before use · “remote” = server reachable over HTTPS, so cloud platforms can use it · <span class="msb">Microsoft 365</span> ways the tool connects to Microsoft 365 Copilot, Word, Teams, Outlook or Power Automate.</p></div>
+    </div>
+    <details class="panel infobox" id="mcpBox">
+      <summary><span><b>How to connect a tool to an AI assistant via MCP</b><small>Three routes, from simple to flexible – and what to check first.</small></span></summary>
+      <div class="ib-grid">
+        <div>
+          <h3>1 · Ready-made connectors</h3>
+          <p>Most assistants offer ready-made connectors or apps – depending on the tool and licence, for example for scite, Consensus, PubMed, GitHub or Notion. Many of them use MCP in the background. Nothing to build – check which ones your university has enabled.</p>
+          <h3>2 · Your own assistant or automation</h3>
+          <ol>
+            <li>Choose a platform that accepts MCP servers – for example the custom-connector option of your assistant, Microsoft Copilot Studio or a workflow tool such as n8n.</li>
+            <li>Enter a name, a short description (the assistant uses it to decide when to call the tool) and the server URL from the provider’s documentation.</li>
+            <li>Choose how to sign in: none, API key or OAuth 2.0. With OAuth, each researcher uses their own account.</li>
+            <li>Add instructions such as “cite DOIs, never invent sources”, test with real examples, then share it with your team.</li>
+          </ol>
+          <h3>3 · Code, desktop and local tools</h3>
+          <p>Code editors such as VS Code and desktop assistants connect to MCP servers directly – including local ones such as Zotero or jamovi that never leave your computer.</p>
+          <h3>Without MCP</h3>
+          <p>Many tools already work where you write: reference managers cite in Word (Zotero, EndNote, Mendeley, Citavi, Paperpile), note-takers join video meetings (Otter, Sally), and some offer automation connectors. Filter by “Microsoft 365 integration” below for the Microsoft route.</p>
+        </div>
+        <div class="ib-check">
+          <h3>Before you start</h3>
+          <ul>
+            <li>Cloud platforms only connect to <b>remote</b> servers (HTTPS). Local community servers need a code editor or a desktop assistant.</li>
+            <li>Connectors and custom assistants may need additional licences; IT may have to approve them and can restrict connectors.</li>
+            <li>Your prompts and inputs go to the tool provider. Check your university’s data rules; never send unpublished or personal data to an unvetted server.</li>
+            <li>Community servers are not maintained by the provider – review the code and permissions first.</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+    <div class="tchips" id="toolFilter"></div>
+    <div class="tgrid" id="toolGrid"></div>
+    <div class="panel" style="margin-top:8px">
+      <h2>About AI assistants</h2>
+      <p class="sub" style="font-size:14.5px;color:var(--ink-2)">Use the assistant your university provides or permits – with a university account, inputs are usually covered by a data-protection agreement and not used for training. Features, names and limits differ between tools and change frequently; assessments as of November 2026. Guidance on responsible use in research:</p>
+      <ul class="note" id="sources"></ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>Prof. Dr. Manuel Kern · Heilbronn University of Applied Sciences · <span class="version"></span></span><span>No personal data is stored · no product endorsement</span></div></footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden></aside>
+<div class="modal" id="modal" hidden></div>
+<div class="modal login" id="login" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
