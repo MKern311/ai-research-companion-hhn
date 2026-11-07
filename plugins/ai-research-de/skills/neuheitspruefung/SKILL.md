@@ -17,7 +17,9 @@ Eine kurze, geprüfte Liste der nächstliegenden Studien mit Angabe, wie sie sic
 
 Monate nach Projektbeginn stellen Sie womöglich fest, dass Ihre Studie schon existiert: Schlagwortsuchen übersehen eng verwandte Arbeiten, die andere Begriffe, das Vokabular eines anderen Fachs oder eine andere Analyseeinheit verwenden.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Zusammenfassung ein und bitten Sie um eng verwandte veröffentlichte Studien mit Links.
 2. Bitten Sie um einen Satz pro Studie dazu, wie sie sich mit Ihrer überschneidet.
@@ -29,9 +31,8 @@ Monate nach Projektbeginn stellen Sie womöglich fest, dass Ihre Studie schon ex
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Neuheitsprüfung“. Anweisungen: bis zu acht nächstliegende Studien, jeweils mit Autorinnen und Autoren, Jahr, Titel, funktionierendem Link und einem Satz zur Überschneidung; nur Studien, die er tatsächlich gefunden hat; eine Positionierungsaussage in zwei Sätzen; und der Hinweis, dass dies ein erster Scan und kein Beweis für Neuheit ist. Kein Code nötig. Startprompt: „Wurde diese Studie schon durchgeführt? Hier ist meine Zusammenfassung.“ Wiederverwendbar, wenn sich Ihr Plan oder Ihre Frage verschiebt.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet] und prüfe, ob meine geplante Studie schon durchgeführt wurde. Meine Projektzusammenfassung lautet: [Zusammenfassung]. Suchen Sie bis zu acht veröffentlichte Studien, die ihr am nächsten kommen. Nennen Sie zu jeder Autorinnen und Autoren, Jahr, Titel, einen funktionierenden Link und einen Satz dazu, wie sie sich mit meinem Projekt überschneidet oder davon unterscheidet. Listen Sie nur Studien auf, die Sie tatsächlich mit einem Link gefunden haben. Wenn Sie nicht sicher sind, sagen Sie es; erfinden Sie keine Quellen. Schließen Sie mit zwei Sätzen dazu, wie ich meine Studie positionieren könnte.

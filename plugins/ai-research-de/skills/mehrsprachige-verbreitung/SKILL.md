@@ -17,7 +17,9 @@ Eine lokalisierte Übersetzung mit Begriffsglossar und aufgelisteten Anpassungen
 
 Zielgruppen in anderen Ländern zu erreichen braucht mehr als wörtliche Übersetzung – Fachbegriffe, Einheiten, Zahlenformate und Beispiele müssen zum lokalen Gebrauch und zur Terminologie des Fachs passen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie den Text ein und nennen Sie Zielsprache, Land und Zielgruppe.
 2. Bitten Sie um eine Übersetzung samt einer Liste der vorgenommenen kulturellen Anpassungen.
@@ -29,12 +31,11 @@ Zielgruppen in anderen Ländern zu erreichen braucht mehr als wörtliche Überse
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: Zielsprache, Land und Zielgruppe, natürlicher Stil, Zahlen und Einheiten exakt im lokalen Format, Glossarbegriffe beibehalten, jede Anpassung aufgelistet, unsichere Begriffe markiert. Wissen: Ihr Begriffsglossar. Ein zweiter Agent, der nur zurückübersetzt und keinen Zugriff auf das Original hat, macht die Prüfung wiederholbar. Startprompt: „Übersetze dieses Abstract für die Öffentlichkeit in [Land]“. Für jede Zusammenfassung, die Sie im Ausland teilen, wiederverwendbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bin Forschende/Forschender in [Fach] und teile meine Arbeit mit [Zielgruppe] in [Land]. Unten steht meine Laienzusammenfassung auf Deutsch: [Text einfügen]. Übersetze sie für diese Zielgruppe in [Sprache], in klarem und natürlichem Stil. Halte Fachbegriffe einheitlich und gib in einem kurzen Glossar den [Sprache]-Begriff für jedes Schlüsselkonzept an. Passe Beispiele, Einheiten oder Bezüge an, die lokal keinen Sinn ergäben, und liste jede vorgenommene Anpassung auf. Markiere jeden Begriff, bei dem du dir über die übliche Übersetzung in diesem Fach unsicher bist.
+Ich bin Forschende/Forschender in [Fach] und teile meine Arbeit mit [Zielgruppe] in [Land]. Unten steht meine Laienzusammenfassung auf Deutsch: [Text einfügen]. Übersetzen Sie sie für diese Zielgruppe in [Sprache], in klarem und natürlichem Stil. Halten Sie Fachbegriffe einheitlich und geben Sie in einem kurzen Glossar den [Sprache]-Begriff für jedes Schlüsselkonzept an. Passen Sie Beispiele, Einheiten oder Bezüge an, die lokal keinen Sinn ergäben, und listen Sie jede vorgenommene Anpassung auf. Markieren Sie jeden Begriff, bei dem Sie sich über die übliche Übersetzung in diesem Fach unsicher sind.
 ```
 
 ## Prüfung

@@ -17,7 +17,9 @@ Three respondent paths walked through, a fix list for routing and answer options
 
 Broken skip logic, overlapping answer options and inconsistent scales slip through when you have read your own questionnaire twenty times – and surface only in the data.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the exported questionnaire and describe the target group.
 2. Ask the assistant to walk through it along three different answer paths.
@@ -29,9 +31,8 @@ Broken skip logic, overlapping answer options and inconsistent scales slip throu
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Survey checker'. Instructions: walk at least three respondent paths, use the fixed problem types and table, add a language check and a completion-time estimate, and never change the meaning of a question. Knowledge: your style guide or your institution's survey guidance. Starter prompt: 'Check this exported questionnaire for [target group]'. Reusable for every questionnaire and every version before launch.
 
-## Starter prompt
+## Typical request
 
 ```text
 I have finished a questionnaire on [topic] for [target group]; it is attached with its routing. Act as a careful survey methodologist. First, walk through the questionnaire as three respondents taking different paths (for example someone who answers 'no' at the first filter, someone who answers 'yes' everywhere, and someone who skips optional questions), listing the questions each one sees. Then show a table of problems: question number, type of problem (broken or missing routing, question shown to people it does not apply to, answer options missing or overlapping, inconsistent scale direction or labels, reference to an earlier answer that may not exist, unclear instruction), and a suggested fix. Next, check the language: spelling, grammar, consistent terms and form of address, and wording that is hard to read for the target group. Finally, estimate the completion time. Do not change the meaning of any question.

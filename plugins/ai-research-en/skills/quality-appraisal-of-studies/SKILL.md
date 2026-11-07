@@ -17,7 +17,9 @@ A completed design-appropriate checklist with a rating and supporting passage pe
 
 Appraising studies item by item is slow, and judgements drift between papers or rest on a general impression rather than on what the paper actually reports.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the paper and name the study design and checklist.
 2. Ask for each checklist item with a rating and the supporting passage.
@@ -29,9 +31,8 @@ Appraising studies item by item is slow, and judgements drift between papers or 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Appraisal assistant'. Instructions: name and justify a checklist for the design, or say none fits and use adapted criteria; go item by item with yes, no or can't tell, the exact passage with page and a one-line comment; never infer, never give an overall score. Knowledge: the checklists you use. Starter prompt: 'Appraise this study with [checklist].' Only approved material; a human makes every rating.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am appraising studies for a literature review in [discipline]. The attached paper is a [study design]. Use [checklist, e.g. CASP for qualitative studies, MMAT for mixed studies, JBI for the design] – or, if I have not named one, suggest the most suitable established checklist and say why. Go through the checklist item by item: item, rating (yes, no, can't tell), the exact passage with page or section that supports the rating, and a one-line comment. Use 'can't tell' when the paper does not report enough; do not infer. Finally, summarise the main strengths and concerns in three sentences, without giving an overall score.

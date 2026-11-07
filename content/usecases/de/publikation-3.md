@@ -115,7 +115,7 @@ Fügen Sie die Autorenrichtlinien Ihrer in die engere Wahl gekommenen Zeitschrif
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Hilfe für Zeitschriften und BibTeX“ (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in den dauerhaften Anweisungen die Ausgabe fest: eine Zeitschriftentabelle mit Verlag, Passung, Artikeltyp, Wortlimit, Zitierstil, Open-Access-Optionen und Link zu den Richtlinien; nur die eigenen Seiten der Zeitschriften verwenden (lassen Sie die Websuche eingeschaltet, wenn Ihr Werkzeug sie bietet); BibTeX mit korrekten Eintragstypen und markierten fehlenden Feldern; nie Zeitschriften, DOIs oder Seitenzahlen erfinden. Startprompts: „Schlagen Sie fünf Zeitschriften für dieses Abstract vor.“ und „Wandeln Sie diese Literaturangaben in BibTeX um.“ Wiederverwendbar für jedes Manuskript.
+Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Hilfe für Zeitschriften und BibTeX“ (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in den dauerhaften Anweisungen die Ausgabe fest: eine Zeitschriftentabelle mit Verlag, Passung, Artikeltyp, Wortlimit, Zitierstil, Open-Access-Optionen und Link zu den Richtlinien; nur die eigenen Seiten der Zeitschriften verwenden (lassen Sie die Websuche eingeschaltet, wenn Ihr Werkzeug sie bietet); BibTeX mit korrekten Eintragstypen und markierten fehlenden Feldern; nie Zeitschriften, DOIs oder Seitenzahlen erfinden. Startprompts: „Schlagen Sie fünf Zeitschriften für dieses Abstract vor.“ und „Wandeln Sie diese Literaturangaben in BibTeX um.“ Wiederverwendbar für jedes Manuskript.
 
 ### Automatisierung / eigener Code
 

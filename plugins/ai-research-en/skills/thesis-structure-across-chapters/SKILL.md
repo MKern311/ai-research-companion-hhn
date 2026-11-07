@@ -17,7 +17,9 @@ A traceability matrix of each research question across chapters, with gaps, over
 
 Chapters written over several years drift apart – a research question goes unanswered, findings repeat, and the golden thread from question to contribution that examiners look for gets lost.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your research questions and the chapter summaries in one message.
 2. Ask for a table mapping each research question to chapters.
@@ -29,9 +31,8 @@ Chapters written over several years drift apart – a research question goes una
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). Paste your research questions and the mapping rules into its standing instructions: one row per question showing where it is introduced, addressed with methods, answered and discussed; flag gaps, overlaps and repetition, quoting the sentence behind each point; say when information is missing. Add the thesis outline as knowledge files (if your tool does not support them, attach them in the chat). Starter prompt: "Check this chapter summary against my research questions." Reusable each time a chapter changes.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] checking the golden thread of my thesis. My research questions are: [paste RQs]. Below are short summaries of each chapter: [paste summaries]. Create a table with one row per research question showing where it is introduced, addressed with methods, answered with findings, and discussed in the conclusion. Then list any gaps (a question not answered), overlaps between chapters and likely repetition. For each point, quote the sentence from my summaries it is based on. If the summaries do not give enough information to judge, say so.

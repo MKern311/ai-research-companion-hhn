@@ -17,7 +17,9 @@ Explained, refactored code with docstrings and unit tests that pin down its beha
 
 Research code grows without tests or documentation; months later you cannot tell whether a change altered a result, and others cannot run, reuse or cite your code.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the starter prompt with your code, naming the language and purpose.
 2. Read the explanation and check it matches what you intended the code to do.
@@ -30,9 +32,8 @@ Research code grows without tests or documentation; months later you cannot tell
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, set your language and rules: docstrings, unit tests for normal and edge cases (plain asserts if pytest is missing), a check against a known result or benchmark, units and value ranges stated, "ask when behaviour is unclear", and never include keys or passwords. Switch on code execution if your tool offers it, so it can run Python tests. Starter prompt: "Review this function and write tests for its edge cases." Reusable for each new module.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a researcher writing [language] code for [purpose, e.g. an agent-based simulation of X]. Below is part of my own code. Please 1) explain what it does in plain language, 2) list possible bugs, edge cases and numerical issues, 3) suggest a refactored version with clear names and docstrings that keeps the behaviour the same, and 4) write unit tests in [pytest or testthat] covering normal and edge cases, and 5) suggest checks of the numerical results: a case with a known analytical solution or benchmark, consistent units, conserved quantities and plausible value ranges. If you are unsure about the intended behaviour, ask rather than assume. Code: [paste code]

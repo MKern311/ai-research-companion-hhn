@@ -17,7 +17,9 @@ Ein dokumentierter String in der Syntax der Datenbank, mit Konzeptblöcken, Syno
 
 Boolesche Strings, die durch Ausprobieren entstehen, übersehen Synonyme und Schreibvarianten oder liefern Tausende Treffer – und die wenigsten Forschenden lassen ihre Strategie vor der Ausführung anhand von PRESS begutachten.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Forschungsfrage ein und nennen Sie die Datenbank.
 2. Bitten Sie um einen booleschen Suchstring mit Synonymen und Schlagwörtern.
@@ -29,9 +31,8 @@ Boolesche Strings, die durch Ausprobieren entstehen, übersehen Synonyme und Sch
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Suchstring-Builder“. Anweisungen: Konzeptblöcke mit Synonymen, OR innerhalb und AND zwischen den Blöcken, Trunkierung, Schlagwörter, wo die Datenbank sie hat, der String in einem Codeblock, die Blocktabelle, eine PRESS-Selbstprüfung, und bei Unsicherheit zu einem Feldcode das auch sagen. Wissen: die Syntaxleitfäden der Datenbanken, die Sie nutzen. Startprompt: „Erstelle einen Scopus-String für diese Frage.“ Wiederverwendbar für jede neue Frage oder Datenbank.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet]. Meine Forschungsfrage lautet: [Frage]. Erstellen Sie einen booleschen Suchstring für [Datenbank] mit drei Konzeptblöcken, Synonymen mit OR verbunden, Blöcken mit AND verbunden und Trunkierung, wo sinnvoll. Schlagen Sie Schlagwörter vor (zum Beispiel MeSH), wenn die Datenbank sie nutzt. Zeigen Sie den String in einem Codeblock und dann eine kurze Tabelle: Block, Begriffe, was er übersehen könnte. Prüfen Sie den String dann anhand der PRESS-Checkliste: Übersetzung der Frage, boolesche und Proximity-Operatoren, Schlagwörter, Textwörter und Schreibvarianten, Rechtschreibung und Syntax, Limits und Filter. Sagen Sie, ob der String eher auf Sensitivität oder Spezifität zielt. Verwenden Sie nur Syntax, die [Datenbank] unterstützt; wenn Sie bei einem Feldcode unsicher sind, sagen Sie es.

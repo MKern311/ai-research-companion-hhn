@@ -17,7 +17,9 @@ Eine KI-Zweitmeinung je Datensatz mit dem entscheidenden Kriterium und einem Zit
 
 Hunderte Titel und Abstracts zu screenen ist mühsam, und eine zweite menschliche Screening-Person ist schwer zu finden – doch eine einzelne ermüdete Person weicht von den Kriterien ab und übersieht geeignete Datensätze.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Screenen Sie die 10 Abstracts selbst und notieren Sie Ihre Entscheidungen.
 2. Fügen Sie Ihre Kriterien und die 10 nummerierten Abstracts in Ihren KI-Assistenten ein.
@@ -29,9 +31,8 @@ Hunderte Titel und Abstracts zu screenen ist mühsam, und eine zweite menschlich
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Zweitscreener“. Anweisungen: Ihre Kriterien wortwörtlich, eine Zeile je Datensatz mit Entscheidung, entscheidendem Kriterium und einem Zitat aus dem Abstract, „unsicher“ statt zu raten, und „der Mensch trifft die endgültige Entscheidung“. Wissen: das Protokoll. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, um Kappa zu berechnen. Startprompt: „Screene diesen Stapel.“ Nur freigegebene, nicht sensible Datensätze kommen hinein; Sie prüfen jede Entscheidung.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich screene Datensätze für eine Literaturübersicht zu [Thema]. Einschlusskriterien: [Kriterien]. Ausschlusskriterien: [Kriterien]. Unten stehen 10 nummerierte Titel mit Abstracts. Geben Sie zu jedem eine Tabellenzeile an: Nummer, Entscheidung (Einschluss, Ausschluss oder unsicher), das entscheidende Kriterium und ein kurzes Zitat aus dem Abstract, das die Entscheidung stützt. Verwenden Sie „unsicher“, wenn der Abstract nicht genug Informationen liefert; raten Sie nicht. Ich treffe die endgültige Entscheidung.

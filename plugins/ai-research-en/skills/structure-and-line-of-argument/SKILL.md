@@ -17,7 +17,9 @@ A three-sentence summary to test against your intent, a Toulmin map of claim, gr
 
 You know your argument too well to see it from outside – a missing warrant, an unstated limitation or a section in the wrong place often only surfaces in peer review.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the starter prompt with your outline and target journal.
 2. Compare the three-sentence summary with what you mean to argue.
@@ -29,9 +31,8 @@ You know your argument too well to see it from outside – a missing warrant, an
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- In Instructions, set the routine: three-sentence summary, Toulmin map with a quote for each element, steps assumed rather than shown, CARS moves in the introduction, refer to section headings and never rewrite the text. Add your target journal's author guidelines as Knowledge. Starter prompt: "Map the argument of this draft and mark the weakest step." Reusable for every paper and chapter.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am writing a [paper or thesis chapter] in [discipline] for [target journal]. Below is my [abstract and outline]. 1) Summarise my central argument in three sentences. 2) Map the line of argument step by step and mark where a step is missing, assumed or not supported by the evidence described. 3) Suggest changes to the structure to fit a typical [article type, e.g. empirical IMRaD] article in this journal. Be specific and refer to my section headings. Do not rewrite my text. Text: [paste text]

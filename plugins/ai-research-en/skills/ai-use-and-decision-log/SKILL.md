@@ -17,7 +17,9 @@ A running provenance log of AI use, checks and the decisions they informed, plus
 
 At submission you must declare your AI use, but months later you cannot reconstruct which tool, prompt or output shaped which part of the thesis, or how you checked it.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Describe today's AI task: tool, purpose, prompt and how you checked it.
 2. Ask for a log table template with your task as row one, including the research decision it informed.
@@ -29,9 +31,8 @@ At submission you must declare your AI use, but months later you cannot reconstr
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: the log columns, fill only from what you describe, leave unknown cells empty, declarations in a neutral tone naming only logged uses, never add tools or benefits. Knowledge: your university's AI policy. Starter prompts: "Turn today's AI use into a log row" and "Draft my declaration from these rows". Reusable after every AI task – the agent does not keep the log, so paste each new row into your Excel log or Word file.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher and want to keep a log of my AI use as the basis for the AI declaration in my thesis. Create a log table with columns: date, tool, task, prompt (full or summary), where the output is saved, how I checked it, what I used in my work, which research decision it informed. Fill in the first row from this description: [describe today's task]. Then draft a declaration of about 100 words, in a neutral tone, that describes only the uses in the log. Do not add uses I have not listed. [Paste university guidance if available.]

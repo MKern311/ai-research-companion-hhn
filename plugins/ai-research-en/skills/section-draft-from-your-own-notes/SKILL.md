@@ -17,7 +17,9 @@ A claim–evidence map and a rough draft built only from your notes, with gaps m
 
 Turning a pile of notes into a first draft is slow, and on a blank page it is easy to lose track of which source supports which claim.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Check your university's rules on AI-assisted drafting first.
 2. Paste your notes and sources and ask for an evidence map, then a first draft.
@@ -29,9 +31,8 @@ Turning a pile of notes into a first draft is slow, and on a blank page it is ea
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, fix the sequence: evidence map first, then a draft of the requested length using only your notes and sources, cited in your style, with [GAP] wherever a sentence lacks a source; never add claims, sources or numbers. Starter prompt: "Build the evidence map from these notes, then draft 200 words." Reusable for each section – check your university's rules first, rework the text yourself and declare the AI use.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am writing the [section, e.g. literature review section on X] of my [thesis or paper] in [discipline]. Below are my own notes and the sources each point relies on. First, build an evidence map: the main points in a logical order, each with the source(s) that support it and any gaps where a point has no source. Then write a first draft of about [length] words that uses only my points and sources, cites them in [citation style], and marks with [GAP] every place where my notes do not support a sentence. Do not add claims, sources or numbers of your own. This is a draft that I will rework myself.

@@ -17,7 +17,9 @@ Eine schrittweise Erklärung mit definierten Symbolen, einem durchgerechneten Be
 
 Eine Formel, ungewohnte Notation oder ein Schlüsselpaper in einer anderen Sprache kann Ihre Lektüre stundenlang aufhalten – oder dazu verleiten, es zu zitieren, ohne es wirklich zu verstehen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie das Paper an oder fügen Sie die schwierige oder fremdsprachige Passage ein.
 2. Bitten Sie um eine Erklärung in einfacher Sprache mit jedem definierten Symbol oder um eine englische Übersetzung mit Relevanzzusammenfassung.
@@ -29,9 +31,8 @@ Eine Formel, ungewohnte Notation oder ein Schlüsselpaper in einer anderen Sprac
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Methodenerklärer“. Anweisungen: einfache Sprache, jedes Symbol definiert, die eigene Notation des Papers, ein kleines durchgerechnetes Beispiel, Annahmen benannt und alles über das Paper Hinausgehende gekennzeichnet; bei Übersetzungen britisches Englisch, Originalbegriffe in Klammern bei Unsicherheit, eine Relevanzzusammenfassung in fünf Stichpunkten, „nur zum Screening“. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, für durchgerechnete Beispiele. Startprompts: „Erkläre Abschnitt 3 dieses Papers“, „Übersetze und fasse diesen Abstract zusammen“.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet]. Wählen Sie den Teil, der zutrifft.

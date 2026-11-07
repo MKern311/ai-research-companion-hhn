@@ -70,7 +70,7 @@ Sie schlagen ein bewusst einfaches Design vor – eine Regression der jährliche
 ### Prompt
 
 ```text
-Ich prüfe ein Forschungsdesign mit Klimadaten. Forschungsfrage: Wie viel der globalen Erwärmung seit 1959 hängt mit dem steigenden atmosphärischen CO₂ zusammen? Geplantes Design: eine einfache Regression nach der Methode der kleinsten Quadrate (OLS) der jährlichen globalen Temperaturanomalie (die angehängte monatliche HadCRUT5-CSV) auf die jährliche mittlere CO₂-Konzentration (die angehängte NOAA-Mauna-Loa-CO₂-CSV), 1959–2024. Vergleiche dieses Design in einer Tabelle mit zwei realistischen Alternativen: Design, was es beantworten kann, wichtigste Stärken, wichtigste Schwächen, benötigte Daten. Liste dann die wichtigsten Gefährdungen der Validität meines geplanten Designs auf, sortiert nach statistischer Schlussvalidität, interner, Konstrukt- und externer Validität, jeweils mit einer konkreten Gegenmaßnahme. Beziehe dich, wo es passt, auf Merkmale der angehängten Dateien, etwa Basisperioden, Messstandorte und Codes für fehlende Werte. Führe die Regression nicht aus; ich möchte eine Kritik des Designs, keine Ergebnisse. Sei spezifisch für diese Studie statt generisch und bleibe unter 450 Wörtern.
+Ich prüfe ein Forschungsdesign mit Klimadaten. Forschungsfrage: Wie viel der globalen Erwärmung seit 1959 hängt mit dem steigenden atmosphärischen CO₂ zusammen? Geplantes Design: eine einfache Regression nach der Methode der kleinsten Quadrate (OLS) der jährlichen globalen Temperaturanomalie (die angehängte monatliche HadCRUT5-CSV) auf die jährliche mittlere CO₂-Konzentration (die angehängte NOAA-Mauna-Loa-CO₂-CSV), 1959–2024. Vergleichen Sie dieses Design in einer Tabelle mit zwei realistischen Alternativen: Design, was es beantworten kann, wichtigste Stärken, wichtigste Schwächen, benötigte Daten. Listen Sie dann die wichtigsten Gefährdungen der Validität meines geplanten Designs auf, sortiert nach statistischer Schlussvalidität, interner, Konstrukt- und externer Validität, jeweils mit einer konkreten Gegenmaßnahme. Beziehen Sie sich, wo es passt, auf Merkmale der angehängten Dateien, etwa Basisperioden, Messstandorte und Codes für fehlende Werte. Führen Sie die Regression nicht aus; ich möchte eine Kritik des Designs, keine Ergebnisse. Seien Sie spezifisch für diese Studie statt generisch und bleiben Sie unter 450 Wörtern.
 ```
 
 ### Prüfung
@@ -93,7 +93,7 @@ Ihre Forschungsfrage und Ihr geplantes Design in zwei bis drei Sätzen.
 ### Prompt
 
 ```text
-Ich promoviere in [Fach]. Meine Forschungsfrage lautet: [Frage]. Mein geplantes Design ist: [Design]. Vergleiche es in einer Tabelle mit zwei realistischen Alternativen: Design, was es beantworten kann, wichtigste Stärken, wichtigste Schwächen, praktische Anforderungen (Zeit, Zugang, Daten). Liste dann für mein geplantes Design die wichtigsten Gefährdungen der Validität auf (bei qualitativer Arbeit: der Vertrauenswürdigkeit), jeweils mit einer konkreten Möglichkeit, sie zu verringern. Wenn mein Design ein Experiment ist, ergänze einen kurzen Plan: Bedingungen, unabhängige und abhängige Variablen, Kontrollen und Randomisierung, und schlage einen Versuchsplan vor (zum Beispiel ein fraktionelles faktorielles oder ein Response-Surface-Design), der die Informationen, die ich brauche, mit weniger Durchläufen liefert; nenne dabei, welche Effekte er nicht trennen kann. Sei spezifisch für meine Studie statt generisch. Bleibe unter 450 Wörtern.
+Ich promoviere in [Fach]. Meine Forschungsfrage lautet: [Frage]. Mein geplantes Design ist: [Design]. Vergleichen Sie es in einer Tabelle mit zwei realistischen Alternativen: Design, was es beantworten kann, wichtigste Stärken, wichtigste Schwächen, praktische Anforderungen (Zeit, Zugang, Daten). Listen Sie dann für mein geplantes Design die wichtigsten Gefährdungen der Validität auf (bei qualitativer Arbeit: der Vertrauenswürdigkeit), jeweils mit einer konkreten Möglichkeit, sie zu verringern. Wenn mein Design ein Experiment ist, ergänzen Sie einen kurzen Plan: Bedingungen, unabhängige und abhängige Variablen, Kontrollen und Randomisierung, und schlagen Sie einen Versuchsplan vor (zum Beispiel ein fraktionelles faktorielles oder ein Response-Surface-Design), der die Informationen, die ich brauche, mit weniger Durchläufen liefert; nennen Sie dabei, welche Effekte er nicht trennen kann. Seien Sie spezifisch für meine Studie statt generisch. Bleiben Sie unter 450 Wörtern.
 ```
 
 ### Prüfung
@@ -102,7 +102,7 @@ Unter den genannten Gefährdungen sind die, die Sie aus Ihrer methodischen Ausbi
 
 ## Technik
 
-Fügen Sie Ihre Frage und Ihr Design in Ihren KI-Assistenten ein (z. B. Copilot, ChatGPT, Claude oder Gemini); Daten sind nicht nötig. Alternativ laden Sie einen unkritischen Entwurf Ihres Methodenteils hoch. In der Übung hängen Sie die HadCRUT5- und die Mauna-Loa-CO₂-Datei an, damit der Assistent auf deren Eigenschaften eingehen kann.
+Fügen Sie Ihre Frage und Ihr Design in Ihren KI-Assistenten ein (z. B. Copilot, ChatGPT, Claude oder Gemini); Daten sind nicht nötig. Alternativ laden Sie einen nicht sensiblen Entwurf Ihres Methodenteils hoch. In der Übung hängen Sie die HadCRUT5- und die Mauna-Loa-CO₂-Datei an, damit der Assistent auf deren Eigenschaften eingehen kann.
 
 ## Stufen
 
@@ -116,4 +116,4 @@ Fügen Sie Ihren Antragsentwurf, zwei oder drei zentrale Methodenarbeiten Ihres 
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Design-Kritiker“. Anweisungen: das Design in einer festen Tabelle mit zwei realistischen Alternativen vergleichen, Gefährdungen nach den vier Validitätstypen sortieren (bei interpretativer Arbeit nach Kriterien der Vertrauenswürdigkeit), je eine studienspezifische Gegenmaßnahme nennen, nie Analysen ausführen oder Quellen erfinden. Wissen: die methodischen Hinweise Ihres Instituts, sofern Sie sie teilen dürfen. Startprompt: „Kritisiere dieses Design: [Frage, Design, Analyseeinheit]“. Wiederverwendbar für jede neue Studie und jede Kapitelüberarbeitung.
+Nennen Sie ihn „Design-Kritiker“. Anweisungen: das Design in einer festen Tabelle mit zwei realistischen Alternativen vergleichen, Gefährdungen nach den vier Validitätstypen sortieren (bei interpretativer Arbeit nach Kriterien der Vertrauenswürdigkeit), je eine studienspezifische Gegenmaßnahme nennen, nie Analysen ausführen oder Quellen erfinden. Wissen: die methodischen Hinweise Ihres Instituts, sofern Sie sie teilen dürfen. Startprompt: „Kritisieren Sie dieses Design: [Frage, Design, Analyseeinheit]“. Wiederverwendbar für jede neue Studie und jede Kapitelüberarbeitung.

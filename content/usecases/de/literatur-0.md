@@ -113,4 +113,4 @@ Fügen Sie Ihre Frage, den Syntaxleitfaden Ihrer Bibliothek für die Datenbank, 
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Suchstring-Builder“. Anweisungen: Konzeptblöcke mit Synonymen, OR innerhalb und AND zwischen den Blöcken, Trunkierung, Schlagwörter, wo die Datenbank sie hat, der String in einem Codeblock, die Blocktabelle, eine PRESS-Selbstprüfung, und bei Unsicherheit zu einem Feldcode das auch sagen. Wissen: die Syntaxleitfäden der Datenbanken, die Sie nutzen. Startprompt: „Erstelle einen Scopus-String für diese Frage.“ Wiederverwendbar für jede neue Frage oder Datenbank.
+Nennen Sie ihn „Suchstring-Builder“. Anweisungen: Konzeptblöcke mit Synonymen, OR innerhalb und AND zwischen den Blöcken, Trunkierung, Schlagwörter, wo die Datenbank sie hat, der String in einem Codeblock, die Blocktabelle, eine PRESS-Selbstprüfung, und bei Unsicherheit zu einem Feldcode das auch sagen. Wissen: die Syntaxleitfäden der Datenbanken, die Sie nutzen. Startprompt: „Erstellen Sie einen Scopus-String für diese Frage.“ Wiederverwendbar für jede neue Frage oder Datenbank.

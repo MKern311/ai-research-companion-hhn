@@ -1,5 +1,5 @@
 ---
-name: metadaten-fair-daten-and-replikation
+name: metadaten-fair-daten-und-replikation
 description: "Lassen Sie sich Metadaten, Codebooks und README-Dateien für Datenpublikationen vorschlagen, stellen Sie ein Replikationspaket zusammen und prüfen Sie, ob jede Zahl der Arbeit aus dem Code reproduzierbar ist. Einsetzen bei: Metadaten, FAIR-Daten & Replikation."
 ---
 
@@ -17,7 +17,9 @@ Ein aus der Datei berechnetes Codebook, ein Entwurf für README und Repository-M
 
 Datenablage und Replikationspakete kommen zuletzt, wenn Details vergessen sind; Codebooks und READMEs werden hastig geschrieben, Flags bleiben undokumentiert, und Zahlen der Arbeit lassen sich womöglich nicht reproduzieren.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie den Datensatz an und sagen Sie, was er enthält und wie er erhoben wurde.
 2. Bitten Sie um ein Codebook mit berechneten Bereichen und fehlenden Werten.
@@ -29,12 +31,11 @@ Datenablage und Replikationspakete kommen zuletzt, wenn Details vergessen sind; 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: Codebook-Spalten, Bereiche und Anzahl fehlender Werte mit Python berechnet, [PRÜFEN] bei jeder geratenen Bedeutung, README-Abschnitte, obligatorische DataCite-Felder, eine Replikations-Checkliste. Wissen: die Ablagerichtlinien und Lizenzoptionen Ihres Repositorys. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompts: „Codebook und README für diese Datei“ und „Replikations-Checkliste für meine Arbeit“. Für jeden Datensatz, den Sie ablegen, wiederverwendbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bereite einen Datensatz für die Ablage in [Repository] vor. Angehängt ist [Dateiname]; er enthält [kurze Beschreibung und Art der Erhebung]. Untersuche die Datei mit Python und erstelle dann eine Codebook-Tabelle: Variablenname, Beschreibung, Typ, Einheit, Bereich oder erlaubte Werte, Anzahl fehlender Werte, Code für fehlende Werte. Entwirf dann ein README mit: Titel, Urhebern [Platzhalter], Beschreibung, Methoden, Dateiliste, Variablen, Lizenz [Platzhalter], Zitierweise, Kontakt. Markiere jede Variablenbedeutung, die du geraten hast, mit [PRÜFEN]. Liste dann die zentralen Metadatenfelder auf, die das Repository voraussichtlich abfragt. Gib zum Schluss eine Checkliste für ein Replikationspaket (Daten, Code, Softwareversionen, Ausführungsreihenfolge, erwartete Ergebnisse) und sage, wie ich prüfen kann, dass jede Zahl in meiner Arbeit vom Code reproduziert wird.
+Ich bereite einen Datensatz für die Ablage in [Repository] vor. Angehängt ist [Dateiname]; er enthält [kurze Beschreibung und Art der Erhebung]. Untersuchen Sie die Datei mit Python und erstellen Sie dann eine Codebook-Tabelle: Variablenname, Beschreibung, Typ, Einheit, Bereich oder erlaubte Werte, Anzahl fehlender Werte, Code für fehlende Werte. Entwerfen Sie dann ein README mit: Titel, Urhebern [Platzhalter], Beschreibung, Methoden, Dateiliste, Variablen, Lizenz [Platzhalter], Zitierweise, Kontakt. Markieren Sie jede Variablenbedeutung, die Sie geraten haben, mit [PRÜFEN]. Listen Sie dann die zentralen Metadatenfelder auf, die das Repository voraussichtlich abfragt. Geben Sie zum Schluss eine Checkliste für ein Replikationspaket (Daten, Code, Softwareversionen, Ausführungsreihenfolge, erwartete Ergebnisse) und sagen Sie, wie ich prüfen kann, dass jede Zahl in meiner Arbeit vom Code reproduziert wird.
 ```
 
 ## Prüfung

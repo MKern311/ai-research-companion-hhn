@@ -11,13 +11,15 @@ description: "Finden Sie Erwähnungen in Politik, Medien und Praxis und struktur
 
 Finden Sie Erwähnungen in Politik, Medien und Praxis und strukturieren Sie sie als Wirkungsnachweis.
 
-Eine Tabelle geprüfter Erwähnungen mit Links, klassifiziert nach Art und nach Stufe von Wahrnehmung bis Nutzung, plus eine kurze Wirkungserzählung, die einen Beitrag beansprucht, nicht mehr, als die Belege zeigen.
+Eine Tabelle geprüfter Erwähnungen mit Links, klassifiziert nach Art und nach Grad von Wahrnehmung bis Nutzung, plus eine kurze Wirkungserzählung, die einen Beitrag beansprucht, nicht mehr, als die Belege zeigen.
 
 ## Wann einsetzen
 
 Belege dafür, dass Forschung Politik, Medien oder Praxis erreicht hat, sind im Web verstreut, und Erwähnungen werden leicht mit Wirkung verwechselt – einer nachweisbaren Veränderung oder einem Nutzen außerhalb der Wissenschaft.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Nennen Sie Titel, DOI und Autorenschaft und bitten Sie um Erwähnungen außerhalb der Wissenschaft.
 2. Bitten Sie um eine Tabelle der Quellen mit Links und Art der Wirkung.
@@ -29,12 +31,11 @@ Belege dafür, dass Forschung Politik, Medien oder Praxis erreicht hat, sind im 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: Suchumfang und Tabellenspalten aus dem Startprompt, einen Eintrag nur aufnehmen, wenn seine Seite die Arbeit, den DOI oder die Autorenschaft nennt, als Wahrnehmung, Nutzung oder Veränderung klassifizieren, Beitrag statt Zuschreibung beanspruchen, nie Quellen erfinden. Wissen: Websuche, wenn Ihr Werkzeug sie anbietet, oder bis zu vier vertrauenswürdige öffentliche Policy-Websites. Startprompts: „Finde neue Erwähnungen von [DOI] seit [Datum]“ und „Klassifiziere diese bestätigten Einträge“. Für jede Arbeit oder jedes Projekt wiederverwendbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich sammle Belege für die Wirkung meiner Forschung. Die Arbeit ist [Titel, Autorenschaft, DOI] (oder das Projekt [Name]). Durchsuche das Web nach Erwähnungen seit [Jahr] in Policy-Dokumenten, Berichten von Regierungen oder NGOs, Nachrichtenmedien und Webseiten aus der Praxis. Gib eine Tabelle: Quelle, Art (Politik, Medien, Praxis), Datum, Link, was sie über die Forschung sagt und mögliche Art der Wirkung (Wahrnehmung, Politikänderung, Praxisänderung). Nimm nur Einträge mit einem Link auf, der die Arbeit, das Projekt oder die Autorenschaft nennt. Sage, wenn du dir nicht sicher bist, dass ein Eintrag sich auf diese Arbeit bezieht; erfinde keine Quellen.
+Ich sammle Belege für die Wirkung meiner Forschung. Die Arbeit ist [Titel, Autorenschaft, DOI] (oder das Projekt [Name]). Durchsuchen Sie das Web nach Erwähnungen seit [Jahr] in Policy-Dokumenten, Berichten von Regierungen oder NGOs, Nachrichtenmedien und Webseiten aus der Praxis. Geben Sie eine Tabelle: Quelle, Art (Politik, Medien, Praxis), Datum, Link, was sie über die Forschung sagt und mögliche Art der Wirkung (Wahrnehmung, Politikänderung, Praxisänderung). Nehmen Sie nur Einträge mit einem Link auf, der die Arbeit, das Projekt oder die Autorenschaft nennt. Sagen Sie, wenn Sie sich nicht sicher sind, dass ein Eintrag sich auf diese Arbeit bezieht; erfinden Sie keine Quellen.
 ```
 
 ## Prüfung

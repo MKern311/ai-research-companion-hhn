@@ -17,7 +17,9 @@ A localised translation with a term glossary and listed adaptations, checked by 
 
 Reaching audiences in other countries needs more than literal translation – technical terms, units, number formats and examples have to fit local usage and the field's terminology.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the text and name the target language, country and audience.
 2. Ask for a translation plus a list of cultural adaptations made.
@@ -29,9 +31,8 @@ Reaching audiences in other countries needs more than literal translation – te
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: target language, country and audience, natural style, numbers and units exact in local format, glossary terms kept, every adaptation listed, unsure terms marked. Knowledge: your term glossary. A second agent that only back-translates, with no access to the original, makes the check repeatable. Starter prompt: "Translate this abstract for the public in [country]". Reusable for every summary you share abroad.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a researcher in [discipline] sharing my work with [audience] in [country]. Below is my lay summary in English: [paste text]. Translate it into [language] for this audience, in a clear and natural style. Keep technical terms consistent and give the [language] term for each key concept in a short glossary. Adapt examples, units or references that would not make sense locally, and list every adaptation you made. Mark any term where you are unsure of the usual translation in this field.

@@ -17,7 +17,9 @@ A pre-coded table with quoted reasons and confidence, plus Cohen's kappa and a c
 
 Coding hundreds of texts by hand takes weeks, and a second coder for reliability is often unavailable – so large text collections stay unused or are sampled thinly.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Code ten of the texts yourself before opening your AI assistant and keep your codes aside.
 2. Paste the starter prompt with your scheme and all texts, or attach the CSV.
@@ -29,9 +31,8 @@ Coding hundreds of texts by hand takes weeks, and a second coder for reliability
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Pre-annotator' and switch on code execution / data analysis if your tool offers it, for kappa and the confusion matrix. Instructions: the coding scheme, one code per text, 'unclear' instead of new codes, confidence and a verbatim quote as reason, kappa against human codes when given. Knowledge: your codebook. Only approved, non-sensitive texts go in, and a human checks a sample of every batch. Starter prompt: 'Code these texts: [paste]'.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am testing whether a language model can pre-annotate texts for my study on [topic]. Coding scheme: [code: definition, one per line]. Assign exactly one code to each text below (or in the attached file). Return a table: text ID, code, confidence (high, medium or low), and a one-sentence reason that quotes the text. Use 'unclear' if no code fits; do not create new codes. Texts: [paste numbered texts]

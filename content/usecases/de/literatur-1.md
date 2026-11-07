@@ -116,7 +116,7 @@ Fügen Sie das Schlüsselpaper (A2), das von Ihnen geprüfte zitierende Paper (A
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Zitations-Explorer“. Anweisungen: das Problem des Schlüsselpapers in einfachen Worten beschreiben, verwandte Paper mit anderer Terminologie und bis zu drei zitierende Paper finden, zu jedem einen funktionierenden Link und den Zusammenhang nennen, jedes als Referenzliste oder Suchergebnis kennzeichnen, einen zitierten Überblick von 150 Wörtern schreiben und niemals Quellen erfinden. Startprompt: „Finde verwandte und zitierende Arbeiten für diese DOI.“ Wiederverwendbar für jedes neue Schlüsselpaper.
+Nennen Sie ihn „Zitations-Explorer“. Anweisungen: das Problem des Schlüsselpapers in einfachen Worten beschreiben, verwandte Paper mit anderer Terminologie und bis zu drei zitierende Paper finden, zu jedem einen funktionierenden Link und den Zusammenhang nennen, jedes als Referenzliste oder Suchergebnis kennzeichnen, einen zitierten Überblick von 150 Wörtern schreiben und niemals Quellen erfinden. Startprompt: „Finden Sie verwandte und zitierende Arbeiten für diese DOI.“ Wiederverwendbar für jedes neue Schlüsselpaper.
 
 ### Automatisierung / eigener Code
 

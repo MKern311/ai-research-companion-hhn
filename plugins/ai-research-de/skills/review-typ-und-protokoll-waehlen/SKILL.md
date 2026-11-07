@@ -17,7 +17,9 @@ Eine begründete Wahl des Review-Typs für Ihre Frage und Ihre Frist sowie ein P
 
 Es ist verlockend, eine Übersichtsarbeit „systematisch“ zu nennen, ohne die Zeit oder die Literatur, um das zu tragen; vage Einschlusskriterien scheitern dann mitten im Screening.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Forschungsfrage, den erwarteten Literaturumfang und Ihre Frist ein.
 2. Bitten Sie Ihren KI-Assistenten, systematische, Scoping-, narrative und Rapid Reviews für Ihren Fall zu vergleichen.
@@ -29,9 +31,8 @@ Es ist verlockend, eine Übersichtsarbeit „systematisch“ zu nennen, ohne die
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Review-Planer“. Anweisungen: systematische, Scoping-, narrative und Rapid Reviews für die gegebene Frage und Zeit vergleichen, einen mit Bedingungen empfehlen, Kriterien allein aus der Frage mit Stufe und Grenzfall entwerfen, Kriterien kennzeichnen, die anhand eines Abstracts schwer zu beurteilen sind, und Unsicherheit markieren. Wissen: PRISMA-P und die Leitlinien Ihres Fachs. Startprompt: „Welcher Review-Typ passt zu dieser Frage und Frist?“ Wiederverwendbar für jede neue Übersichtsarbeit.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet] und plane eine Literaturübersicht. Meine Forschungsfrage: [Frage]. Erwarteter Literaturumfang: [gering / mittel / groß, falls bekannt]. Verfügbare Zeit: [Wochen oder Monate]. Vergleichen Sie für meinen Fall ein systematisches Review, ein Scoping Review, ein narratives Review und ein Rapid Review in einer Tabelle: Zweck, was meine Frage bräuchte, Aufwand und Risiken. Empfehlen Sie einen Typ und nennen Sie die Bedingungen, unter denen Sie einen anderen empfehlen würden. Entwerfen Sie dann einen Protokollentwurf: Review-Frage, ihre Elemente (zum Beispiel PICOC), Quellen und Datenbanken, Zeitraum und Sprachen, Ein- und Ausschlusskriterien, Screening-Stufen, Ansatz für Datenextraktion und Synthese sowie ob die Registrierung des Protokolls (zum Beispiel bei PROSPERO oder OSF) in meinem Fach üblich ist. Leiten Sie die Ein- und Ausschlusskriterien allein aus der Forschungsfrage ab, zeigen Sie eine Tabelle (Kriterium, Einschluss oder Ausschluss, auf Titel-und-Abstract- oder Volltextstufe beurteilt, Beispiel für einen Grenzfall) und sagen Sie, welche Kriterien zu offen, zu streng oder anhand eines Abstracts schwer zu beurteilen sind. Kennzeichnen Sie alles, bei dem Sie unsicher sind.
@@ -50,7 +51,7 @@ Die Empfehlung passt zu Ihrer Frage und Ihrer Zeit, die Kriterien liefern für f
 
 - **Review-Typologie (Grant & Booth)** – Vierzehn Review-Typen, verglichen nach Suche, Bewertung, Synthese und Analyse (das SALSA-Rahmenwerk). Systematische Übersichtsarbeiten beantworten fokussierte Fragen mit erschöpfender Suche und Bewertung; Scoping Reviews kartieren Evidenz; narrative Übersichtsarbeiten sind selektiv.
 - **Systematischer versus Scoping Review (Munn et al.)** – Wählen Sie ein Scoping Review, um die Arten von Evidenz zu bestimmen, Konzepte zu klären, Lücken zu kartieren oder ein Systematic Review vorzubereiten; wählen Sie ein Systematic Review, um eine bestimmte Frage zu beantworten, zum Beispiel zur Wirksamkeit oder zur Bedeutung.
-- **Scoping-Rahmenwerk (Arksey & O'Malley)** – Fünf Stufen: Frage bestimmen, relevante Studien identifizieren, Studien auswählen, Daten kartieren, zusammenstellen und berichten; eine optionale sechste Stufe ist die Konsultation. Berichten Sie Scoping Reviews mit PRISMA-ScR.
+- **Scoping-Rahmenwerk (Arksey & O'Malley)** – Fünf Schritte: Frage bestimmen, relevante Studien identifizieren, Studien auswählen, Daten kartieren, zusammenstellen und berichten; ein optionaler sechster Schritt ist die Konsultation. Berichten Sie Scoping Reviews mit PRISMA-ScR.
 - **PRISMA-P** – Eine Checkliste mit 17 Punkten zur Berichterstattung über Protokolle systematischer Übersichtsarbeiten: Begründung, Eignungskriterien, Quellen, Suchstrategie, Auswahl und Extraktion, Verzerrungsrisiko, Synthese. Die Registrierung des Protokolls bei PROSPERO (gesundheitsbezogene Outcomes) oder OSF (jedes Fach) legt den Plan vorab fest.
 - **Rapid Review** – Ein verschlankter systematischer Ansatz – zum Beispiel weniger Datenbanken oder Einzelscreening mit Verifizierung – für Entscheidungen unter Zeitdruck. Berichten Sie jede Abkürzung als Limitation.
 

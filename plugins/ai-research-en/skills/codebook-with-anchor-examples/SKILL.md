@@ -17,7 +17,9 @@ A codebook with definitions, inclusion, exclusion and borderline rules and ancho
 
 Categories that seem clear in your head turn vague in use: coders disagree on borderline passages, rules scatter across memos, and agreement cannot be reported.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your research question and categories.
 2. Ask for a codebook with definitions, inclusion and exclusion rules and borderline rules.
@@ -29,9 +31,8 @@ Categories that seem clear in your head turn vague in use: coders disagree on bo
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant, for example "Codebook coder" (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). Add the final codebook as a knowledge file (if your tool does not support knowledge files, attach it in the chat). In the standing instructions: code sentence by sentence, give category, exact quote and "clear, unclear or problematic", use "none of these" when nothing fits, and never invent an anchor or quote. Starter prompt: "Code this passage with the codebook and flag every borderline decision." Reusable for each new batch – only approved, anonymised material goes in, and a human checks every coding.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am doing a qualitative content analysis (for example following Mayring or Kuckartz). Research question: [question]. Categories: [list with one-line descriptions]. Build a codebook: for each category give the name, a definition, an inclusion rule, an exclusion rule, and a rule for borderline cases. Do not invent anchor examples; write 'add anchor example from material' instead. Then code the passage below with this codebook: for each coded segment, give the category, the exact quote, whether the decision was clear, unclear or problematic, and how the codebook should change. Use only direct quotes from the passage.

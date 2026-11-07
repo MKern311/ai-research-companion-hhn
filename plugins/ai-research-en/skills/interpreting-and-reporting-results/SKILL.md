@@ -17,7 +17,9 @@ A plain explanation of your output, assumptions and quality criteria checked aga
 
 Statistical output is full of figures whose meaning and thresholds you half remember, and turning it into a correct, complete APA results paragraph takes repeated checking.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the output and say which analysis and software produced it.
 2. Ask for each number to be explained and the assumptions and quality criteria to be checked.
@@ -30,9 +32,8 @@ Statistical output is full of figures whose meaning and thresholds you half reme
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, set the rules: explain each part of the output, list the assumptions and say which the output lets you check, name the source of every threshold, use only numbers from the output without recomputing or rounding, and say what the analysis cannot show. Add your field's reporting guide as a knowledge file; no code needed. Starter prompt: "Interpret this output and draft an APA 7 results paragraph." Reusable for every analysis you run.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. Below is the output of a [analysis] I ran in [software] on [public or dummy] data, with [n] cases. 1) Explain each part of the output in plain language. 2) List the assumptions and quality criteria I should check for this analysis (for example normality, multicollinearity, reliability such as Cronbach's alpha or omega, model fit such as CFI, RMSEA and SRMR, or for PLS-SEM AVE and HTMT), say which ones the output shows and whether they meet common thresholds, and name the source of each threshold. 3) List checks or analyses I may have missed for this question and design (for example robustness checks, alternative models, sensitivity or subgroup analyses) and say briefly why each matters. 4) Draft a results paragraph in APA 7 style using only numbers from the output. Do not round differently, recompute or add numbers that are not in the output; mark anything you are unsure about.

@@ -70,7 +70,7 @@ Bauen Sie die Kausalkette hinter den jährlichen Klimaindikatoren aus Forster et
 ### Prompt
 
 ```text
-Angehängt ist Forster et al. (2025), „Indicators of Global Climate Change 2024“, dazu die monatliche HadCRUT5-CSV und die NOAA-Mauna-Loa-CO₂-CSV. 1) Zeichne ausschließlich anhand der Arbeit die Kette der Indikatoren, die sie berichtet – von Emissionen über Konzentrationen und effektiven Strahlungsantrieb bis zur beobachteten und menschengemachten Erwärmung – als Mermaid-Flussdiagramm-Code (von links nach rechts), jeden Pfeil beschriftet mit dem Abschnitt der Arbeit, aus dem er stammt. 2) Gib eine Tabelle jedes Pfeils im Code: Nummer, von, nach, Abschnitt der Arbeit (Nummer und Titel) und ein kurzes Zitat aus diesem Abschnitt, das den Pfeil stützt. 3) Ergänze eine Messebene: welche Spalte jeder angehängten Datendatei welches Konstrukt misst, und mit welcher Einheit und Basisperiode. 4) Liste jeden Pfeil und jedes Konstrukt auf, die du ergänzt hast und die nicht in der Arbeit stehen.
+Angehängt ist Forster et al. (2025), „Indicators of Global Climate Change 2024“, dazu die monatliche HadCRUT5-CSV und die NOAA-Mauna-Loa-CO₂-CSV. 1) Zeichnen Sie ausschließlich anhand der Arbeit die Kette der Indikatoren, die sie berichtet – von Emissionen über Konzentrationen und effektiven Strahlungsantrieb bis zur beobachteten und menschengemachten Erwärmung – als Mermaid-Flussdiagramm-Code (von links nach rechts), jeden Pfeil beschriftet mit dem Abschnitt der Arbeit, aus dem er stammt. 2) Geben Sie eine Tabelle jedes Pfeils im Code: Nummer, von, nach, Abschnitt der Arbeit (Nummer und Titel) und ein kurzes Zitat aus diesem Abschnitt, das den Pfeil stützt. 3) Ergänzen Sie eine Messebene: welche Spalte jeder angehängten Datendatei welches Konstrukt misst, und mit welcher Einheit und Basisperiode. 4) Listen Sie jeden Pfeil und jedes Konstrukt auf, die Sie ergänzt haben und die nicht in der Arbeit stehen.
 ```
 
 ### Prüfung
@@ -93,7 +93,7 @@ Ihre Forschungsfrage mit drei bis sechs Konstrukten und den erwarteten Beziehung
 ### Prompt
 
 ```text
-Ich promoviere in [Fach] und arbeite an [Forschungsfrage]. Meine Konstrukte sind: [Konstrukt – einzeilige Definition, für jedes]. Die erwarteten Beziehungen sind: [z. B. A erhöht B; C moderiert A→B]. 1) Zeichne das konzeptionelle Modell als Mermaid-Flussdiagramm-Code (von links nach rechts): Konstrukte als Knoten, vermutete Pfade als beschriftete Pfeile (H1, H2 …), Moderatoren als Pfeile, die auf einen Pfad zeigen. 2) Gib eine Tabelle jedes Pfeils im Code: Beschriftung, von, nach und der Teil meiner Beschreibung, auf dem er beruht – oder „nicht in der Beschreibung“. 3) Wenn ich ein Messmodell möchte, ergänze für jedes Konstrukt, ob es reflektiv oder formativ ist, mit einer einzeiligen Begründung, und liste 3–4 mögliche Indikatoren oder Fragebogen-Items je Konstrukt in einer Tabelle auf: Konstrukt, Indikator, Quelle oder „noch zu entwickeln“. Erfinde keine veröffentlichten Skalen; wenn du eine bestehende Skala vorschlägst, sage, wie sicher du dir bist. 4) Liste jeden Pfad auf, den meine Beschreibung nicht stützt.
+Ich promoviere in [Fach] und arbeite an [Forschungsfrage]. Meine Konstrukte sind: [Konstrukt – einzeilige Definition, für jedes]. Die erwarteten Beziehungen sind: [z. B. A erhöht B; C moderiert A→B]. 1) Zeichnen Sie das konzeptionelle Modell als Mermaid-Flussdiagramm-Code (von links nach rechts): Konstrukte als Knoten, vermutete Pfade als beschriftete Pfeile (H1, H2 …), Moderatoren als Pfeile, die auf einen Pfad zeigen. 2) Geben Sie eine Tabelle jedes Pfeils im Code: Beschriftung, von, nach und der Teil meiner Beschreibung, auf dem er beruht – oder „nicht in der Beschreibung“. 3) Wenn ich ein Messmodell möchte, ergänzen Sie für jedes Konstrukt, ob es reflektiv oder formativ ist, mit einer einzeiligen Begründung, und listen Sie 3–4 mögliche Indikatoren oder Fragebogen-Items je Konstrukt in einer Tabelle auf: Konstrukt, Indikator, Quelle oder „noch zu entwickeln“. Erfinden Sie keine veröffentlichten Skalen; wenn Sie eine bestehende Skala vorschlagen, sagen Sie, wie sicher Sie sich sind. 4) Listen Sie jeden Pfad auf, den meine Beschreibung nicht stützt.
 ```
 
 ### Prüfung
@@ -102,11 +102,11 @@ Jede Zeile der Pfeiltabelle entspricht Ihrer Beschreibung oder ist markiert, jed
 
 ### Grenze
 
-Der Assistent liefert das Modell als Code und als Tabellen, die Sie im Chat prüfen; um die Zeichnung zu sehen, fügen Sie den Code in draw.io oder einen anderen Mermaid-Viewer ein, und das direkte Zeichnen auf der Arbeitsfläche erfordert eine Verbindung, die Ihr Tool und Ihre Hochschule erlauben müssen. Die Theorie hinter jedem Pfeil bleibt Ihre Argumentation.
+Der Assistent liefert das Modell als Code und als Tabellen, die Sie im Chat prüfen; um die Zeichnung zu sehen, fügen Sie den Code in draw.io oder einen anderen Mermaid-Viewer ein, und das direkte Zeichnen auf der Arbeitsfläche erfordert eine Verbindung, die Ihr Werkzeug und Ihre Hochschule erlauben müssen. Die Theorie hinter jedem Pfeil bleibt Ihre Argumentation.
 
 ## Technik
 
-Ihr KI-Assistent schreibt Mermaid oder draw.io-XML, das Sie in draw.io importieren (Arrange › Insert › Advanced). Wenn der MCP-Server von draw.io oder Figma verbunden ist – sofern Ihr Tool MCP-Konnektoren unterstützt und Ihre Hochschule es erlaubt –, kann der Assistent das Diagramm direkt erstellen und aktualisieren.
+Ihr KI-Assistent schreibt Mermaid oder draw.io-XML, das Sie in draw.io importieren (Arrange › Insert › Advanced). Wenn der MCP-Server von draw.io oder Figma verbunden ist – sofern Ihr Werkzeug MCP-Konnektoren unterstützt und Ihre Hochschule es erlaubt –, kann der Assistent das Diagramm direkt erstellen und aktualisieren.
 
 ## Stufen
 
@@ -120,8 +120,8 @@ Fügen Sie die Schlüsselarbeiten hinter Ihren Konstrukten, Ihre Konstruktdefini
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Modelldiagramm-Bauer“. Anweisungen: Mermaid-Flussdiagramm von links nach rechts, Pfade mit H1, H2 … beschriftet, immer eine Tabelle jedes Pfeils mit seiner Quelle und eine Konstrukt-Indikator-Tabelle, reflektiv oder formativ mit Begründung, nie veröffentlichte Skalen erfinden, jeden Pfad markieren, der nicht in der Eingabe steht. Wissen: Ihre Konstruktdefinitionen und Theorienotizen. Startprompt: „Aktualisiere mein Modell: [Änderung]“. Wiederverwendbar für Abschlussarbeit, Folien und Befragung.
+Nennen Sie ihn „Modelldiagramm-Bauer“. Anweisungen: Mermaid-Flussdiagramm von links nach rechts, Pfade mit H1, H2 … beschriftet, immer eine Tabelle jedes Pfeils mit seiner Quelle und eine Konstrukt-Indikator-Tabelle, reflektiv oder formativ mit Begründung, nie veröffentlichte Skalen erfinden, jeden Pfad markieren, der nicht in der Eingabe steht. Wissen: Ihre Konstruktdefinitionen und Theorienotizen. Startprompt: „Aktualisieren Sie mein Modell: [Änderung]“. Wiederverwendbar für Abschlussarbeit, Folien und Befragung.
 
 ### Automatisierung / eigener Code
 
-Fügen Sie den MCP-Server von draw.io oder Figma einem eigenen Assistenten oder Workflow hinzu, damit der Assistent das Diagramm auf der Arbeitsfläche zeichnet und aktualisiert, statt Code zu liefern, den Sie einfügen. Dafür braucht es ein Tool, das MCP-Konnektoren unterstützt. Auf GitHub: Halten Sie das Diagramm als Mermaid-Code in einem Repository – GitHub stellt es dar, und jede Änderung bleibt in der Historie sichtbar. Prüfen Sie vorher Datenschutz und Freigabe mit Ihrer Hochschule.
+Fügen Sie den MCP-Server von draw.io oder Figma einem eigenen Assistenten oder Workflow hinzu, damit der Assistent das Diagramm auf der Arbeitsfläche zeichnet und aktualisiert, statt Code zu liefern, den Sie einfügen. Dafür braucht es ein Werkzeug, das MCP-Konnektoren unterstützt. Auf GitHub: Halten Sie das Diagramm als Mermaid-Code in einem Repository – GitHub stellt es dar, und jede Änderung bleibt in der Historie sichtbar. Prüfen Sie vorher Datenschutz und Freigabe mit Ihrer Hochschule.

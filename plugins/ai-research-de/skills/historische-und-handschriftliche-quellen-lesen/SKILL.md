@@ -1,5 +1,5 @@
 ---
-name: historische-and-handschriftliche-quellen-lesen
+name: historische-und-handschriftliche-quellen-lesen
 description: "Transkribieren Sie gedrucktes oder handschriftliches Archivmaterial (OCR/HTR) und lassen Sie erste Übersetzungen für das Close Reading entwerfen. Einsetzen bei: Historische & handschriftliche Quellen lesen."
 ---
 
@@ -17,7 +17,9 @@ Eine zeilenweise diplomatische Transkription mit markierten unsicheren Lesungen,
 
 Alter Druck und alte Handschriften bremsen Sie: Eine Seite in einer ungewohnten Hand zu entziffern kann eine Stunde dauern, noch bevor die Übersetzung beginnt.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie das Bild einer einzelnen Seite oder eines kurzen Abschnitts an.
 2. Fügen Sie den Startprompt mit Sprache und ungefährem Datum ein.
@@ -29,12 +31,11 @@ Alter Druck und alte Handschriften bremsen Sie: Eine Seite in einer ungewohnten 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Archiv-Transkribent“. Anweisungen: zeilenweise, Originalschreibung und Abkürzungen beibehalten, [?] für Unsicheres und [unleserlich] für Unlesbares, eine wörtliche Übersetzung in einer Tabelle mit zwei Spalten, Hinweise zu Wörtern mit gewandelter Bedeutung. Wissen: Ihre Abkürzungsliste und geprüfte Beispieltranskriptionen. Startprompt: „Transkribiere diese Seite – [Sprache], um [Datum]“. Wiederverwendbar für jede Seite; Sie prüfen jede weiterhin stichprobenartig am Bild.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bin Forschende/r und arbeite mit Archivquellen. Das angehängte Bild zeigt ein [gedrucktes oder handschriftliches] Dokument in [Sprache] aus der Zeit um [Datum oder Zeitraum]. Transkribiere es zeilenweise und behalte die Originalschreibung, Abkürzungen und Zeilenumbrüche bei. Markiere unsichere Lesungen mit [?] und unleserliche Stellen mit [unleserlich], statt zu raten. Gib dann einen wörtlichen Übersetzungsentwurf in modernes Deutsch, zeilenweise, in einer Tabelle mit zwei Spalten. Nenne Wörter, deren Bedeutung sich seit dieser Zeit möglicherweise geändert hat.
+Ich bin Forschende/r und arbeite mit Archivquellen. Das angehängte Bild zeigt ein [gedrucktes oder handschriftliches] Dokument in [Sprache] aus der Zeit um [Datum oder Zeitraum]. Transkribieren Sie es zeilenweise und behalten Sie die Originalschreibung, Abkürzungen und Zeilenumbrüche bei. Markieren Sie unsichere Lesungen mit [?] und unleserliche Stellen mit [unleserlich], statt zu raten. Geben Sie dann einen wörtlichen Übersetzungsentwurf in modernes Deutsch, zeilenweise, in einer Tabelle mit zwei Spalten. Nennen Sie Wörter, deren Bedeutung sich seit dieser Zeit möglicherweise geändert hat.
 ```
 
 ## Prüfung
@@ -43,7 +44,7 @@ In fünf Zeilen, die Sie gegen die vorhandene Transkription oder das Bild geprü
 
 ## Grenzen
 
-- Ein Chat arbeitet Seite für Seite; ganze Sammlungen zu transkribieren braucht eigene OCR- oder Handschriftenerkennungs-Tools.
+- Ein Chat arbeitet Seite für Seite; ganze Sammlungen zu transkribieren braucht eigene OCR- oder Handschriftenerkennungs-Werkzeuge.
 - Risiko: Eigene unveröffentlichte Entwürfe, Gutachten oder Inhalte Dritter.
 
 ## Wichtige Konzepte

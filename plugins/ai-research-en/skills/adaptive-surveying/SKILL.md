@@ -17,7 +17,9 @@ A piloted interview flow with every follow-up and its reason logged, so you can 
 
 Fixed questionnaires cannot follow up vague or surprising answers, while live interviews do not scale – so you trade depth against reach, and AI follow-ups risk leading respondents.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the starter prompt with your three core questions.
 2. Answer as an invented respondent, including one vague and one off-topic answer.
@@ -29,9 +31,8 @@ Fixed questionnaires cannot follow up vague or surprising answers, while live in
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Interview pilot'. Instructions: your core questions in order, at most one neutral follow-up per answer, no leading or sensitive questions, accept 'I'd rather not say', and a log of every follow-up with its reason at the end. Use it only to pilot with invented respondents, never with participants, and review every log yourself. Starter prompt: 'Start the pilot interview'.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am designing an adaptive interview on [topic] for [population] and want to pilot it. Act as the interviewer. Ask my core questions one at a time: [Q1], [Q2], [Q3]. After each answer, ask at most one neutral follow-up to clarify or deepen it. Rules: no leading questions, no questions about health, finances or other sensitive matters, accept 'I'd rather not say' without pushing, and stay within the topic. I will answer as an invented respondent. After the last question, list each follow-up you asked and your reason for it.

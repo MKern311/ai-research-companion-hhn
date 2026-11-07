@@ -17,7 +17,9 @@ Eine Prüfung jeder Literaturangabe anhand von DOIs und Verlagsdatensätzen und 
 
 Falsche Literaturangaben und Zitierfehler – Quellen, die nicht sagen, wofür sie zitiert werden – schleichen sich leicht ein, besonders bei von KI vorgeschlagenen Quellen, und schaden der Glaubwürdigkeit.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie den Absatz und seine Literaturangaben ein.
 2. Bitten Sie den Assistenten bei eingeschalteter Websuche (falls Ihr Werkzeug sie bietet), zu prüfen, dass jede Literaturangabe existiert, mit Link oder DOI.
@@ -29,9 +31,8 @@ Falsche Literaturangaben und Zitierfehler – Quellen, die nicht sagen, wofür s
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Literaturprüfer“ (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in den dauerhaften Anweisungen die zweistufige Prüfung fest: zuerst Existenz und Metadaten (funktionierende DOI oder Link, „nicht gefunden“, wenn nichts vorliegt, jeden Unterschied bei Autorinnen und Autoren, Jahr, Titel, Zeitschrift, Band oder Seiten markieren), dann Stützung (stützt, teilweise, stützt nicht) mit zitierter Passage; nie raten. Lassen Sie die Websuche eingeschaltet, wenn Ihr Werkzeug sie bietet. Startprompt: „Prüfen Sie diese Literaturangaben und die Aussagen, für die sie zitiert werden.“ Wiederverwendbar für jedes Kapitel vor der Einreichung.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich prüfe die Literaturangaben in einem Absatz meiner [Abschlussarbeit oder meines Artikels]. Für jede Literaturangabe unten: 1) Suchen Sie nach ihr und geben Sie einen funktionierenden Link oder eine DOI an; sagen Sie 'nicht gefunden', wenn Sie sie nicht finden, und markieren Sie Unterschiede bei Autorinnen und Autoren, Jahr, Titel oder Zeitschrift. 2) Sagen Sie für jeden Satz mit einem Zitat, ob die zitierte Quelle – soweit Sie es anhand ihres Abstracts oder Volltexts erkennen können – die Aussage stützt, teilweise stützt oder nicht stützt, und zitieren Sie die Passage, auf die Sie sich stützen. Raten Sie nicht; wenn Sie von einer Quelle nicht genug sehen können, sagen Sie das.

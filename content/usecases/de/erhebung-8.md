@@ -64,7 +64,7 @@ Führen Sie ein Mini-Audit durch: Stellen Sie Ihrem KI-Assistenten dieselbe Frag
 ### Prompt
 
 ```text
-Wie hat der menschengemachte Klimawandel die Wahrscheinlichkeit von Tagen über 40 °C in Großbritannien verändert, nach Forschung, die vor dem Rekord im Juli 2022 veröffentlicht wurde? Antworte in etwa 120 Wörtern und mit Quellen. [Führen Sie genau diesen Prompt in fünf neuen Chats aus und speichern Sie jede Antwort mit der Uhrzeit.]
+Wie hat der menschengemachte Klimawandel die Wahrscheinlichkeit von Tagen über 40 °C in Großbritannien verändert, nach Forschung, die vor dem Rekord im Juli 2022 veröffentlicht wurde? Antworten Sie in etwa 120 Wörtern und mit Quellen. [Führen Sie genau diesen Prompt in fünf neuen Chats aus und speichern Sie jede Antwort mit der Uhrzeit.]
 ```
 
 ### Prüfung
@@ -87,7 +87,7 @@ Eine Frage dazu, was Sprachmodelle sagen oder wie sie antworten – keine Frage 
 ### Prompt
 
 ```text
-Ich untersuche, wie ein Sprachmodell eine Frage in [Fach] beantwortet – die Antworten des Modells sind meine Daten, kein Ersatz für Menschen. Beantworte die folgende Frage so, wie du es normalerweise tun würdest, in etwa 120 Wörtern, und nenne deine Quellen: [Frage]. [Führen Sie genau diesen Prompt in fünf neuen Chats am selben Tag aus und speichern Sie jede Antwort mit Datum, Uhrzeit und dem angezeigten Modellnamen.]
+Ich untersuche, wie ein Sprachmodell eine Frage in [Fach] beantwortet – die Antworten des Modells sind meine Daten, kein Ersatz für Menschen. Beantworten Sie die folgende Frage so, wie Sie es normalerweise tun würden, in etwa 120 Wörtern, und nennen Sie Ihre Quellen: [Frage]. [Führen Sie genau diesen Prompt in fünf neuen Chats am selben Tag aus und speichern Sie jede Antwort mit Datum, Uhrzeit und dem angezeigten Modellnamen.]
 ```
 
 ### Prüfung
@@ -106,15 +106,15 @@ Ein gewöhnlicher Chat genügt für ein erstes Audit mit wiederholten neuen Chat
 
 ### Chat
 
-Führen Sie den festen Prompt in fünf neuen Chats aus und speichern Sie jede Antwort mit der Uhrzeit. Fragen Sie in einem davon nach mit „Bist du sicher? Bitte prüfe deine Quellen.“ und halten Sie fest, ob sich die Antwort ändert – ein zweites Maß für Stabilität.
+Führen Sie den festen Prompt in fünf neuen Chats aus und speichern Sie jede Antwort mit der Uhrzeit. Fragen Sie in einem davon nach mit „Sind Sie sicher? Bitte prüfen Sie Ihre Quellen.“ und halten Sie fest, ob sich die Antwort ändert – ein zweites Maß für Stabilität.
 
 ### Projekt / Notebook
 
-Fügen Sie die gespeicherten Antworten als Word- oder Textdateien mit Datum, Uhrzeit und Modell hinzu, dazu Ihr Codebuch und die Referenzarbeit (B2 in der Übungsversion). Bitten Sie um eine Tabelle, die jede Antwort gegen die Referenz kodiert und jede genannte Quelle auflistet. Je nach Tool antwortet das Projekt nur aus diesen Dateien, sodass keine neue Modellausgabe hineingerät; Sie prüfen jeden Code.
+Fügen Sie die gespeicherten Antworten als Word- oder Textdateien mit Datum, Uhrzeit und Modell hinzu, dazu Ihr Codebuch und die Referenzarbeit (B2 in der Übungsversion). Bitten Sie um eine Tabelle, die jede Antwort gegen die Referenz kodiert und jede genannte Quelle auflistet. Je nach Werkzeug antwortet das Projekt nur aus diesen Dateien, sodass keine neue Modellausgabe hineingerät; Sie prüfen jeden Code.
 
 ### Eigener Assistent
 
-Lassen Sie keinen Agenten die Antworten erzeugen – seine Anweisungen würden verändern, was Sie untersuchen. Bauen Sie stattdessen einen kodierenden Agenten, „Audit-Kodierer“. Anweisungen: Ihr Codebuch (korrekt, teilweise korrekt, falsch, keine oder erfundene Quelle) und eine feste Tabelle. Wissen: die Referenzarbeit (fügen Sie sie als Wissensdatei hinzu, wenn Ihr Tool es erlaubt; andernfalls hängen Sie sie im Chat mit dem Assistenten an). Startprompt: „Kodiere diese gespeicherten Antworten gegen die Referenz“. Es gehen nur Modellantworten hinein, nie personenbezogene Daten, und Sie prüfen jeden Code.
+Lassen Sie keinen Agenten die Antworten erzeugen – seine Anweisungen würden verändern, was Sie untersuchen. Bauen Sie stattdessen einen kodierenden Agenten, „Audit-Kodierer“. Anweisungen: Ihr Codebuch (korrekt, teilweise korrekt, falsch, keine oder erfundene Quelle) und eine feste Tabelle. Wissen: die Referenzarbeit (fügen Sie sie als Wissensdatei hinzu, wenn Ihr Werkzeug es erlaubt; andernfalls hängen Sie sie im Chat mit dem Assistenten an). Startprompt: „Kodieren Sie diese gespeicherten Antworten gegen die Referenz“. Es gehen nur Modellantworten hinein, nie personenbezogene Daten, und Sie prüfen jeden Code.
 
 ### Automatisierung / eigener Code
 

@@ -38,9 +38,9 @@ Definieren Sie das Konstrukt und seine Facetten, bevor Sie Items schreiben. Inha
 
 Vermeiden Sie doppelläufige Items (zwei Fragen in einer), suggestive oder wertende Formulierungen, doppelte Verneinungen, vage Mengenangaben wie „oft“, Fachjargon und unbegründete Annahmen. Jedes Item fragt nur eine Sache, in der Sprache der Befragten, und passt zu seiner Antwortskala.
 
-### Vierstufiges Antwortmodell (Tourangeau)
+### Vierphasiges Antwortmodell (Tourangeau)
 
-Das Beantworten umfasst Verstehen, Abrufen, Urteilen und Abbilden der Antwort auf die Skala. Diagnostizieren Sie jedes fehlerhafte Item nach der Stufe: unklare Begriffe scheitern beim Verstehen, lange Erinnerungszeiträume beim Abrufen, unpassende Optionen beim Abbilden der Antwort.
+Das Beantworten umfasst Verstehen, Abrufen, Urteilen und Abbilden der Antwort auf die Skala. Diagnostizieren Sie jedes fehlerhafte Item nach der Phase: unklare Begriffe scheitern beim Verstehen, lange Erinnerungszeiträume beim Abrufen, unpassende Optionen beim Abbilden der Antwort.
 
 ### Likert-artige Ratingskalen
 
@@ -62,7 +62,7 @@ Expertinnen und Experten bewerten die Relevanz jedes Items auf einer vierstufige
 
 ### Mitbringen
 
-Fünf bis acht eigene Entwürfe von Fragebogen-Items oder Interviewfragen zu einem unkritischen Thema.
+Fünf bis acht eigene Entwürfe von Fragebogen-Items oder Interviewfragen zu einem nicht sensiblen Thema.
 
 ### Schritte
 
@@ -74,7 +74,7 @@ Fünf bis acht eigene Entwürfe von Fragebogen-Items oder Interviewfragen zu ein
 ### Prompt
 
 ```text
-Ich entwickle [einen Fragebogen oder einen Interviewleitfaden] zu [Konstrukt] für [Zielgruppe]. Prüfe die untenstehenden Item-Entwürfe. Zeige eine Tabelle: Item-Nummer, ursprüngliche Formulierung, Problem (doppelläufig, suggestiv, mehrdeutig, Jargon, passt nicht zur Antwortskala oder keines), überarbeitete Formulierung. Lass Bedeutung und Konstrukt unverändert. Ergänze eine Spalte, die jedes Item der Forschungsfrage oder dem Konstrukt zuordnet, dem es dient, und markiere Forschungsfragen, die kein Item abdeckt. Schlage dann eine passende Antwortskala vor und sage, ob es für dieses Konstrukt möglicherweise schon eine validierte Skala gibt; wenn du dir nicht sicher bist, sage das; erfinde keine Quellen.
+Ich entwickle [einen Fragebogen oder einen Interviewleitfaden] zu [Konstrukt] für [Zielgruppe]. Prüfen Sie die untenstehenden Item-Entwürfe. Zeigen Sie eine Tabelle: Item-Nummer, ursprüngliche Formulierung, Problem (doppelläufig, suggestiv, mehrdeutig, Jargon, passt nicht zur Antwortskala oder keines), überarbeitete Formulierung. Lassen Sie Bedeutung und Konstrukt unverändert. Ergänzen Sie eine Spalte, die jedes Item der Forschungsfrage oder dem Konstrukt zuordnet, dem es dient, und markieren Sie Forschungsfragen, die kein Item abdeckt. Schlagen Sie dann eine passende Antwortskala vor und sagen Sie, ob es für dieses Konstrukt möglicherweise schon eine validierte Skala gibt; wenn Sie sich nicht sicher sind, sagen Sie das; erfinden Sie keine Quellen.
 
 [Items einfügen]
 ```
@@ -99,4 +99,4 @@ Sammeln Sie Ihre Forschungsfragen, Konstruktdefinitionen, Entwürfe von Fragebog
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Item-Prüfer“. Anweisungen: die Problemtypen (doppelläufig, suggestiv, mehrdeutig, Jargon, Skalenpassung), das Tabellenformat, „Bedeutung und Konstrukt unverändert lassen“ und „nie validierte Skalen oder Quellen erfinden“. Wissen: Ihre Konstruktdefinitionen und Forschungsfragen. Startprompts: „Prüfe diese Items: [einfügen]“ und „Ordne diese Items meinen Konstrukten zu“. Wiederverwendbar für jeden neuen Entwurf und mit Koautorinnen und Koautoren teilbar.
+Nennen Sie ihn „Item-Prüfer“. Anweisungen: die Problemtypen (doppelläufig, suggestiv, mehrdeutig, Jargon, passt nicht zur Antwortskala), das Tabellenformat, „Bedeutung und Konstrukt unverändert lassen“ und „nie validierte Skalen oder Quellen erfinden“. Wissen: Ihre Konstruktdefinitionen und Forschungsfragen. Startprompts: „Prüfen Sie diese Items: [einfügen]“ und „Ordnen Sie diese Items meinen Konstrukten zu“. Wiederverwendbar für jeden neuen Entwurf und mit Koautorinnen und Koautoren teilbar.

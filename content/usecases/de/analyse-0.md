@@ -75,7 +75,7 @@ Ich bin Promovierende bzw. Promovierender und lerne Python für die Statistik. A
 
 ### Prüfung
 
-Das Modell sollte 145 vollständige Jahre verwenden (1880–2025): 1883 fällt heraus, weil der Dezember fehlt, 2026 wegen Unvollständigkeit und vorläufiger Werte. Der OLS-Trend beträgt etwa 0.11 °C pro Jahrzehnt (Bestimmtheitsmaß R² etwa 0.32); der Koeffizient ist in beiden Läufen identisch, nur der Standardfehler ändert sich. Rechnen Sie den Mittelwert für 2025 in Excel nach: 14.45 °C. Die Residuen liegen 1960–1989 unter null und nach 2010 darüber, der Assistent sollte also eine Gerade infrage stellen.
+Das Modell sollte 145 vollständige Jahre verwenden (1880–2025): 1883 fällt heraus, weil der Dezember fehlt, 2026 wegen Unvollständigkeit und vorläufiger Werte. Der OLS-Trend beträgt etwa 0,11 °C pro Jahrzehnt (Bestimmtheitsmaß R² etwa 0,32); der Koeffizient ist in beiden Läufen identisch, nur der Standardfehler ändert sich. Rechnen Sie den Mittelwert für 2025 in Excel nach: 14,45 °C. Die Residuen liegen 1960–1989 unter null und nach 2010 darüber, der Assistent sollte also eine Gerade infrage stellen.
 
 ## Mit eigenem Material
 
@@ -120,4 +120,4 @@ Fügen Sie die Durham-Stationsdatei (D7, .txt), Ihren Analyseplan als Word-Datei
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Nennen Sie in seinen dauerhaften Anweisungen Ihre Disziplin und Software und legen Sie die Regeln fest: kommentierter Code, nur vollständige Fälle, jede entfernte Beobachtung auflisten, Annahmen benennen und prüfen, R- oder Stata-Entsprechungen angeben, ohne sie auszuführen, und nie eine Zahl ohne den zugehörigen Code berichten. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompt: „Hier sind mein Datensatz und mein Modell – schreiben Sie den Code, führen Sie ihn aus und erklären Sie ihn.“ Wiederverwendbar für jeden neuen Datensatz.
+Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Nennen Sie in seinen dauerhaften Anweisungen Ihre Disziplin und Software und legen Sie die Regeln fest: kommentierter Code, nur vollständige Fälle, jede entfernte Beobachtung auflisten, Annahmen benennen und prüfen, R- oder Stata-Entsprechungen angeben, ohne sie auszuführen, und nie eine Zahl ohne den zugehörigen Code berichten. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompt: „Hier sind mein Datensatz und mein Modell – schreiben Sie den Code, führen Sie ihn aus und erklären Sie ihn.“ Wiederverwendbar für jeden neuen Datensatz.

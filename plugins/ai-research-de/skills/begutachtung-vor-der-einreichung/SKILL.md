@@ -17,7 +17,9 @@ Drei Gutachten aus verschiedenen Blickwinkeln, jeweils an eine zitierte Passage 
 
 Kritisches Feedback kommt meist Monate nach der Einreichung, und Betreuungspersonen haben selten Zeit, jeden Entwurf als skeptische Außenstehende zu lesen, die Methoden, Schlussfolgerungen und Berichtsstandards prüfen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie den Text an oder fügen Sie ihn ein und nennen Sie Zielzeitschrift und Artikeltyp.
 2. Bitten Sie um drei kurze Gutachten aus verschiedenen Rollen: Methoden, Theorie, Advocatus Diaboli.
@@ -29,9 +31,8 @@ Kritisches Feedback kommt meist Monate nach der Einreichung, und Betreuungsperso
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Definieren Sie in seinen dauerhaften Anweisungen das Gremium: eine Methodenexpertin bzw. ein Methodenexperte, eine Fachexpertin bzw. ein Fachexperte und eine Advocatus-Diaboli-Rolle, jeweils mit kurzer Einschätzung und bis zu vier wesentlichen Kommentaren, die ihre Passage zitieren und eine Korrektur vorschlagen; dann eine Prüfung der Berichtsrichtlinie („sagen, wenn keine passt“) und ein priorisierter Fahrplan mit Aufwand. Fügen Sie Ihre Checklisten als Wissensdateien hinzu (unterstützt Ihr Werkzeug sie nicht, hängen Sie sie im Chat an). Startprompt: „Begutachten Sie diesen Entwurf für [Zeitschrift].“ Wiederverwendbar für jedes Manuskript – nur eigene Entwürfe oder mit Zustimmung der Mitautorinnen und Mitautoren.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender im Fach [Disziplin] und plane, diesen [Artikeltyp] bei [Zeitschrift] einzureichen. Angehängt ist [Abschnitt meines Entwurfs]. Handeln Sie als Gremium aus drei kritischen, aber fairen Peer-Review-Gutachtenden: einer Methodenexpertin bzw. einem Methodenexperten, einer Theorieexpertin bzw. einem Theorieexperten und einer Advocatus-Diaboli-Rolle, die die zentrale Behauptung infrage stellt. Jede Gutachterrolle gibt eine Einschätzung in zwei Sätzen und bis zu vier wesentliche Kommentare ab; zitieren Sie zu jedem Kommentar die Passage, auf die er sich bezieht, und schlagen Sie eine konkrete Korrektur vor. Benennen Sie dann Punkte, die die Berichtsrichtlinie für mein Design erwarten würde und die fehlen (zum Beispiel CONSORT, STROBE, COREQ oder SRQR – sagen Sie, welche anwendbar ist). Schließen Sie mit einem Überarbeitungsfahrplan: die Änderungen in der Reihenfolge ihrer Priorität, mit Aufwand (klein, mittel, groß). Kommentieren Sie nur, was im Text steht; wenn etwas möglicherweise an anderer Stelle des Artikels abgedeckt ist, sagen Sie das.

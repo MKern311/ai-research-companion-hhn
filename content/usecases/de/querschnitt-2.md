@@ -69,7 +69,7 @@ Ihren geplanten Abgabetermin, die wichtigsten Meilensteine Ihrer Einrichtung (z.
 ### Prompt
 
 ```text
-Ich bin Promovierende/Promovierender im Jahr [Jahr] eines [Vollzeit- / Teilzeit-]Studiums in [Fach]. Mein Abgabetermin ist [Datum]. Feste Meilensteine: [Liste]. Regelmäßige Verpflichtungen: [Lehre, Arbeit, Pflege, Stunden pro Woche]. Plane rückwärts vom Abgabetermin: eine Tabelle mit Quartalsmeilensteinen und Ergebnissen sowie einem Puffer von mindestens [x] Wochen. Plane dann meine nächste Woche in halbtägigen Blöcken mit einem Hauptziel pro Tag. Zeige schließlich, wie sich der Plan ändert, wenn [Rückschlag, z. B. die Datenerhebung sich um sechs Wochen verzögert]. Bleibe realistisch im Rahmen der Stunden, die ich habe, und weise darauf hin, wo der Plan zu knapp ist.
+Ich bin Promovierende bzw. Promovierender im Jahr [Jahr] eines [Vollzeit- / Teilzeit-]Studiums in [Fach]. Mein Abgabetermin ist [Datum]. Feste Meilensteine: [Liste]. Regelmäßige Verpflichtungen: [Lehre, Arbeit, Pflege, Stunden pro Woche]. Planen Sie rückwärts vom Abgabetermin: eine Tabelle mit Quartalsmeilensteinen und Ergebnissen sowie einem Puffer von mindestens [x] Wochen. Planen Sie dann meine nächste Woche in halbtägigen Blöcken mit einem Hauptziel pro Tag. Zeigen Sie schließlich, wie sich der Plan ändert, wenn [Rückschlag, z. B. die Datenerhebung sich um sechs Wochen verzögert]. Bleiben Sie realistisch im Rahmen der Stunden, die ich habe, und weisen Sie darauf hin, wo der Plan zu knapp ist.
 ```
 
 ### Prüfung
@@ -92,4 +92,4 @@ Fügen Sie Ihren Plan (als .xlsx oder Word), die Meilensteinregelungen Ihrer Ein
 
 ### Eigener Assistent
 
-Anweisungen: rückwärts vom Abgabetermin planen, den kritischen Pfad markieren, Schätzungen auf frühere Dauern stützen und ausdrückliche Puffer einplanen, Wochenpläne in halbtägigen Blöcken mit einem Ziel pro Tag, jeden Plan melden, der die genannten Stunden übersteigt. Wissen: Ihre Meilensteinregelungen. Schalten Sie „Dokumente, Diagramme und Code erstellen“ für einen Excel-Zeitplan ein. Startprompts: „Plane meine nächste Woche“ und „Plane nach diesem Rückschlag neu“. Jede Woche wiederverwendbar.
+Anweisungen: rückwärts vom Abgabetermin planen, den kritischen Pfad markieren, Schätzungen auf frühere Dauern stützen und ausdrückliche Puffer einplanen, Wochenpläne in halbtägigen Blöcken mit einem Ziel pro Tag, jeden Plan melden, der die genannten Stunden übersteigt. Wissen: Ihre Meilensteinregelungen. Schalten Sie Codeausführung bzw. Datenanalyse für einen Excel-Zeitplan ein, wenn Ihr Werkzeug das anbietet. Startprompts: „Planen Sie meine nächste Woche“ und „Planen Sie nach diesem Rückschlag neu“. Jede Woche wiederverwendbar.

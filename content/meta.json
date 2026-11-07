@@ -137,8 +137,8 @@
     "de": "Eigener Assistent"
    },
    "desc": {
-    "en": "Your own configured assistant: standing instructions, knowledge files and, where available, code execution (e.g. a Copilot agent, a custom GPT, a Gemini Gem). Reusable for every new paper, dataset or draft.",
-    "de": "Ihr eigener konfigurierter Assistent: feste Anweisungen, Wissensdateien und, wo verfügbar, Codeausführung (z. B. ein Copilot-Agent, ein Custom GPT, ein Gemini Gem). Wiederverwendbar für jeden neuen Aufsatz, Datensatz oder Entwurf."
+    "en": "Your own configured assistant: standing instructions, knowledge files and, where available, code execution (e.g. a Copilot agent, a ChatGPT or Claude project, a Gemini Gem). Reusable for every new paper, dataset or draft.",
+    "de": "Ihr eigener konfigurierter Assistent: feste Anweisungen, Wissensdateien und, wo verfügbar, Codeausführung (z. B. ein Copilot-Agent, ein ChatGPT- oder Claude-Projekt, ein Gemini Gem). Wiederverwendbar für jeden neuen Aufsatz, Datensatz oder Entwurf."
    }
   },
   {

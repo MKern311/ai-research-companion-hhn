@@ -17,7 +17,9 @@ Eine Tabelle auf Basis eines vorab definierten Extraktionsformulars, jeder Wert 
 
 Kennzahlen, Aussagen und Metadaten sind über lange Berichte, Webseiten, Archivalien und Datendokumentationen verstreut; sie von Hand in eine Tabelle zu kopieren ist langsam und führt zu Übertragungsfehlern und uneinheitlichen Definitionen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie das PDF an, oder nur die relevanten Seiten eines langen Berichts.
 2. Fügen Sie den Startprompt mit den Feldern ein, die extrahiert werden sollen.
@@ -29,12 +31,11 @@ Kennzahlen, Aussagen und Metadaten sind über lange Berichte, Webseiten, Archiva
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Extraktionsassistent“ und schalten Sie Codeausführung bzw. Dateierstellung ein, wenn Ihr Tool sie anbietet, für den CSV-Export. Anweisungen: Ihr Extraktionsformular mit Felddefinitionen, eine Zeile je Dokument, Zeile oder Seite und ein wörtliches Zitat für jeden Wert, „nicht angegeben“, wo etwas fehlt, kein Wissen von außen. Startprompt: „Extrahiere die Formularfelder aus den angehängten Dokumenten“. Es geht nur freigegebenes Material hinein; wiederverwendbar für jeden Stapel, und Sie prüfen jedes Mal eine Zufallsstichprobe.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich sammle Daten aus Dokumenten für ein Forschungsprojekt zu [Thema]. Extrahiere aus dem angehängten PDF diese Felder: [Feld 1, Feld 2, Feld 3, z. B. Jahr, Umsatz, Anzahl Mitarbeitende, genannte Ziele]. Gib eine Tabelle zurück mit einer Zeile je [Einheit, z. B. Jahr oder Organisation] und einer Spalte je Feld, dazu die Seitenzahl und ein kurzes wörtliches Zitat als Beleg für jeden Wert. Wenn ein Wert fehlt oder mehrdeutig ist, schreibe „nicht gefunden“, statt zu schätzen. Nutze keine Informationen von außerhalb des Dokuments.
+Ich sammle Daten aus Dokumenten für ein Forschungsprojekt zu [Thema]. Extrahieren Sie aus dem angehängten PDF diese Felder: [Feld 1, Feld 2, Feld 3, z. B. Jahr, Umsatz, Anzahl Mitarbeitende, genannte Ziele]. Geben Sie eine Tabelle zurück mit einer Zeile je [Einheit, z. B. Jahr oder Organisation] und einer Spalte je Feld, dazu die Seitenzahl und ein kurzes wörtliches Zitat als Beleg für jeden Wert. Wenn ein Wert fehlt oder mehrdeutig ist, schreiben Sie „nicht gefunden“, statt zu schätzen. Nutzen Sie keine Informationen von außerhalb des Dokuments.
 ```
 
 ## Prüfung
@@ -47,7 +48,7 @@ Fünf zufällig gewählte Werte stimmen auf der zitierten Seite exakt mit dem PD
 
 ## Wichtige Konzepte
 
-- **Extraktionsformular** – Eine vorab definierte Liste von Feldern mit operationalen Definitionen, Einheiten und zulässigen Werten, die vor dem vollen Einsatz an einigen Dokumenten pilotiert wird. Standard in systematischen Übersichtsarbeiten über Fächer hinweg; es hält die Extraktion über Dokumente, Personen und Tools hinweg konsistent.
+- **Extraktionsformular** – Eine vorab definierte Liste von Feldern mit operationalen Definitionen, Einheiten und zulässigen Werten, die vor dem vollen Einsatz an einigen Dokumenten pilotiert wird. Standard in systematischen Übersichtsarbeiten über Fächer hinweg; es hält die Extraktion über Dokumente, Personen und Werkzeuge hinweg konsistent.
 - **Doppelextraktion und Verifikation** – Zwei Personen extrahieren unabhängig voneinander und klären Abweichungen, oder eine extrahiert und eine zweite verifiziert. Wenn die KI als Erstextraktorin dient, verifizieren Sie jeden Wert, den Sie analysieren werden, oder zumindest eine Zufallsstichprobe mit dokumentierter Fehlerrate.
 - **Herkunftsnachweis: Fundstelle und wörtliches Zitat** – Wenn Sie festhalten, woher jeder Wert stammt – Seite in einem PDF, Zeile in einer Textdatei, URL und Abrufdatum bei einer Webseite –, wird die Extraktion nachprüfbar, und erfundene Werte fallen schnell auf. Unterscheiden Sie „nicht angegeben“ von „null“ und von „unklar“, und lassen Sie die Extraktion nie eine Lücke aus Allgemeinwissen füllen.
 - **Dokumentenanalyse (Bowen)** – Ein systematisches Verfahren zur Durchsicht gedruckter und elektronischer Dokumente – Überfliegen, gründliches Lesen, Interpretation – mit Blick auf Authentizität, Glaubwürdigkeit, Repräsentativität und den Zweck, für den jedes Dokument entstand.

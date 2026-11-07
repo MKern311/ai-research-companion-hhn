@@ -17,7 +17,9 @@ Ihre Frage, abgebildet auf ein passendes Rahmenwerk (PICO, PICOC, PEO oder SPIDE
 
 Eine Frage, die im Gespräch klar klingt, scheitert oft, sobald man sie suchen oder messen will: Elemente des Rahmenwerks fehlen, Konstrukte sind undefiniert, der Umfang ist für Zeit und Daten unrealistisch.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Forschungsfrage ein und nennen Sie Ihr Fachgebiet.
 2. Fragen Sie, welches Rahmenwerk am besten passt (PICO, PICOC, PEO, SPIDER oder ein anderes) und warum.
@@ -29,9 +31,8 @@ Eine Frage, die im Gespräch klar klingt, scheitert oft, sobald man sie suchen o
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Fragen-Strukturierer“. Anweisungen: ein Rahmenwerk wählen und begründen, die Elementtabelle mit fehlenden Teilen und je drei Suchbegriffen liefern, angenommene Elemente kennzeichnen, Teilfragen den Elementen zuordnen, FINER mit projektspezifischen Begründungen bewerten und messbare Arbeitsdefinitionen vorschlagen. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet und Definitionen an Daten getestet werden sollen. Startprompt: „Strukturiere diese Frage und teste sie anhand von FINER.“ Wiederverwendbar für jede neue Entwurfsfrage.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet]. Meine Entwurfsfrage lautet: [Frage]. Schlagen Sie das am besten geeignete Rahmenwerk zur Strukturierung vor (zum Beispiel PICO, PICOC, PEO oder SPIDER) und erklären Sie in zwei Sätzen, warum es besser passt als die anderen. Zeigen Sie dann eine Tabelle: Element des Rahmenwerks, der Teil meiner Frage, den es abdeckt, was noch fehlt oder unklar ist, und drei englische Suchbegriffe oder Synonyme. Kennzeichnen Sie jedes Element, das Sie annehmen mussten, statt es aus meiner Frage zu übernehmen. Schlagen Sie als Nächstes drei bis fünf Teilfragen vor, jeweils einem Element zugeordnet. Bewerten Sie die Frage kurz anhand von FINER (feasible, interesting, novel, ethical, relevant) mit je einer Begründung pro Kriterium. Listen Sie abschließend die zentralen Konstrukte auf, sagen Sie, welche vage sind, und schlagen Sie zu jedem eine Arbeitsdefinition und eine mögliche Art vor, es zu messen oder zu beobachten.

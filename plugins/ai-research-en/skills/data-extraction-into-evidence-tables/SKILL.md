@@ -17,7 +17,9 @@ A first-draft evidence table built on a piloted extraction form, with a page ref
 
 Copying designs, samples and effects from dozens of full texts is slow and error-prone; numbers are easily mistyped, taken from the wrong table or silently converted.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the PDF and paste your extraction fields.
 2. Ask for one table row per paper with page or section references.
@@ -29,9 +31,8 @@ Copying designs, samples and effects from dozens of full texts is slow and error
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Evidence extractor'. Instructions: your extraction form as fixed columns, a page or section after each value, numbers copied exactly – no calculating, rounding or converting – and 'not reported' for gaps. Knowledge: the form and its coding rules. Switch on code execution / data analysis if your tool offers it, to export the table to Excel. Starter prompt: 'Extract this PDF into the evidence table.' Only approved material; a human checks every row.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am building an evidence table for a review on [topic]. From the attached paper(s), extract one table row per study with these columns: citation, design, sample size and population, setting, key variables or measures, main result with the reported statistic, stated limitations – and, if the paper reports the statistics for it, the effect size (for example d, r or an odds ratio) with its confidence interval. After each value give the page or section where you found it. Copy numbers exactly as reported; do not calculate, round or infer. If a field is not in the paper, write 'not reported'.

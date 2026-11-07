@@ -1,5 +1,5 @@
 ---
-name: konzeptionelle-modelle-and-messmodelle-als-diagramme
+name: konzeptionelle-modelle-und-messmodelle-als-diagramme
 description: "Verwandeln Sie Ihre Theorie in ein Diagramm eines konzeptionellen Modells oder Messmodells – Konstrukte, Pfade und bei Bedarf Fragebogen-Items – als bearbeitbaren draw.io- oder Figma-Inhalt, den Sie mit der Literatur aktualisieren, statt ihn neu zu zeichnen. Einsetzen bei: Konzeptionelle Modelle & Messmodelle als Diagramme."
 ---
 
@@ -17,7 +17,9 @@ Ein bearbeitbares Modell als Code (Mermaid oder draw.io-XML) neben einer Konstru
 
 Konzeptionelle Modelle und Messmodelle werden in Folien- oder Zeichenprogrammen von Hand neu gezeichnet; jede neue Arbeit und jedes geänderte Konstrukt bedeutet Mehrarbeit, und das Diagramm driftet von Text und Item-Liste weg.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Beschreiben Sie die Konstrukte, ihre Definitionen und die erwarteten Pfade.
 2. Bitten Sie den Assistenten um das Modell als Mermaid-Code, eine Tabelle jedes Pfeils mit seiner Grundlage und eine Konstrukt-Indikator-Tabelle.
@@ -29,12 +31,11 @@ Konzeptionelle Modelle und Messmodelle werden in Folien- oder Zeichenprogrammen 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Modelldiagramm-Bauer“. Anweisungen: Mermaid-Flussdiagramm von links nach rechts, Pfade mit H1, H2 … beschriftet, immer eine Tabelle jedes Pfeils mit seiner Quelle und eine Konstrukt-Indikator-Tabelle, reflektiv oder formativ mit Begründung, nie veröffentlichte Skalen erfinden, jeden Pfad markieren, der nicht in der Eingabe steht. Wissen: Ihre Konstruktdefinitionen und Theorienotizen. Startprompt: „Aktualisiere mein Modell: [Änderung]“. Wiederverwendbar für Abschlussarbeit, Folien und Befragung.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich promoviere in [Fach] und arbeite an [Forschungsfrage]. Meine Konstrukte sind: [Konstrukt – einzeilige Definition, für jedes]. Die erwarteten Beziehungen sind: [z. B. A erhöht B; C moderiert A→B]. 1) Zeichne das konzeptionelle Modell als Mermaid-Flussdiagramm-Code (von links nach rechts): Konstrukte als Knoten, vermutete Pfade als beschriftete Pfeile (H1, H2 …), Moderatoren als Pfeile, die auf einen Pfad zeigen. 2) Gib eine Tabelle jedes Pfeils im Code: Beschriftung, von, nach und der Teil meiner Beschreibung, auf dem er beruht – oder „nicht in der Beschreibung“. 3) Wenn ich ein Messmodell möchte, ergänze für jedes Konstrukt, ob es reflektiv oder formativ ist, mit einer einzeiligen Begründung, und liste 3–4 mögliche Indikatoren oder Fragebogen-Items je Konstrukt in einer Tabelle auf: Konstrukt, Indikator, Quelle oder „noch zu entwickeln“. Erfinde keine veröffentlichten Skalen; wenn du eine bestehende Skala vorschlägst, sage, wie sicher du dir bist. 4) Liste jeden Pfad auf, den meine Beschreibung nicht stützt.
+Ich promoviere in [Fach] und arbeite an [Forschungsfrage]. Meine Konstrukte sind: [Konstrukt – einzeilige Definition, für jedes]. Die erwarteten Beziehungen sind: [z. B. A erhöht B; C moderiert A→B]. 1) Zeichnen Sie das konzeptionelle Modell als Mermaid-Flussdiagramm-Code (von links nach rechts): Konstrukte als Knoten, vermutete Pfade als beschriftete Pfeile (H1, H2 …), Moderatoren als Pfeile, die auf einen Pfad zeigen. 2) Geben Sie eine Tabelle jedes Pfeils im Code: Beschriftung, von, nach und der Teil meiner Beschreibung, auf dem er beruht – oder „nicht in der Beschreibung“. 3) Wenn ich ein Messmodell möchte, ergänzen Sie für jedes Konstrukt, ob es reflektiv oder formativ ist, mit einer einzeiligen Begründung, und listen Sie 3–4 mögliche Indikatoren oder Fragebogen-Items je Konstrukt in einer Tabelle auf: Konstrukt, Indikator, Quelle oder „noch zu entwickeln“. Erfinden Sie keine veröffentlichten Skalen; wenn Sie eine bestehende Skala vorschlagen, sagen Sie, wie sicher Sie sich sind. 4) Listen Sie jeden Pfad auf, den meine Beschreibung nicht stützt.
 ```
 
 ## Prüfung
@@ -43,7 +44,7 @@ Jede Zeile der Pfeiltabelle entspricht Ihrer Beschreibung oder ist markiert, jed
 
 ## Grenzen
 
-- Der Assistent liefert das Modell als Code und als Tabellen, die Sie im Chat prüfen; um die Zeichnung zu sehen, fügen Sie den Code in draw.io oder einen anderen Mermaid-Viewer ein, und das direkte Zeichnen auf der Arbeitsfläche erfordert eine Verbindung, die Ihr Tool und Ihre Hochschule erlauben müssen. Die Theorie hinter jedem Pfeil bleibt Ihre Argumentation.
+- Der Assistent liefert das Modell als Code und als Tabellen, die Sie im Chat prüfen; um die Zeichnung zu sehen, fügen Sie den Code in draw.io oder einen anderen Mermaid-Viewer ein, und das direkte Zeichnen auf der Arbeitsfläche erfordert eine Verbindung, die Ihr Werkzeug und Ihre Hochschule erlauben müssen. Die Theorie hinter jedem Pfeil bleibt Ihre Argumentation.
 - Risiko: Öffentliches oder eigenes, nicht sensibles Material; Fehler sind leicht zu erkennen.
 
 ## Wichtige Konzepte

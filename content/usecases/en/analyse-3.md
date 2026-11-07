@@ -113,7 +113,7 @@ Add the Forster report (A3), the code and topic lists from your chat runs saved 
 
 ### Custom assistant
 
-Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, fix the method: preprocessing rules, a fixed random seed, the number of topics, a stability rerun, top-word tables, and "call a vague topic vague". For labelling, add category definitions and ask for a one-line reason per text. Switch on code execution / data analysis if your tool offers it. Starter prompt: "Run the standard topic model on this corpus and report stability." Only approved, non-sensitive texts go in, and you check a sample of labels by hand.
+Create a configured assistant (e.g. a Copilot agent, a ChatGPT project, a Gemini Gem or a Claude project). In its standing instructions, fix the method: preprocessing rules, a fixed random seed, the number of topics, a stability rerun, top-word tables, and "call a vague topic vague". For labelling, add category definitions and ask for a one-line reason per text. Switch on code execution / data analysis if your tool offers it. Starter prompt: "Run the standard topic model on this corpus and report stability." Only approved, non-sensitive texts go in, and you check a sample of labels by hand.
 
 ### Automation / own code
 

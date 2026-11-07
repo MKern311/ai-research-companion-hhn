@@ -48,15 +48,15 @@ Zwei Reihen mit gemeinsamem Trend können ein hohes R² und eine „signifikante
 
 ### Grenzwerte der Modellgüte bei Strukturgleichungsmodellen
 
-Konventionen von Hu und Bentler (1999): Comparative Fit Index (CFI) ≥ 0.95, Root Mean Square Error of Approximation (RMSEA) ≤ 0.06, Standardized Root Mean Square Residual (SRMR) ≤ 0.08. Aus Simulationen abgeleitet, sind sie Richtwerte, keine Bestanden-oder-nicht-Regeln.
+Konventionen von Hu und Bentler (1999): Comparative Fit Index (CFI) ≥ 0,95, Root Mean Square Error of Approximation (RMSEA) ≤ 0,06, Standardized Root Mean Square Residual (SRMR) ≤ 0.08. Aus Simulationen abgeleitet, sind sie Richtwerte, keine Bestanden-oder-nicht-Regeln.
 
 ### Heterotrait-Monotrait-Verhältnis (HTMT)
 
-Ein Kriterium der Diskriminanzvalidität, besonders bei der Partial-Least-Squares-Strukturgleichungsmodellierung verwendet (Henseler et al., 2015). Übliche Schwellenwerte: unter 0.85 für konzeptionell verschiedene Konstrukte, unter 0.90 für ähnliche.
+Ein Kriterium der Diskriminanzvalidität, besonders bei der Partial-Least-Squares-Strukturgleichungsmodellierung verwendet (Henseler et al., 2015). Übliche Schwellenwerte: unter 0,85 für konzeptionell verschiedene Konstrukte, unter 0,90 für ähnliche.
 
 ### Reliabilität: Cronbachs Alpha und McDonalds Omega
 
-Alpha setzt gleiche Faktorladungen voraus (Tau-Äquivalenz); Omega nicht, weshalb es oft bevorzugt wird (McNeish, 2018). Werte von etwa 0.70 oder höher gelten als übliche Konvention für den Forschungseinsatz.
+Alpha setzt gleiche Faktorladungen voraus (Tau-Äquivalenz); Omega nicht, weshalb es oft bevorzugt wird (McNeish, 2018). Werte von etwa 0,70 oder höher gelten als übliche Konvention für den Forschungseinsatz.
 
 ## Literatur
 
@@ -82,7 +82,7 @@ Chat 1 – hängen Sie die monatliche HadCRUT5-CSV und die GISTEMP-CSV an (die e
 
 ### Prüfung
 
-Jede Zahl im Absatz steht in der Zusammenfassung (n = 146 Jahre, Bestimmtheitsmaß R² = 0.987, Durbin-Watson etwa 0.39). Der Assistent sollte sagen, dass der niedrige Durbin-Watson-Wert autokorrelierte Residuen anzeigt, die Standardfehler also zu klein sind; dass der Achsenabschnitt von etwa −0.09 °C vor allem die unterschiedlichen Baselines widerspiegelt; und dass der gemeinsame Erwärmungstrend R² aufbläht. Übereinstimmung beurteilt man anhand der jährlichen Differenzen (Bland-Altman), nicht anhand von R².
+Jede Zahl im Absatz steht in der Zusammenfassung (n = 146 Jahre, Bestimmtheitsmaß R² = 0,987, Durbin-Watson etwa 0,39). Der Assistent sollte sagen, dass der niedrige Durbin-Watson-Wert autokorrelierte Residuen anzeigt, die Standardfehler also zu klein sind; dass der Achsenabschnitt von etwa −0,09 °C vor allem die unterschiedlichen Baselines widerspiegelt; und dass der gemeinsame Erwärmungstrend R² aufbläht. Übereinstimmung beurteilt man anhand der jährlichen Differenzen (Bland-Altman), nicht anhand von R².
 
 ## Mit eigenem Material
 
@@ -130,4 +130,4 @@ Fügen Sie die gespeicherte Modellzusammenfassung (.txt), Ihren Analyseplan und 
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen die Regeln fest: jeden Teil des Outputs erklären, die Annahmen auflisten und sagen, welche der Output zu prüfen erlaubt, die Quelle jedes Schwellenwerts nennen, nur Zahlen aus dem Output verwenden, ohne neu zu berechnen oder zu runden, und sagen, was die Analyse nicht zeigen kann. Fügen Sie den Berichtsleitfaden Ihres Fachs als Wissensdatei hinzu; Code ist nicht nötig. Startprompt: „Interpretieren Sie diesen Output und entwerfen Sie einen Ergebnisabsatz im APA-7-Stil.“ Wiederverwendbar für jede Analyse, die Sie durchführen.
+Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen die Regeln fest: jeden Teil des Outputs erklären, die Annahmen auflisten und sagen, welche der Output zu prüfen erlaubt, die Quelle jedes Schwellenwerts nennen, nur Zahlen aus dem Output verwenden, ohne neu zu berechnen oder zu runden, und sagen, was die Analyse nicht zeigen kann. Fügen Sie den Berichtsleitfaden Ihres Fachs als Wissensdatei hinzu; Code ist nicht nötig. Startprompt: „Interpretieren Sie diesen Output und entwerfen Sie einen Ergebnisabsatz im APA-7-Stil.“ Wiederverwendbar für jede Analyse, die Sie durchführen.

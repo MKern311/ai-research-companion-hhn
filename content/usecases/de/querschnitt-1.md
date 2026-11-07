@@ -64,7 +64,7 @@ Stichpunktnotizen oder Laborbucheinträge zu Fortschritt, Ergebnissen und Pläne
 ### Prompt
 
 ```text
-Ich bin Promovierende/Promovierender in [Fach] und bereite meinen [Monatsbericht für meine Betreuungsperson / Jahresbericht / Übergangsgespräch / Bestätigungsgespräch] vor. Der Bericht braucht diese Abschnitte: [Überschriften einfügen]. Meine Notizen lauten: [Notizen einfügen]. Entwirf den Bericht unter diesen Überschriften in sachlichem, knappem Stil mit etwa [Wortzahl] Wörtern. Berücksichtige den Fortschritt gegenüber den Zielen des letzten Zeitraums, Ergebnisse, Weiterbildung, einen Plan für den nächsten Zeitraum (Monat oder Jahr) und eine Tabelle der Risiken mit Wahrscheinlichkeit, Auswirkung und Gegenmaßnahme. Verwende nur, was in meinen Notizen steht; markiere fehlende Informationen mit [ERGÄNZEN] und erfinde keine Leistungen, Daten oder Ergebnisse.
+Ich bin Promovierende bzw. Promovierender in [Fach] und bereite meinen [Monatsbericht für meine Betreuungsperson / Jahresbericht / Übergangsgespräch / Bestätigungsgespräch] vor. Der Bericht braucht diese Abschnitte: [Überschriften einfügen]. Meine Notizen lauten: [Notizen einfügen]. Entwerfen Sie den Bericht unter diesen Überschriften in sachlichem, knappem Stil mit etwa [Wortzahl] Wörtern. Berücksichtigen Sie den Fortschritt gegenüber den Zielen des letzten Zeitraums, Ergebnisse, Weiterbildung, einen Plan für den nächsten Zeitraum (Monat oder Jahr) und eine Tabelle der Risiken mit Wahrscheinlichkeit, Auswirkung und Gegenmaßnahme. Verwenden Sie nur, was in meinen Notizen steht; markieren Sie fehlende Informationen mit [ERGÄNZEN] und erfinden Sie keine Leistungen, Daten oder Ergebnisse.
 ```
 
 ### Prüfung

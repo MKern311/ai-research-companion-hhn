@@ -92,4 +92,4 @@ Add your plan (as .xlsx or Word), your institution's milestone regulations and a
 
 ### Custom assistant
 
-Instructions: plan backwards from the submission date, mark the critical path, base estimates on past durations and add explicit buffers, weekly plans in half-day blocks with one goal per day, flag any plan that exceeds the stated hours. Knowledge: your milestone regulations. Switch on "Create documents, charts and code" for an Excel timeline. Starter prompts: "Plan my next week" and "Re-plan after this setback". Reusable every week.
+Instructions: plan backwards from the submission date, mark the critical path, base estimates on past durations and add explicit buffers, weekly plans in half-day blocks with one goal per day, flag any plan that exceeds the stated hours. Knowledge: your milestone regulations. Switch on code execution or data analysis for an Excel timeline, if your tool offers it. Starter prompts: "Plan my next week" and "Re-plan after this setback". Reusable every week.

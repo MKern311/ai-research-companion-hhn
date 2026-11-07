@@ -65,7 +65,7 @@ Ihre eigenen kurzen Notizen zum Fortschritt seit dem letzten Betreuungsgespräch
 ### Prompt
 
 ```text
-Ich bin Promovierende/Promovierender in [Fach] und bereite ein [45-minütiges] Betreuungsgespräch vor. Meine Notizen zu Fortschritt und offenen Punkten lauten: [Notizen einfügen]. Entwerfe eine Agenda mit Zeitfenstern, die drei Entscheidungen, die ich von meinen Betreuungspersonen brauche, und konkrete Fragen zu jedem Agendapunkt. Nach dem Gespräch füge ich meine Notizen ein; fasse sie dann als Tabelle zusammen: Aufgabe, Zuständigkeit, Frist, und ergänze offene Fragen. Verwende nur, was in meinen Notizen steht, und füge keine Aufgaben oder Vereinbarungen hinzu, die dort nicht stehen.
+Ich bin Promovierende bzw. Promovierender in [Fach] und bereite ein [45-minütiges] Betreuungsgespräch vor. Meine Notizen zu Fortschritt und offenen Punkten lauten: [Notizen einfügen]. Entwerfen Sie eine Agenda mit Zeitfenstern, die drei Entscheidungen, die ich von meinen Betreuungspersonen brauche, und konkrete Fragen zu jedem Agendapunkt. Nach dem Gespräch füge ich meine Notizen ein; fassen Sie sie dann als Tabelle zusammen: Aufgabe, Zuständigkeit, Frist, und ergänzen Sie offene Fragen. Verwenden Sie nur, was in meinen Notizen steht, und fügen Sie keine Aufgaben oder Vereinbarungen hinzu, die dort nicht stehen.
 ```
 
 ### Prüfung

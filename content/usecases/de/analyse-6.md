@@ -114,7 +114,7 @@ Fügen Sie die Meereis-Datei (D6; speichern Sie sie als .xlsx oder .txt, wenn Ih
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen Ihre Sprache und Regeln fest: Docstrings, Unit-Tests für normale Fälle und Randfälle (einfache asserts, wenn pytest fehlt), eine Prüfung an einem bekannten Ergebnis oder Benchmark, Einheiten und Wertebereiche benennen, „bei unklarem Verhalten nachfragen“ und nie Schlüssel oder Passwörter einfügen. Schalten Sie Codeausführung ein, wenn Ihr Werkzeug sie anbietet, damit er Python-Tests ausführen kann. Startprompt: „Prüfen Sie diese Funktion und schreiben Sie Tests für ihre Randfälle.“ Wiederverwendbar für jedes neue Modul.
+Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen Ihre Sprache und Regeln fest: Docstrings, Unit-Tests für normale Fälle und Randfälle (einfache asserts, wenn pytest fehlt), eine Prüfung an einem bekannten Ergebnis oder Benchmark, Einheiten und Wertebereiche benennen, „bei unklarem Verhalten nachfragen“ und nie Schlüssel oder Passwörter einfügen. Schalten Sie Codeausführung ein, wenn Ihr Werkzeug sie anbietet, damit er Python-Tests ausführen kann. Startprompt: „Prüfen Sie diese Funktion und schreiben Sie Tests für ihre Randfälle.“ Wiederverwendbar für jedes neue Modul.
 
 ### Automatisierung / eigener Code
 

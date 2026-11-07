@@ -103,7 +103,7 @@ In a plain chat the rules last only for this conversation – a new chat starts 
 
 ## Technology
 
-Create a custom assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project) with your rules as instructions and public websites or practice PDFs as knowledge; if your tool does not accept knowledge files, attach them in the chat. Adding search tools such as OpenAlex needs a connection (MCP or API) – check data protection and approval with your university first.
+Create a custom assistant (e.g. a Copilot agent, a ChatGPT project, a Gemini Gem or a Claude project) with your rules as instructions and public websites or practice PDFs as knowledge; if your tool does not accept knowledge files, attach them in the chat. Adding search tools such as OpenAlex needs a connection (MCP or API) – check data protection and approval with your university first.
 
 ## Levels
 

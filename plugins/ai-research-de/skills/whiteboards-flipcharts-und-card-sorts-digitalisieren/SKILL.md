@@ -17,10 +17,12 @@ Eine transkribierte, strukturierte Tabelle jeder Karte und ihrer Zuordnung, mit 
 
 Card Sorts, Item-Sorting-Aufgaben und Workshop-Boards liefern reichhaltige Daten auf Papier; sie abzutippen und Zuordnungen von Hand zu zählen kostet Stunden und führt zu Übertragungsfehlern.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fotografieren Sie das Board frontal, bei gutem Licht, in einer oder zwei Aufnahmen.
-2. Laden Sie das Foto hoch (JPEG oder PNG; konvertieren Sie andere Formate zuerst, wenn Ihr Tool sie nicht akzeptiert) – aus der mobilen App Ihres Assistenten oder über Ihren Cloud-Speicher – und bitten Sie den Assistenten, jede Karte zu transkribieren, bevor er irgendetwas interpretiert.
+2. Laden Sie das Foto hoch (JPEG oder PNG; konvertieren Sie andere Formate zuerst, wenn Ihr Werkzeug sie nicht akzeptiert) – aus der mobilen App Ihres Assistenten oder über Ihren Cloud-Speicher – und bitten Sie den Assistenten, jede Karte zu transkribieren, bevor er irgendetwas interpretiert.
 3. Bitten Sie um die Cluster oder die Zuordnung von Karten zu Kategorien als Tabelle, mit markierten unsicheren Lesungen.
 4. Vergleichen Sie Transkription und Zuordnung mit dem Board selbst.
 
@@ -29,12 +31,11 @@ Card Sorts, Item-Sorting-Aufgaben und Workshop-Boards liefern reichhaltige Daten
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Board-Digitalisierer“ und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Tool sie anbietet, für Zählungen und den Tabellenexport. Anweisungen: vor dem Interpretieren jede Karte transkribieren, [unleserlich] statt zu raten, eine Tabelle aus Karte, Text, Cluster und Verbindungen, Zählungen je vorgegebener Kategorie, Interpretation zuletzt. Wissen: Ihre Kategorienliste. Es gehen nur Fotos ohne Gesichter oder Namen hinein, und Sie prüfen jede Tabelle am Board. Startprompt: „Digitalisiere diesen Card Sort“.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Das angehängte Foto zeigt das Ergebnis eines/einer [Card Sort / Item-Sorting-Aufgabe / Brainstormings] aus einem/einer [Workshop oder Experiment] zu [Thema]. 1) Transkribiere jede Karte oder Notiz exakt wie geschrieben, nummeriert, mit ihrer Position (Spalte oder Cluster). Markiere jedes Wort, das du nicht lesen kannst, als [unleserlich], statt zu raten. 2) Gib eine Tabelle: Kartennummer, Text, die Gruppe oder Kategorie, in die sie gelegt wurde, und jeden Pfeil oder jede Linie, die sie mit einer anderen Karte verbindet. 3) Wenn die Aufgabe Items vorgegebenen Kategorien zuordnete ([Kategorien auflisten]), zähle für jedes Item, wie viele Zuordnungen in die vorgesehene Kategorie fallen. 4) Schlage erst danach eine kurze Bezeichnung für jedes Cluster vor und sage, welche Karten schlecht passen. Halte Beobachtung (Schritte 1–3) und Interpretation (Schritt 4) getrennt.
+Das angehängte Foto zeigt das Ergebnis eines/einer [Card Sort / Item-Sorting-Aufgabe / Brainstormings] aus einem/einer [Workshop oder Experiment] zu [Thema]. 1) Transkribieren Sie jede Karte oder Notiz exakt wie geschrieben, nummeriert, mit ihrer Position (Spalte oder Cluster). Markieren Sie jedes Wort, das Sie nicht lesen können, als [unleserlich], statt zu raten. 2) Geben Sie eine Tabelle: Kartennummer, Text, die Gruppe oder Kategorie, in die sie gelegt wurde, und jeden Pfeil oder jede Linie, die sie mit einer anderen Karte verbindet. 3) Wenn die Aufgabe Items vorgegebenen Kategorien zuordnete ([Kategorien auflisten]), zählen Sie für jedes Item, wie viele Zuordnungen in die vorgesehene Kategorie fallen. 4) Schlagen Sie erst danach eine kurze Bezeichnung für jedes Cluster vor und sagen Sie, welche Karten schlecht passen. Halten Sie Beobachtung (Schritte 1–3) und Interpretation (Schritt 4) getrennt.
 ```
 
 ## Prüfung

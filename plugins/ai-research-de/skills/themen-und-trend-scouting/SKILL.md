@@ -17,7 +17,9 @@ Eine Thementabelle mit Jahreszählungen und eine Liste selten kombinierter Theme
 
 Wohin sich ein Feld entwickelt, lässt sich aus verstreuter Lektüre nur unzuverlässig beurteilen: Wachsende Cluster und vernachlässigte Schnittstellen bleiben ohne Co-Word- oder Zitationsanalyse unsichtbar, und die wenigsten Forschenden führen eine solche Analyse früh durch.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie die Liste mit Titeln und Jahren in Ihren KI-Assistenten ein.
 2. Bitten Sie ihn, die Paper nach Themen zu gruppieren und pro Jahr zu zählen.
@@ -29,9 +31,8 @@ Wohin sich ein Feld entwickelt, lässt sich aus verstreuter Lektüre nur unzuver
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Themen-Scout“. Anweisungen: vier bis sechs Themen, eine Tabelle aus Thema, Paper und Jahr, selten kombinierte Themen, eine Aussage dazu, was die Stichprobe zeigen kann und was nicht, und niemals Paper hinzufügen, die nicht im Upload stehen. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, damit er Paper pro Jahr zählt und grafisch darstellt. Startprompt: „Clustere diese Titelliste und stelle die Paper pro Jahr grafisch dar.“ Wiederverwendbar für jeden neuen Export.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet] und suche wachsende Themen und Lücken. Unten stehen [Anzahl] Paper-Titel mit ihren Erscheinungsjahren, kopiert aus [Quelle]. Gruppieren Sie sie in vier bis sechs Themen. Zeigen Sie eine Tabelle: Thema, Paper-Titel zu diesem Thema, Anzahl der Paper pro Jahr. Nennen Sie dann zwei oder drei Kombinationen von Themen, die selten gemeinsam vorkommen und möglicherweise unterforscht sind. Stützen Sie sich ausschließlich auf die Liste, die ich Ihnen gebe, und sagen Sie deutlich, dass eine kleine Liste keine echten Trends zeigen kann.

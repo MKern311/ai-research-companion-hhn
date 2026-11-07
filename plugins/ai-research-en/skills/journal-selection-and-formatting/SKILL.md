@@ -17,7 +17,9 @@ A shortlist of legitimate journals with links to their own guidelines, a formatt
 
 Finding a journal whose aims and scope fit, then reformatting references and layout to its guidelines, takes hours – and a desk rejection for poor fit costs weeks.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. With web search switched on, paste your abstract and ask for five candidate journals with links to their author guidelines.
 2. Open two of the linked guideline pages and compare scope and word limits.
@@ -29,9 +31,8 @@ Finding a journal whose aims and scope fit, then reformatting references and lay
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant, for example "Journal and BibTeX helper" (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In the standing instructions, set the output: a journal table with publisher, fit, article type, word limit, reference style, open-access options and guideline link; use only the journals' own pages (keep web search on if your tool offers it); BibTeX with correct entry types and missing fields flagged; never invent journals, DOIs or page numbers. Starter prompts: "Suggest five journals for this abstract." and "Convert these references to BibTeX." Reusable for every manuscript.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] preparing a manuscript. My abstract is: [paste abstract]. Suggest five peer-reviewed journals whose published aims and scope fit this work, including [journal I am considering]. Give a table with: journal, publisher, why it fits, article type and word limit, reference style, open-access options, and a link to the author guidelines page. Use only information from the journals' own websites and cite the link. If I paste a few references or BibTeX entries, convert them to the journal's citation style and flag missing fields. If you are not sure about a detail, say so; do not invent journals or requirements.

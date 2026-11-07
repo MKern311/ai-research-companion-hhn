@@ -1,6 +1,6 @@
 ---
-name: stichprobengroesse-and-poweranalyse
-description: "Erzeugen Sie Berechnungen als nachvollziehbaren Code – der Assistent schreibt Python und führt es aus, wenn Ihr Tool Code ausführen kann; für R schreibt er Code, den Sie selbst ausführen – und machen Sie Annahmen explizit. Einsetzen bei: Stichprobengröße & Poweranalyse."
+name: stichprobengroesse-und-poweranalyse
+description: "Erzeugen Sie Berechnungen als nachvollziehbaren Code – der Assistent schreibt Python und führt es aus, wenn Ihr Werkzeug Code ausführen kann; für R schreibt er Code, den Sie selbst ausführen – und machen Sie Annahmen explizit. Einsetzen bei: Stichprobengröße & Poweranalyse."
 ---
 
 # Stichprobengröße & Poweranalyse
@@ -9,7 +9,7 @@ description: "Erzeugen Sie Berechnungen als nachvollziehbaren Code – der Assis
 
 ## Ziel
 
-Erzeugen Sie Berechnungen als nachvollziehbaren Code – der Assistent schreibt Python und führt es aus, wenn Ihr Tool Code ausführen kann; für R schreibt er Code, den Sie selbst ausführen – und machen Sie Annahmen explizit.
+Erzeugen Sie Berechnungen als nachvollziehbaren Code – der Assistent schreibt Python und führt es aus, wenn Ihr Werkzeug Code ausführen kann; für R schreibt er Code, den Sie selbst ausführen – und machen Sie Annahmen explizit.
 
 Wiederholbar ausführbarer Code, eine Kurve der benötigten Stichprobengröße über plausible Effektgrößen und eine explizite Liste der Annahmen – eine a-priori-Poweranalyse, die Sie verteidigen und aktualisieren können, wenn sich Schätzungen ändern.
 
@@ -17,7 +17,9 @@ Wiederholbar ausführbarer Code, eine Kurve der benötigten Stichprobengröße �
 
 Stichprobengrößen werden oft einmal in einem Web-Rechner berechnet, ohne die Annahmen festzuhalten – schwer zu begründen gegenüber einer Ethikkommission oder Prüfenden und stumm gegenüber Clusterung oder Abhängigkeit.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Beschreiben Sie Ihren geplanten Test, die Effektgröße, Alpha und die gewünschte Power.
 2. Bitten Sie den Assistenten, Python-Code für die Poweranalyse zu schreiben und auszuführen (wenn er keinen Code ausführen kann, führen Sie ihn selbst aus).
@@ -29,12 +31,11 @@ Stichprobengrößen werden oft einmal in einem Web-Rechner berechnet, ohne die A
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Power-Analyst“ und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Tool sie anbietet. Anweisungen: immer Python mit statsmodels schreiben und ausführen, den Code zeigen, die Stichprobengröße über Effektgrößen grafisch darstellen, jede Annahme auflisten und welche Ihre Daten verletzen könnten, und einen bekannten Benchmark ausführen (d = 0,5 ergibt etwa 64 je Gruppe). Startprompt: „Poweranalyse für [Test], Effektgröße [Wert] aus [Quelle]“. Wiederverwendbar für jede Studie oder jeden Antrag.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich plane eine Studie in [Fach] mit [statistischer Test, z. B. t-Test für unabhängige Stichproben]. Schreibe und führe Python-Code aus (zum Beispiel mit statsmodels), der die benötigte Stichprobengröße für die Effektgröße [Wert, z. B. Cohens d = 0,5], Alpha 0,05, Power 0,80, zweiseitig berechnet. Zeige den Code, das Ergebnis und eine Grafik der Stichprobengröße für Effektgrößen von 0,2 bis 0,8. Liste jede Annahme auf, die die Berechnung trifft, und erkläre das Ergebnis in zwei klaren Sätzen.
+Ich plane eine Studie in [Fach] mit [statistischer Test, z. B. t-Test für unabhängige Stichproben]. Schreiben und führen Sie Python-Code aus (zum Beispiel mit statsmodels), der die benötigte Stichprobengröße für die Effektgröße [Wert, z. B. Cohens d = 0,5], Alpha 0,05, Power 0,80, zweiseitig berechnet. Zeigen Sie den Code, das Ergebnis und eine Grafik der Stichprobengröße für Effektgrößen von 0,2 bis 0,8. Listen Sie jede Annahme auf, die die Berechnung trifft, und erklären Sie das Ergebnis in zwei klaren Sätzen.
 ```
 
 ## Prüfung

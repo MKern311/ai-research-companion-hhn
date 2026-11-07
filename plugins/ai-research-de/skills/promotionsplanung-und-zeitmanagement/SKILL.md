@@ -1,5 +1,5 @@
 ---
-name: promotionsplanung-and-zeitmanagement
+name: promotionsplanung-und-zeitmanagement
 description: "Gliedern Sie die Promotion in Meilensteine, planen Sie Ihre Wochen und planen Sie nach Rückschlägen neu. Einsetzen bei: Promotionsplanung & Zeitmanagement."
 ---
 
@@ -17,7 +17,9 @@ Ein Rückwärtsplan mit Meilensteinen, Abhängigkeiten und ausdrücklichen Puffe
 
 Eine Promotion lässt sich schwer rückwärts planen; man unterschätzt systematisch, wie lange Aufgaben dauern, die Wochen füllen sich mit Lehre und Verwaltung, und nach einem Rückschlag wirkt der Plan überholt.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Abgabetermin, Meilensteine und Verpflichtungen ein.
 2. Bitten Sie um einen Rückwärtsplan mit Quartalsmeilensteinen und Puffern.
@@ -29,12 +31,11 @@ Eine Promotion lässt sich schwer rückwärts planen; man unterschätzt systemat
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: rückwärts vom Abgabetermin planen, den kritischen Pfad markieren, Schätzungen auf frühere Dauern stützen und ausdrückliche Puffer einplanen, Wochenpläne in halbtägigen Blöcken mit einem Ziel pro Tag, jeden Plan melden, der die genannten Stunden übersteigt. Wissen: Ihre Meilensteinregelungen. Schalten Sie „Dokumente, Diagramme und Code erstellen“ für einen Excel-Zeitplan ein. Startprompts: „Plane meine nächste Woche“ und „Plane nach diesem Rückschlag neu“. Jede Woche wiederverwendbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bin Promovierende/Promovierender im Jahr [Jahr] eines [Vollzeit- / Teilzeit-]Studiums in [Fach]. Mein Abgabetermin ist [Datum]. Feste Meilensteine: [Liste]. Regelmäßige Verpflichtungen: [Lehre, Arbeit, Pflege, Stunden pro Woche]. Plane rückwärts vom Abgabetermin: eine Tabelle mit Quartalsmeilensteinen und Ergebnissen sowie einem Puffer von mindestens [x] Wochen. Plane dann meine nächste Woche in halbtägigen Blöcken mit einem Hauptziel pro Tag. Zeige schließlich, wie sich der Plan ändert, wenn [Rückschlag, z. B. die Datenerhebung sich um sechs Wochen verzögert]. Bleibe realistisch im Rahmen der Stunden, die ich habe, und weise darauf hin, wo der Plan zu knapp ist.
+Ich bin Promovierende bzw. Promovierender im Jahr [Jahr] eines [Vollzeit- / Teilzeit-]Studiums in [Fach]. Mein Abgabetermin ist [Datum]. Feste Meilensteine: [Liste]. Regelmäßige Verpflichtungen: [Lehre, Arbeit, Pflege, Stunden pro Woche]. Planen Sie rückwärts vom Abgabetermin: eine Tabelle mit Quartalsmeilensteinen und Ergebnissen sowie einem Puffer von mindestens [x] Wochen. Planen Sie dann meine nächste Woche in halbtägigen Blöcken mit einem Hauptziel pro Tag. Zeigen Sie schließlich, wie sich der Plan ändert, wenn [Rückschlag, z. B. die Datenerhebung sich um sechs Wochen verzögert]. Bleiben Sie realistisch im Rahmen der Stunden, die ich habe, und weisen Sie darauf hin, wo der Plan zu knapp ist.
 ```
 
 ## Prüfung

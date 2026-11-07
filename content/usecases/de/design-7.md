@@ -14,7 +14,7 @@ data: B2; C4
 practice_data: B2; C4
 ---
 
-Erzeugen Sie passende Materialien für jede Bedingung eines Experiments – z. B. Fallvignetten, eine Botschaft in zwei Rahmungen (Framings), eine Mock-Webseite oder einen Mock-Newsfeed – und entwerfen Sie den Studienablauf mit Randomisierung und Variablennamen für Ihr Befragungstool.
+Erzeugen Sie passende Materialien für jede Bedingung eines Experiments – z. B. Fallvignetten, eine Botschaft in zwei Rahmungen (Framings), eine Mock-Webseite oder einen Mock-Newsfeed – und entwerfen Sie den Studienablauf mit Randomisierung und Variablennamen für Ihr Befragungswerkzeug.
 
 ## Problem
 
@@ -22,14 +22,14 @@ Realistische Stimuli für jede Bedingung – Vignetten, gerahmte Botschaften, Mo
 
 ## Ergebnis
 
-Passende Stimuli für jede Bedingung, eine Manipulationsprüfung und ein Studienablauf mit Variablennamen, die Sie in Ihrem Befragungstool einrichten – schneller gebaut, leichter gleichwertig zu halten, und ein Export, der direkt in Ihre Analyse geht.
+Passende Stimuli für jede Bedingung, eine Manipulationsprüfung und ein Studienablauf mit Variablennamen, die Sie in Ihrem Befragungswerkzeug einrichten – schneller gebaut, leichter gleichwertig zu halten, und ein Export, der direkt in Ihre Analyse geht.
 
 ## Vorgehen
 
 1. Definieren Sie den manipulierten Faktor, seine Stufen und alles, was konstant gehalten wird
 2. Erzeugen Sie Stimuli je Bedingung und listen Sie jeden Unterschied zwischen ihnen auf
 3. Entwerfen Sie eine Manipulationsprüfung und den Studienablauf mit Variablennamen
-4. Bauen Sie die Studie in Ihrem Befragungstool und pilotieren Sie Realismus und Manipulation mit echten Personen
+4. Bauen Sie die Studie in Ihrem Befragungswerkzeug und pilotieren Sie Realismus und Manipulation mit echten Personen
 5. Holen Sie die Ethikfreigabe ein und bereiten Sie ein Debriefing vor
 
 ## Konzepte
@@ -69,7 +69,7 @@ Bauen Sie die zwei Bedingungen eines Framing-Experiments: ein Mock-Newsfeed zu e
 ### Prompt
 
 ```text
-Angehängt sind Christidis et al. (2020) zu heißen Tagen in Großbritannien und Zachariah et al. (2023) zur Hitzewelle 2022 in Indien und Pakistan. Ich möchte testen, ob eine Attributionsaussage verändert, wie besorgt Lesende wegen Hitzewellen sind. Erstelle zwei Versionen eines Mock-Social-Media-Newsfeeds als je eine eigenständige HTML-Seite: sechs Beiträge von fiktiven Konten, einer davon ein Beitrag über eine Hitzewelle. Bedingung A: Der Hitzewellen-Beitrag enthält einen Attributionssatz, der einer der Arbeiten originalgetreu entnommen ist, mit Quelle. Bedingung B: derselbe Beitrag ohne diesen Satz, ansonsten Wort für Wort identisch. Liste jeden Unterschied zwischen A und B auf, zitiere die Quellenpassage für den Attributionssatz und ergänze eine Frage zur Manipulationsprüfung und ein Besorgnismaß mit drei Items samt Variablennamen.
+Angehängt sind Christidis et al. (2020) zu heißen Tagen in Großbritannien und Zachariah et al. (2023) zur Hitzewelle 2022 in Indien und Pakistan. Ich möchte testen, ob eine Attributionsaussage verändert, wie besorgt Lesende wegen Hitzewellen sind. Erstellen Sie zwei Versionen eines Mock-Social-Media-Newsfeeds als je eine eigenständige HTML-Seite: sechs Beiträge von fiktiven Konten, einer davon ein Beitrag über eine Hitzewelle. Bedingung A: Der Hitzewellen-Beitrag enthält einen Attributionssatz, der einer der Arbeiten originalgetreu entnommen ist, mit Quelle. Bedingung B: derselbe Beitrag ohne diesen Satz, ansonsten Wort für Wort identisch. Listen Sie jeden Unterschied zwischen A und B auf, zitieren Sie die Quellenpassage für den Attributionssatz und ergänzen Sie eine Frage zur Manipulationsprüfung und ein Besorgnismaß mit drei Items samt Variablennamen.
 ```
 
 ### Prüfung
@@ -92,7 +92,7 @@ Ihre Hypothese mit dem Faktor, den Sie manipulieren, und dem Outcome, den Sie me
 ### Prompt
 
 ```text
-Ich plane ein Between-Subjects-Experiment in [Fach]. Hypothese: [z. B. eine als Verlust gerahmte Botschaft verändert Intentionen stärker als dieselbe Botschaft, als Gewinn gerahmt]. Manipulierter Faktor: [Faktor] mit den Stufen [Stufe A] und [Stufe B]. Outcome-Messungen: [Messungen]. 1) Erstelle den Stimulus für jede Bedingung: [z. B. eine kurze Fallvignette, eine öffentliche Informationsbotschaft oder eine Mock-Webseite als eine eigenständige HTML-Seite]. Halte alles identisch außer dem manipulierten Element und liste jeden Unterschied zwischen den Bedingungen auf. 2) Schreibe eine Frage zur Manipulationsprüfung. 3) Entwirf den vollständigen Studienablauf für ein Befragungstool – Einwilligung, zufällige Zuteilung, Stimulus, Messungen, Manipulationsprüfung, Demografie, Debriefing – als Tabelle mit Variablennamen und Kodierung, sodass der Export direkt analysiert werden kann. Verwende keine realen Organisationen, Marken, Personen oder Logos.
+Ich plane ein Between-Subjects-Experiment in [Fach]. Hypothese: [z. B. eine als Verlust gerahmte Botschaft verändert Intentionen stärker als dieselbe Botschaft, als Gewinn gerahmt]. Manipulierter Faktor: [Faktor] mit den Stufen [Stufe A] und [Stufe B]. Outcome-Messungen: [Messungen]. 1) Erstellen Sie den Stimulus für jede Bedingung: [z. B. eine kurze Fallvignette, eine öffentliche Informationsbotschaft oder eine Mock-Webseite als eine eigenständige HTML-Seite]. Halten Sie alles identisch außer dem manipulierten Element und listen Sie jeden Unterschied zwischen den Bedingungen auf. 2) Schreiben Sie eine Frage zur Manipulationsprüfung. 3) Entwerfen Sie den vollständigen Studienablauf für ein Befragungswerkzeug – Einwilligung, zufällige Zuteilung, Stimulus, Messungen, Manipulationsprüfung, Demografie, Debriefing – als Tabelle mit Variablennamen und Kodierung, sodass der Export direkt analysiert werden kann. Verwenden Sie keine realen Organisationen, Marken, Personen oder Logos.
 ```
 
 ### Prüfung
@@ -105,7 +105,7 @@ Stimuli brauchen eine Ethikfreigabe, ein Debriefing, wenn sie irreführen, und e
 
 ## Technik
 
-Ihr KI-Assistent schreibt Stimulustexte und eigenständige HTML-Mock-ups und entwirft den Befragungsablauf; die Studie bauen Sie in Ihrem Befragungstool (z. B. Qualtrics oder Microsoft Forms). Für realistische interaktive Feeds protokollieren Forschungsplattformen wie Truman oder das Mock Social Media Website Tool das Verhalten der Teilnehmenden.
+Ihr KI-Assistent schreibt Stimulustexte und eigenständige HTML-Mock-ups und entwirft den Befragungsablauf; die Studie bauen Sie in Ihrem Befragungswerkzeug (z. B. Qualtrics oder Microsoft Forms). Für realistische interaktive Feeds protokollieren Forschungsplattformen wie Truman oder das Mock Social Media Website Tool das Verhalten der Teilnehmenden.
 
 ## Stufen
 
@@ -119,4 +119,4 @@ Fügen Sie die Quellenarbeiten hinter Ihren Stimuli, Ihren Analyseplan oder Ihre
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Stimulus-Bauer“ und schalten Sie Codeausführung bzw. Dateierstellung ein, wenn Ihr Tool sie anbietet, damit er HTML-Dateien liefert. Anweisungen: Bedingungen identisch halten außer dem manipulierten Element, jeden Unterschied auflisten, die Quelle jeder Tatsachenbehauptung zitieren, eine Manipulationsprüfung und einen Studienablauf mit Variablennamen ergänzen, keine realen Organisationen, Marken, Personen oder Logos verwenden. Startprompt: „Baue die Bedingungen [A] und [B] für: [Hypothese]“. Wiederverwendbar für jedes Folgeexperiment.
+Nennen Sie ihn „Stimulus-Bauer“ und schalten Sie Codeausführung bzw. Dateierstellung ein, wenn Ihr Werkzeug sie anbietet, damit er HTML-Dateien liefert. Anweisungen: Bedingungen identisch halten außer dem manipulierten Element, jeden Unterschied auflisten, die Quelle jeder Tatsachenbehauptung zitieren, eine Manipulationsprüfung und einen Studienablauf mit Variablennamen ergänzen, keine realen Organisationen, Marken, Personen oder Logos verwenden. Startprompt: „Bauen Sie die Bedingungen [A] und [B] für: [Hypothese]“. Wiederverwendbar für jedes Folgeexperiment.

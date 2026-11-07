@@ -17,7 +17,9 @@ An editable model kept as code (Mermaid or draw.io XML) next to a construct–in
 
 Conceptual and measurement models are redrawn by hand in slide or drawing tools; each new paper or changed construct means rework, and the diagram drifts away from the text and the item list.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Describe the constructs, their definitions and the expected paths.
 2. Ask the assistant for the model as Mermaid code, a table of every arrow with what it rests on, and a construct–indicator table.
@@ -29,9 +31,8 @@ Conceptual and measurement models are redrawn by hand in slide or drawing tools;
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Model diagram builder'. Instructions: Mermaid flowchart left to right, paths labelled H1, H2 …, always a table of every arrow with its source and a construct–indicator table, reflective or formative with a reason, never invent published scales, flag every path not in the input. Knowledge: your construct definitions and theory notes. Starter prompt: 'Update my model: [change]'. Reusable across thesis, slides and survey.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] working on [research question]. My constructs are: [construct – one-line definition, for each]. The expected relationships are: [e.g. A increases B; C moderates A→B]. 1) Draw the conceptual model as Mermaid flowchart code (left to right): constructs as nodes, hypothesised paths as labelled arrows (H1, H2 …), moderators as arrows pointing at a path. 2) Give a table of every arrow in the code: label, from, to, and the part of my description it rests on – or 'not in description'. 3) If I want a measurement model, add for each construct whether it is reflective or formative, with a one-line reason, and list 3–4 candidate indicators or survey items per construct in a table: construct, indicator, source or 'to be developed'. Do not invent published scales; if you suggest an existing scale, say how sure you are. 4) List any path that is not backed by my description.

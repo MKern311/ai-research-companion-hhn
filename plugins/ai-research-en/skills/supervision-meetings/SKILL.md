@@ -17,7 +17,9 @@ A timed agenda with the decisions you need and an action list with owners and de
 
 Supervision time is short: without an agenda key decisions slip, expectations stay implicit, and agreed actions sit in scattered notes that nobody writes up.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your notes and ask for a 45-minute meeting agenda.
 2. Ask for three decisions you need and questions to ask.
@@ -29,9 +31,8 @@ Supervision time is short: without an agenda key decisions slip, expectations st
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: agenda with time slots, the three decisions you need, questions per item, actions as a table with owner and deadline in SMART form, use only the pasted notes, never add agreements that are not there, list open questions. No Knowledge needed. Starter prompts: "Agenda for my 45-minute meeting" and "Action list from these notes". Reusable for every supervision meeting.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] preparing for a [45-minute] supervision meeting. My notes on progress and open issues are: [paste notes]. Draft an agenda with time slots, the three decisions I need from my supervisors, and specific questions for each agenda item. After the meeting I will paste my notes; then summarise them as a table: action, owner, deadline, and add any open questions. Use only what is in my notes and do not add actions or agreements that are not there.

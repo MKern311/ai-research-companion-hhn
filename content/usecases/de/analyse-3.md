@@ -113,7 +113,7 @@ Fügen Sie den Forster-Bericht (A3), Code und Themenlisten Ihrer Chat-Läufe als
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen die Methode fest: Vorverarbeitungsregeln, einen festen Zufallsstartwert, die Zahl der Themen, einen Stabilitätslauf, Tabellen der häufigsten Wörter und „ein unscharfes Thema unscharf nennen“. Ergänzen Sie für das Labeln Kategoriendefinitionen und fordern Sie je Text eine einzeilige Begründung. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompt: „Führen Sie das Standard-Topic-Modell für dieses Korpus aus und berichten Sie die Stabilität.“ Es kommen nur genehmigte, nicht sensible Texte hinein, und Sie prüfen eine Stichprobe der Labels von Hand.
+Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen die Methode fest: Vorverarbeitungsregeln, einen festen Zufallsstartwert, die Zahl der Themen, einen Stabilitätslauf, Tabellen der häufigsten Wörter und „ein unscharfes Thema unscharf nennen“. Ergänzen Sie für das Labeln Kategoriendefinitionen und fordern Sie je Text eine einzeilige Begründung. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompt: „Führen Sie das Standard-Topic-Modell für dieses Korpus aus und berichten Sie die Stabilität.“ Es kommen nur genehmigte, nicht sensible Texte hinein, und Sie prüfen eine Stichprobe der Labels von Hand.
 
 ### Automatisierung / eigener Code
 

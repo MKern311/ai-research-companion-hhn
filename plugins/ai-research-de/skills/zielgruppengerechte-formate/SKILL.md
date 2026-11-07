@@ -17,7 +17,9 @@ Drei Erstentwürfe für verschiedene Zielgruppen, mit exakt erhaltenen Zahlen, B
 
 Für jede Arbeit eine Laienzusammenfassung, einen Policy Brief und einen Social-Media-Beitrag zu schreiben, kostet Zeit, und beim Vereinfachen droht Spin – kausale, allgemeine oder sichere Aussagen, die die Arbeit nicht trifft.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie die Arbeit an und nennen Sie Ihre Zielgruppe.
 2. Bitten Sie um eine Laienzusammenfassung von 150 Wörtern und eine Gliederung für einen einseitigen Policy Brief.
@@ -29,12 +31,11 @@ Für jede Arbeit eine Laienzusammenfassung, einen Policy Brief und einen Social-
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: die drei Formate mit Wortgrenzen, Zahlen und Bedingungen exakt, Unsicherheitswörter beibehalten, eine Liste jeder Vereinfachung, nie eine Aussage, die die Arbeit nicht trifft. Kein Wissen nötig – hängen Sie jede Arbeit im Chat an. Startprompts: „Laienzusammenfassung, Brief-Gliederung und Beitrag für Verwaltungsmitarbeitende“ und „Prüfe diesen Entwurf gegen die Arbeit auf Spin“. Für jede neue Arbeit wiederverwendbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bin Forschende/Forschender in [Fach]. Angehängt ist meine Arbeit [Titel]. Schreibe für [Zielgruppe, z. B. Verwaltungsmitarbeitende einer Kommune oder die breite Öffentlichkeit]: 1) eine Laienzusammenfassung von etwa 150 Wörtern in klarer Sprache, ohne Fachjargon; 2) eine Gliederung für einen einseitigen Policy Brief mit Problem, zentralen Befunden und drei praktischen Empfehlungen; 3) einen Social-Media-Beitrag von bis zu 60 Wörtern. Verwende nur Befunde, die in der Arbeit stehen, halte Zahlen exakt und lasse die Ergebnisse nicht stärker oder allgemeiner klingen, als die Arbeit sie darstellt. Nenne jede Stelle, an der du vereinfachen musstest.
+Ich bin Forschende/Forschender in [Fach]. Angehängt ist meine Arbeit [Titel]. Schreiben Sie für [Zielgruppe, z. B. Verwaltungsmitarbeitende einer Kommune oder die breite Öffentlichkeit]: 1) eine Laienzusammenfassung von etwa 150 Wörtern in klarer Sprache, ohne Fachjargon; 2) eine Gliederung für einen einseitigen Policy Brief mit Problem, zentralen Befunden und drei praktischen Empfehlungen; 3) einen Social-Media-Beitrag von bis zu 60 Wörtern. Verwenden Sie nur Befunde, die in der Arbeit stehen, halten Sie Zahlen exakt und lassen Sie die Ergebnisse nicht stärker oder allgemeiner klingen, als die Arbeit sie darstellt. Nennen Sie jede Stelle, an der Sie vereinfachen mussten.
 ```
 
 ## Prüfung

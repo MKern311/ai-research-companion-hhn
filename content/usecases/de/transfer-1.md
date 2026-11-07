@@ -67,12 +67,12 @@ Stellen Sie die Winter- und Sommerniederschläge im Vereinigten Königreich aus 
 ### Prompt
 
 ```text
-Angehängt ist die Niederschlags-Textdatei des Met Office für das Vereinigte Königreich (HadUK-Grid-Flächenreihe: monatliche, saisonale und jährliche Summen in mm). 1) Lies sie mit Python ein. Die letzte Zeile ist ein unvollständiges Jahr, und manche Zellen sind leer oder „---“: Sage, wie du damit umgegangen bist und welche Monate jede Jahreszeit umfasst. 2) Erstelle eine klare Grafik der Winter- (win) und Sommerniederschläge (sum) pro Jahr, jeweils mit einem gleitenden 10-Jahres-Mittel, mit beschrifteten Achsen, Einheiten, einer für Farbsehschwächen geeigneten Palette und einem kurzen Titel. Zeige den Python-Code. 3) Gib die mittleren Winter- und Sommerniederschläge für 1961–1990 und 1991–2020 an. 4) Entwirf eine Gliederung aus sechs Folien für einen 10-minütigen Vortrag vor Promovierenden: jeder Titel eine Aussage in einem ganzen Satz, bis zu drei Stichpunkte und die zu verwendende Visualisierung. Verwende nur Zahlen aus der Datei und behaupte keine Ursachen, die die Daten nicht zeigen können.
+Angehängt ist die Niederschlags-Textdatei des Met Office für das Vereinigte Königreich (HadUK-Grid-Flächenreihe: monatliche, saisonale und jährliche Summen in mm). 1) Lesen Sie sie mit Python ein. Die letzte Zeile ist ein unvollständiges Jahr, und manche Zellen sind leer oder „---“: Sagen Sie, wie Sie damit umgegangen sind und welche Monate jede Jahreszeit umfasst. 2) Erstellen Sie eine klare Grafik der Winter- (win) und Sommerniederschläge (sum) pro Jahr, jeweils mit einem gleitenden 10-Jahres-Mittel, mit beschrifteten Achsen, Einheiten, einer für Farbsehschwächen geeigneten Palette und einem kurzen Titel. Zeigen Sie den Python-Code. 3) Geben Sie die mittleren Winter- und Sommerniederschläge für 1961–1990 und 1991–2020 an. 4) Entwerfen Sie eine Gliederung aus sechs Folien für einen 10-minütigen Vortrag vor Promovierenden: jeder Titel eine Aussage in einem ganzen Satz, bis zu drei Stichpunkte und die zu verwendende Visualisierung. Verwenden Sie nur Zahlen aus der Datei und behaupten Sie keine Ursachen, die die Daten nicht zeigen können.
 ```
 
 ### Prüfung
 
-Der mittlere Winterniederschlag beträgt 302.8 mm (1961–1990) und 343.6 mm (1991–2020); im Sommer sind es 232.0 und 253.4 mm. Der Winter umfasst den vorangehenden Dezember; am nassesten ist 2014 (539.9 mm). Die Zeile 2026 hat einen Winterwert von 399.6 mm, aber keine Jahressumme – erscheint 399.6 als Oktober, hat der Assistent die Zeile an Leerzeichen getrennt. Ein Titel, der eine Ursache nennt, geht über die Daten hinaus.
+Der mittlere Winterniederschlag beträgt 302,8 mm (1961–1990) und 343,6 mm (1991–2020); im Sommer sind es 232,0 und 253,4 mm. Der Winter umfasst den vorangehenden Dezember; am nassesten ist 2014 (539,9 mm). Die Zeile 2026 hat einen Winterwert von 399,6 mm, aber keine Jahressumme – erscheint 399,6 als Oktober, hat der Assistent die Zeile an Leerzeichen getrennt. Ein Titel, der eine Ursache nennt, geht über die Daten hinaus.
 
 ## Mit eigenem Material
 
@@ -90,7 +90,7 @@ Drei bis fünf Sätze zu Ihren zentralen Befunden und eine kleine Ergebnistabell
 ### Prompt
 
 ```text
-Ich präsentiere meine Forschung vor [Zielgruppe] in einem [10-minütigen] Vortrag. Angehängt ist eine Ergebnistabelle [Dateiname]; meine zentralen Befunde lauten: [Befunde einfügen]. 1) Erstelle eine klare Grafik von [Variable] nach [Gruppe] mit beschrifteten Achsen, Einheiten und einem kurzen Titel und zeige den verwendeten Python-Code. 2) Entwirf eine Gliederung aus sechs Folien: Jeder Folientitel ist eine Kernaussage in einem ganzen Satz, mit bis zu drei Stichpunkten und einem Hinweis, welche Visualisierung zu verwenden ist. Verwende nur die Zahlen aus der Datei und meine Befunde; frage mich, wenn eine Spalte unklar ist.
+Ich präsentiere meine Forschung vor [Zielgruppe] in einem [10-minütigen] Vortrag. Angehängt ist eine Ergebnistabelle [Dateiname]; meine zentralen Befunde lauten: [Befunde einfügen]. 1) Erstellen Sie eine klare Grafik von [Variable] nach [Gruppe] mit beschrifteten Achsen, Einheiten und einem kurzen Titel und zeigen Sie den verwendeten Python-Code. 2) Entwerfen Sie eine Gliederung aus sechs Folien: Jeder Folientitel ist eine Kernaussage in einem ganzen Satz, mit bis zu drei Stichpunkten und einem Hinweis, welche Visualisierung zu verwenden ist. Verwenden Sie nur die Zahlen aus der Datei und meine Befunde; fragen Sie mich, wenn eine Spalte unklar ist.
 ```
 
 ### Prüfung
@@ -117,4 +117,4 @@ Fügen Sie die D8-Textdatei, Ihre Vortragsnotizen und eine Word-Datei mit dem Gr
 
 ### Eigener Assistent
 
-Anweisungen: breite Dateien mit Python einlesen und berichten, wie Leerstellen und unvollständige Zeilen behandelt wurden; immer den Code zeigen; für Farbsehschwächen geeignete Palette, beschriftete Achsen mit Einheiten; Folientitel als Aussagen in ganzen Sätzen, die die Daten stützen, nie Ursachen, die die Daten nicht zeigen können. Schalten Sie „Dokumente, Diagramme und Code erstellen“ ein. Startprompts: „Stelle diese Reihe mit gleitendem 10-Jahres-Mittel dar“ und „Gliederung aus sechs Folien zu dieser Grafik“. Für jede neue Ergebnisdatei wiederverwendbar.
+Anweisungen: breite Dateien mit Python einlesen und berichten, wie Leerstellen und unvollständige Zeilen behandelt wurden; immer den Code zeigen; für Farbsehschwächen geeignete Palette, beschriftete Achsen mit Einheiten; Folientitel als Aussagen in ganzen Sätzen, die die Daten stützen, nie Ursachen, die die Daten nicht zeigen können. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug das anbietet. Startprompts: „Stellen Sie diese Reihe mit gleitendem 10-Jahres-Mittel dar“ und „Gliederung aus sechs Folien zu dieser Grafik“. Für jede neue Ergebnisdatei wiederverwendbar.

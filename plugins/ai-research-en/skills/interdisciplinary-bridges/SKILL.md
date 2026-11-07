@@ -17,7 +17,9 @@ A table of transferable concepts or methods, what each needs adapting and where 
 
 Useful concepts and methods often already exist in a neighbouring discipline, but you rarely read its journals and do not know the vocabulary to search for them.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your research question and name your discipline.
 2. Ask for concepts or methods from neighbouring disciplines that could transfer.
@@ -29,9 +31,8 @@ Useful concepts and methods often already exist in a neighbouring discipline, bu
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Discipline bridge'. Instructions: four concepts or methods from named neighbouring fields, the starter prompt's table (transfer, adaptation, risk of mismatch), the search vocabulary each field uses, and a reference only if it is sure it exists. Switch on code execution / data analysis if your tool offers it and you want a method tried on your data. Starter prompt: 'Which methods from other fields fit this question?' Reusable for every new question.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] working on: [research question]. Suggest four concepts, theories or methods from neighbouring disciplines that could help answer it. Show a table: discipline, concept or method, how it would transfer to my question, what would need adapting, risk of mismatch. Add one key reference per row only if you are confident it exists, with a link where possible. If you are not sure, say so; do not invent sources.

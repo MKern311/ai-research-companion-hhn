@@ -17,7 +17,9 @@ A speaker-labelled draft transcript and translation that you correct rather than
 
 Transcribing an hour of interview by hand takes several hours, and translation adds more; automatic tools save time but can silently change wording, merge speakers and drop hesitations.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Ask the assistant to invent a 200-word two-person interview excerpt on your topic, without speaker labels.
 2. Paste the starter prompt with that excerpt and choose a target language you can read.
@@ -29,9 +31,8 @@ Transcribing an hour of interview by hand takes several hours, and translation a
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Transcript formatter'. Instructions: add speaker labels, mark [unclear], translate keeping hesitations, show original and translation side by side, never summarise, shorten or correct speech, and remind you to remove names first. Knowledge: your glossary of terms. Only approved, pseudonymised text goes in, and you check every line against the audio. Starter prompt: 'Label and translate this excerpt into [language]'.
 
-## Starter prompt
+## Typical request
 
 ```text
 Below is a short, invented interview excerpt between an interviewer and one participant, with no speaker labels. 1) Add labels (I: and P:) at each change of speaker, keeping the wording exactly as it is. 2) Mark any place where the speaker is unclear with [unclear]. 3) Translate the labelled text into [language], keeping hesitations and repetitions. Show the original and the translation side by side in a two-column table. Do not summarise, shorten or correct the speakers' grammar. Excerpt: [paste invented text]

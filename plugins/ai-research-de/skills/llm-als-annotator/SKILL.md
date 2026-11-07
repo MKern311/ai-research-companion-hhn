@@ -17,7 +17,9 @@ Eine vorkodierte Tabelle mit zitierten Begründungen und Konfidenz, dazu Cohens 
 
 Hunderte Texte von Hand zu kodieren dauert Wochen, und eine zweite kodierende Person für die Reliabilität fehlt oft – große Textsammlungen bleiben daher ungenutzt oder werden nur dünn gesampelt.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Kodieren Sie zehn der Texte selbst, bevor Sie Ihren KI-Assistenten öffnen, und legen Sie Ihre Codes beiseite.
 2. Fügen Sie den Startprompt mit Ihrem Schema und allen Texten ein, oder hängen Sie die CSV an.
@@ -29,12 +31,11 @@ Hunderte Texte von Hand zu kodieren dauert Wochen, und eine zweite kodierende Pe
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Vorannotator“ und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Tool sie anbietet, für Kappa und die Konfusionsmatrix. Anweisungen: das Kodierschema, ein Code je Text, „unklar“ statt neuer Codes, Konfidenz und ein wörtliches Zitat als Begründung, Kappa gegen menschliche Codes, wenn sie vorliegen. Wissen: Ihr Codebuch. Es geht nur freigegebener, unkritischer Text hinein, und ein Mensch prüft von jedem Stapel eine Stichprobe. Startprompt: „Kodiere diese Texte: [einfügen]“.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich teste, ob ein Sprachmodell Texte für meine Studie zu [Thema] vorannotieren kann. Kodierschema: [Code: Definition, einer je Zeile]. Weise jedem untenstehenden Text (oder in der angehängten Datei) genau einen Code zu. Gib eine Tabelle zurück: Text-ID, Code, Konfidenz (hoch, mittel oder niedrig) und eine Begründung in einem Satz, die den Text zitiert. Verwende „unklar“, wenn kein Code passt; erfinde keine neuen Codes. Texte: [nummerierte Texte einfügen]
+Ich teste, ob ein Sprachmodell Texte für meine Studie zu [Thema] vorannotieren kann. Kodierschema: [Code: Definition, einer je Zeile]. Weisen Sie jedem untenstehenden Text (oder in der angehängten Datei) genau einen Code zu. Geben Sie eine Tabelle zurück: Text-ID, Code, Konfidenz (hoch, mittel oder niedrig) und eine Begründung in einem Satz, die den Text zitiert. Verwenden Sie „unklar“, wenn kein Code passt; erfinden Sie keine neuen Codes. Texte: [nummerierte Texte einfügen]
 ```
 
 ## Prüfung
@@ -43,7 +44,7 @@ Bei zehn Texten ist Kappa ein grobes Signal, kein Freigabetest: Schauen Sie zuer
 
 ## Grenzen
 
-- Ein Chat erlaubt es, das Schema an einer kleinen Stichprobe zu testen; das Vorannotieren großer Mengen braucht eine skriptgesteuerte Pipeline in einem freigegebenen Tool.
+- Ein Chat erlaubt es, das Schema an einer kleinen Stichprobe zu testen; das Vorannotieren großer Mengen braucht eine skriptgesteuerte Pipeline in einem freigegebenen Werkzeug.
 - Risiko: Personenbezogene oder sensible Daten oder Entscheidungen, die direkt in Ihre Ergebnisse einfließen.
 
 ## Wichtige Konzepte

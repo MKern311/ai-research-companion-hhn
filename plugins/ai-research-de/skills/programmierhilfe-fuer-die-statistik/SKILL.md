@@ -17,7 +17,9 @@ Kommentierter, lauffähiger Code, den Sie Zeile für Zeile erklären können, mi
 
 Sie wissen, welches Modell Sie brauchen, verlieren aber Stunden mit Syntax, Fehlermeldungen und Paketoptionen. Code aus Foren passt selten zu Ihrer Datenstruktur oder zu den Annahmen des Modells.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie die CSV-Datei an und beschreiben Sie die Analyse unter Nennung Ihrer Software.
 2. Bitten Sie um kommentierten Code und eine einfache Erklärung jedes Schritts.
@@ -29,9 +31,8 @@ Sie wissen, welches Modell Sie brauchen, verlieren aber Stunden mit Syntax, Fehl
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Nennen Sie in seinen dauerhaften Anweisungen Ihre Disziplin und Software und legen Sie die Regeln fest: kommentierter Code, nur vollständige Fälle, jede entfernte Beobachtung auflisten, Annahmen benennen und prüfen, R- oder Stata-Entsprechungen angeben, ohne sie auszuführen, und nie eine Zahl ohne den zugehörigen Code berichten. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompt: „Hier sind mein Datensatz und mein Modell – schreiben Sie den Code, führen Sie ihn aus und erklären Sie ihn.“ Wiederverwendbar für jeden neuen Datensatz.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender im Fach [Disziplin] und nutze [R, Python, Stata oder SPSS]. Die angehängte Datei ist ein [öffentlicher oder Dummy-]Datensatz mit den Variablen [wichtigste Variablen]. Ich möchte [Analyse, z. B. eine lineare Regression von Y auf X1 und X2 mit robusten Standardfehlern durchführen]. Schreiben Sie kommentierten Code, der die Daten lädt, Variablentypen und fehlende Werte prüft, die Analyse durchführt und die Ergebnisse ausgibt. Erklären Sie danach in einfacher Sprache, was jeder Block tut und welche Annahmen ich prüfen sollte. Wenn eine Funktion oder Option in meiner Version möglicherweise nicht existiert, sagen Sie das. (Bei komplexeren Modellen – zum Beispiel Strukturgleichungsmodellen mit lavaan oder seminr oder einer Metaanalyse mit metafor – nennen Sie das Paket und fügen Sie einen kurzen Auszug aus seiner Dokumentation ein, damit der Code ihr folgt.)

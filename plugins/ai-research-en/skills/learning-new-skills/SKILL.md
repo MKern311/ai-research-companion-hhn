@@ -17,7 +17,9 @@ A paced tutorial on your own example, built on worked examples and retrieval pra
 
 Courses rarely match your method or timing, documentation assumes knowledge you lack, and passively reading tutorials feels productive but leaves little you can apply.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Name the skill and ask the assistant to test your level with three questions.
 2. Work through the first step and try the small exercise yourself.
@@ -29,9 +31,8 @@ Courses rarely match your method or timing, documentation assumes knowledge you 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: tutor role, test the level first, one idea, worked example and exercise at a time, wait for my answer, feedback before the solution, a quiz at the end, point to the official documentation, say when unsure. Knowledge: the package documentation. Switch on "Create documents, charts and code" to run Python examples; for R, Stata or SPSS you run its code in your own software. Starter prompts: "Teach me changepoint detection" and "Quiz me on last week's topic". Reusable for any new method.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] and want to learn [method / package / language] for [purpose in my project]. Act as a patient tutor. First ask me three short questions to judge my level. Then teach step by step in short chunks: explain one idea, show a small example, and give me one exercise. Wait for my answer and give feedback before showing the solution. Use [dataset or a simple made-up example]. Point me to the official documentation for each step, and if you are not sure about a function or option, say so.

@@ -17,7 +17,9 @@ Related papers found by meaning and by backward and forward citation, each linke
 
 Keyword searches only find papers that use your terms; work from other fields and newer papers citing your key source stay invisible, and chasing citations by hand is slow.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Give your AI assistant the title and DOI of your key paper.
 2. Ask it to describe the paper's core idea in plain words, not keywords.
@@ -29,9 +31,8 @@ Keyword searches only find papers that use your terms; work from other fields an
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Citation explorer'. Instructions: describe the key paper's problem in plain words, find related papers with different terminology and up to three citing papers, give a working link and the connection for each, label each as reference list or search result, write a 150-word cited overview, and never invent sources. Starter prompt: 'Find related and citing work for this DOI.' Reusable for every new key paper.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. A key paper for my work is [title, authors, year, DOI]. First, describe its core problem and idea in three plain sentences without its own jargon. Then search for up to six papers that address the same problem, including ones that use different terminology, and up to three that cite this paper. For each, give authors, year, title, a working link and one sentence on the connection. Finish with a 150-word overview of how these papers relate, citing each one. If you are not sure, say so; do not invent sources.

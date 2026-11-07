@@ -17,7 +17,9 @@ A seminar case, discussion questions at the apply level of Bloom's revised taxon
 
 Bringing current research into seminars means building cases and questions from scratch, and recall questions are quicker to write than ones that make students apply or evaluate findings.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the paper and state the module, level and learning outcome.
 2. Ask for a short case study based on the paper.
@@ -29,9 +31,8 @@ Bringing current research into seminars means building cases and questions from 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: case length and format, questions at the apply level of Bloom's revised taxonomy or above, outcome, activity and assessment aligned, facts only from the attached paper, a list of simplifications, worked answers with code. Knowledge: your module descriptor and learning outcomes. Switch on "Create documents, charts and code" for data exercises. Starter prompt: "Seminar case and three questions from this paper". Reusable for every new paper and module.
 
-## Starter prompt
+## Typical request
 
 ```text
 I teach [module] to [level] students in [discipline]. Attached is a recent paper: [title]. The learning outcome is: [paste outcome]. Write a case study of about 400 words based on the paper's setting and findings, suitable for a 20-minute seminar activity. Add three discussion questions that ask students to apply or evaluate the findings, not just recall them, and one short applied exercise. Keep facts and figures as in the paper, and list any simplifications you made so I can check them.

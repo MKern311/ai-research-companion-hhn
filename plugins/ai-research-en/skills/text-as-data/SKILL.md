@@ -17,7 +17,9 @@ First labels and topics with the code behind them, validated against a hand-code
 
 Hundreds of open-text answers, abstracts or documents are too many to read closely, and labelling them by hand is slow and hard to keep consistent across time and coders.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the CSV and paste the starter prompt, naming the text column.
 2. Read ten of the labelled texts yourself and count how many you agree with.
@@ -29,9 +31,8 @@ Hundreds of open-text answers, abstracts or documents are too many to read close
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, fix the method: preprocessing rules, a fixed random seed, the number of topics, a stability rerun, top-word tables, and "call a vague topic vague". For labelling, add category definitions and ask for a one-line reason per text. Switch on code execution / data analysis if your tool offers it. Starter prompt: "Run the standard topic model on this corpus and report stability." Only approved, non-sensitive texts go in, and you check a sample of labels by hand.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am exploring text as data for a project on [topic]. The attached CSV has [number] texts in the column [column name]. 1) For the first 30 rows, assign a sentiment (positive, neutral or negative) or one of these categories: [categories with definitions], with a one-line reason. 2) Using Python, run a simple topic model on all rows with [5] topics and show the top ten words per topic and the code. State the method and settings used, and say where results look unstable.

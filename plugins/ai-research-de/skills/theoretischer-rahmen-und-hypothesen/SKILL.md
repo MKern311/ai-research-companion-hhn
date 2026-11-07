@@ -17,7 +17,9 @@ Ein Vergleich von Kandidatentheorien, falsifizierbare Hypothesen oder Propositio
 
 Die Wahl zwischen Theorien und die Ableitung von Hypothesen bleiben oft implizit; Gutachtende finden dann Sprünge in der Argumentation, Hypothesen ohne theoretischen Mechanismus oder ein Modell, das die Frage nicht beantwortet.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Forschungsfrage, die Kandidatentheorien und die Abstracts ein.
 2. Bitten Sie um einen Vergleich der Theorien für Ihre Frage.
@@ -29,9 +31,8 @@ Die Wahl zwischen Theorien und die Ableitung von Hypothesen bleiben oft implizit
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Theorie und Hypothesen“. Anweisungen: Kandidatentheorien in einer Tabelle vergleichen, Hypothesen jeweils mit Begründung und belegender Textstelle ableiten, das Modell in Worten beschreiben, Probleme mit Bezugszeiträumen und ausgelassenen Variablen kennzeichnen und niemals Studien erfinden. Wissen: Ihre zentralen Theoriepaper. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, um eine Hypothese an Daten zu testen – hängen Sie die Datendatei im Chat an, nicht als Wissen. Startprompt: „Leite aus diesen Theorien Hypothesen ab und teste eine an dieser Datei.“
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet]. Meine Forschungsfrage lautet: [Frage]. Ich erwäge diese Theorien oder Modelle: [Theorien]. Vergleichen Sie sie für meine Frage in einer Tabelle: Kerngedanke, zentrale Konstrukte, was jede in meinem Fall vorhersagen oder erklären helfen würde, typische Methoden und Grenzen. Leiten Sie dann drei bis fünf Hypothesen ab (bei qualitativer Arbeit Propositionen oder sensibilisierende Fragen), jeweils mit einer kurzen Begründung, die die Theorie nennt und, wo möglich, eine der von mir bereitgestellten Studien. Beschreiben Sie abschließend das konzeptionelle Modell in Worten: Konstrukte, erwartete Beziehungen und ihre Richtung sowie mögliche Moderatoren oder Mediatoren. Erfinden Sie keine Studien; kennzeichnen Sie jeden Link, bei dem Sie unsicher sind.

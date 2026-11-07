@@ -17,7 +17,9 @@ A reasoned choice of review type for your question and deadline, and a protocol 
 
 It is tempting to call a review 'systematic' without the time or literature to support it; vague inclusion criteria then fail halfway through screening.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your research question, the expected amount of literature and your deadline.
 2. Ask your AI assistant to compare systematic, scoping, narrative and rapid reviews for your case.
@@ -29,9 +31,8 @@ It is tempting to call a review 'systematic' without the time or literature to s
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Review planner'. Instructions: compare systematic, scoping, narrative and rapid reviews for the given question and time, recommend one with conditions, draft criteria from the question only with stage and borderline case, flag criteria hard to judge from an abstract, and mark uncertainty. Knowledge: PRISMA-P and your field's guidance. Starter prompt: 'Which review type fits this question and deadline?' Reusable for every new review.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] planning a literature review. My research question: [question]. Expected amount of literature: [few / moderate / large, if known]. Time available: [weeks or months]. Compare a systematic review, a scoping review, a narrative review and a rapid review for my case in a table: purpose, what my question would need, effort, and risks. Recommend one type and name the conditions under which you would recommend another. Then draft a protocol outline: review question, its elements (for example PICOC), sources and databases, time span and languages, inclusion and exclusion criteria, screening stages, data extraction and synthesis approach, and whether registering the protocol (for example on PROSPERO or OSF) is usual in my field. For the inclusion and exclusion criteria, derive them from the research question only, show a table (criterion, include or exclude, judged at title-and-abstract or full-text stage, example of a borderline case) and say which criteria are too open, too strict or hard to judge from an abstract. Mark anything you are unsure about.

@@ -17,7 +17,9 @@ Eine einfache Erklärung Ihres Outputs, an belegten Konventionen geprüfte Annah
 
 Statistischer Output ist voller Kennzahlen, deren Bedeutung und Schwellenwerte Sie nur halb erinnern, und ihn in einen korrekten, vollständigen APA-Ergebnisabsatz zu überführen erfordert wiederholtes Prüfen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie den Output ein und sagen Sie, welche Analyse und welche Software ihn erzeugt hat.
 2. Bitten Sie darum, jede Zahl zu erklären und die Annahmen und Gütekriterien zu prüfen.
@@ -30,9 +32,8 @@ Statistischer Output ist voller Kennzahlen, deren Bedeutung und Schwellenwerte S
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen die Regeln fest: jeden Teil des Outputs erklären, die Annahmen auflisten und sagen, welche der Output zu prüfen erlaubt, die Quelle jedes Schwellenwerts nennen, nur Zahlen aus dem Output verwenden, ohne neu zu berechnen oder zu runden, und sagen, was die Analyse nicht zeigen kann. Fügen Sie den Berichtsleitfaden Ihres Fachs als Wissensdatei hinzu; Code ist nicht nötig. Startprompt: „Interpretieren Sie diesen Output und entwerfen Sie einen Ergebnisabsatz im APA-7-Stil.“ Wiederverwendbar für jede Analyse, die Sie durchführen.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender im Fach [Disziplin]. Unten steht der Output einer [Analyse], die ich in [Software] mit [öffentlichen oder Dummy-]Daten und [n] Fällen durchgeführt habe. 1) Erklären Sie jeden Teil des Outputs in einfacher Sprache. 2) Listen Sie die Annahmen und Gütekriterien auf, die ich für diese Analyse prüfen sollte (zum Beispiel Normalverteilung, Multikollinearität, Reliabilität wie Cronbachs Alpha oder Omega, Modellgüte wie CFI, RMSEA und SRMR oder bei PLS-SEM AVE und HTMT), sagen Sie, welche der Output zeigt und ob sie gängige Schwellenwerte erfüllen, und nennen Sie die Quelle jedes Schwellenwerts. 3) Listen Sie Prüfungen oder Analysen auf, die ich für diese Fragestellung und dieses Design womöglich übersehen habe (zum Beispiel Robustheitsprüfungen, alternative Modelle, Sensitivitäts- oder Subgruppenanalysen), und sagen Sie kurz, warum jede wichtig ist. 4) Entwerfen Sie einen Ergebnisabsatz im APA-7-Stil, der nur Zahlen aus dem Output verwendet. Runden Sie nicht anders, berechnen Sie nichts neu und fügen Sie keine Zahlen hinzu, die nicht im Output stehen; markieren Sie alles, bei dem Sie unsicher sind.
@@ -54,9 +55,9 @@ Jede Zahl im Absatz steht im Output, und die genannten Schwellenwerte entspreche
 - **APA Journal Article Reporting Standards (JARS-Quant)** – Appelbaum et al. (2018) listen auf, was quantitative Ergebnisse berichten müssen: Stichprobenumfang und fehlende Daten, jeden Test mit Teststatistik, Freiheitsgraden und exaktem p, Effektstärken mit Konfidenzintervallen und etwaige Verletzungen von Annahmen.
 - **p-Werte versus Effektstärken** – Die Stellungnahme der American Statistical Association (Wasserstein & Lazar, 2016): Ein p-Wert misst weder die Wahrscheinlichkeit, dass eine Hypothese wahr ist, noch die Größe eines Effekts, und p < .05 allein sollte Schlussfolgerungen nicht bestimmen.
 - **Korrelation, Übereinstimmung und trendbehaftete Reihen** – Zwei Reihen mit gemeinsamem Trend können ein hohes R² und eine „signifikante“ Steigung zeigen, obwohl sie nichts miteinander zu tun haben (Scheinregression; Granger & Newbold, 1974) – ein Warnzeichen ist ein R² oberhalb der Durbin-Watson-Statistik. Und eine hohe Korrelation zwischen zwei Messungen derselben Größe zeigt nicht, dass sie übereinstimmen: Beurteilen Sie die Übereinstimmung anhand der Differenzen, mit ihrem Mittelwert und den Übereinstimmungsgrenzen (Limits of Agreement; Bland & Altman, 1986).
-- **Grenzwerte der Modellgüte bei Strukturgleichungsmodellen** – Konventionen von Hu und Bentler (1999): Comparative Fit Index (CFI) ≥ 0.95, Root Mean Square Error of Approximation (RMSEA) ≤ 0.06, Standardized Root Mean Square Residual (SRMR) ≤ 0.08. Aus Simulationen abgeleitet, sind sie Richtwerte, keine Bestanden-oder-nicht-Regeln.
-- **Heterotrait-Monotrait-Verhältnis (HTMT)** – Ein Kriterium der Diskriminanzvalidität, besonders bei der Partial-Least-Squares-Strukturgleichungsmodellierung verwendet (Henseler et al., 2015). Übliche Schwellenwerte: unter 0.85 für konzeptionell verschiedene Konstrukte, unter 0.90 für ähnliche.
-- **Reliabilität: Cronbachs Alpha und McDonalds Omega** – Alpha setzt gleiche Faktorladungen voraus (Tau-Äquivalenz); Omega nicht, weshalb es oft bevorzugt wird (McNeish, 2018). Werte von etwa 0.70 oder höher gelten als übliche Konvention für den Forschungseinsatz.
+- **Grenzwerte der Modellgüte bei Strukturgleichungsmodellen** – Konventionen von Hu und Bentler (1999): Comparative Fit Index (CFI) ≥ 0,95, Root Mean Square Error of Approximation (RMSEA) ≤ 0,06, Standardized Root Mean Square Residual (SRMR) ≤ 0.08. Aus Simulationen abgeleitet, sind sie Richtwerte, keine Bestanden-oder-nicht-Regeln.
+- **Heterotrait-Monotrait-Verhältnis (HTMT)** – Ein Kriterium der Diskriminanzvalidität, besonders bei der Partial-Least-Squares-Strukturgleichungsmodellierung verwendet (Henseler et al., 2015). Übliche Schwellenwerte: unter 0,85 für konzeptionell verschiedene Konstrukte, unter 0,90 für ähnliche.
+- **Reliabilität: Cronbachs Alpha und McDonalds Omega** – Alpha setzt gleiche Faktorladungen voraus (Tau-Äquivalenz); Omega nicht, weshalb es oft bevorzugt wird (McNeish, 2018). Werte von etwa 0,70 oder höher gelten als übliche Konvention für den Forschungseinsatz.
 
 ## Wichtige Literatur
 

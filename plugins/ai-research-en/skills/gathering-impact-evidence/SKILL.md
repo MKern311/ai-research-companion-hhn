@@ -17,7 +17,9 @@ A table of verified mentions with links, classified by type and by stage from aw
 
 Evidence that research reached policy, media or practice is scattered across the web, and mentions are easily mistaken for impact – a demonstrable change or benefit beyond academia.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Give the title, DOI and authors, and ask for mentions beyond academia.
 2. Ask for a table of sources with links and type of impact.
@@ -29,9 +31,8 @@ Evidence that research reached policy, media or practice is scattered across the
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: search scope and table columns from the starter prompt, include an item only when its page names the paper, DOI or authors, classify as awareness, use or change, claim contribution not attribution, never invent sources. Knowledge: web search if your tool offers it, or up to four trusted public policy websites. Starter prompts: "Find new mentions of [DOI] since [date]" and "Classify these confirmed items". Reusable for every paper or project.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am gathering evidence of the impact of my research. The paper is [title, authors, DOI] (or the project [name]). Search the web for mentions since [year] in policy documents, government or NGO reports, news media and practitioner websites. Give a table: source, type (policy, media, practice), date, link, what it says about the research, and possible kind of impact (awareness, policy change, practice change). Include only items with a link that names the paper, project or authors. If you are not sure an item refers to this work, say so; do not invent sources.

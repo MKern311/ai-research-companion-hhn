@@ -17,7 +17,9 @@ A bank of likely examiner questions on originality, significance and rigour, eac
 
 You rarely get to practise answering hard questions about your own thesis aloud before the viva, and mock vivas depend on busy colleagues' time.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your abstract and chapter summary, then ask for likely examiner questions.
 2. Pick three questions and answer each one in the chat.
@@ -29,9 +31,8 @@ You rarely get to practise answering hard questions about your own thesis aloud 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant, for example "Viva examiner" (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In the standing instructions, describe the examiner: UK viva, questions grouped by contribution, methodology, findings and limitations, and future work, each tied to a quoted claim; one question at a time, wait for the answer, then brief feedback and a follow-up. Add your abstract and chapter summaries as knowledge files (if your tool does not support knowledge files, attach them in the chat). Starter prompt: "Examine me on chapter 3." Reusable for regular practice – a complement to mock vivas with your supervisors.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am preparing for my PhD viva in [discipline] at a UK university. Below are my thesis abstract and a summary of chapter [number]: [paste text]. Act as an experienced external examiner. Write 12 questions I am likely to be asked, grouped under: contribution to knowledge, methodology, findings and limitations, and future work. Make some broad and some probing, and link each to a specific claim in my text. Then ask me one question at a time, wait for my answer, and give brief feedback on clarity, use of evidence and what an examiner might ask next.

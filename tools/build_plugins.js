@@ -16,10 +16,11 @@ for (const lang of ['en', 'de']) {
   fs.writeFileSync(path.join(dir, '.claude-plugin', 'plugin.json'), JSON.stringify({name, description:DESC[lang], version:'2.0.0', author:{name:'Manuel Kern'}, homepage:SITE}, null, 2) + '\n');
   const seen = new Set(); let n = 0;
   for (const [id, en] of Object.entries(KB.ucs.en)) {
+    if (en.meta.excursus) continue;   // excursus (LLMs as research objects): not suitable as a standing skill
     const src = (lang === 'de' && KB.ucs.de[id]) || en, s = {};
     KEYS.forEach(k => { s[k] = filled(src.sections[k]) ? src.sections[k] : en.sections[k]; });
     const u = {id, meta:en.meta, title:src.meta.title || en.meta.title, summary:src.summary || en.summary, s};
-    let slug = EXPORT.slug(u.title); while (seen.has(slug)) slug += '-' + id.split('-').pop(); seen.add(slug);
+    let slug = EXPORT.slug(u.title, lang); while (seen.has(slug)) slug += '-' + id.split('-').pop(); seen.add(slug);
     const risk = KB.meta.risk[en.meta.risk], md = EXPORT.skillMd(u, lang, {url:SITE + '#/uc/' + id, riskDef:risk ? (risk.def[lang] || risk.def.en) : ''}).replace(/^name: .*$/m, 'name: ' + slug);
     fs.mkdirSync(path.join(dir, 'skills', slug), {recursive:true});
     fs.writeFileSync(path.join(dir, 'skills', slug, 'SKILL.md'), md); n++;

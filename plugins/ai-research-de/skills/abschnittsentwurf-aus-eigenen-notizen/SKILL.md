@@ -17,7 +17,9 @@ Eine Aussage-Evidenz-Karte und ein grober Entwurf, der ausschließlich aus Ihren
 
 Einen Stapel Notizen in einen ersten Entwurf zu überführen ist langsam, und auf der leeren Seite verliert man leicht den Überblick, welche Quelle welche Aussage stützt.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Prüfen Sie zuerst die Regeln Ihrer Hochschule zum KI-gestützten Entwerfen.
 2. Fügen Sie Ihre Notizen und Quellen ein und bitten Sie um eine Evidenzkarte, dann um einen ersten Entwurf.
@@ -29,9 +31,8 @@ Einen Stapel Notizen in einen ersten Entwurf zu überführen ist langsam, und au
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen die Abfolge fest: zuerst die Evidenzkarte, dann ein Entwurf der gewünschten Länge, der nur Ihre Notizen und Quellen verwendet, in Ihrem Stil zitiert und überall dort [LÜCKE] setzt, wo einem Satz eine Quelle fehlt; nie Aussagen, Quellen oder Zahlen hinzufügen. Startprompt: „Erstellen Sie aus diesen Notizen die Evidenzkarte und entwerfen Sie dann 200 Wörter.“ Wiederverwendbar für jeden Abschnitt – prüfen Sie zuerst die Regeln Ihrer Hochschule, überarbeiten Sie den Text selbst und legen Sie den KI-Einsatz offen.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich schreibe den Abschnitt [Abschnitt, z. B. Literaturübersicht zu X] meiner [Abschlussarbeit oder meines Artikels] im Fach [Disziplin]. Unten stehen meine eigenen Notizen und die Quellen, auf die sich jeder Punkt stützt. Erstellen Sie zuerst eine Evidenzkarte: die Hauptpunkte in logischer Reihenfolge, jeweils mit den Quellen, die sie stützen, und mit Lücken, wo ein Punkt keine Quelle hat. Schreiben Sie dann einen ersten Entwurf von etwa [Länge] Wörtern, der nur meine Punkte und Quellen verwendet, sie im Stil [Zitierstil] zitiert und mit [LÜCKE] jede Stelle markiert, an der meine Notizen einen Satz nicht stützen. Fügen Sie keine eigenen Aussagen, Quellen oder Zahlen hinzu. Dies ist ein Entwurf, den ich selbst überarbeiten werde.

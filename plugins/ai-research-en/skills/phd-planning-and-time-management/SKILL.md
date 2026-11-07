@@ -17,7 +17,9 @@ A backward plan with milestones, dependencies and explicit buffers, a realistic 
 
 A doctorate is hard to plan backwards; people systematically underestimate how long tasks take, weeks fill with teaching and admin, and after a setback the plan feels obsolete.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your submission date, milestones and commitments.
 2. Ask for a backward plan with quarterly milestones and buffers.
@@ -29,9 +31,8 @@ A doctorate is hard to plan backwards; people systematically underestimate how l
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: plan backwards from the submission date, mark the critical path, base estimates on past durations and add explicit buffers, weekly plans in half-day blocks with one goal per day, flag any plan that exceeds the stated hours. Knowledge: your milestone regulations. Switch on "Create documents, charts and code" for an Excel timeline. Starter prompts: "Plan my next week" and "Re-plan after this setback". Reusable every week.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in year [year] of [full-time / part-time] study in [discipline]. My submission date is [date]. Fixed milestones: [list]. Regular commitments: [teaching, work, caring, hours per week]. Plan backwards from submission: a table of quarterly milestones with deliverables and a buffer of at least [x] weeks. Then plan my next week in half-day blocks with one main goal per day. Finally, show how the plan changes if [setback, e.g. data collection is delayed by six weeks]. Keep it realistic for the hours I have and point out where the plan is too tight.

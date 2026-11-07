@@ -17,7 +17,9 @@ Eine Rückverfolgbarkeitsmatrix jeder Forschungsfrage über die Kapitel hinweg, 
 
 Kapitel, die über mehrere Jahre entstanden sind, driften auseinander – eine Forschungsfrage bleibt unbeantwortet, Ergebnisse wiederholen sich, und der rote Faden von der Frage zum Beitrag, nach dem Prüfende suchen, geht verloren.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Forschungsfragen und die Kapitelzusammenfassungen in einer Nachricht ein.
 2. Bitten Sie um eine Tabelle, die jede Forschungsfrage den Kapiteln zuordnet.
@@ -29,9 +31,8 @@ Kapitel, die über mehrere Jahre entstanden sind, driften auseinander – eine F
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Fügen Sie Ihre Forschungsfragen und die Zuordnungsregeln in seine dauerhaften Anweisungen ein: eine Zeile je Frage, die zeigt, wo sie eingeführt, mit Methoden bearbeitet, beantwortet und diskutiert wird; Lücken, Überschneidungen und Wiederholungen markieren und den Satz hinter jedem Punkt zitieren; sagen, wenn Informationen fehlen. Fügen Sie die Gliederung der Abschlussarbeit als Wissensdateien hinzu (unterstützt Ihr Werkzeug sie nicht, hängen Sie sie im Chat an). Startprompt: „Prüfen Sie diese Kapitelzusammenfassung gegen meine Forschungsfragen.“ Wiederverwendbar jedes Mal, wenn sich ein Kapitel ändert.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender im Fach [Disziplin] und prüfe den roten Faden meiner Abschlussarbeit. Meine Forschungsfragen lauten: [Forschungsfragen einfügen]. Unten stehen kurze Zusammenfassungen jedes Kapitels: [Zusammenfassungen einfügen]. Erstellen Sie eine Tabelle mit einer Zeile je Forschungsfrage, die zeigt, wo sie eingeführt, mit Methoden bearbeitet, mit Ergebnissen beantwortet und in der Schlussfolgerung diskutiert wird. Listen Sie dann Lücken (eine Frage, die nicht beantwortet wird), Überschneidungen zwischen Kapiteln und wahrscheinliche Wiederholungen auf. Zitieren Sie zu jedem Punkt den Satz aus meinen Zusammenfassungen, auf dem er beruht. Wenn die Zusammenfassungen nicht genügend Informationen für ein Urteil liefern, sagen Sie das.

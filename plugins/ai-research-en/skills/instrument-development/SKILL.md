@@ -17,7 +17,9 @@ Revised items with each problem named, an item-to-construct matrix that exposes 
 
 Draft items often hide double-barrelled, leading or ambiguous wording, and some research questions or facets of the construct end up with no item – usually noticed only after data collection.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your draft items and describe the construct and target group.
 2. Ask the assistant to flag double-barrelled, leading, ambiguous or jargon-heavy items.
@@ -29,9 +31,8 @@ Draft items often hide double-barrelled, leading or ambiguous wording, and some 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Item reviewer'. Instructions: the problem types (double-barrelled, leading, ambiguous, jargon, scale mismatch), the table format, 'keep meaning and construct unchanged' and 'never invent validated scales or sources'. Knowledge: your construct definitions and research questions. Starter prompts: 'Review these items: [paste]' and 'Map these items to my constructs'. Reusable for every new draft and shareable with co-authors.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am developing a [survey or interview guide] on [construct] for [target group]. Review the draft items below. Show a table: item number, original wording, problem (double-barrelled, leading, ambiguous, jargon, mismatch with response scale, or none), revised wording. Keep the meaning and the construct unchanged. Add a column mapping each item to the research question or construct it serves, and flag research questions that no item covers. Then suggest a suitable response scale and say whether a validated scale for this construct might already exist; if you are not sure, say so; do not invent sources.

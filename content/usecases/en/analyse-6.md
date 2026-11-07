@@ -114,7 +114,7 @@ Add the sea-ice file (D6; save it as .xlsx or .txt if your tool does not accept 
 
 ### Custom assistant
 
-Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, set your language and rules: docstrings, unit tests for normal and edge cases (plain asserts if pytest is missing), a check against a known result or benchmark, units and value ranges stated, "ask when behaviour is unclear", and never include keys or passwords. Switch on code execution if your tool offers it, so it can run Python tests. Starter prompt: "Review this function and write tests for its edge cases." Reusable for each new module.
+Create a configured assistant (e.g. a Copilot agent, a ChatGPT project, a Gemini Gem or a Claude project). In its standing instructions, set your language and rules: docstrings, unit tests for normal and edge cases (plain asserts if pytest is missing), a check against a known result or benchmark, units and value ranges stated, "ask when behaviour is unclear", and never include keys or passwords. Switch on code execution if your tool offers it, so it can run Python tests. Starter prompt: "Review this function and write tests for its edge cases." Reusable for each new module.
 
 ### Automation / own code
 

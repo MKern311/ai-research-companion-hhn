@@ -47,7 +47,7 @@ Der Zyklus von Van den Broeck et al. (2005): Auffälligkeiten aufspüren (Screen
 
 ### Tukey-Grenzen (Tukey's Fences)
 
-Eine Konvention, um mögliche Ausreißer zu markieren: Werte unter Q1 − 1.5 × IQR oder über Q3 + 1.5 × IQR, wobei IQR der Interquartilsabstand ist. Eine Markierung ist Anlass zur Diagnose, keine Regel zum Entfernen.
+Eine Konvention, um mögliche Ausreißer zu markieren: Werte unter Q1 − 1,5 × IQR oder über Q3 + 1,5 × IQR, wobei IQR der Interquartilsabstand ist. Eine Markierung ist Anlass zur Diagnose, keine Regel zum Entfernen.
 
 ## Literatur
 
@@ -69,7 +69,7 @@ Ich bereite einen Datensatz für die Analyse vor. Die angehängte Textdatei der 
 
 ### Prüfung
 
-Öffnen Sie die Datei in einem Texteditor: 2,085 Monatszeilen (Januar 1853 – September 2026), 912 fehlende Sonnenscheinwerte und neun Zeilen mit 'Provisional'. Das höchste tmax, 28.2 °C im Juli 2026, ist geschätzt und vorläufig.
+Öffnen Sie die Datei in einem Texteditor: 2.085 Monatszeilen (Januar 1853 – September 2026), 912 fehlende Sonnenscheinwerte und neun Zeilen mit 'Provisional'. Das höchste tmax, 28,2 °C im Juli 2026, ist geschätzt und vorläufig.
 
 ## Mit eigenem Material
 
@@ -110,4 +110,4 @@ Fügen Sie die Oxford-Rohdatei (D7, .txt), ein kurzes Datenwörterbuch als Word-
 
 ### Eigener Assistent
 
-Legen Sie in den Anweisungen die Reihenfolge fest: zuerst Kopfzeilen und Codebook lesen, ohne Änderung ein Profil erstellen, eine Problemtabelle ausgeben, auf Ihre Freigabe warten, dann mit Kennzeichenspalten bereinigen, die Rohdatei unangetastet lassen und Skript sowie Änderungsprotokoll zurückgeben. Nie Zeilen stillschweigend löschen. Schalten Sie „Dokumente, Diagramme und Code erstellen“ ein. Startprompt: „Erstellen Sie ein Profil dieser Datei und listen Sie jedes Problem auf, bevor bereinigt wird.“ Wiederverwendbar für jede neue Datendatei oder Erhebungswelle.
+Legen Sie in den Anweisungen die Reihenfolge fest: zuerst Kopfzeilen und Codebook lesen, ohne Änderung ein Profil erstellen, eine Problemtabelle ausgeben, auf Ihre Freigabe warten, dann mit Kennzeichenspalten bereinigen, die Rohdatei unangetastet lassen und Skript sowie Änderungsprotokoll zurückgeben. Nie Zeilen stillschweigend löschen. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug das anbietet. Startprompt: „Erstellen Sie ein Profil dieser Datei und listen Sie jedes Problem auf, bevor bereinigt wird.“ Wiederverwendbar für jede neue Datendatei oder Erhebungswelle.

@@ -17,7 +17,9 @@ A numbered table of every comment with your planned action, and a draft point-by
 
 Reviewer reports mix major and minor points across several reviewers; drafting a complete, courteous point-by-point response is slow, and one overlooked comment can delay acceptance.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the reviewer comments and ask for a numbered table of all points.
 2. Add your notes on what you changed or why you disagree.
@@ -29,9 +31,8 @@ Reviewer reports mix major and minor points across several reviewers; drafting a
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- In Instructions, set the rules: number every comment in a table, quote it before each reply, keep replies polite and concise, write [ADD RESPONSE] where your notes give no answer, never claim a change you have not listed, and end with a short summary of changes. Starter prompt: "Here are the comments and my notes – draft the response letter." Reusable for every revision round. Never upload manuscripts you review for others.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am revising a manuscript in [discipline] after peer review. Below are the reviewer comments: [paste comments]. My notes on changes made or points I disagree with: [paste notes]. First, list every comment in a table: number, reviewer, major or minor, what is requested, my planned action. Then draft a polite, concise response letter that answers each comment in turn, quoting it first. Where my notes give no answer, write [ADD RESPONSE] instead of inventing one. Do not claim any change I have not listed. End with a summary of changes in five bullet points or fewer.

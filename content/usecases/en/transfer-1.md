@@ -117,4 +117,4 @@ Add the D8 text file, your talk notes and a Word file with the chart code and nu
 
 ### Custom assistant
 
-Instructions: read wide files with Python and report how blanks and incomplete rows were handled; always show the code; colour-vision-safe palette, labelled axes with units; slide titles as full-sentence claims the data support, never causes the data cannot show. Switch on "Create documents, charts and code". Starter prompts: "Chart this series with a 10-year rolling mean" and "Six-slide outline from this chart". Reusable for every new results file.
+Instructions: read wide files with Python and report how blanks and incomplete rows were handled; always show the code; colour-vision-safe palette, labelled axes with units; slide titles as full-sentence claims the data support, never causes the data cannot show. Switch on code execution or data analysis if your tool offers it. Starter prompts: "Chart this series with a 10-year rolling mean" and "Six-slide outline from this chart". Reusable for every new results file.

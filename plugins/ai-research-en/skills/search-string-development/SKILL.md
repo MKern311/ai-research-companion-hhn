@@ -17,7 +17,9 @@ A documented string in database syntax, with concept blocks, synonyms and a PRES
 
 Boolean strings built by trial and error miss synonyms and spelling variants or return thousands of hits – and few researchers have their strategy peer-reviewed against PRESS before running it.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your research question and name the database.
 2. Ask for a Boolean search string with synonyms and subject headings.
@@ -29,9 +31,8 @@ Boolean strings built by trial and error miss synonyms and spelling variants or 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Search string builder'. Instructions: concept blocks with synonyms, OR within and AND between blocks, truncation, subject headings where the database has them, the string in a code block, the block table, a PRESS self-check, and say so when unsure about a field code. Knowledge: the syntax guides of the databases you use. Starter prompt: 'Build a Scopus string for this question.' Reusable for every new question or database.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. My research question is: [question]. Build a Boolean search string for [database] with three concept blocks, synonyms joined by OR, blocks joined by AND, and truncation where useful. Suggest subject headings (for example MeSH) if the database uses them. Show the string in a code block, then a short table: block, terms, what it may miss. Then review the string against the PRESS checklist: translation of the question, Boolean and proximity operators, subject headings, text words and spelling variants, spelling and syntax, limits and filters. Say whether the string leans towards sensitivity or specificity. Use only syntax that [database] supports; if unsure about a field code, say so.

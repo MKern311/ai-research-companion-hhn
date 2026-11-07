@@ -17,7 +17,9 @@ A rerunnable cleaning script, a log of every decision and a tidy dataset in whic
 
 Raw files arrive with missing-value codes, quality flags, provisional rows and duplicates; cleaning by hand is slow, undocumented and hard to reproduce or defend later.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the file and paste the starter prompt.
 2. Review the issue table and decide which fixes you accept.
@@ -29,9 +31,8 @@ Raw files arrive with missing-value codes, quality flags, provisional rows and d
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- In Instructions, fix the order: read the header and codebook first, profile without changing anything, report an issue table, wait for your approval, then clean with flag columns, keep the raw file untouched and return the script and a change log. Never delete rows silently. Switch on "Create documents, charts and code". Starter prompt: "Profile this file and list every problem before cleaning." Reusable for each new data file or survey wave.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am preparing a dataset for analysis. The attached file contains [public or dummy data on topic]; each row is a [unit]. Use Python to profile it: missing values per column, inconsistent category spellings, duplicate rows, and out-of-range or implausible values (valid ranges: [e.g. age 18–99]). Report the issues as a table: column, problem, number of rows, example values, suggested fix. Do not change the data yet. Show the code you used so I can rerun it later.

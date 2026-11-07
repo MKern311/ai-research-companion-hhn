@@ -17,7 +17,9 @@ A pseudonymised draft, a replacement log and the share of planted direct and ind
 
 Pseudonymising transcripts by hand is tedious, and indirect identifiers – a rare job title, a local event – are easy to miss, so combinations can still re-identify participants.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Write, or ask the assistant to invent, a 200-word excerpt with fictional names, places and dates.
 2. Note every identifier you planted, including indirect ones such as a rare job title.
@@ -29,9 +31,8 @@ Pseudonymising transcripts by hand is tedious, and indirect identifiers – a ra
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Pseudonymisation tester'. Instructions: your replacement codes ([P1], [CITY], [ORG1], [DATE]), everything else word for word, indirect identifiers flagged but unchanged, always the text plus a replacement log. Use it only on invented or approved, de-identified test material, and a human checks every output. Starter prompt: 'Pseudonymise this excerpt and log the replacements'.
 
-## Starter prompt
+## Typical request
 
 ```text
 Below is an invented interview excerpt. Pseudonymise it for qualitative analysis. Replace personal names with [P1], [P2]; places with [CITY] or [REGION]; organisations with [ORG1], [ORG2]; exact dates with [DATE]; and keep everything else word for word. Also flag, without changing them, indirect identifiers that could reveal someone in combination, such as rare job titles or distinctive events. Return 1) the pseudonymised text and 2) a table: original term, replacement, type. Excerpt: [paste invented text]

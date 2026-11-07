@@ -17,7 +17,9 @@ Answers grounded in your own papers, each with file, page and a verbatim quote y
 
 You remember that a paper said something, but not which one or where; rereading or keyword-searching a folder of PDFs is slow and misses paraphrases.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the three PDFs to one chat.
 2. Ask a question that the papers answer, requesting quotes with file and page.
@@ -29,9 +31,8 @@ You remember that a paper said something, but not which one or where; rereading 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Library Q&A'. Instructions: answer only from the knowledge files, give file, page and a verbatim quote of one to three sentences per claim, say 'not in these sources' when they are silent, and never use outside knowledge. Knowledge: your core papers (if your tool limits knowledge files, attach them in the chat with the assistant instead). Starter prompts: 'What do my papers say about …?', 'Which paper defines …?'
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. Answer my question using only the attached PDFs. My question is: [question]. Give a short answer (up to 200 words), then a list of supporting passages: file name, page, exact quote of one to three sentences. Only quote text that appears word for word in the files. If the files do not answer the question, or only partly, say so clearly instead of using outside knowledge.

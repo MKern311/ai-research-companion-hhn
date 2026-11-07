@@ -1,5 +1,5 @@
 ---
-name: praesentationen-and-visualisierungen
+name: praesentationen-und-visualisierungen
 description: "Entwerfen Sie aus Ergebnissen Folien, Poster, Infografiken und erklärende Grafiken. Einsetzen bei: Präsentationen & Visualisierungen."
 ---
 
@@ -17,7 +17,9 @@ Eine beschriftete, farbsichere Grafik mit dem Python-Code dahinter, sodass Sie s
 
 Ergebnisse in eine klare Grafik und einen Vortrag zu verwandeln braucht viele Durchgänge, und Folien führen oft Themen auf, statt Aussagen zu formulieren, die visuelle Evidenz stützt.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie die Ergebnistabelle an und bitten Sie um eine klare Grafik des Hauptergebnisses.
 2. Bitten Sie den Assistenten, den für die Grafik verwendeten Python-Code zu zeigen.
@@ -29,12 +31,11 @@ Ergebnisse in eine klare Grafik und einen Vortrag zu verwandeln braucht viele Du
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: breite Dateien mit Python einlesen und berichten, wie Leerstellen und unvollständige Zeilen behandelt wurden; immer den Code zeigen; für Farbsehschwächen geeignete Palette, beschriftete Achsen mit Einheiten; Folientitel als Aussagen in ganzen Sätzen, die die Daten stützen, nie Ursachen, die die Daten nicht zeigen können. Schalten Sie „Dokumente, Diagramme und Code erstellen“ ein. Startprompts: „Stelle diese Reihe mit gleitendem 10-Jahres-Mittel dar“ und „Gliederung aus sechs Folien zu dieser Grafik“. Für jede neue Ergebnisdatei wiederverwendbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich präsentiere meine Forschung vor [Zielgruppe] in einem [10-minütigen] Vortrag. Angehängt ist eine Ergebnistabelle [Dateiname]; meine zentralen Befunde lauten: [Befunde einfügen]. 1) Erstelle eine klare Grafik von [Variable] nach [Gruppe] mit beschrifteten Achsen, Einheiten und einem kurzen Titel und zeige den verwendeten Python-Code. 2) Entwirf eine Gliederung aus sechs Folien: Jeder Folientitel ist eine Kernaussage in einem ganzen Satz, mit bis zu drei Stichpunkten und einem Hinweis, welche Visualisierung zu verwenden ist. Verwende nur die Zahlen aus der Datei und meine Befunde; frage mich, wenn eine Spalte unklar ist.
+Ich präsentiere meine Forschung vor [Zielgruppe] in einem [10-minütigen] Vortrag. Angehängt ist eine Ergebnistabelle [Dateiname]; meine zentralen Befunde lauten: [Befunde einfügen]. 1) Erstellen Sie eine klare Grafik von [Variable] nach [Gruppe] mit beschrifteten Achsen, Einheiten und einem kurzen Titel und zeigen Sie den verwendeten Python-Code. 2) Entwerfen Sie eine Gliederung aus sechs Folien: Jeder Folientitel ist eine Kernaussage in einem ganzen Satz, mit bis zu drei Stichpunkten und einem Hinweis, welche Visualisierung zu verwenden ist. Verwenden Sie nur die Zahlen aus der Datei und meine Befunde; fragen Sie mich, wenn eine Spalte unklar ist.
 ```
 
 ## Prüfung

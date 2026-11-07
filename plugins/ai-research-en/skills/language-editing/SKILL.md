@@ -17,7 +17,9 @@ A clearer paragraph in given–new order and a change table you decide on line b
 
 Writing in a second language takes longer, and generic editing tools smooth your text into phrasing that shifts hedges, emphasis or meaning and no longer sounds like you.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the starter prompt with your paragraph, discipline and readership.
 2. Go through the change table and accept or reject each edit.
@@ -29,9 +31,8 @@ Writing in a second language takes longer, and generic editing tools smooth your
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Put your style sheet in Instructions: UK English, the given–new principle, keep terms, numbers, hedges and citations unchanged, add no content, return a change table, mark unclear sentences and flag AI-typical phrasing. Add a glossary of your field's terms as Knowledge. Starter prompt: "Edit this paragraph and give me the change table." Reusable for every chapter – check your university's rules on proofreading for the thesis.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] writing in English as my [first or second] language, for [readership, e.g. a journal in my field]. Edit the paragraph below for clarity, precision and flow in UK English, keeping my meaning, terminology and citations unchanged. Do not add new content or claims. Return 1) the edited paragraph and 2) a table: original phrase, change, reason. Mark any sentence where my meaning is unclear instead of guessing, and flag generic or typically AI-sounding phrases (for example 'delve into', 'plays a crucial role', empty intensifiers) so I can rewrite them in my own voice. Paragraph: [paste text]

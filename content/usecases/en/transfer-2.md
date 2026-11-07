@@ -110,4 +110,4 @@ Add B2, the D1 text file and your module descriptor with its learning outcomes. 
 
 ### Custom assistant
 
-Instructions: case length and format, questions at the apply level of Bloom's revised taxonomy or above, outcome, activity and assessment aligned, facts only from the attached paper, a list of simplifications, worked answers with code. Knowledge: your module descriptor and learning outcomes. Switch on "Create documents, charts and code" for data exercises. Starter prompt: "Seminar case and three questions from this paper". Reusable for every new paper and module.
+Instructions: case length and format, questions at the apply level of Bloom's revised taxonomy or above, outcome, activity and assessment aligned, facts only from the attached paper, a list of simplifications, worked answers with code. Knowledge: your module descriptor and learning outcomes. Switch on code execution or data analysis for data exercises, if your tool offers it. Starter prompt: "Seminar case and three questions from this paper". Reusable for every new paper and module.

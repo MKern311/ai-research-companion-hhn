@@ -17,7 +17,9 @@ A table built on a predefined extraction form, each value with its page or line 
 
 Key figures, statements and metadata sit scattered across long reports, web pages, archival records and data documentation; copying them into a spreadsheet by hand is slow and invites transcription errors and inconsistent definitions.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the PDF, or only the relevant pages of a long report.
 2. Paste the starter prompt with the fields you want extracted.
@@ -29,9 +31,8 @@ Key figures, statements and metadata sit scattered across long reports, web page
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Extraction assistant' and switch on code execution / file creation if your tool offers it, for the CSV export. Instructions: your extraction form with field definitions, one row per document, line or page and a verbatim quote for every value, 'not stated' where absent, no outside knowledge. Starter prompt: 'Extract the form fields from the attached documents'. Only approved material goes in; reusable for every batch, and you check a random sample each time.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am collecting data from documents for a research project on [topic]. From the attached PDF, extract these fields: [field 1, field 2, field 3, e.g. year, revenue, number of staff, stated goals]. Return a table with one row per [unit, e.g. year or organisation] and a column for each field, plus the page number and a short verbatim quote as evidence for each value. If a value is missing or ambiguous, write 'not found' rather than estimating. Do not use any information from outside the document.

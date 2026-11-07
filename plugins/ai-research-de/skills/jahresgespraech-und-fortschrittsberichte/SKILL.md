@@ -1,5 +1,5 @@
 ---
-name: jahresgespraech-and-fortschrittsberichte
+name: jahresgespraech-und-fortschrittsberichte
 description: "Machen Sie aus Laborbüchern und Notizen monatliche Fortschrittsberichte für Ihre Betreuungsperson und gliedern Sie Fortschritt, Planung und Risiken für Jahres-, Übergangs- oder Bestätigungsgespräche. Einsetzen bei: Jahresgespräch & Fortschrittsberichte."
 ---
 
@@ -17,7 +17,9 @@ Ein Entwurf unter den Überschriften Ihres Formulars, Lücken mit [ERGÄNZEN] ma
 
 Monatsberichte an die Betreuungsperson sowie Jahres- oder Übergangsgespräche fallen in arbeitsreiche Zeiten; den Fortschritt aus Laborbüchern und verstreuten Notizen zu rekonstruieren und in die vorgegebenen Überschriften zu bringen, dauert Tage.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie die Abschnittsüberschriften Ihres Monatsberichts oder Gesprächsformulars ein.
 2. Fügen Sie Ihre Notizen ein und bitten Sie um einen Entwurf unter diesen Überschriften.
@@ -29,12 +31,11 @@ Monatsberichte an die Betreuungsperson sowie Jahres- oder Übergangsgespräche f
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: Ihre Berichtstypen und deren Überschriften, sachlicher Stil und Wortzahl, Fortschritt gegenüber früheren Zielen, eine Risikotabelle mit Wahrscheinlichkeit, Auswirkung und Gegenmaßnahme, [ERGÄNZEN] für Lücken, nie Leistungen, Daten oder Ergebnisse erfinden. Wissen: das Gesprächsformular und seine Bewertungskriterien. Startprompts: „Monatsbericht aus diesen Notizen“ und „Entwurf meines Jahresberichts“. Jeden Monat und für jedes Gespräch wiederverwendbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bin Promovierende/Promovierender in [Fach] und bereite meinen [Monatsbericht für meine Betreuungsperson / Jahresbericht / Übergangsgespräch / Bestätigungsgespräch] vor. Der Bericht braucht diese Abschnitte: [Überschriften einfügen]. Meine Notizen lauten: [Notizen einfügen]. Entwirf den Bericht unter diesen Überschriften in sachlichem, knappem Stil mit etwa [Wortzahl] Wörtern. Berücksichtige den Fortschritt gegenüber den Zielen des letzten Zeitraums, Ergebnisse, Weiterbildung, einen Plan für den nächsten Zeitraum (Monat oder Jahr) und eine Tabelle der Risiken mit Wahrscheinlichkeit, Auswirkung und Gegenmaßnahme. Verwende nur, was in meinen Notizen steht; markiere fehlende Informationen mit [ERGÄNZEN] und erfinde keine Leistungen, Daten oder Ergebnisse.
+Ich bin Promovierende bzw. Promovierender in [Fach] und bereite meinen [Monatsbericht für meine Betreuungsperson / Jahresbericht / Übergangsgespräch / Bestätigungsgespräch] vor. Der Bericht braucht diese Abschnitte: [Überschriften einfügen]. Meine Notizen lauten: [Notizen einfügen]. Entwerfen Sie den Bericht unter diesen Überschriften in sachlichem, knappem Stil mit etwa [Wortzahl] Wörtern. Berücksichtigen Sie den Fortschritt gegenüber den Zielen des letzten Zeitraums, Ergebnisse, Weiterbildung, einen Plan für den nächsten Zeitraum (Monat oder Jahr) und eine Tabelle der Risiken mit Wahrscheinlichkeit, Auswirkung und Gegenmaßnahme. Verwenden Sie nur, was in meinen Notizen steht; markieren Sie fehlende Informationen mit [ERGÄNZEN] und erfinden Sie keine Leistungen, Daten oder Ergebnisse.
 ```
 
 ## Prüfung

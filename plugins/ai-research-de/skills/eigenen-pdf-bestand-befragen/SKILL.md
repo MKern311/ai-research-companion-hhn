@@ -17,7 +17,9 @@ Antworten, die in Ihren eigenen Papern gründen, jeweils mit Datei, Seite und ei
 
 Sie erinnern sich, dass ein Paper etwas gesagt hat, aber nicht welches oder wo; einen Ordner voller PDFs erneut zu lesen oder per Schlagwort zu durchsuchen ist langsam und übersieht Umschreibungen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie die drei PDFs an einen Chat an.
 2. Stellen Sie eine Frage, die die Paper beantworten, und verlangen Sie Zitate mit Datei und Seite.
@@ -29,9 +31,8 @@ Sie erinnern sich, dass ein Paper etwas gesagt hat, aber nicht welches oder wo; 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Bibliotheks-Q&A“. Anweisungen: nur aus den Wissensdateien antworten, zu jeder Aussage Datei, Seite und ein wörtliches Zitat von ein bis drei Sätzen angeben, „nicht in diesen Quellen“ sagen, wenn sie schweigen, und niemals Wissen von außerhalb verwenden. Wissen: Ihre zentralen Paper (begrenzt Ihr Werkzeug die Wissensdateien, hängen Sie sie stattdessen im Chat mit dem Assistenten an). Startprompts: „Was sagen meine Paper über …?“, „Welches Paper definiert …?“
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet]. Beantworten Sie meine Frage ausschließlich anhand der angehängten PDFs. Meine Frage lautet: [Frage]. Geben Sie eine kurze Antwort (bis zu 200 Wörter) und dann eine Liste belegender Textstellen: Dateiname, Seite, exaktes Zitat von ein bis drei Sätzen. Zitieren Sie nur Text, der wortwörtlich in den Dateien steht. Beantworten die Dateien die Frage nicht oder nur teilweise, sagen Sie das deutlich, statt Wissen von außerhalb zu verwenden.

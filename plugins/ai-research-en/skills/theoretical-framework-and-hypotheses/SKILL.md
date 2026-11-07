@@ -17,7 +17,9 @@ A comparison of candidate theories, falsifiable hypotheses or propositions with 
 
 Choosing between theories and deriving hypotheses is often left implicit; reviewers then find leaps in reasoning, hypotheses without a theoretical mechanism, or a model that does not answer the question.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your research question, candidate theories and the abstracts.
 2. Ask for a comparison of the theories for your question.
@@ -29,9 +31,8 @@ Choosing between theories and deriving hypotheses is often left implicit; review
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Theory and hypotheses'. Instructions: compare candidate theories in a table, derive hypotheses each with reasoning and a supporting passage, describe the model in words, flag baseline and omitted-variable issues, and never invent studies. Knowledge: your core theory papers. Switch on code execution / data analysis if your tool offers it, to test a hypothesis on data – attach the data file in the chat, not as knowledge. Starter prompt: 'Derive hypotheses from these theories and test one on this file.'
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. My research question is: [question]. I am considering these theories or models: [theories]. Compare them for my question in a table: core idea, key constructs, what each would predict or help explain in my case, typical methods, and limitations. Then derive three to five hypotheses (or, for qualitative work, propositions or sensitising questions), each with a short line of reasoning that names the theory and, where possible, one of the studies I provide. Finally, describe the conceptual model in words: constructs, expected relationships and their direction, and possible moderators or mediators. Do not invent studies; mark any link you are unsure about.

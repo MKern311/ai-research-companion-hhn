@@ -17,7 +17,9 @@ A transcribed, structured table of every card and its placement, with counts per
 
 Card sorts, item-sorting tasks and workshop boards produce rich data on paper; typing them up and counting placements by hand takes hours and introduces transcription errors.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Photograph the board straight on, in good light, in one or two shots.
 2. Upload the photo (JPEG or PNG; convert other formats first if your tool does not accept them) – from your assistant's mobile app or via your cloud storage – and ask the assistant to transcribe every card before interpreting anything.
@@ -29,9 +31,8 @@ Card sorts, item-sorting tasks and workshop boards produce rich data on paper; t
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Board digitiser' and switch on code execution / data analysis if your tool offers it, for counts and the table export. Instructions: transcribe every card before interpreting, [illegible] instead of guessing, a table of card, text, cluster and connections, counts per predefined category, interpretation last. Knowledge: your category list. Only photos without faces or names go in, and you check every table against the board. Starter prompt: 'Digitise this card sort'.
 
-## Starter prompt
+## Typical request
 
 ```text
 The attached photo shows the result of a [card sort / item-sorting task / brainstorming] from a [workshop or experiment] on [topic]. 1) Transcribe every card or note exactly as written, numbered, with its position (column or cluster). Mark any word you cannot read as [illegible] instead of guessing. 2) Give a table: card number, text, the group or category it was placed in, and any arrow or line connecting it to another card. 3) If the task assigned items to predefined categories ([list categories]), count for each item how many placements fall in the intended category. 4) Only then suggest a short label for each cluster and say which cards fit poorly. Keep observation (steps 1–3) and interpretation (step 4) separate.

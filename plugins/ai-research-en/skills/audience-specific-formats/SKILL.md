@@ -17,7 +17,9 @@ Three first drafts for different audiences, with numbers, conditions and uncerta
 
 Writing a lay summary, policy brief and social post for each paper takes time, and simplifying invites spin – causal, general or certain claims the paper does not make.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the paper and name your target audience.
 2. Ask for a 150-word lay summary and a one-page policy brief outline.
@@ -29,9 +31,8 @@ Writing a lay summary, policy brief and social post for each paper takes time, a
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: the three formats with word limits, numbers and conditions kept exact, uncertainty words kept, a list of every simplification, never a claim the paper does not make. No Knowledge needed – attach each paper in the chat. Starter prompts: "Lay summary, brief outline and post for council officers" and "Check this draft for spin against the paper". Reusable for every new paper.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a researcher in [discipline]. Attached is my paper [title]. Write for [audience, e.g. local council officers or the general public]: 1) a lay summary of about 150 words in plain English, without jargon; 2) an outline for a one-page policy brief with the problem, key findings and three practical recommendations; 3) a social media post of up to 60 words. Use only findings stated in the paper, keep numbers exact, and do not make the results sound stronger or more general than the paper does. List any point where you had to simplify.

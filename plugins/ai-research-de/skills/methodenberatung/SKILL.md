@@ -17,7 +17,9 @@ Ein Vergleich von drei Designs und eine Liste von Gefährdungen, sortiert nach V
 
 Designs folgen oft der ersten Idee oder der Gewohnheit des Fachs; Alternativen und Gefährdungen der Validität oder Vertrauenswürdigkeit tauchen spät auf – im Kolloquium oder im Gutachten.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Forschungsfrage und das geplante Design ein.
 2. Bitten Sie um einen Vergleich von drei Designalternativen in einer Tabelle.
@@ -29,12 +31,11 @@ Designs folgen oft der ersten Idee oder der Gewohnheit des Fachs; Alternativen u
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Design-Kritiker“. Anweisungen: das Design in einer festen Tabelle mit zwei realistischen Alternativen vergleichen, Gefährdungen nach den vier Validitätstypen sortieren (bei interpretativer Arbeit nach Kriterien der Vertrauenswürdigkeit), je eine studienspezifische Gegenmaßnahme nennen, nie Analysen ausführen oder Quellen erfinden. Wissen: die methodischen Hinweise Ihres Instituts, sofern Sie sie teilen dürfen. Startprompt: „Kritisiere dieses Design: [Frage, Design, Analyseeinheit]“. Wiederverwendbar für jede neue Studie und jede Kapitelüberarbeitung.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich promoviere in [Fach]. Meine Forschungsfrage lautet: [Frage]. Mein geplantes Design ist: [Design]. Vergleiche es in einer Tabelle mit zwei realistischen Alternativen: Design, was es beantworten kann, wichtigste Stärken, wichtigste Schwächen, praktische Anforderungen (Zeit, Zugang, Daten). Liste dann für mein geplantes Design die wichtigsten Gefährdungen der Validität auf (bei qualitativer Arbeit: der Vertrauenswürdigkeit), jeweils mit einer konkreten Möglichkeit, sie zu verringern. Wenn mein Design ein Experiment ist, ergänze einen kurzen Plan: Bedingungen, unabhängige und abhängige Variablen, Kontrollen und Randomisierung, und schlage einen Versuchsplan vor (zum Beispiel ein fraktionelles faktorielles oder ein Response-Surface-Design), der die Informationen, die ich brauche, mit weniger Durchläufen liefert; nenne dabei, welche Effekte er nicht trennen kann. Sei spezifisch für meine Studie statt generisch. Bleibe unter 450 Wörtern.
+Ich promoviere in [Fach]. Meine Forschungsfrage lautet: [Frage]. Mein geplantes Design ist: [Design]. Vergleichen Sie es in einer Tabelle mit zwei realistischen Alternativen: Design, was es beantworten kann, wichtigste Stärken, wichtigste Schwächen, praktische Anforderungen (Zeit, Zugang, Daten). Listen Sie dann für mein geplantes Design die wichtigsten Gefährdungen der Validität auf (bei qualitativer Arbeit: der Vertrauenswürdigkeit), jeweils mit einer konkreten Möglichkeit, sie zu verringern. Wenn mein Design ein Experiment ist, ergänzen Sie einen kurzen Plan: Bedingungen, unabhängige und abhängige Variablen, Kontrollen und Randomisierung, und schlagen Sie einen Versuchsplan vor (zum Beispiel ein fraktionelles faktorielles oder ein Response-Surface-Design), der die Informationen, die ich brauche, mit weniger Durchläufen liefert; nennen Sie dabei, welche Effekte er nicht trennen kann. Seien Sie spezifisch für meine Studie statt generisch. Bleiben Sie unter 450 Wörtern.
 ```
 
 ## Prüfung

@@ -17,7 +17,9 @@ Eine Tabelle der Abweichungen mit Fundstellen, die Sie prüfen, bevor Sie etwas 
 
 Nach vielen Überarbeitungen passen Zahlen im Abstract nicht mehr zu den Tabellen, Begriffe und Abkürzungen driften, und Zitate fehlen im Literaturverzeichnis – Gutachtende bemerken das.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie das Dokument an und fügen Sie den Startprompt ein.
 2. Prüfen Sie jeden markierten Punkt selbst im Dokument, bevor Sie etwas ändern.
@@ -29,9 +31,8 @@ Nach vielen Überarbeitungen passen Zahlen im Abstract nicht mehr zu den Tabelle
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Definieren Sie in seinen dauerhaften Anweisungen die Prüfung: Zahlen über Abstract, Text und Tabellen hinweg; Begriffe und Abkürzungen; Zitate im Text gegen das Literaturverzeichnis; eine Tabelle mit Art des Problems, Fundstelle, was jede Stelle sagt, und Korrekturvorschlag; nur berichten, was im Dokument steht, und sagen, welche Teile nicht gelesen wurden. Startprompt: „Führen Sie die Konsistenzprüfung für diesen Entwurf durch.“ Wiederverwendbar vor jeder Einreichung – bauen Sie eine Abweichung ein, um sie zu testen.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich prüfe meinen eigenen [Artikel oder mein Kapitel] vor der Einreichung. Prüfen Sie im angehängten Dokument die Konsistenz: 1) Zahlen (Stichprobenumfänge, Prozentwerte, Statistiken), die sich zwischen Abstract, Haupttext und Tabellen unterscheiden; 2) Schlüsselbegriffe oder Abkürzungen, die uneinheitlich verwendet werden; 3) Zitate im Text, die im Literaturverzeichnis fehlen, und Literaturangaben, die nie zitiert werden. (Ob die Literaturangaben selbst existieren und den Text stützen, ist eine separate Prüfung.) Geben Sie eine Tabelle zurück: Art des Problems, Fundstelle (Abschnitt oder Seite), was jede Stelle sagt, Korrekturvorschlag. Berichten Sie nur, was Sie im Dokument finden; wenn Teile zu lang waren, um sie vollständig zu lesen, sagen Sie, welche.

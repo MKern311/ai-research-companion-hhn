@@ -17,7 +17,9 @@ A concept-centric matrix (Webster & Watson) showing which study covers which con
 
 After reading twenty papers you know them one by one, but not how they relate – where they agree, where they contradict each other and why.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste or attach the studies and list the concepts you want compared.
 2. Ask for a concept matrix with studies as rows and concepts as columns.
@@ -29,9 +31,8 @@ After reading twenty papers you know them one by one, but not how they relate �
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Concept matrix'. Instructions: one row per study, your concepts as fixed columns, 'fully', 'partly' or 'not at all' with finding, passage and page, then agreements and tensions with likely reasons; never smooth over contradictions or add studies. Switch on code execution / data analysis if your tool offers it, to export to Excel. Starter prompt: 'Add this study to the matrix.' Only approved material; you check every cell and write the synthesis.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] working on a review of [topic]. Using only the studies I provide, build a concept matrix: one row per study, columns for [concept 1], [concept 2], [concept 3]. In each cell, say whether the study addresses the concept fully, partly or not at all, and give the finding in a few words, including direction of effect, with a short supporting passage. Then list where the studies agree and where they contradict each other, with possible reasons such as method, sample or context, naming the study for each point. Do not add studies I have not given you.

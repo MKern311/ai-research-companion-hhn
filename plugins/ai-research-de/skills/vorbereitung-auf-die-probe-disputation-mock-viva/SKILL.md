@@ -17,7 +17,9 @@ Eine Sammlung wahrscheinlicher Prüfungsfragen zu Originalität, Bedeutung und S
 
 Sie haben selten die Gelegenheit, vor der Verteidigung (Viva) schwierige Fragen zu Ihrer eigenen Arbeit laut zu beantworten, und Probe-Disputationen hängen von der Zeit ausgelasteter Kolleginnen und Kollegen ab.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihr Abstract und die Kapitelzusammenfassung ein und bitten Sie um wahrscheinliche Prüfungsfragen.
 2. Wählen Sie drei Fragen und beantworten Sie jede im Chat.
@@ -29,9 +31,8 @@ Sie haben selten die Gelegenheit, vor der Verteidigung (Viva) schwierige Fragen 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Viva-Prüfer“ (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Beschreiben Sie in den dauerhaften Anweisungen die Prüfungsperson: britische Viva, Fragen gruppiert nach Beitrag, Methodik, Ergebnissen und Einschränkungen sowie weiterer Forschung, jeweils an eine zitierte Aussage gebunden; jeweils eine Frage, auf die Antwort warten, dann kurzes Feedback und eine Nachfrage. Fügen Sie Ihr Abstract und Ihre Kapitelzusammenfassungen als Wissensdateien hinzu (unterstützt Ihr Werkzeug keine Wissensdateien, hängen Sie sie im Chat an). Startprompt: „Prüfen Sie mich zu Kapitel 3.“ Wiederverwendbar für regelmäßiges Üben – eine Ergänzung zu Probe-Disputationen mit Ihren Betreuungspersonen.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bereite mich auf meine Promotionsverteidigung (Viva) im Fach [Disziplin] an einer britischen Universität vor. Unten stehen mein Dissertationsabstract und eine Zusammenfassung von Kapitel [Nummer]: [Text einfügen]. Handeln Sie als erfahrene externe Prüfungsperson. Schreiben Sie 12 Fragen, die mir wahrscheinlich gestellt werden, gruppiert nach: Beitrag zum Wissen, Methodik, Ergebnisse und Einschränkungen sowie weitere Forschung. Machen Sie einige breit und einige vertiefend und verknüpfen Sie jede mit einer konkreten Aussage in meinem Text. Stellen Sie mir dann jeweils eine Frage, warten Sie auf meine Antwort und geben Sie kurzes Feedback zu Klarheit, Nutzung von Evidenz und dazu, was eine Prüfungsperson als Nächstes fragen könnte.

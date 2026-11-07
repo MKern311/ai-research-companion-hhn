@@ -17,7 +17,9 @@ A table of mismatches with locations that you verify before changing anything, p
 
 After many revisions, numbers in the abstract no longer match the tables, terms and abbreviations drift, and citations go missing from the reference list – reviewers notice.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the document and paste the starter prompt.
 2. Check each flagged item in the document yourself before changing anything.
@@ -29,9 +31,8 @@ After many revisions, numbers in the abstract no longer match the tables, terms 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, define the check: numbers across abstract, text and tables; terms and abbreviations; in-text citations against the reference list; a table of issue type, location, what each place says and suggested fix; report only what is in the document and say which parts were not read. Starter prompt: "Run the consistency check on this draft." Reusable before every submission – plant one mismatch to test it.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am checking my own [paper or chapter] before submission. In the attached document, check consistency: 1) numbers (sample sizes, percentages, statistics) that differ between the abstract, main text and tables; 2) key terms or abbreviations used inconsistently; 3) in-text citations missing from the reference list, and references never cited. (Whether the references themselves exist and support the text is a separate check.) Return a table: issue type, location (section or page), what each place says, suggested fix. Only report what you find in the document; if parts were too long to read fully, say which.

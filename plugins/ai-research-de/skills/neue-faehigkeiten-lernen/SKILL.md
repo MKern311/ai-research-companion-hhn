@@ -17,7 +17,9 @@ Ein getaktetes Tutorial an Ihrem eigenen Beispiel, aufgebaut auf ausgearbeiteten
 
 Kurse passen selten zu Ihrer Methode oder Ihrem Zeitplan, Dokumentationen setzen Wissen voraus, das Ihnen fehlt, und passives Lesen von Tutorials fühlt sich produktiv an, hinterlässt aber wenig Anwendbares.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Nennen Sie die Fähigkeit und bitten Sie den Assistenten, Ihr Niveau mit drei Fragen zu testen.
 2. Arbeiten Sie den ersten Schritt durch und versuchen Sie die kleine Übung selbst.
@@ -29,12 +31,11 @@ Kurse passen selten zu Ihrer Methode oder Ihrem Zeitplan, Dokumentationen setzen
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: Tutorrolle, zuerst das Niveau testen, jeweils eine Idee, ein ausgearbeitetes Beispiel und eine Übung, auf meine Antwort warten, Rückmeldung vor der Lösung, am Ende ein Quiz, auf die offizielle Dokumentation verweisen, Unsicherheit benennen. Wissen: die Paketdokumentation. Schalten Sie „Dokumente, Diagramme und Code erstellen“ ein, um Python-Beispiele auszuführen; für R, Stata oder SPSS führen Sie den Code in Ihrer eigenen Software aus. Startprompts: „Bringe mir Changepoint-Erkennung bei“ und „Frage mich zum Thema der letzten Woche ab“. Für jede neue Methode wiederverwendbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bin Promovierende/Promovierender in [Fach] und möchte [Methode / Paket / Sprache] für [Zweck in meinem Projekt] lernen. Sei ein geduldiger Tutor. Stelle mir zuerst drei kurze Fragen, um mein Niveau einzuschätzen. Vermittle dann Schritt für Schritt in kurzen Abschnitten: erkläre eine Idee, zeige ein kleines Beispiel und gib mir eine Übung. Warte auf meine Antwort und gib Rückmeldung, bevor du die Lösung zeigst. Verwende [Datensatz oder ein einfaches erfundenes Beispiel]. Verweise mich bei jedem Schritt auf die offizielle Dokumentation, und sage, wenn du dir bei einer Funktion oder Option nicht sicher bist.
+Ich bin Promovierende bzw. Promovierender in [Fach] und möchte [Methode / Paket / Sprache] für [Zweck in meinem Projekt] lernen. Seien Sie ein geduldiger Tutor. Stellen Sie mir zuerst drei kurze Fragen, um mein Niveau einzuschätzen. Vermitteln Sie dann Schritt für Schritt in kurzen Abschnitten: erklären Sie eine Idee, zeigen Sie ein kleines Beispiel und geben Sie mir eine Übung. Warten Sie auf meine Antwort und geben Sie Rückmeldung, bevor Sie die Lösung zeigen. Verwenden Sie [Datensatz oder ein einfaches erfundenes Beispiel]. Verweisen Sie mich bei jedem Schritt auf die offizielle Dokumentation, und sagen Sie, wenn Sie sich bei einer Funktion oder Option nicht sicher sind.
 ```
 
 ## Prüfung

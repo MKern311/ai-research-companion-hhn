@@ -64,7 +64,7 @@ Behandeln Sie die zwölf Übungs-Abstracts als Alert dieser Woche und sortieren 
 ### Prompt
 
 ```text
-Ich bin Promovierende/Promovierender. Meine Forschungsfrage lautet: Wie hat der menschliche Einfluss die Wahrscheinlichkeit extremer Hitze im Vereinigten Königreich und in Westeuropa verändert? Relevanzkriterien: Pflichtlektüre, wenn eine Arbeit Änderungen bei Hitzeextremen für das Vereinigte Königreich oder Westeuropa schätzt; Vielleicht, wenn sie Daten oder Methoden liefert, die ich dort anwenden könnte; sonst Überspringen. Die angehängte Textdatei enthält Titel und Abstracts von zwölf Arbeiten; behandle sie als Alert dieser Woche. Sortiere die Arbeiten, nur anhand von Titel und Abstract, in Pflichtlektüre, Vielleicht und Überspringen, mit einer Zeile zur Begründung, die das angewandte Kriterium nennt. Sage für die Pflichtlektüre, ob sie meine Frage jeweils stützt, infrage stellt oder erweitert. Nenne zum Schluss fünf Suchbegriffe, die sich für meine Alerts lohnen. Ergänze keine Arbeiten, die nicht in der Datei stehen.
+Ich bin Promovierende bzw. Promovierender. Meine Forschungsfrage lautet: Wie hat der menschliche Einfluss die Wahrscheinlichkeit extremer Hitze im Vereinigten Königreich und in Westeuropa verändert? Relevanzkriterien: Pflichtlektüre, wenn eine Arbeit Änderungen bei Hitzeextremen für das Vereinigte Königreich oder Westeuropa schätzt; Vielleicht, wenn sie Daten oder Methoden liefert, die ich dort anwenden könnte; sonst Überspringen. Die angehängte Textdatei enthält Titel und Abstracts von zwölf Arbeiten; behandeln Sie sie als Alert dieser Woche. Sortieren Sie die Arbeiten, nur anhand von Titel und Abstract, in Pflichtlektüre, Vielleicht und Überspringen, mit einer Zeile zur Begründung, die das angewandte Kriterium nennt. Sagen Sie für die Pflichtlektüre, ob sie meine Frage jeweils stützt, infrage stellt oder erweitert. Nennen Sie zum Schluss fünf Suchbegriffe, die sich für meine Alerts lohnen. Ergänzen Sie keine Arbeiten, die nicht in der Datei stehen.
 ```
 
 ### Prüfung
@@ -87,7 +87,7 @@ Eine Liste von 10 bis 20 neuen Titeln (möglichst mit Abstracts) aus einem aktue
 ### Prompt
 
 ```text
-Ich bin Promovierende/Promovierender in [Fach]. Meine Forschungsfrage lautet: [Frage]. Unten stehen neue Publikationen aus den Alerts dieser Woche. Sortiere sie in Pflichtlektüre, Vielleicht und Überspringen, mit einer Zeile Begründung, nur anhand von Titel und Abstract. Sage für die Pflichtlektüre in einem Satz, ob sie meine Arbeit jeweils stützt, infrage stellt oder erweitert oder eine Methode bietet, die ich nutzen könnte. Nenne zum Schluss eine kurze Liste von Suchbegriffen, die sich für meine Alerts lohnen. Ergänze keine Arbeiten, die nicht in der Liste stehen.
+Ich bin Promovierende bzw. Promovierender in [Fach]. Meine Forschungsfrage lautet: [Frage]. Unten stehen neue Publikationen aus den Alerts dieser Woche. Sortieren Sie sie in Pflichtlektüre, Vielleicht und Überspringen, mit einer Zeile Begründung, nur anhand von Titel und Abstract. Sagen Sie für die Pflichtlektüre in einem Satz, ob sie meine Arbeit jeweils stützt, infrage stellt oder erweitert oder eine Methode bietet, die ich nutzen könnte. Nennen Sie zum Schluss eine kurze Liste von Suchbegriffen, die sich für meine Alerts lohnen. Ergänzen Sie keine Arbeiten, die nicht in der Liste stehen.
 
 [Titel und Abstracts einfügen]
 ```

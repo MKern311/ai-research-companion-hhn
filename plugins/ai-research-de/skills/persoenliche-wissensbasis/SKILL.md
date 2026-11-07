@@ -17,7 +17,9 @@ Atomare Notizen mit IDs und Quellen, ein kleines kontrolliertes Schlagwortvokabu
 
 Notizen, Markierungen und Annotationen liegen in verschiedenen Werkzeugen; Sie erinnern sich, etwas Relevantes gelesen zu haben, finden es aber nicht, und Zusammenhänge zwischen Quellen bleiben in Ihrem Kopf.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie die Notizen an oder fügen Sie sie ein und bitten Sie um atomare Notizen: eine Idee pro Notiz, mit ID und Quelle.
 2. Bitten Sie um ein kontrolliertes Vokabular von 10 bis 15 Schlagwörtern mit Definitionen und den Synonymen, die jedes ersetzt.
@@ -29,12 +31,11 @@ Notizen, Markierungen und Annotationen liegen in verschiedenen Werkzeugen; Sie e
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: das Format der atomaren Notiz (ID, eine Idee, Quelle, Seite), Ihr kontrolliertes Schlagwortvokabular mit Definitionen, die fünf Verknüpfungstypen, ein zitierter Satz für jede Verknüpfung, keine Verknüpfungen, die nur auf einem gemeinsamen Thema beruhen. Wissen: Ihr Schlagwortvokabular. Startprompts: „Atomare Notizen aus diesen Markierungen“ und „Typisierte Verknüpfungen zwischen diesen Notizen“. Für jeden Stapel Lektüre wiederverwendbar, sodass neue Notizen zu den alten passen.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bin Promovierende/Promovierender in [Fach] und baue ein Notizsystem in [Zotero / OneNote / Obsidian / Notion] auf. Angehängt sind meine Notizen zu [Anzahl] Quellen. 1) Schreibe sie als atomare Notizen um: eine Idee pro Notiz, in einfachen Worten, jeweils mit kurzer ID, der Quelle und der Seite, falls meine Notiz eine nennt. 2) Schlage ein kontrolliertes Vokabular von 10 bis 15 Schlagwörtern vor, jeweils mit einzeiliger Definition und den Synonymen, die es ersetzt, und vergib an jede Notiz zwei oder drei Schlagwörter. 3) Schlage bis zu fünf Verknüpfungen zwischen Notizen vor, jeweils typisiert als stützt, widerspricht, erweitert, nutzt Daten von oder nutzt Methode von, und nenne den Satz in meinen Notizen, auf dem jede Verknüpfung beruht. Verwende nur, was in meinen Notizen steht; lass Verknüpfungen weg, die nur auf einem gemeinsamen Thema beruhen, und sage, wenn eine Verknüpfung unsicher ist.
+Ich bin Promovierende bzw. Promovierender in [Fach] und baue ein Notizsystem in [Zotero / OneNote / Obsidian / Notion] auf. Angehängt sind meine Notizen zu [Anzahl] Quellen. 1) Schreiben Sie sie als atomare Notizen um: eine Idee pro Notiz, in einfachen Worten, jeweils mit kurzer ID, der Quelle und der Seite, falls meine Notiz eine nennt. 2) Schlagen Sie ein kontrolliertes Vokabular von 10 bis 15 Schlagwörtern vor, jeweils mit einzeiliger Definition und den Synonymen, die es ersetzt, und vergeben Sie an jede Notiz zwei oder drei Schlagwörter. 3) Schlagen Sie bis zu fünf Verknüpfungen zwischen Notizen vor, jeweils typisiert als stützt, widerspricht, erweitert, nutzt Daten von oder nutzt Methode von, und nennen Sie den Satz in meinen Notizen, auf dem jede Verknüpfung beruht. Verwenden Sie nur, was in meinen Notizen steht; lassen Sie Verknüpfungen weg, die nur auf einem gemeinsamen Thema beruhen, und sagen Sie, wenn eine Verknüpfung unsicher ist.
 ```
 
 ## Prüfung

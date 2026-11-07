@@ -17,7 +17,9 @@ Matched stimuli for every condition, a manipulation check and a study flow with 
 
 Building realistic stimuli for each condition – vignettes, framed messages, mock web pages or feeds – and wiring them into a survey with randomisation takes weeks, and small unintended differences between conditions confound the results.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. State the manipulated factor, its levels and what must stay identical across conditions.
 2. Ask the assistant for the stimulus texts or a simple HTML mock-up per condition, plus a manipulation check.
@@ -29,9 +31,8 @@ Building realistic stimuli for each condition – vignettes, framed messages, mo
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Stimulus builder' and switch on code execution / file creation if your tool offers it, so it returns HTML files. Instructions: keep conditions identical except the manipulated element, list every difference, quote the source of any factual claim, add a manipulation check and a study flow with variable names, use no real organisations, brands, people or logos. Starter prompt: 'Build conditions [A] and [B] for: [hypothesis]'. Reusable for every follow-up experiment.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am planning a between-subjects experiment in [discipline]. Hypothesis: [e.g. a message framed as a loss changes intentions more than the same message framed as a gain]. Manipulated factor: [factor] with the levels [level A] and [level B]. Outcome measures: [measures]. 1) Create the stimulus for each condition: [e.g. a short case vignette, a public information message or a mock web page, as a single self-contained HTML page]. Keep everything identical except the manipulated element and list every difference between the conditions. 2) Write one manipulation-check question. 3) Draft the full study flow for a survey tool – consent, random assignment, stimulus, measures, manipulation check, demographics, debrief – as a table with variable names and coding, so the export can be analysed directly. Use no real organisations, brands, people or logos.

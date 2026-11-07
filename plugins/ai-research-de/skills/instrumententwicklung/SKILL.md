@@ -17,7 +17,9 @@ Entwerfen Sie Items, Interviewleitfäden und Antwortskalen; prüfen Sie sie auf 
 
 Entwürfe von Items verbergen oft doppelläufige, suggestive oder mehrdeutige Formulierungen, und manche Forschungsfragen oder Facetten des Konstrukts bleiben ohne Item – meist erst nach der Datenerhebung bemerkt.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Item-Entwürfe ein und beschreiben Sie Konstrukt und Zielgruppe.
 2. Bitten Sie den Assistenten, doppelläufige, suggestive, mehrdeutige oder jargonlastige Items zu markieren.
@@ -29,12 +31,11 @@ Entwürfe von Items verbergen oft doppelläufige, suggestive oder mehrdeutige Fo
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Item-Prüfer“. Anweisungen: die Problemtypen (doppelläufig, suggestiv, mehrdeutig, Jargon, Skalenpassung), das Tabellenformat, „Bedeutung und Konstrukt unverändert lassen“ und „nie validierte Skalen oder Quellen erfinden“. Wissen: Ihre Konstruktdefinitionen und Forschungsfragen. Startprompts: „Prüfe diese Items: [einfügen]“ und „Ordne diese Items meinen Konstrukten zu“. Wiederverwendbar für jeden neuen Entwurf und mit Koautorinnen und Koautoren teilbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich entwickle [einen Fragebogen oder einen Interviewleitfaden] zu [Konstrukt] für [Zielgruppe]. Prüfe die untenstehenden Item-Entwürfe. Zeige eine Tabelle: Item-Nummer, ursprüngliche Formulierung, Problem (doppelläufig, suggestiv, mehrdeutig, Jargon, passt nicht zur Antwortskala oder keines), überarbeitete Formulierung. Lass Bedeutung und Konstrukt unverändert. Ergänze eine Spalte, die jedes Item der Forschungsfrage oder dem Konstrukt zuordnet, dem es dient, und markiere Forschungsfragen, die kein Item abdeckt. Schlage dann eine passende Antwortskala vor und sage, ob es für dieses Konstrukt möglicherweise schon eine validierte Skala gibt; wenn du dir nicht sicher bist, sage das; erfinde keine Quellen.
+Ich entwickle [einen Fragebogen oder einen Interviewleitfaden] zu [Konstrukt] für [Zielgruppe]. Prüfen Sie die untenstehenden Item-Entwürfe. Zeigen Sie eine Tabelle: Item-Nummer, ursprüngliche Formulierung, Problem (doppelläufig, suggestiv, mehrdeutig, Jargon, passt nicht zur Antwortskala oder keines), überarbeitete Formulierung. Lassen Sie Bedeutung und Konstrukt unverändert. Ergänzen Sie eine Spalte, die jedes Item der Forschungsfrage oder dem Konstrukt zuordnet, dem es dient, und markieren Sie Forschungsfragen, die kein Item abdeckt. Schlagen Sie dann eine passende Antwortskala vor und sagen Sie, ob es für dieses Konstrukt möglicherweise schon eine validierte Skala gibt; wenn Sie sich nicht sicher sind, sagen Sie das; erfinden Sie keine Quellen.
 
 [Items einfügen]
 ```
@@ -51,7 +52,7 @@ Jedes markierte Problem erweist sich als echt, wenn Sie das ursprüngliche Item 
 
 - **Konstruktdefinition und Inhaltsvalidität** – Definieren Sie das Konstrukt und seine Facetten, bevor Sie Items schreiben. Inhaltsvalidität ist das Ausmaß, in dem die Items jede Facette abdecken und nichts darüber hinaus; eine Item-Konstrukt-Matrix (Blueprint) zeigt Lücken und überrepräsentierte Facetten, in Befragungen wie in Interviewleitfäden.
 - **Regeln für das Formulieren von Items** – Vermeiden Sie doppelläufige Items (zwei Fragen in einer), suggestive oder wertende Formulierungen, doppelte Verneinungen, vage Mengenangaben wie „oft“, Fachjargon und unbegründete Annahmen. Jedes Item fragt nur eine Sache, in der Sprache der Befragten, und passt zu seiner Antwortskala.
-- **Vierstufiges Antwortmodell (Tourangeau)** – Das Beantworten umfasst Verstehen, Abrufen, Urteilen und Abbilden der Antwort auf die Skala. Diagnostizieren Sie jedes fehlerhafte Item nach der Stufe: unklare Begriffe scheitern beim Verstehen, lange Erinnerungszeiträume beim Abrufen, unpassende Optionen beim Abbilden der Antwort.
+- **Vierphasiges Antwortmodell (Tourangeau)** – Das Beantworten umfasst Verstehen, Abrufen, Urteilen und Abbilden der Antwort auf die Skala. Diagnostizieren Sie jedes fehlerhafte Item nach der Phase: unklare Begriffe scheitern beim Verstehen, lange Erinnerungszeiträume beim Abrufen, unpassende Optionen beim Abbilden der Antwort.
 - **Likert-artige Ratingskalen** – Geordnete Zustimmungs- oder Häufigkeitskategorien, meist fünf oder sieben Stufen, mit einheitlicher Richtung und beschrifteten Endpunkten oder durchgehend beschrifteten Stufen. Entscheiden Sie bewusst über eine Mittelkategorie und eine Option „weiß nicht“; verlässliche Skalenwerte brauchen mehrere Items je Facette.
 - **Content Validity Index (CVI)** – Expertinnen und Experten bewerten die Relevanz jedes Items auf einer vierstufigen Skala; der Item-CVI (I-CVI) ist der Anteil der Bewertungen mit 3 oder 4. Lynn (1986) legte die Mindestübereinstimmung nach Panelgröße fest; Polit, Beck und Owen (2007) empfehlen einen I-CVI von mindestens 0,78.
 

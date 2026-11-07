@@ -17,7 +17,9 @@ Verwandte Paper, gefunden nach Bedeutung sowie über Rückwärts- und Vorwärtsz
 
 Schlagwortsuchen finden nur Paper, die Ihre Begriffe verwenden; Arbeiten aus anderen Fächern und neuere Paper, die Ihre Schlüsselquelle zitieren, bleiben unsichtbar, und das Verfolgen von Zitationen von Hand ist langsam.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Geben Sie Ihrem KI-Assistenten Titel und DOI Ihres Schlüsselpapers.
 2. Bitten Sie ihn, die Kernidee des Papers in einfachen Worten zu beschreiben, nicht in Schlagwörtern.
@@ -29,9 +31,8 @@ Schlagwortsuchen finden nur Paper, die Ihre Begriffe verwenden; Arbeiten aus and
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Zitations-Explorer“. Anweisungen: das Problem des Schlüsselpapers in einfachen Worten beschreiben, verwandte Paper mit anderer Terminologie und bis zu drei zitierende Paper finden, zu jedem einen funktionierenden Link und den Zusammenhang nennen, jedes als Referenzliste oder Suchergebnis kennzeichnen, einen zitierten Überblick von 150 Wörtern schreiben und niemals Quellen erfinden. Startprompt: „Finde verwandte und zitierende Arbeiten für diese DOI.“ Wiederverwendbar für jedes neue Schlüsselpaper.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet]. Ein Schlüsselpaper für meine Arbeit ist [Titel, Autorinnen und Autoren, Jahr, DOI]. Beschreiben Sie zuerst sein Kernproblem und seine Kernidee in drei einfachen Sätzen ohne seinen eigenen Fachjargon. Suchen Sie dann bis zu sechs Paper, die dasselbe Problem behandeln, auch solche mit anderer Terminologie, und bis zu drei, die dieses Paper zitieren. Nennen Sie zu jedem Autorinnen und Autoren, Jahr, Titel, einen funktionierenden Link und einen Satz zum Zusammenhang. Schließen Sie mit einem Überblick von 150 Wörtern darüber, wie diese Paper zusammenhängen, und zitieren Sie jedes. Wenn Sie nicht sicher sind, sagen Sie es; erfinden Sie keine Quellen.

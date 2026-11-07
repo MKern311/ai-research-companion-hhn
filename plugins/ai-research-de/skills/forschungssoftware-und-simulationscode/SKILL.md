@@ -17,7 +17,9 @@ Erklärter, refaktorisierter Code mit Docstrings und Unit-Tests, die sein Verhal
 
 Forschungscode wächst ohne Tests und Dokumentation; Monate später lässt sich nicht sagen, ob eine Änderung ein Ergebnis verändert hat, und andere können Ihren Code weder ausführen noch wiederverwenden oder zitieren.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie den Startprompt mit Ihrem Code ein und nennen Sie Sprache und Zweck.
 2. Lesen Sie die Erklärung und prüfen Sie, ob sie dem entspricht, was der Code Ihrer Absicht nach tun soll.
@@ -30,9 +32,8 @@ Forschungscode wächst ohne Tests und Dokumentation; Monate später lässt sich 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen Ihre Sprache und Regeln fest: Docstrings, Unit-Tests für normale Fälle und Randfälle (einfache asserts, wenn pytest fehlt), eine Prüfung an einem bekannten Ergebnis oder Benchmark, Einheiten und Wertebereiche benennen, „bei unklarem Verhalten nachfragen“ und nie Schlüssel oder Passwörter einfügen. Schalten Sie Codeausführung ein, wenn Ihr Werkzeug sie anbietet, damit er Python-Tests ausführen kann. Startprompt: „Prüfen Sie diese Funktion und schreiben Sie Tests für ihre Randfälle.“ Wiederverwendbar für jedes neue Modul.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Forschende bzw. Forschender und schreibe [Sprache]-Code für [Zweck, z. B. eine agentenbasierte Simulation von X]. Unten steht ein Teil meines eigenen Codes. Bitte 1) erklären Sie in einfacher Sprache, was er tut, 2) listen Sie mögliche Fehler, Randfälle und numerische Probleme auf, 3) schlagen Sie eine refaktorisierte Version mit klaren Namen und Docstrings vor, die das Verhalten unverändert lässt, 4) schreiben Sie Unit-Tests in [pytest oder testthat], die normale Fälle und Randfälle abdecken, und 5) schlagen Sie Prüfungen der numerischen Ergebnisse vor: einen Fall mit bekannter analytischer Lösung oder einem Benchmark, konsistente Einheiten, Erhaltungsgrößen und plausible Wertebereiche. Wenn Sie sich beim gewünschten Verhalten nicht sicher sind, fragen Sie nach, statt etwas anzunehmen. Code: [Code einfügen]

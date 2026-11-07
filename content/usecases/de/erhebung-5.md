@@ -40,7 +40,7 @@ Direkte Identifikatoren benennen eine Person (Name, E-Mail, Adresse). Indirekte 
 
 ### Recall und Precision der De-Identifizierung
 
-Recall ist der Anteil der echten Identifikatoren, die das Tool erkannt hat; Precision ist der Anteil seiner Ersetzungen, die echte Identifikatoren waren. Für die Vertraulichkeit zählt der Recall am meisten, da ein einziger Fehler re-identifizieren kann, messen Sie ihn daher an eingebauten Identifikatoren.
+Recall ist der Anteil der echten Identifikatoren, die das Werkzeug erkannt hat; Precision ist der Anteil seiner Ersetzungen, die echte Identifikatoren waren. Für die Vertraulichkeit zählt der Recall am meisten, da ein einziger Fehler re-identifizieren kann, messen Sie ihn daher an eingebauten Identifikatoren.
 
 ### Konsistente Ersetzung und analytische Integrität
 
@@ -67,7 +67,7 @@ Nichts Echtes: einen erfundenen Interviewausschnitt von etwa 200 Wörtern mit au
 ### Prompt
 
 ```text
-Unten steht ein erfundener Interviewausschnitt. Pseudonymisiere ihn für die qualitative Analyse. Ersetze Personennamen durch [P1], [P2]; Orte durch [STADT] oder [REGION]; Organisationen durch [ORG1], [ORG2]; genaue Daten durch [DATUM]; und lass alles andere wortgetreu. Markiere außerdem, ohne sie zu ändern, indirekte Identifikatoren, die in Kombination jemanden verraten könnten, etwa seltene Berufsbezeichnungen oder besondere Ereignisse. Gib zurück: 1) den pseudonymisierten Text und 2) eine Tabelle: ursprünglicher Begriff, Ersetzung, Typ. Ausschnitt: [erfundenen Text einfügen]
+Unten steht ein erfundener Interviewausschnitt. Pseudonymisieren Sie ihn für die qualitative Analyse. Ersetzen Sie Personennamen durch [P1], [P2]; Orte durch [STADT] oder [REGION]; Organisationen durch [ORG1], [ORG2]; genaue Daten durch [DATUM]; und lassen Sie alles andere wortgetreu. Markieren Sie außerdem, ohne sie zu ändern, indirekte Identifikatoren, die in Kombination jemanden verraten könnten, etwa seltene Berufsbezeichnungen oder besondere Ereignisse. Geben Sie zurück: 1) den pseudonymisierten Text und 2) eine Tabelle: ursprünglicher Begriff, Ersetzung, Typ. Ausschnitt: [erfundenen Text einfügen]
 ```
 
 ### Prüfung
@@ -94,4 +94,4 @@ Verwenden Sie nur erfundene Ausschnitte, mit Ihren Pseudonymisierungsregeln und 
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Pseudonymisierungs-Tester“. Anweisungen: Ihre Ersetzungscodes ([P1], [STADT], [ORG1], [DATUM]), alles andere wortgetreu, indirekte Identifikatoren markiert, aber unverändert, immer der Text plus ein Ersetzungsprotokoll. Nutzen Sie ihn nur an erfundenem oder freigegebenem, de-identifiziertem Testmaterial, und ein Mensch prüft jede Ausgabe. Startprompt: „Pseudonymisiere diesen Ausschnitt und protokolliere die Ersetzungen“.
+Nennen Sie ihn „Pseudonymisierungs-Tester“. Anweisungen: Ihre Ersetzungscodes ([P1], [STADT], [ORG1], [DATUM]), alles andere wortgetreu, indirekte Identifikatoren markiert, aber unverändert, immer der Text plus ein Ersetzungsprotokoll. Nutzen Sie ihn nur an erfundenem oder freigegebenem, de-identifiziertem Testmaterial, und ein Mensch prüft jede Ausgabe. Startprompt: „Pseudonymisieren Sie diesen Ausschnitt und protokollieren Sie die Ersetzungen“.

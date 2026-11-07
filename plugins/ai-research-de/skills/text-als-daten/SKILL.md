@@ -17,7 +17,9 @@ Erste Labels und Themen samt dem zugehörigen Code, validiert an einer von Hand 
 
 Hunderte offene Antworten, Abstracts oder Dokumente sind zu viele, um sie genau zu lesen, und sie von Hand zu kennzeichnen ist langsam und über Zeit und Codierende hinweg schwer konsistent zu halten.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie die CSV-Datei an und fügen Sie den Startprompt ein; nennen Sie dabei die Textspalte.
 2. Lesen Sie zehn der gekennzeichneten Texte selbst und zählen Sie, in wie vielen Sie zustimmen.
@@ -29,9 +31,8 @@ Hunderte offene Antworten, Abstracts oder Dokumente sind zu viele, um sie genau 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen die Methode fest: Vorverarbeitungsregeln, einen festen Zufallsstartwert, die Zahl der Themen, einen Stabilitätslauf, Tabellen der häufigsten Wörter und „ein unscharfes Thema unscharf nennen“. Ergänzen Sie für das Labeln Kategoriendefinitionen und fordern Sie je Text eine einzeilige Begründung. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompt: „Führen Sie das Standard-Topic-Modell für dieses Korpus aus und berichten Sie die Stabilität.“ Es kommen nur genehmigte, nicht sensible Texte hinein, und Sie prüfen eine Stichprobe der Labels von Hand.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich erkunde Text als Daten für ein Projekt zu [Thema]. Die angehängte CSV-Datei enthält [Anzahl] Texte in der Spalte [Spaltenname]. 1) Ordnen Sie den ersten 30 Zeilen ein Sentiment (positiv, neutral oder negativ) oder eine dieser Kategorien zu: [Kategorien mit Definitionen], jeweils mit einer einzeiligen Begründung. 2) Führen Sie mit Python ein einfaches Topic-Modell über alle Zeilen mit [5] Themen aus und zeigen Sie die zehn häufigsten Wörter je Thema sowie den Code. Nennen Sie die verwendete Methode und die Einstellungen und sagen Sie, wo die Ergebnisse instabil wirken.

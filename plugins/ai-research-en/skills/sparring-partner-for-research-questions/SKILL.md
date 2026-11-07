@@ -17,7 +17,9 @@ Alternative framings of your question, the assumptions it rests on and the stron
 
 Early ideas are usually tested only against your own view or a busy supervisor's; blind spots, untested assumptions and obvious objections surface late, sometimes at the viva.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your idea and ask your AI assistant to act as a critical supervisor.
 2. Ask for alternative research questions with different scope or angle.
@@ -29,9 +31,8 @@ Early ideas are usually tested only against your own view or a busy supervisor's
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Critical supervisor'. Instructions: the three parts of the starter prompt – alternative questions (narrower, broader, different angle), hidden assumptions, three strongest objections with counter-positions – under 350 words, no literature unless it is sure it exists, and never choose the direction for you. No knowledge or code needed. Starter prompts: 'Challenge this idea', 'Act as reviewer 2 on my revised question'. Reusable for every new idea or revision.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. My rough research idea is: [idea]. Act as a critical but fair supervisor. First, give three alternative research questions: one narrower, one broader, one from a different angle, each with one sentence on what it would add. Second, list the assumptions my idea takes for granted. Third, give the three strongest objections a reviewer might raise, and one possible counter-position. Keep it under 350 words. Do not cite literature unless you are sure it exists.

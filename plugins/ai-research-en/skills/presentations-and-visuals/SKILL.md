@@ -17,7 +17,9 @@ A labelled, colour-safe chart with the Python code behind it, so you can reprodu
 
 Turning results into a clear chart and talk takes many iterations, and slides often list topics instead of stating claims backed by visual evidence.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the results table and ask for one clear chart of the main result.
 2. Ask the assistant to show the Python code it used for the chart.
@@ -29,9 +31,8 @@ Turning results into a clear chart and talk takes many iterations, and slides of
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: read wide files with Python and report how blanks and incomplete rows were handled; always show the code; colour-vision-safe palette, labelled axes with units; slide titles as full-sentence claims the data support, never causes the data cannot show. Switch on "Create documents, charts and code". Starter prompts: "Chart this series with a 10-year rolling mean" and "Six-slide outline from this chart". Reusable for every new results file.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am presenting my research to [audience] in a [10-minute] talk. Attached is a results table [file name]; my key findings are: [paste findings]. 1) Create one clear chart of [variable] by [group] with labelled axes, units and a short title, and show the Python code you used. 2) Draft a six-slide outline: each slide title is a full-sentence message, with up to three bullet points and a note on which visual to use. Use only the numbers in the file and my findings; if a column is unclear, ask me.

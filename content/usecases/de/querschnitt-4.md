@@ -64,12 +64,12 @@ Schreiben Sie Codebook, README und Metadatensatz für die Oxford-Stationsdatei, 
 ### Prompt
 
 ```text
-Ich bereite eine bereinigte Fassung der angehängten Textdatei der Met-Office-Station Oxford für die Ablage in einem Datenrepository vor. Lies zuerst die Kopfzeilen. Untersuche die Datei mit Python und erstelle dann eine Codebook-Tabelle: Variablenname, Beschreibung, Typ, Einheit, beobachteter Bereich, Anzahl fehlender Werte, Code für fehlende Werte und verwendete Flags (*, # oder „Provisional“). Entwirf dann ein README mit Titel, Urhebern (als Platzhalter lassen), Beschreibung, Quelle und Entstehung der Daten, Dateiliste, Variablen, Lizenz (als Platzhalter lassen), Zitierweise der ursprünglichen Met-Office-Daten und Kontakt. Markiere jede Bedeutung, die du geraten hast, mit [PRÜFEN]. Liste die obligatorischen DataCite-Metadatenfelder mit Vorschlagswerten auf. Gib zum Schluss eine Replikations-Checkliste zu Daten, Code, Softwareversionen, Ausführungsreihenfolge und erwarteten Ergebnissen.
+Ich bereite eine bereinigte Fassung der angehängten Textdatei der Met-Office-Station Oxford für die Ablage in einem Datenrepository vor. Lesen Sie zuerst die Kopfzeilen. Untersuchen Sie die Datei mit Python und erstellen Sie dann eine Codebook-Tabelle: Variablenname, Beschreibung, Typ, Einheit, beobachteter Bereich, Anzahl fehlender Werte, Code für fehlende Werte und verwendete Flags (*, # oder „Provisional“). Entwerfen Sie dann ein README mit Titel, Urhebern (als Platzhalter lassen), Beschreibung, Quelle und Entstehung der Daten, Dateiliste, Variablen, Lizenz (als Platzhalter lassen), Zitierweise der ursprünglichen Met-Office-Daten und Kontakt. Markieren Sie jede Bedeutung, die Sie geraten haben, mit [PRÜFEN]. Listen Sie die obligatorischen DataCite-Metadatenfelder mit Vorschlagswerten auf. Geben Sie zum Schluss eine Replikations-Checkliste zu Daten, Code, Softwareversionen, Ausführungsreihenfolge und erwarteten Ergebnissen.
 ```
 
 ### Prüfung
 
-Vergleichen Sie mit der Datei: tmax reicht von −0.2 bis 28.2 °C, sun fehlt („---“) in 912 Monaten und rain in keinem. Jede Bedeutung, die der Kopf nicht definiert, etwa „af“, muss [PRÜFEN] tragen.
+Vergleichen Sie mit der Datei: tmax reicht von −0,2 bis 28,2 °C, sun fehlt („---“) in 912 Monaten und rain in keinem. Jede Bedeutung, die der Kopf nicht definiert, etwa „af“, muss [PRÜFEN] tragen.
 
 ## Mit eigenem Material
 
@@ -87,7 +87,7 @@ Einen kleinen öffentlichen oder fiktiven Datensatz als CSV oder Excel, zum Beis
 ### Prompt
 
 ```text
-Ich bereite einen Datensatz für die Ablage in [Repository] vor. Angehängt ist [Dateiname]; er enthält [kurze Beschreibung und Art der Erhebung]. Untersuche die Datei mit Python und erstelle dann eine Codebook-Tabelle: Variablenname, Beschreibung, Typ, Einheit, Bereich oder erlaubte Werte, Anzahl fehlender Werte, Code für fehlende Werte. Entwirf dann ein README mit: Titel, Urhebern [Platzhalter], Beschreibung, Methoden, Dateiliste, Variablen, Lizenz [Platzhalter], Zitierweise, Kontakt. Markiere jede Variablenbedeutung, die du geraten hast, mit [PRÜFEN]. Liste dann die zentralen Metadatenfelder auf, die das Repository voraussichtlich abfragt. Gib zum Schluss eine Checkliste für ein Replikationspaket (Daten, Code, Softwareversionen, Ausführungsreihenfolge, erwartete Ergebnisse) und sage, wie ich prüfen kann, dass jede Zahl in meiner Arbeit vom Code reproduziert wird.
+Ich bereite einen Datensatz für die Ablage in [Repository] vor. Angehängt ist [Dateiname]; er enthält [kurze Beschreibung und Art der Erhebung]. Untersuchen Sie die Datei mit Python und erstellen Sie dann eine Codebook-Tabelle: Variablenname, Beschreibung, Typ, Einheit, Bereich oder erlaubte Werte, Anzahl fehlender Werte, Code für fehlende Werte. Entwerfen Sie dann ein README mit: Titel, Urhebern [Platzhalter], Beschreibung, Methoden, Dateiliste, Variablen, Lizenz [Platzhalter], Zitierweise, Kontakt. Markieren Sie jede Variablenbedeutung, die Sie geraten haben, mit [PRÜFEN]. Listen Sie dann die zentralen Metadatenfelder auf, die das Repository voraussichtlich abfragt. Geben Sie zum Schluss eine Checkliste für ein Replikationspaket (Daten, Code, Softwareversionen, Ausführungsreihenfolge, erwartete Ergebnisse) und sagen Sie, wie ich prüfen kann, dass jede Zahl in meiner Arbeit vom Code reproduziert wird.
 ```
 
 ### Prüfung

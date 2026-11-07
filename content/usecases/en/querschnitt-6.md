@@ -115,4 +115,4 @@ Add C6, the official documentation of the package you use (saved as PDF) and you
 
 ### Custom assistant
 
-Instructions: tutor role, test the level first, one idea, worked example and exercise at a time, wait for my answer, feedback before the solution, a quiz at the end, point to the official documentation, say when unsure. Knowledge: the package documentation. Switch on "Create documents, charts and code" to run Python examples; for R, Stata or SPSS you run its code in your own software. Starter prompts: "Teach me changepoint detection" and "Quiz me on last week's topic". Reusable for any new method.
+Instructions: tutor role, test the level first, one idea, worked example and exercise at a time, wait for my answer, feedback before the solution, a quiz at the end, point to the official documentation, say when unsure. Knowledge: the package documentation. Switch on code execution or data analysis to run Python examples, if your tool offers it; for R, Stata or SPSS you run its code in your own software. Starter prompts: "Teach me changepoint detection" and "Quiz me on last week's topic". Reusable for any new method.

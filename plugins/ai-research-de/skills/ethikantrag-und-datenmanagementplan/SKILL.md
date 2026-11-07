@@ -1,5 +1,5 @@
 ---
-name: ethikantrag-and-datenmanagementplan
+name: ethikantrag-und-datenmanagementplan
 description: "Strukturieren Sie Entwürfe entlang der Vorlagen Ihrer Einrichtung – die studienspezifische Argumentation zu Einwilligung, Risiken und Anonymisierung muss Ihre eigene sein. Einsetzen bei: Ethikantrag & Datenmanagementplan."
 ---
 
@@ -17,7 +17,9 @@ Ein Gerüst unter jeder Überschrift mit den Erwartungen der Gutachtenden und de
 
 Ethikformulare und Datenmanagementpläne sind lang und ungewohnt; Sie verlieren Zeit damit herauszufinden, was jeder Abschnitt erwartet, bevor Sie über Einwilligung, Risiko, Datenschutz und Nachnutzung argumentieren können.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie die Überschriften der Vorlage und Ihre kurze Studienzusammenfassung ein.
 2. Bitten Sie um einen Gerüstentwurf unter jeder Überschrift mit Leitfragen.
@@ -29,12 +31,11 @@ Ethikformulare und Datenmanagementpläne sind lang und ungewohnt; Sie verlieren 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Ethik- und DMP-Entwerfer“. Anweisungen: den Überschriften der Vorlage folgen, Erwartungen der Gutachtenden, offene Fragen und ein Gerüst mit [Platzhaltern] liefern, Lizenzen nur aus Quelldokumenten übernehmen und nie Argumentation zu Einwilligung, Risiko oder Anonymisierung schreiben oder Regeln nennen, die er nicht belegen kann. Wissen: die öffentlichen Vorlagen und Hinweisseiten Ihrer Einrichtung. Startprompt: „Entwirf das Gerüst für [Ethikantrag oder DMP]: [Studienzusammenfassung]“. Wiederverwendbar für jedes neue Projekt.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bereite [einen Ethikantrag oder einen Datenmanagementplan] für eine Studie zu [Thema] vor. Die Überschriften der Vorlage sind: [Überschriften]. Meine Studie in Kürze: [Zusammenfassung]. Gib für jede Überschrift an: was Gutachtende üblicherweise erwarten, welche Fragen ich selbst beantworten muss, und ein kurzes Gerüst mit [Platzhaltern]. Schreibe keine studienspezifische Argumentation zu Einwilligung, Risiken oder Anonymisierung; lass stattdessen klare Aufforderungen an mich. Nenne keine institutionellen Regeln oder rechtlichen Anforderungen, wenn du dir nicht sicher bist; wenn du dir nicht sicher bist, sage das.
+Ich bereite [einen Ethikantrag oder einen Datenmanagementplan] für eine Studie zu [Thema] vor. Die Überschriften der Vorlage sind: [Überschriften]. Meine Studie in Kürze: [Zusammenfassung]. Geben Sie für jede Überschrift an: was Gutachtende üblicherweise erwarten, welche Fragen ich selbst beantworten muss, und ein kurzes Gerüst mit [Platzhaltern]. Schreiben Sie keine studienspezifische Argumentation zu Einwilligung, Risiken oder Anonymisierung; lassen Sie stattdessen klare Aufforderungen an mich. Nennen Sie keine institutionellen Regeln oder rechtlichen Anforderungen, wenn Sie sich nicht sicher sind; wenn Sie sich nicht sicher sind, sagen Sie das.
 ```
 
 ## Prüfung

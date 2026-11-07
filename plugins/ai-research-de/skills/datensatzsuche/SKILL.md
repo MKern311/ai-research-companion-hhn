@@ -17,7 +17,9 @@ Eine Auswahlliste verifizierter Datensätze mit Abdeckung, Analyseeinheit, Zugan
 
 Geeignete Sekundärdaten gibt es oft, aber sie liegen bei Statistikämtern, Archiven und Repositorien, die Sie nicht kennen – Sie finden sie, nachdem Sie eigene erhoben haben, oder übersehen Unterschiede bei Lizenz und Definitionen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Schalten Sie die Websuche ein (sofern Ihr Tenant sie erlaubt) und fügen Sie dann den Startprompt mit Ihrer Forschungsfrage und Ihren Datenanforderungen ein.
 2. Öffnen Sie jeden vorgeschlagenen Link und prüfen Sie Abdeckung, Zugangsbedingungen und letzte Aktualisierung.
@@ -29,12 +31,11 @@ Geeignete Sekundärdaten gibt es oft, aber sie liegen bei Statistikämtern, Arch
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Daten-Scout“. Anweisungen: die feste Tabelle (Name, Anbieter, Link, Abdeckung, Analyseeinheit, Zugang, Lizenz, Passung, Lücken), „sage, wenn du dir nicht sicher bist“ und „erfinde nie Datensätze“. Wissen: die öffentlichen Websites von Repositorien, denen Sie vertrauen, etwa der UK Data Service oder das Archiv Ihres Fachs. Startprompt: „Finde offene Daten für: [Frage, Region, Zeitraum, Variablen]“. Wiederverwendbar für jede neue Frage; Sie öffnen weiterhin jeden Link.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich promoviere in [Fach]. Meine Forschungsfrage lautet: [Frage]. Ich brauche Sekundärdaten, die [Land oder Region] und [Zeitraum] abdecken, auf der Ebene von [Individuen, Unternehmen, Regionen oder Texten], mit Variablen zu [zentrale Variablen]. Suche im Web nach offenen Datensätzen und Repositorien (zum Beispiel dem UK Data Service, nationalen Statistikämtern, Zenodo oder Fach-Repositorien). Gib bis zu sechs Optionen als Tabelle an: Name, Anbieter, Link, Abdeckung, Zugangsbedingungen, Passung und was fehlt. Wenn du dir nicht sicher bist, ob ein Datensatz eine Variable enthält, sage das; erfinde keine Datensätze.
+Ich promoviere in [Fach]. Meine Forschungsfrage lautet: [Frage]. Ich brauche Sekundärdaten, die [Land oder Region] und [Zeitraum] abdecken, auf der Ebene von [Individuen, Unternehmen, Regionen oder Texten], mit Variablen zu [zentrale Variablen]. Suchen Sie im Web nach offenen Datensätzen und Repositorien (zum Beispiel dem UK Data Service, nationalen Statistikämtern, Zenodo oder Fach-Repositorien). Geben Sie bis zu sechs Optionen als Tabelle an: Name, Anbieter, Link, Abdeckung, Zugangsbedingungen, Passung und was fehlt. Wenn Sie sich nicht sicher sind, ob ein Datensatz eine Variable enthält, sagen Sie das; erfinden Sie keine Datensätze.
 ```
 
 ## Prüfung

@@ -17,7 +17,9 @@ Ein Entwurf eines Kategoriensystems mit Definitionen und wörtlichen Belegen, de
 
 Das erste Codieren dauert Wochen, und allein ist schwer zu beurteilen, ob Codes konsistent angewendet werden, ob Themen mehr sind als Themenzusammenfassungen oder wann neue Daten keine neuen Codes mehr hervorbringen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie den Startprompt mit Ihrer Forschungsfrage und den Auszügen ein.
 2. Prüfen Sie, dass jeder Code eine klare Definition und ein passendes Beispielzitat hat.
@@ -29,9 +31,8 @@ Das erste Codieren dauert Wochen, und allein ist schwer zu beurteilen, ob Codes 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Hilfe beim qualitativen Codieren“ (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Fügen Sie Ihr Kategoriensystem als Wissensdatei hinzu (unterstützt Ihr Werkzeug keine Wissensdateien, hängen Sie es im Chat an). Nennen Sie in den dauerhaften Anweisungen Ihren Ansatz (z. B. Codebook-Thematische-Analyse) und die Regeln: wortgetreu mit Seiten- oder Zeilenangabe zitieren, im Text bleiben, mehrdeutige Stellen kennzeichnen, nie Zitate oder Themen erfinden. Startprompt: „Codieren Sie diesen Auszug mit meinem Kategoriensystem und kennzeichnen Sie jede Grenzfall-Textstelle.“ Wiederverwendbar für jedes neue Dokument – es kommt nur genehmigtes, anonymisiertes Material hinein, und Sie prüfen jedes codierte Segment.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin qualitativ Forschende bzw. Forschender im Fach [Disziplin]. Meine Forschungsfrage lautet: [Frage]. Unten stehen [Anzahl] kurze Auszüge zum Üben. Schlagen Sie ein Kategoriensystem aus 5–8 Codes vor, jeweils mit einer einzeiligen Definition und einem Beispielzitat. Codieren Sie dann jeden Auszug und zeigen Sie für jeden vergebenen Code die genaue Textstelle. Schlagen Sie abschließend vor, wie sich die Codes zu 2–3 möglichen Themen gruppieren lassen, und weisen Sie darauf hin, wo ein Auszug auf mehr als eine Weise gelesen werden könnte. [Nur für Codebook- oder Grounded-Theory-Ansätze: Sagen Sie, ob der letzte Auszug noch neue Codes hervorgebracht hat.] Gehen Sie nicht über das hinaus, was der Text sagt. Auszüge: [Text einfügen]

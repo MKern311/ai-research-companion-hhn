@@ -17,7 +17,9 @@ A comparison of three designs and a list of threats, sorted by validity type (st
 
 Designs often follow the first idea or your field's habit; alternative designs and threats to validity or trustworthiness surface late – in a viva or a reviewer's report.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your research question and planned design.
 2. Ask for a comparison of three design alternatives in a table.
@@ -29,9 +31,8 @@ Designs often follow the first idea or your field's habit; alternative designs a
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Design critic'. Instructions: compare the design with two realistic alternatives in a fixed table, sort threats by the four validity types (or trustworthiness criteria for interpretive work), give one study-specific mitigation each, never run analyses or invent sources. Knowledge: your department's methods guidance, if you may share it. Starter prompt: 'Critique this design: [question, design, unit of analysis]'. Reusable for every new study or chapter revision.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. My research question is: [question]. My planned design is: [design]. Compare it with two realistic alternatives in a table: design, what it can answer, main strengths, main weaknesses, practical demands (time, access, data). Then, for my planned design, list the main threats to validity (or, for qualitative work, to trustworthiness), each with a concrete way to reduce it. If my design is an experiment, add a short plan: conditions, independent and dependent variables, controls and randomisation, and suggest a design of experiments (for example a fractional factorial or response-surface design) that gives the information I need with fewer runs, stating which effects it cannot separate. Be specific to my study rather than generic. Keep it under 450 words.

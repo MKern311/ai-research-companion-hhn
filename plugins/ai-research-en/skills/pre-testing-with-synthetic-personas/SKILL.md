@@ -17,7 +17,9 @@ A list of hypothesised misreadings per item, sorted by response stage, that shar
 
 Cognitive pre-tests with real respondents are slow to arrange, so obvious comprehension problems often reach the pilot and use up scarce participants.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your items and describe the target population.
 2. Ask the assistant to simulate four varied respondents thinking aloud about each item.
@@ -29,9 +31,8 @@ Cognitive pre-tests with real respondents are slow to arrange, so obvious compre
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Pre-test planner'. Instructions: simulate four varied personas, sort misreadings by response stage (comprehension, retrieval, judgement, response), give a table with suggested probes, and label every output 'simulated – not data, not a pre-test'. Knowledge: a short description of your population. Starter prompt: 'Pre-test these items for [population]: [paste]'. Reusable for every revised version before each real pre-test round.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am preparing a pre-test of a questionnaire on [topic] for [population]. Simulate four varied respondents from this population (differing in age, background and reading level). For each, think aloud briefly about each item below: how they understand it and where they hesitate or misread it. Then give a table: item number, comprehension problem, how many personas had it, suggested fix. These are simulated respondents to prepare a real pre-test, not data.

@@ -69,7 +69,7 @@ Angehängt ist das PDF von Forster et al. (2025), Indicators of Global Climate C
 
 ### Prüfung
 
-Die Werte im Abstract sollten mit Tabelle 5 (1.24 [1.11 to 1.35] °C), Tabelle 6 (1.22 und 1.36 °C), Tabelle 7 (0.27 °C per decade) und Tabelle 1 (53.6 ± 5.2 Gt CO₂e) übereinstimmen. Die eingebaute 0.29 muss markiert werden.
+Die Werte im Abstract sollten mit Tabelle 5 (1,24 [1,11 bis 1,35] °C), Tabelle 6 (1,22 und 1,36 °C), Tabelle 7 (0,27 °C pro Jahrzehnt) und Tabelle 1 (53,6 ± 5,2 Gt CO₂e) übereinstimmen. Die eingebaute 0,29 muss markiert werden.
 
 ## Mit eigenem Material
 
@@ -110,4 +110,4 @@ Fügen Sie den Forster-Bericht (A3) oder, für Ihre eigene Arbeit, den aktuellen
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Definieren Sie in seinen dauerhaften Anweisungen die Prüfung: Zahlen über Abstract, Text und Tabellen hinweg; Begriffe und Abkürzungen; Zitate im Text gegen das Literaturverzeichnis; eine Tabelle mit Art des Problems, Fundstelle, was jede Stelle sagt, und Korrekturvorschlag; nur berichten, was im Dokument steht, und sagen, welche Teile nicht gelesen wurden. Startprompt: „Führen Sie die Konsistenzprüfung für diesen Entwurf durch.“ Wiederverwendbar vor jeder Einreichung – bauen Sie eine Abweichung ein, um sie zu testen.
+Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Definieren Sie in seinen dauerhaften Anweisungen die Prüfung: Zahlen über Abstract, Text und Tabellen hinweg; Begriffe und Abkürzungen; Zitate im Text gegen das Literaturverzeichnis; eine Tabelle mit Art des Problems, Fundstelle, was jede Stelle sagt, und Korrekturvorschlag; nur berichten, was im Dokument steht, und sagen, welche Teile nicht gelesen wurden. Startprompt: „Führen Sie die Konsistenzprüfung für diesen Entwurf durch.“ Wiederverwendbar vor jeder Einreichung – bauen Sie eine Abweichung ein, um sie zu testen.

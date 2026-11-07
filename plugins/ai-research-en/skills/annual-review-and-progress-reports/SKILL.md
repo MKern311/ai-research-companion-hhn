@@ -17,7 +17,9 @@ A draft under your form's headings with gaps marked [TO ADD], a risk register an
 
 Monthly reports to your supervisor and annual or transfer reviews arrive at busy times; reconstructing progress from lab notebooks and scattered notes and fitting it to the required headings takes days.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the section headings of your monthly report or review form.
 2. Paste your notes and ask for a draft under those headings.
@@ -29,9 +31,8 @@ Monthly reports to your supervisor and annual or transfer reviews arrive at busy
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: your report types and their headings, factual style and word count, progress against previous objectives, a risk table with likelihood, impact and mitigation, [TO ADD] for gaps, never invent achievements, dates or results. Knowledge: the review form and its assessment criteria. Starter prompts: "Monthly report from these notes" and "Draft my annual review". Reusable every month and at every review.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] preparing my [monthly progress report for my supervisor / annual / transfer / confirmation review]. The report needs these sections: [paste headings]. My notes are: [paste notes]. Draft the report under these headings in a factual, concise style of about [word count] words. Include progress against the objectives of the last period, outputs, training, a plan for the next period (month or year), and a table of risks with likelihood, impact and mitigation. Use only what is in my notes; mark missing information with [TO ADD] and do not invent achievements, dates or results.

@@ -64,7 +64,7 @@ Bevor Sie Ihren KI-Assistenten öffnen, kodieren Sie die 12 Abstracts in der Abs
 ### Prompt
 
 ```text
-Ich teste, ob ein Sprachmodell Texte vorannotieren kann. Angehängt ist eine Textdatei mit den Titeln und Abstracts von 12 Arbeiten zum Klimawandel, jede mit einer ID von A1 bis C6. Kodierschema, ein Code je Arbeit: DATASET – beschreibt, wie ein Beobachtungsdatensatz aufgebaut oder aktualisiert wird; ATTRIBUTION – quantifiziert den menschlichen Beitrag zur Erwärmung oder zu einem bestimmten Extremereignis; TREND – quantifiziert beobachtete oder projizierte Änderungen ohne formale Attribution; METHOD – demonstriert hauptsächlich ein statistisches Verfahren an bestehenden Daten. Verwende „unklar“, wenn kein Code passt; erfinde keine neuen Codes. Gib eine Tabelle zurück: ID, Erstautor/in und Jahr, Code, Konfidenz (hoch, mittel oder niedrig) und eine Begründung in einem Satz, die das Abstract zitiert. Als Nächstes füge ich meine eigenen Codes ein: Berechne dann Cohens Kappa in Python, zeige eine Konfusionsmatrix und liste jede Abweichung auf.
+Ich teste, ob ein Sprachmodell Texte vorannotieren kann. Angehängt ist eine Textdatei mit den Titeln und Abstracts von 12 Arbeiten zum Klimawandel, jede mit einer ID von A1 bis C6. Kodierschema, ein Code je Arbeit: DATASET – beschreibt, wie ein Beobachtungsdatensatz aufgebaut oder aktualisiert wird; ATTRIBUTION – quantifiziert den menschlichen Beitrag zur Erwärmung oder zu einem bestimmten Extremereignis; TREND – quantifiziert beobachtete oder projizierte Änderungen ohne formale Attribution; METHOD – demonstriert hauptsächlich ein statistisches Verfahren an bestehenden Daten. Verwenden Sie „unklar“, wenn kein Code passt; erfinden Sie keine neuen Codes. Geben Sie eine Tabelle zurück: ID, Erstautor/in und Jahr, Code, Konfidenz (hoch, mittel oder niedrig) und eine Begründung in einem Satz, die das Abstract zitiert. Als Nächstes füge ich meine eigenen Codes ein: Berechnen Sie dann Cohens Kappa in Python, zeigen Sie eine Konfusionsmatrix und listen Sie jede Abweichung auf.
 ```
 
 ### Prüfung
@@ -75,7 +75,7 @@ Berechnen Sie Kappa von Hand aus der Konfusionsmatrix nach. Erwarten Sie Abweich
 
 ### Mitbringen
 
-Ihr Kodierschema (3–6 Codes mit Definitionen) und 20 kurze unkritische Texte, etwa Open-Access-Abstracts oder erfundene Aussagen, nummeriert in einer Liste oder CSV.
+Ihr Kodierschema (3–6 Codes mit Definitionen) und 20 kurze nicht sensible Texte, etwa Open-Access-Abstracts oder erfundene Aussagen, nummeriert in einer Liste oder CSV.
 
 ### Schritte
 
@@ -87,7 +87,7 @@ Ihr Kodierschema (3–6 Codes mit Definitionen) und 20 kurze unkritische Texte, 
 ### Prompt
 
 ```text
-Ich teste, ob ein Sprachmodell Texte für meine Studie zu [Thema] vorannotieren kann. Kodierschema: [Code: Definition, einer je Zeile]. Weise jedem untenstehenden Text (oder in der angehängten Datei) genau einen Code zu. Gib eine Tabelle zurück: Text-ID, Code, Konfidenz (hoch, mittel oder niedrig) und eine Begründung in einem Satz, die den Text zitiert. Verwende „unklar“, wenn kein Code passt; erfinde keine neuen Codes. Texte: [nummerierte Texte einfügen]
+Ich teste, ob ein Sprachmodell Texte für meine Studie zu [Thema] vorannotieren kann. Kodierschema: [Code: Definition, einer je Zeile]. Weisen Sie jedem untenstehenden Text (oder in der angehängten Datei) genau einen Code zu. Geben Sie eine Tabelle zurück: Text-ID, Code, Konfidenz (hoch, mittel oder niedrig) und eine Begründung in einem Satz, die den Text zitiert. Verwenden Sie „unklar“, wenn kein Code passt; erfinden Sie keine neuen Codes. Texte: [nummerierte Texte einfügen]
 ```
 
 ### Prüfung
@@ -96,11 +96,11 @@ Bei zehn Texten ist Kappa ein grobes Signal, kein Freigabetest: Schauen Sie zuer
 
 ### Grenze
 
-Ein Chat erlaubt es, das Schema an einer kleinen Stichprobe zu testen; das Vorannotieren großer Mengen braucht eine skriptgesteuerte Pipeline in einem freigegebenen Tool.
+Ein Chat erlaubt es, das Schema an einer kleinen Stichprobe zu testen; das Vorannotieren großer Mengen braucht eine skriptgesteuerte Pipeline in einem freigegebenen Werkzeug.
 
 ## Technik
 
-Laden Sie die Texte als CSV- oder Textdatei mit Ihrem Codebuch in Ihren KI-Assistenten hoch; er kodiert sie und berechnet Cohens Kappa in Python gegen Ihre Codes – wenn er keinen Code ausführen kann, bitten Sie um den Code und führen Sie ihn selbst aus. Kodieren im großen Maßstab braucht eine skriptgesteuerte Pipeline in einem freigegebenen Tool. Üben Sie an der Abstract-Datei der 12 Übungsarbeiten.
+Laden Sie die Texte als CSV- oder Textdatei mit Ihrem Codebuch in Ihren KI-Assistenten hoch; er kodiert sie und berechnet Cohens Kappa in Python gegen Ihre Codes – wenn er keinen Code ausführen kann, bitten Sie um den Code und führen Sie ihn selbst aus. Kodieren im großen Maßstab braucht eine skriptgesteuerte Pipeline in einem freigegebenen Werkzeug. Üben Sie an der Abstract-Datei der 12 Übungsarbeiten.
 
 ## Stufen
 
@@ -110,8 +110,8 @@ Führen Sie den Startprompt mit der Abstract-Datei aus und fügen Sie Ihre eigen
 
 ### Projekt / Notebook
 
-Fügen Sie Ihr Codebuch mit Definitionen und Beispielen hinzu, die Texte (AB funktioniert als .txt; wenn Ihr Tool den Dateityp nicht akzeptiert, speichern Sie als .xlsx oder .txt) und Ihre Notizen zu jeder Abweichung. Fragen Sie, auf welche Definitionen die Abweichungen hindeuten, und lassen Sie ein überarbeitetes Codebuch entwerfen. Je nach Tool kann das Projekt Kappa nicht berechnen, bewahrt aber jede Codebuchversion mit ihren Gründen auf – Material für Ihren Methodenteil.
+Fügen Sie Ihr Codebuch mit Definitionen und Beispielen hinzu, die Texte (AB funktioniert als .txt; wenn Ihr Werkzeug den Dateityp nicht akzeptiert, speichern Sie als .xlsx oder .txt) und Ihre Notizen zu jeder Abweichung. Fragen Sie, auf welche Definitionen die Abweichungen hindeuten, und lassen Sie ein überarbeitetes Codebuch entwerfen. Je nach Werkzeug kann das Projekt Kappa nicht berechnen, bewahrt aber jede Codebuchversion mit ihren Gründen auf – Material für Ihren Methodenteil.
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Vorannotator“ und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Tool sie anbietet, für Kappa und die Konfusionsmatrix. Anweisungen: das Kodierschema, ein Code je Text, „unklar“ statt neuer Codes, Konfidenz und ein wörtliches Zitat als Begründung, Kappa gegen menschliche Codes, wenn sie vorliegen. Wissen: Ihr Codebuch. Es geht nur freigegebener, unkritischer Text hinein, und ein Mensch prüft von jedem Stapel eine Stichprobe. Startprompt: „Kodiere diese Texte: [einfügen]“.
+Nennen Sie ihn „Vorannotator“ und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, für Kappa und die Konfusionsmatrix. Anweisungen: das Kodierschema, ein Code je Text, „unklar“ statt neuer Codes, Konfidenz und ein wörtliches Zitat als Begründung, Kappa gegen menschliche Codes, wenn sie vorliegen. Wissen: Ihr Codebuch. Es geht nur freigegebener, nicht sensibler Text hinein, und ein Mensch prüft von jedem Stapel eine Stichprobe. Startprompt: „Kodieren Sie diese Texte: [einfügen]“.

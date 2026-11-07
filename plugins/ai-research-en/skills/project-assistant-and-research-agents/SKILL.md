@@ -17,7 +17,9 @@ A reusable assistant that applies your citation style and terms, and a staged wo
 
 You repeat the same rules in every chat, and multi-step tasks such as a scoping search drift off course or mix unchecked, sometimes invented, sources into the output.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Start a new chat and paste the prompt with your rules as the first message.
 2. Attach your PDFs, or name your websites if web search is on.
@@ -29,9 +31,8 @@ You repeat the same rules in every chat, and multi-step tasks such as a scoping 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: APA 7, your terms with definitions, never invent sources, quotes or numbers, a verbatim quote and page per cell, stop after each stage for approval. Knowledge: the four PDFs or your own approved, non-sensitive papers. Starter prompts: "Stage 1 extraction for these papers" and "Compare the approved cells". A human checks every result; reusable for each new scoping or comparison task.
 
-## Starter prompt
+## Typical request
 
 ```text
 For this whole conversation, you are the research assistant of a postgraduate researcher in [discipline]. Always follow these standing rules: use [citation style]; use these terms consistently: [key terms with definitions]; never invent sources, quotes or numbers – say when you are unsure; [further rules]. When I ask for a scoping task on [research question], work in three stages and stop after each one for my approval. Stage 1, search: list up to eight sources from [attached PDFs / websites] or the web, with title, year, link and one line on relevance. Stage 2, extraction: for the sources I approve, fill a table with aim, method, sample and main finding. Stage 3, report: write a 300-word summary that cites only approved sources. First confirm these rules in three lines and wait for my question.

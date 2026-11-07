@@ -63,12 +63,12 @@ Für jeden Schlüsselbegriff in einem Glossar ein vereinbartes Äquivalent festl
 ### Prompt
 
 ```text
-Angehängt ist das PDF von Christidis et al. (2020). Nimm sein Abstract und übersetze es ins Englische für interessierte Mitglieder der Öffentlichkeit in Großbritannien (ersetze Englisch und Großbritannien durch eine Sprache, die jemand in deiner Gruppe liest, und ein passendes Land). Verwende einen klaren, natürlichen Stil. Halte Fachbegriffe einheitlich und gib ein kurzes Glossar mit der übersetzten Entsprechung für jedes Schlüsselkonzept, etwa return time, human influence, attribution und greenhouse gas emissions. Passe an, was lokal keinen Sinn ergäbe, und liste jede Anpassung auf. Halte alle Zahlen und Einheiten exakt und verwende lokale Zahlenformate. Markiere jeden Begriff, bei dem du dir über die in der Klimawissenschaft übliche Übersetzung unsicher bist.
+Angehängt ist das PDF von Christidis et al. (2020). Nehmen Sie sein Abstract und übersetzen Sie es ins Englische für interessierte Mitglieder der Öffentlichkeit in Großbritannien (ersetzen Sie Englisch und Großbritannien durch eine Sprache, die jemand in Ihrer Gruppe liest, und ein passendes Land). Verwenden Sie einen klaren, natürlichen Stil. Halten Sie Fachbegriffe einheitlich und geben Sie ein kurzes Glossar mit der übersetzten Entsprechung für jedes Schlüsselkonzept, etwa return time, human influence, attribution und greenhouse gas emissions. Passen Sie an, was lokal keinen Sinn ergäbe, und listen Sie jede Anpassung auf. Halten Sie alle Zahlen und Einheiten exakt und verwenden Sie lokale Zahlenformate. Markieren Sie jeden Begriff, bei dem Sie sich über die in der Klimawissenschaft übliche Übersetzung unsicher sind.
 ```
 
 ### Prüfung
 
-Übersetzen Sie in einem neuen Chat zurück und vergleichen Sie mit dem Original-Abstract: 38.7 °C, 100–300 years und 3.5 years by 2100 müssen erhalten bleiben, zusammen mit der Bedingung „without mitigating greenhouse gas emissions“.
+Übersetzen Sie in einem neuen Chat zurück und vergleichen Sie mit dem Original-Abstract: 38,7 °C, 100–300 Jahre und 3,5 Jahre bis 2100 müssen erhalten bleiben, zusammen mit der Bedingung „without mitigating greenhouse gas emissions“.
 
 ## Mit eigenem Material
 
@@ -86,7 +86,7 @@ Eine eigene Laienzusammenfassung oder ein eigenes Abstract (150–250 Wörter) u
 ### Prompt
 
 ```text
-Ich bin Forschende/Forschender in [Fach] und teile meine Arbeit mit [Zielgruppe] in [Land]. Unten steht meine Laienzusammenfassung auf Deutsch: [Text einfügen]. Übersetze sie für diese Zielgruppe in [Sprache], in klarem und natürlichem Stil. Halte Fachbegriffe einheitlich und gib in einem kurzen Glossar den [Sprache]-Begriff für jedes Schlüsselkonzept an. Passe Beispiele, Einheiten oder Bezüge an, die lokal keinen Sinn ergäben, und liste jede vorgenommene Anpassung auf. Markiere jeden Begriff, bei dem du dir über die übliche Übersetzung in diesem Fach unsicher bist.
+Ich bin Forschende/Forschender in [Fach] und teile meine Arbeit mit [Zielgruppe] in [Land]. Unten steht meine Laienzusammenfassung auf Deutsch: [Text einfügen]. Übersetzen Sie sie für diese Zielgruppe in [Sprache], in klarem und natürlichem Stil. Halten Sie Fachbegriffe einheitlich und geben Sie in einem kurzen Glossar den [Sprache]-Begriff für jedes Schlüsselkonzept an. Passen Sie Beispiele, Einheiten oder Bezüge an, die lokal keinen Sinn ergäben, und listen Sie jede vorgenommene Anpassung auf. Markieren Sie jeden Begriff, bei dem Sie sich über die übliche Übersetzung in diesem Fach unsicher sind.
 ```
 
 ### Prüfung
@@ -109,4 +109,4 @@ Fügen Sie B2, Ihre freigegebenen früheren Übersetzungen und ein Glossardokume
 
 ### Eigener Assistent
 
-Anweisungen: Zielsprache, Land und Zielgruppe, natürlicher Stil, Zahlen und Einheiten exakt im lokalen Format, Glossarbegriffe beibehalten, jede Anpassung aufgelistet, unsichere Begriffe markiert. Wissen: Ihr Begriffsglossar. Ein zweiter Agent, der nur zurückübersetzt und keinen Zugriff auf das Original hat, macht die Prüfung wiederholbar. Startprompt: „Übersetze dieses Abstract für die Öffentlichkeit in [Land]“. Für jede Zusammenfassung, die Sie im Ausland teilen, wiederverwendbar.
+Anweisungen: Zielsprache, Land und Zielgruppe, natürlicher Stil, Zahlen und Einheiten exakt im lokalen Format, Glossarbegriffe beibehalten, jede Anpassung aufgelistet, unsichere Begriffe markiert. Wissen: Ihr Begriffsglossar. Ein zweiter Agent, der nur zurückübersetzt und keinen Zugriff auf das Original hat, macht die Prüfung wiederholbar. Startprompt: „Übersetzen Sie dieses Abstract für die Öffentlichkeit in [Land]“. Für jede Zusammenfassung, die Sie im Ausland teilen, wiederverwendbar.

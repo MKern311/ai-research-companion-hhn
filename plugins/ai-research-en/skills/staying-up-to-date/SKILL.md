@@ -17,7 +17,9 @@ A weekly triage into must-read, maybe and skip against explicit relevance criter
 
 Alerts and tables of contents bring dozens of new titles each week; skimming them all takes hours, and relevant papers are lost in the noise.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your research question and the new titles and abstracts.
 2. Ask for a must-read, maybe and skip rating with a reason for each.
@@ -29,9 +31,8 @@ Alerts and tables of contents bring dozens of new titles each week; skimming the
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: your research question, the three relevance criteria, rate only from title and abstract, a one-line reason naming the criterion, supports, challenges or extends for must-reads, five alert terms, never add papers not in the input. Knowledge: optionally two or three key papers that define your topic. Starter prompt: "Triage this week's alert". Reusable every week.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. My research question is: [question]. Below are new publications from this week's alerts. Sort them into must-read, maybe and skip, with one line on why, based only on the title and abstract given. For the must-reads, say in one sentence whether each supports, challenges or extends my work, or offers a method I could use. Finish with a short list of search terms worth adding to my alerts. Do not add papers that are not in the list.

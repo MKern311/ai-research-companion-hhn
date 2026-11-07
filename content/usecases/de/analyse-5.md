@@ -71,7 +71,7 @@ Ich brauche eine publikationsreife Abbildung für ein Kapitel meiner Abschlussar
 
 ### Prüfung
 
-Das letzte dargestellte Jahr ist 2025, nicht das unvollständige 2026; 2024 liegt bei etwa 1.17 °C (in Excel prüfen). Gemittelte monatliche Grenzen sind nur eine Näherung und breiter als die offizielle Jahresreihe des Met Office (für 1850 etwa −0.70 bis −0.15 °C gegenüber −0.60 bis −0.25 °C); der Assistent sollte Sie für eine veröffentlichte Abbildung auf diese Jahresreihe verweisen. Drucken Sie die Abbildung in Graustufen aus, um die Lesbarkeit zu testen.
+Das letzte dargestellte Jahr ist 2025, nicht das unvollständige 2026; 2024 liegt bei etwa 1,17 °C (in Excel prüfen). Gemittelte monatliche Grenzen sind nur eine Näherung und breiter als die offizielle Jahresreihe des Met Office (für 1850 etwa −0,70 bis −0,15 °C gegenüber −0,60 bis −0,25 °C); der Assistent sollte Sie für eine veröffentlichte Abbildung auf diese Jahresreihe verweisen. Drucken Sie die Abbildung in Graustufen aus, um die Lesbarkeit zu testen.
 
 ## Mit eigenem Material
 
@@ -112,4 +112,4 @@ Fügen Sie die HadCRUT5-Datei (D3; speichern Sie sie als .xlsx oder .txt, wenn I
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Schreiben Sie in seine dauerhaften Anweisungen Ihren Hausstil: Schriftart und -größe, farbenblindheitssichere Palette, Breite und Auflösung, Achsenbeschriftungen mit Einheiten, nur vollständige Zeiträume, Unsicherheit dort zeigen, wo die Daten es erlauben, und „immer den vollständigen Code und einen Entwurf der Abbildungsunterschrift zurückgeben“. Fügen Sie die Abbildungsrichtlinien der Zeitschrift als Wissensdatei hinzu (unterstützt Ihr Werkzeug keine Wissensdateien, hängen Sie sie im Chat an) und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompt: „Zeichnen Sie diese Daten als Zeitschriftenabbildung in meinem Hausstil.“ Wiederverwendbar für jedes Kapitel.
+Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Schreiben Sie in seine dauerhaften Anweisungen Ihren Hausstil: Schriftart und -größe, farbenblindheitssichere Palette, Breite und Auflösung, Achsenbeschriftungen mit Einheiten, nur vollständige Zeiträume, Unsicherheit dort zeigen, wo die Daten es erlauben, und „immer den vollständigen Code und einen Entwurf der Abbildungsunterschrift zurückgeben“. Fügen Sie die Abbildungsrichtlinien der Zeitschrift als Wissensdatei hinzu (unterstützt Ihr Werkzeug keine Wissensdateien, hängen Sie sie im Chat an) und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompt: „Zeichnen Sie diese Daten als Zeitschriftenabbildung in meinem Hausstil.“ Wiederverwendbar für jedes Kapitel.

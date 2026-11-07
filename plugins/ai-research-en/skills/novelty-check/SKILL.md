@@ -17,7 +17,9 @@ A short, verified list of the closest studies with how each overlaps, plus a pos
 
 Months in, you may find your study already exists: keyword searches miss closely related work that uses different terms, another field's vocabulary or a different unit of analysis.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your summary and ask for closely related published studies with links.
 2. Ask for one sentence per study on how it overlaps with yours.
@@ -29,9 +31,8 @@ Months in, you may find your study already exists: keyword searches miss closely
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Novelty check'. Instructions: up to eight closest studies, each with authors, year, title, working link and one sentence on overlap; only studies it actually found; a two-sentence positioning statement; and a reminder that this is a first scan, not proof of novelty. No code needed. Starter prompt: 'Has this study been done? Here is my summary.' Reusable whenever your plan or question shifts.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] checking whether my planned study has already been done. My project summary is: [summary]. Search for up to eight published studies that are closest to it. For each, give authors, year, title, a working link, and one sentence on how it overlaps with or differs from my project. Only list studies you actually found with a link. If you are not sure, say so; do not invent sources. End with two sentences on how I could position my study.

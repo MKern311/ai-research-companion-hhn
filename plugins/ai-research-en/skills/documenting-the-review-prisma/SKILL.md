@@ -17,7 +17,9 @@ Checked PRISMA 2020 flow numbers with every inconsistency flagged, a methods par
 
 At the end of a review, counts per stage often fail to add up, exclusion reasons are scattered across files, and the PRISMA 2020 checklist becomes an afterthought.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your search log and the counts per stage.
 2. Ask for the PRISMA 2020 flow numbers in a table and a check that they add up, including duplicates removed.
@@ -29,9 +31,8 @@ At the end of a review, counts per stage often fail to add up, exclusion reasons
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'PRISMA checker'. Instructions: arrange the counts for the PRISMA 2020 flow diagram, check every sum and flag inconsistencies instead of correcting them, draft the methods paragraph only from facts in the log, list missing PRISMA 2020 items, and never invent search strings. Knowledge: the PRISMA 2020 checklist. Switch on code execution / data analysis if your tool offers it, for the sums. Starter prompt: 'Check this search log.'
 
-## Starter prompt
+## Typical request
 
 ```text
 I am documenting the search and selection for a literature review. Below is my search log: databases, search dates, search strings and the number of records at each stage, with exclusion reasons. Arrange the numbers for a PRISMA 2020 flow diagram in a table: identified per source, duplicates removed, screened, excluded at title and abstract, reports sought, not retrieved, assessed in full text, excluded with reasons, included. Check that the numbers add up and flag every inconsistency instead of correcting it. Then draft a methods paragraph on the search and selection, using only the facts in my log, and go through the 27 items of the PRISMA 2020 checklist and list which ones my log and draft do not yet cover. If I paste a list of records, mark likely duplicates (same DOI, or same title, year and first author) rather than deleting them.

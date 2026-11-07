@@ -17,7 +17,9 @@ Your question mapped to a fitting framework (PICO, PICOC, PEO or SPIDER), with s
 
 A question that sounds clear in conversation often fails when you try to search or measure it: framework elements are missing, constructs undefined, scope unrealistic for your time and data.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste your research question and name your discipline.
 2. Ask which framework fits best (PICO, PICOC, PEO, SPIDER or other) and why.
@@ -29,9 +31,8 @@ A question that sounds clear in conversation often fails when you try to search 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Question framer'. Instructions: choose and justify a framework, give the element table with missing parts and three search terms each, mark assumed elements, link sub-questions to elements, rate FINER with project-specific reasons, and propose measurable working definitions. Switch on code execution / data analysis if your tool offers it and definitions should be tested on data. Starter prompt: 'Frame this question and test it against FINER.' Reusable for every new draft question.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. My draft research question is: [question]. Suggest the most suitable framework for structuring it (for example PICO, PICOC, PEO or SPIDER) and explain in two sentences why it fits better than the others. Then show a table: framework element, the part of my question it covers, what is still missing or unclear, and three English search terms or synonyms. Mark any element you had to assume rather than take from my question. Next, propose three to five sub-questions, each linked to one element. Rate the question briefly against FINER (feasible, interesting, novel, ethical, relevant), giving one reason per criterion. Finally, list the key constructs, say which are vague, and propose a working definition and one possible way to measure or observe each.

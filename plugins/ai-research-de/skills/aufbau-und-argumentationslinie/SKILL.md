@@ -17,7 +17,9 @@ Eine Zusammenfassung in drei Sätzen, die Sie mit Ihrer Absicht abgleichen, eine
 
 Sie kennen Ihr Argument zu gut, um es von außen zu sehen – eine fehlende Begründung, eine unausgesprochene Einschränkung oder ein falsch platzierter Abschnitt fällt oft erst im Peer Review auf.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie den Startprompt mit Ihrer Gliederung und der Zielzeitschrift ein.
 2. Vergleichen Sie die Zusammenfassung in drei Sätzen mit dem, was Sie argumentieren wollen.
@@ -29,9 +31,8 @@ Sie kennen Ihr Argument zu gut, um es von außen zu sehen – eine fehlende Begr
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Legen Sie in den Anweisungen die Routine fest: Zusammenfassung in drei Sätzen, Toulmin-Karte mit einem Zitat je Element, vorausgesetzte statt gezeigte Schritte, CARS-Schritte in der Einleitung, auf Abschnittsüberschriften verweisen und den Text nie umschreiben. Fügen Sie die Autorenrichtlinien Ihrer Zielzeitschrift als Wissen hinzu. Startprompt: „Bilden Sie das Argument dieses Entwurfs ab und markieren Sie den schwächsten Schritt.“ Wiederverwendbar für jeden Artikel und jedes Kapitel.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich schreibe [einen Artikel oder ein Kapitel meiner Abschlussarbeit] im Fach [Disziplin] für [Zielzeitschrift]. Unten steht mein [Abstract und meine Gliederung]. 1) Fassen Sie mein zentrales Argument in drei Sätzen zusammen. 2) Bilden Sie die Argumentationslinie Schritt für Schritt ab und markieren Sie, wo ein Schritt fehlt, vorausgesetzt wird oder durch die beschriebene Evidenz nicht gestützt ist. 3) Schlagen Sie Änderungen am Aufbau vor, damit er zu einem typischen [Artikeltyp, z. B. empirischen IMRaD-]Artikel in dieser Zeitschrift passt. Seien Sie konkret und verweisen Sie auf meine Abschnittsüberschriften. Schreiben Sie meinen Text nicht um. Text: [Text einfügen]

@@ -17,7 +17,9 @@ Ein pilotierter Interviewablauf, in dem jede Nachfrage samt Begründung protokol
 
 Feste Fragebögen können vage oder überraschende Antworten nicht weiterverfolgen, während Live-Interviews nicht skalieren – Sie tauschen also Tiefe gegen Reichweite, und KI-Nachfragen laufen Gefahr, die Befragten zu lenken.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie den Startprompt mit Ihren drei Kernfragen ein.
 2. Antworten Sie als erfundene befragte Person, darunter eine vage und eine themenfremde Antwort.
@@ -29,12 +31,11 @@ Feste Fragebögen können vage oder überraschende Antworten nicht weiterverfolg
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Interview-Pilot“. Anweisungen: Ihre Kernfragen in der Reihenfolge, höchstens eine neutrale Nachfrage je Antwort, keine lenkenden oder sensiblen Fragen, „Das möchte ich lieber nicht sagen“ akzeptieren und am Ende ein Protokoll jeder Nachfrage mit Begründung. Nutzen Sie ihn nur zum Pilotieren mit erfundenen Befragten, nie mit Teilnehmenden, und prüfen Sie jedes Protokoll selbst. Startprompt: „Starte das Pilotinterview“.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich entwerfe ein adaptives Interview zu [Thema] für [Population] und möchte es pilotieren. Handle als interviewende Person. Stelle meine Kernfragen nacheinander: [F1], [F2], [F3]. Stelle nach jeder Antwort höchstens eine neutrale Nachfrage, um sie zu klären oder zu vertiefen. Regeln: keine lenkenden Fragen, keine Fragen zu Gesundheit, Finanzen oder anderen sensiblen Themen, akzeptiere „Das möchte ich lieber nicht sagen“, ohne nachzudrängen, und bleibe beim Thema. Ich antworte als erfundene befragte Person. Liste nach der letzten Frage jede Nachfrage auf, die du gestellt hast, und deine Begründung dafür.
+Ich entwerfe ein adaptives Interview zu [Thema] für [Population] und möchte es pilotieren. Handeln Sie als interviewende Person. Stellen Sie meine Kernfragen nacheinander: [F1], [F2], [F3]. Stellen Sie nach jeder Antwort höchstens eine neutrale Nachfrage, um sie zu klären oder zu vertiefen. Regeln: keine lenkenden Fragen, keine Fragen zu Gesundheit, Finanzen oder anderen sensiblen Themen, akzeptieren Sie „Das möchte ich lieber nicht sagen“, ohne nachzudrängen, und bleiben Sie beim Thema. Ich antworte als erfundene befragte Person. Listen Sie nach der letzten Frage jede Nachfrage auf, die Sie gestellt haben, und Ihre Begründung dafür.
 ```
 
 ## Prüfung

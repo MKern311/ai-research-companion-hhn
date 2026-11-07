@@ -1,5 +1,5 @@
 ---
-name: ki-nutzung-and-entscheidungsprotokoll
+name: ki-nutzung-und-entscheidungsprotokoll
 description: "Halten Sie Datum, Werkzeug, Prompt, gespeichertes Ergebnis und die dadurch beeinflussten Forschungsentscheidungen fest – die Grundlage für Ihre KI-Erklärung und eine nachvollziehbare Abschlussarbeit. Einsetzen bei: KI-Nutzung & Entscheidungsprotokoll."
 ---
 
@@ -17,7 +17,9 @@ Ein fortlaufendes Herkunftsprotokoll der KI-Nutzung, der Prüfungen und der dadu
 
 Bei der Abgabe müssen Sie Ihre KI-Nutzung erklären, doch Monate später können Sie nicht mehr rekonstruieren, welches Werkzeug, welcher Prompt oder welches Ergebnis welchen Teil der Arbeit geprägt hat oder wie Sie es geprüft haben.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Beschreiben Sie die heutige KI-Aufgabe: Werkzeug, Zweck, Prompt und wie Sie sie geprüft haben.
 2. Bitten Sie um eine Protokolltabelle als Vorlage mit Ihrer Aufgabe als Zeile eins, einschließlich der beeinflussten Forschungsentscheidung.
@@ -29,12 +31,11 @@ Bei der Abgabe müssen Sie Ihre KI-Nutzung erklären, doch Monate später könne
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: die Protokollspalten, nur aus dem füllen, was Sie beschreiben, unbekannte Zellen leer lassen, Erklärungen in neutralem Ton, die nur protokollierte Nutzungen nennen, nie Werkzeuge oder Vorteile hinzufügen. Wissen: die KI-Richtlinie Ihrer Hochschule. Startprompts: „Mache aus der heutigen KI-Nutzung eine Protokollzeile“ und „Entwirf meine Erklärung aus diesen Zeilen“. Nach jeder KI-Aufgabe wiederverwendbar – der Agent führt das Protokoll nicht, fügen Sie also jede neue Zeile in Ihr Excel-Protokoll oder Ihre Word-Datei ein.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bin Promovierende/Promovierender und möchte ein Protokoll meiner KI-Nutzung führen als Grundlage für die KI-Erklärung in meiner Dissertation. Erstelle eine Protokolltabelle mit den Spalten: Datum, Werkzeug, Aufgabe, Prompt (vollständig oder zusammengefasst), Ablageort des Ergebnisses, wie ich es geprüft habe, was ich in meiner Arbeit verwendet habe, welche Forschungsentscheidung es beeinflusst hat. Fülle die erste Zeile nach dieser Beschreibung: [heutige Aufgabe beschreiben]. Entwirf dann eine Erklärung von etwa 100 Wörtern in neutralem Ton, die nur die Nutzungen im Protokoll beschreibt. Füge keine Nutzungen hinzu, die ich nicht aufgeführt habe. [Hinweise der Hochschule einfügen, falls vorhanden.]
+Ich bin Promovierende bzw. Promovierender und möchte ein Protokoll meiner KI-Nutzung führen als Grundlage für die KI-Erklärung in meiner Dissertation. Erstellen Sie eine Protokolltabelle mit den Spalten: Datum, Werkzeug, Aufgabe, Prompt (vollständig oder zusammengefasst), Ablageort des Ergebnisses, wie ich es geprüft habe, was ich in meiner Arbeit verwendet habe, welche Forschungsentscheidung es beeinflusst hat. Füllen Sie die erste Zeile nach dieser Beschreibung: [heutige Aufgabe beschreiben]. Entwerfen Sie dann eine Erklärung von etwa 100 Wörtern in neutralem Ton, die nur die Nutzungen im Protokoll beschreibt. Fügen Sie keine Nutzungen hinzu, die ich nicht aufgeführt habe. [Hinweise der Hochschule einfügen, falls vorhanden.]
 ```
 
 ## Prüfung

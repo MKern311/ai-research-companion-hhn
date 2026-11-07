@@ -17,7 +17,9 @@ Ein klarerer Absatz in Bekannt-neu-Reihenfolge und eine Änderungstabelle, über
 
 Das Schreiben in einer Zweitsprache dauert länger, und generische Lektoratswerkzeuge glätten Ihren Text zu Formulierungen, die Abschwächungen, Betonung oder Bedeutung verschieben und nicht mehr nach Ihnen klingen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie den Startprompt mit Ihrem Absatz, Ihrem Fach und Ihrer Leserschaft ein.
 2. Gehen Sie die Änderungstabelle durch und nehmen Sie jede Änderung an oder lehnen Sie sie ab.
@@ -29,9 +31,8 @@ Das Schreiben in einer Zweitsprache dauert länger, und generische Lektoratswerk
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Legen Sie Ihr Stilblatt in die Anweisungen: britisches Englisch, das Bekannt-neu-Prinzip, Begriffe, Zahlen, Abschwächungen und Zitate unverändert lassen, keinen Inhalt hinzufügen, eine Änderungstabelle zurückgeben, unklare Sätze markieren und KI-typische Formulierungen kennzeichnen. Fügen Sie ein Glossar der Fachbegriffe Ihres Fachs als Wissen hinzu. Startprompt: „Überarbeiten Sie diesen Absatz und geben Sie mir die Änderungstabelle.“ Wiederverwendbar für jedes Kapitel – prüfen Sie für die Abschlussarbeit die Regeln Ihrer Hochschule zum Korrekturlesen.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender im Fach [Disziplin] und schreibe auf Englisch als meiner [ersten oder zweiten] Sprache für [Leserschaft, z. B. eine Zeitschrift meines Fachs]. Überarbeiten Sie den folgenden Absatz auf Klarheit, Präzision und Fluss in britischem Englisch und lassen Sie Bedeutung, Terminologie und Zitate unverändert. Fügen Sie keine neuen Inhalte oder Aussagen hinzu. Geben Sie 1) den überarbeiteten Absatz und 2) eine Tabelle zurück: ursprüngliche Formulierung, Änderung, Begründung. Markieren Sie jeden Satz, bei dem meine Bedeutung unklar ist, statt zu raten, und kennzeichnen Sie generische oder typisch KI-klingende Wendungen (zum Beispiel 'delve into', 'plays a crucial role', leere Verstärker), damit ich sie in meiner eigenen Stimme umschreiben kann. Absatz: [Text einfügen]

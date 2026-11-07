@@ -17,7 +17,9 @@ A line-by-line diplomatic transcription with uncertain readings marked, an error
 
 Old print and handwriting slow you down: deciphering one page in an unfamiliar hand can take an hour, before translation even begins.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the image of a single page or a short section.
 2. Paste the starter prompt with the language and approximate date.
@@ -29,9 +31,8 @@ Old print and handwriting slow you down: deciphering one page in an unfamiliar h
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Archive transcriber'. Instructions: line by line, original spelling and abbreviations kept, [?] for uncertain and [illegible] for unreadable text, a literal translation in a two-column table, notes on words whose meaning has changed. Knowledge: your abbreviation list and checked sample transcriptions. Starter prompt: 'Transcribe this page – [language], around [date]'. Reusable for every page; you still spot-check each one against the image.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a researcher working with archival sources. The attached image shows a [printed or handwritten] document in [language], from around [date or period]. Transcribe it line by line, keeping the original spelling, abbreviations and line breaks. Mark uncertain readings with [?] and illegible parts with [illegible] rather than guessing. Then give a literal draft translation into modern English, line by line, in a two-column table. Note any words whose meaning may have changed since that period.

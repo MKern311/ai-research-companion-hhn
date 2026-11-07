@@ -21,7 +21,7 @@ Belege dafür, dass Forschung Politik, Medien oder Praxis erreicht hat, sind im 
 
 ## Ergebnis
 
-Eine Tabelle geprüfter Erwähnungen mit Links, klassifiziert nach Art und nach Stufe von Wahrnehmung bis Nutzung, plus eine kurze Wirkungserzählung, die einen Beitrag beansprucht, nicht mehr, als die Belege zeigen.
+Eine Tabelle geprüfter Erwähnungen mit Links, klassifiziert nach Art und nach Grad von Wahrnehmung bis Nutzung, plus eine kurze Wirkungserzählung, die einen Beitrag beansprucht, nicht mehr, als die Belege zeigen.
 
 ## Vorgehen
 
@@ -58,17 +58,17 @@ Indikatoren für Online-Aufmerksamkeit – Nachrichten, Policy-Dokumente, sozial
 
 ### Aufgabe
 
-Suchen Sie Erwähnungen der Arbeit von Christidis et al. (2020) zur Hitze im Vereinigten Königreich in Politik, Medien und Praxis; sie fand nach dem Rekord von 40.3 °C im Juli 2022 Beachtung. Sie lernen, wie viele der vom Assistenten genannten Links existieren und die Arbeit tatsächlich nennen.
+Suchen Sie Erwähnungen der Arbeit von Christidis et al. (2020) zur Hitze im Vereinigten Königreich in Politik, Medien und Praxis; sie fand nach dem Rekord von 40,3 °C im Juli 2022 Beachtung. Sie lernen, wie viele der vom Assistenten genannten Links existieren und die Arbeit tatsächlich nennen.
 
 ### Prompt
 
 ```text
-Ich sammle Belege für die Reichweite dieser Arbeit: Christidis, N., McCarthy, M., & Stott, P. A. (2020). The increasing likelihood of temperatures above 30 to 40 °C in the United Kingdom. Nature Communications, 11, 3093. https://doi.org/10.1038/s41467-020-16834-0. Durchsuche das Web nach Erwähnungen seit 2020 in Policy-Dokumenten, Berichten von Regierungen oder NGOs, Nachrichtenmedien und Webseiten aus der Praxis. Gib eine Tabelle: Quelle, Art (Politik, Medien, Praxis), Datum, Link, was sie über die Forschung sagt und Stufe (Wahrnehmung, Nutzung bei Entscheidungen, Änderung von Politik oder Praxis). Nimm nur Einträge auf, deren Seite die Arbeit, ihren DOI oder ihre Autorenschaft nennt. Sage, wenn du dir nicht sicher bist, dass ein Eintrag sich auf diese Arbeit bezieht; erfinde keine Quellen.
+Ich sammle Belege für die Reichweite dieser Arbeit: Christidis, N., McCarthy, M., & Stott, P. A. (2020). The increasing likelihood of temperatures above 30 to 40 °C in the United Kingdom. Nature Communications, 11, 3093. https://doi.org/10.1038/s41467-020-16834-0. Durchsuchen Sie das Web nach Erwähnungen seit 2020 in Policy-Dokumenten, Berichten von Regierungen oder NGOs, Nachrichtenmedien und Webseiten aus der Praxis. Geben Sie eine Tabelle: Quelle, Art (Politik, Medien, Praxis), Datum, Link, was sie über die Forschung sagt und Grad (Wahrnehmung, Nutzung bei Entscheidungen, Änderung von Politik oder Praxis). Nehmen Sie nur Einträge auf, deren Seite die Arbeit, ihren DOI oder ihre Autorenschaft nennt. Sagen Sie, wenn Sie sich nicht sicher sind, dass ein Eintrag sich auf diese Arbeit bezieht; erfinden Sie keine Quellen.
 ```
 
 ### Prüfung
 
-Öffnen Sie jeden Link und behalten Sie nur Seiten, die existieren und die Arbeit, ihren DOI oder ihre Autorenschaft nennen. Wo eine Seite die Befunde zusammenfasst, vergleichen Sie sie mit der Arbeit: Sommer mit 40 °C haben derzeit eine „return time“ von 100–300 Jahren und könnten bis 2100 nur ohne Minderung der Emissionen auf 3.5 Jahre kommen. Zählen Sie die Einträge, die übrig bleiben; die meisten zeigen Reichweite, noch keine Wirkung.
+Öffnen Sie jeden Link und behalten Sie nur Seiten, die existieren und die Arbeit, ihren DOI oder ihre Autorenschaft nennen. Wo eine Seite die Befunde zusammenfasst, vergleichen Sie sie mit der Arbeit: Sommer mit 40 °C haben derzeit eine Wiederkehrzeit von 100–300 Jahren und könnten bis 2100 nur ohne Minderung der Emissionen auf 3,5 Jahre kommen. Zählen Sie die Einträge, die übrig bleiben; die meisten zeigen Reichweite, noch keine Wirkung.
 
 ## Mit eigenem Material
 
@@ -86,7 +86,7 @@ Titel und DOI einer veröffentlichten Arbeit (Ihrer eigenen oder einer bekannten
 ### Prompt
 
 ```text
-Ich sammle Belege für die Wirkung meiner Forschung. Die Arbeit ist [Titel, Autorenschaft, DOI] (oder das Projekt [Name]). Durchsuche das Web nach Erwähnungen seit [Jahr] in Policy-Dokumenten, Berichten von Regierungen oder NGOs, Nachrichtenmedien und Webseiten aus der Praxis. Gib eine Tabelle: Quelle, Art (Politik, Medien, Praxis), Datum, Link, was sie über die Forschung sagt und mögliche Art der Wirkung (Wahrnehmung, Politikänderung, Praxisänderung). Nimm nur Einträge mit einem Link auf, der die Arbeit, das Projekt oder die Autorenschaft nennt. Sage, wenn du dir nicht sicher bist, dass ein Eintrag sich auf diese Arbeit bezieht; erfinde keine Quellen.
+Ich sammle Belege für die Wirkung meiner Forschung. Die Arbeit ist [Titel, Autorenschaft, DOI] (oder das Projekt [Name]). Durchsuchen Sie das Web nach Erwähnungen seit [Jahr] in Policy-Dokumenten, Berichten von Regierungen oder NGOs, Nachrichtenmedien und Webseiten aus der Praxis. Geben Sie eine Tabelle: Quelle, Art (Politik, Medien, Praxis), Datum, Link, was sie über die Forschung sagt und mögliche Art der Wirkung (Wahrnehmung, Politikänderung, Praxisänderung). Nehmen Sie nur Einträge mit einem Link auf, der die Arbeit, das Projekt oder die Autorenschaft nennt. Sagen Sie, wenn Sie sich nicht sicher sind, dass ein Eintrag sich auf diese Arbeit bezieht; erfinden Sie keine Quellen.
 ```
 
 ### Prüfung
@@ -105,7 +105,7 @@ Ihr KI-Assistent kann das Web durchsuchen und verlinkte Quellen liefern, wenn Ih
 
 ### Chat
 
-Führen Sie den Startprompt mit eingeschalteter Websuche aus (falls Ihr Werkzeug sie anbietet). Fügen Sie im selben Chat nur die Einträge wieder ein, die Sie durch Öffnen der Links bestätigt haben, und bitten Sie um eine Stufe je Eintrag (Wahrnehmung, Nutzung, Veränderung) und eine kurze Erzählung, die einen Beitrag beansprucht, nicht die alleinige Zuschreibung.
+Führen Sie den Startprompt mit eingeschalteter Websuche aus (falls Ihr Werkzeug sie anbietet). Fügen Sie im selben Chat nur die Einträge wieder ein, die Sie durch Öffnen der Links bestätigt haben, und bitten Sie um einen Grad je Eintrag (Wahrnehmung, Nutzung, Veränderung) und eine kurze Erzählung, die einen Beitrag beansprucht, nicht die alleinige Zuschreibung.
 
 ### Projekt / Notebook
 
@@ -113,7 +113,7 @@ Ein Notebook arbeitet in der Regel mit seinen Referenzen, statt das Web zu durch
 
 ### Eigener Assistent
 
-Anweisungen: Suchumfang und Tabellenspalten aus dem Startprompt, einen Eintrag nur aufnehmen, wenn seine Seite die Arbeit, den DOI oder die Autorenschaft nennt, als Wahrnehmung, Nutzung oder Veränderung klassifizieren, Beitrag statt Zuschreibung beanspruchen, nie Quellen erfinden. Wissen: Websuche, wenn Ihr Werkzeug sie anbietet, oder bis zu vier vertrauenswürdige öffentliche Policy-Websites. Startprompts: „Finde neue Erwähnungen von [DOI] seit [Datum]“ und „Klassifiziere diese bestätigten Einträge“. Für jede Arbeit oder jedes Projekt wiederverwendbar.
+Anweisungen: Suchumfang und Tabellenspalten aus dem Startprompt, einen Eintrag nur aufnehmen, wenn seine Seite die Arbeit, den DOI oder die Autorenschaft nennt, als Wahrnehmung, Nutzung oder Veränderung klassifizieren, Beitrag statt Zuschreibung beanspruchen, nie Quellen erfinden. Wissen: Websuche, wenn Ihr Werkzeug sie anbietet, oder bis zu vier vertrauenswürdige öffentliche Policy-Websites. Startprompts: „Finden Sie neue Erwähnungen von [DOI] seit [Datum]“ und „Klassifizieren Sie diese bestätigten Einträge“. Für jede Arbeit oder jedes Projekt wiederverwendbar.
 
 ### Automatisierung / eigener Code
 

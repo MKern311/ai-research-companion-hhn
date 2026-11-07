@@ -17,7 +17,9 @@ A skeleton under every heading with reviewers' expectations and the questions yo
 
 Ethics forms and data management plans are long and unfamiliar; you lose time working out what each section expects before you can reason about consent, risk, data protection and reuse.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the template headings and your short study summary.
 2. Ask for a skeleton draft under each heading with guiding questions.
@@ -29,9 +31,8 @@ Ethics forms and data management plans are long and unfamiliar; you lose time wo
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Ethics and DMP drafter'. Instructions: follow the template headings, give reviewer expectations, open questions and a skeleton with [placeholders], take licences only from source documents, and never write consent, risk or anonymisation reasoning or state rules it cannot source. Knowledge: your institution's public templates and guidance pages. Starter prompt: 'Draft the skeleton for [ethics application or DMP]: [study summary]'. Reusable for every new project.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am preparing a [ethics application or data management plan] for a study on [topic]. The template headings are: [headings]. My study in brief: [summary]. For each heading, give: what reviewers usually expect, the questions I must answer myself, and a short skeleton with [placeholders]. Do not write study-specific reasoning on consent, risks or anonymisation; leave clear prompts for me instead. Do not state institutional rules or legal requirements unless you are sure; if you are not sure, say so.

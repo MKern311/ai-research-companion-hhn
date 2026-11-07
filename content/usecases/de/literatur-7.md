@@ -43,7 +43,7 @@ Wählen Sie ein Scoping Review, um die Arten von Evidenz zu bestimmen, Konzepte 
 
 ### Scoping-Rahmenwerk (Arksey & O'Malley)
 
-Fünf Stufen: Frage bestimmen, relevante Studien identifizieren, Studien auswählen, Daten kartieren, zusammenstellen und berichten; eine optionale sechste Stufe ist die Konsultation. Berichten Sie Scoping Reviews mit PRISMA-ScR.
+Fünf Schritte: Frage bestimmen, relevante Studien identifizieren, Studien auswählen, Daten kartieren, zusammenstellen und berichten; ein optionaler sechster Schritt ist die Konsultation. Berichten Sie Scoping Reviews mit PRISMA-ScR.
 
 ### PRISMA-P
 
@@ -120,4 +120,4 @@ Fügen Sie Ihre Frage, PRISMA-P (oder die JBI-Anleitung für Scoping Reviews), d
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Review-Planer“. Anweisungen: systematische, Scoping-, narrative und Rapid Reviews für die gegebene Frage und Zeit vergleichen, einen mit Bedingungen empfehlen, Kriterien allein aus der Frage mit Stufe und Grenzfall entwerfen, Kriterien kennzeichnen, die anhand eines Abstracts schwer zu beurteilen sind, und Unsicherheit markieren. Wissen: PRISMA-P und die Leitlinien Ihres Fachs. Startprompt: „Welcher Review-Typ passt zu dieser Frage und Frist?“ Wiederverwendbar für jede neue Übersichtsarbeit.
+Nennen Sie ihn „Review-Planer“. Anweisungen: systematische, Scoping-, narrative und Rapid Reviews für die gegebene Frage und Zeit vergleichen, einen mit Bedingungen empfehlen, Kriterien allein aus der Frage mit Phase (Titel-/Abstract- oder Volltext-Screening) und Grenzfall entwerfen, Kriterien kennzeichnen, die anhand eines Abstracts schwer zu beurteilen sind, und Unsicherheit markieren. Wissen: PRISMA-P und die Leitlinien Ihres Fachs. Startprompt: „Welcher Review-Typ passt zu dieser Frage und Frist?“ Wiederverwendbar für jede neue Übersichtsarbeit.

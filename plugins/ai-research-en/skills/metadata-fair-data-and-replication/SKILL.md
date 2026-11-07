@@ -17,7 +17,9 @@ A codebook computed from the file, a README and repository metadata draft, and a
 
 Data deposit and replication packages come last, when details are forgotten; codebooks and READMEs get rushed, flags go undocumented and numbers in the paper may not reproduce.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the dataset and say what it contains and how it was collected.
 2. Ask for a codebook with computed ranges and missing values.
@@ -29,9 +31,8 @@ Data deposit and replication packages come last, when details are forgotten; cod
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: codebook columns, ranges and missing counts computed with Python, [CHECK] on every guessed meaning, README sections, DataCite mandatory fields, a replication checklist. Knowledge: your repository's deposit guidelines and licence options. Switch on code execution / data analysis if your tool offers it. Starter prompts: "Codebook and README for this file" and "Replication checklist for my paper". Reusable for every dataset you deposit.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am preparing a dataset for deposit in [repository]. Attached is [file name]; it contains [short description and how it was collected]. Use Python to inspect the file, then create a codebook table: variable name, description, type, unit, range or allowed values, number of missing values, missing-value code. Then draft a README with: title, creators [placeholder], description, methods, file list, variables, licence [placeholder], how to cite, contact. Mark any variable meaning you have guessed with [CHECK]. Then list the core metadata fields the repository will likely ask for. Finally, give a checklist for a replication package (data, code, software versions, run order, expected outputs) and say how I can check that each number in my paper is reproduced by the code.

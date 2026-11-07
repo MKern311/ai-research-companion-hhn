@@ -34,7 +34,7 @@ Eine Tabelle auf Basis eines vorab definierten Extraktionsformulars, jeder Wert 
 
 ### Extraktionsformular
 
-Eine vorab definierte Liste von Feldern mit operationalen Definitionen, Einheiten und zulässigen Werten, die vor dem vollen Einsatz an einigen Dokumenten pilotiert wird. Standard in systematischen Übersichtsarbeiten über Fächer hinweg; es hält die Extraktion über Dokumente, Personen und Tools hinweg konsistent.
+Eine vorab definierte Liste von Feldern mit operationalen Definitionen, Einheiten und zulässigen Werten, die vor dem vollen Einsatz an einigen Dokumenten pilotiert wird. Standard in systematischen Übersichtsarbeiten über Fächer hinweg; es hält die Extraktion über Dokumente, Personen und Werkzeuge hinweg konsistent.
 
 ### Doppelextraktion und Verifikation
 
@@ -57,17 +57,17 @@ Ein systematisches Verfahren zur Durchsicht gedruckter und elektronischer Dokume
 
 ### Aufgabe
 
-Sie extrahieren Metadaten aus den Kopfzeilen dreier britischer Wetterdatendateien – Dokumente, keine Fachartikel – in eine Tabelle. Sie lernen, ob der Assistent die richtige Zeile zitiert, „nicht angegeben“ schreibt, wo eine Datei schweigt, oder Lücken mit seinem Wissen über den Met Office füllt.
+Sie extrahieren Metadaten aus den Kopfzeilen dreier britischer Wetterdatendateien – Dokumente, keine Fachartikel – in eine Tabelle. Sie lernen, ob der Assistent die richtige Zeile zitiert, „nicht angegeben“ schreibt, wo eine Datei schweigt, oder Lücken mit seinem Wissen über das Met Office füllt.
 
 ### Prompt
 
 ```text
-Angehängt sind drei Klartextdateien mit britischen Wetteraufzeichnungen: die Stationsdateien Oxford und Durham und die UK-Niederschlagsreihe. Behandle die Kopfzeilen und das Layout jeder Datei als das Dokument. Extrahiere in eine Tabelle, eine Zeile je Datei: Name der Station oder Reihe; Anbieter oder Quelle; Standort (Breite, Länge, Höhe) oder abgedecktes Gebiet; Variablen mit ihren Einheiten; erstes Jahr und erster Monat der Daten; letztes Jahr und letzter Monat der Daten; Datum der letzten Aktualisierung; wie fehlende Werte markiert sind; wie geschätzte Werte markiert sind; wie vorläufige Werte markiert sind; Hinweise zu Instrumenten oder Methoden; Lizenz oder Nutzungsbedingungen. Gib für jeden Wert die Zeilennummer und den wörtlichen Text aus der Datei als Beleg an. Schreibe „nicht angegeben“, wenn eine Datei ein Feld nicht nennt; nutze weder dein eigenes Wissen noch das Web. Biete die Tabelle dann als CSV-Datei an.
+Angehängt sind drei Klartextdateien mit britischen Wetteraufzeichnungen: die Stationsdateien Oxford und Durham und die UK-Niederschlagsreihe. Behandeln Sie die Kopfzeilen und das Layout jeder Datei als das Dokument. Extrahieren Sie in eine Tabelle, eine Zeile je Datei: Name der Station oder Reihe; Anbieter oder Quelle; Standort (Breite, Länge, Höhe) oder abgedecktes Gebiet; Variablen mit ihren Einheiten; erstes Jahr und erster Monat der Daten; letztes Jahr und letzter Monat der Daten; Datum der letzten Aktualisierung; wie fehlende Werte markiert sind; wie geschätzte Werte markiert sind; wie vorläufige Werte markiert sind; Hinweise zu Instrumenten oder Methoden; Lizenz oder Nutzungsbedingungen. Geben Sie für jeden Wert die Zeilennummer und den wörtlichen Text aus der Datei als Beleg an. Schreiben Sie „nicht angegeben“, wenn eine Datei ein Feld nicht nennt; nutzen Sie weder Ihr eigenes Wissen noch das Web. Bieten Sie die Tabelle dann als CSV-Datei an.
 ```
 
 ### Prüfung
 
-Prüfen Sie jede Zelle an der zitierten Zeile. Oxford: Lat 51.761 Lon -1.262, 63 metres amsl, January 1853 to September 2026. Durham: Lat 54.768 Lon -1.585, 102 metres amsl, January 1880 to September 2026. Beide markieren Schätzungen mit *, fehlende Monate mit --- und die Zeilen von 2026 als „Provisional“ und nennen weder Anbieter noch Aktualisierungsdatum noch Lizenz; das Kennzeichen # für den Sonnenscheinsensor ist definiert, aber kein Wert trägt es. Die Niederschlagsdatei nennt „Met Office National Climate Information Centre“, „Last updated 01-Oct-2026“ und „starting in 1836“, gibt aber weder Einheiten noch Lizenz an. Jeder Anbieter, jede Einheit und jede Lizenz, die der Assistent aus eigenem Wissen ergänzt, ist ein Extraktionsfehler.
+Prüfen Sie jede Zelle an der zitierten Zeile. Oxford: Lat 51.761 Lon -1.262, 63 m über NN, Januar 1853 bis September 2026. Durham: Lat 54.768 Lon -1.585, 102 m über NN, Januar 1880 bis September 2026. Beide markieren Schätzungen mit *, fehlende Monate mit --- und die Zeilen von 2026 als „Provisional“ und nennen weder Anbieter noch Aktualisierungsdatum noch Lizenz; das Kennzeichen # für den Sonnenscheinsensor ist definiert, aber kein Wert trägt es. Die Niederschlagsdatei nennt „Met Office National Climate Information Centre“, „Last updated 01-Oct-2026“ und „starting in 1836“, gibt aber weder Einheiten noch Lizenz an. Jeder Anbieter, jede Einheit und jede Lizenz, die der Assistent aus eigenem Wissen ergänzt, ist ein Extraktionsfehler.
 
 ## Mit eigenem Material
 
@@ -85,7 +85,7 @@ Ein Open-Access-PDF mit Zahlen oder Tabellen, etwa einen Geschäftsbericht, eine
 ### Prompt
 
 ```text
-Ich sammle Daten aus Dokumenten für ein Forschungsprojekt zu [Thema]. Extrahiere aus dem angehängten PDF diese Felder: [Feld 1, Feld 2, Feld 3, z. B. Jahr, Umsatz, Anzahl Mitarbeitende, genannte Ziele]. Gib eine Tabelle zurück mit einer Zeile je [Einheit, z. B. Jahr oder Organisation] und einer Spalte je Feld, dazu die Seitenzahl und ein kurzes wörtliches Zitat als Beleg für jeden Wert. Wenn ein Wert fehlt oder mehrdeutig ist, schreibe „nicht gefunden“, statt zu schätzen. Nutze keine Informationen von außerhalb des Dokuments.
+Ich sammle Daten aus Dokumenten für ein Forschungsprojekt zu [Thema]. Extrahieren Sie aus dem angehängten PDF diese Felder: [Feld 1, Feld 2, Feld 3, z. B. Jahr, Umsatz, Anzahl Mitarbeitende, genannte Ziele]. Geben Sie eine Tabelle zurück mit einer Zeile je [Einheit, z. B. Jahr oder Organisation] und einer Spalte je Feld, dazu die Seitenzahl und ein kurzes wörtliches Zitat als Beleg für jeden Wert. Wenn ein Wert fehlt oder mehrdeutig ist, schreiben Sie „nicht gefunden“, statt zu schätzen. Nutzen Sie keine Informationen von außerhalb des Dokuments.
 ```
 
 ### Prüfung
@@ -108,7 +108,7 @@ Fügen Sie die Dokumente hinzu, aus denen Sie extrahieren – Berichte, Archival
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Extraktionsassistent“ und schalten Sie Codeausführung bzw. Dateierstellung ein, wenn Ihr Tool sie anbietet, für den CSV-Export. Anweisungen: Ihr Extraktionsformular mit Felddefinitionen, eine Zeile je Dokument, Zeile oder Seite und ein wörtliches Zitat für jeden Wert, „nicht angegeben“, wo etwas fehlt, kein Wissen von außen. Startprompt: „Extrahiere die Formularfelder aus den angehängten Dokumenten“. Es geht nur freigegebenes Material hinein; wiederverwendbar für jeden Stapel, und Sie prüfen jedes Mal eine Zufallsstichprobe.
+Nennen Sie ihn „Extraktionsassistent“ und schalten Sie Codeausführung bzw. Dateierstellung ein, wenn Ihr Werkzeug sie anbietet, für den CSV-Export. Anweisungen: Ihr Extraktionsformular mit Felddefinitionen, eine Zeile je Dokument, Zeile oder Seite und ein wörtliches Zitat für jeden Wert, „nicht angegeben“, wo etwas fehlt, kein Wissen von außen. Startprompt: „Extrahieren Sie die Formularfelder aus den angehängten Dokumenten“. Es geht nur freigegebenes Material hinein; wiederverwendbar für jeden Stapel, und Sie prüfen jedes Mal eine Zufallsstichprobe.
 
 ### Automatisierung / eigener Code
 

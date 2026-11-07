@@ -17,7 +17,9 @@ A step-by-step explanation with defined symbols, a worked example and the method
 
 A formula, unfamiliar notation or a key paper in another language can stall your reading for hours – or tempt you to cite it without really understanding it.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the paper or paste the difficult or non-English passage.
 2. Ask for a plain-language explanation with every symbol defined, or an English translation with a relevance summary.
@@ -29,9 +31,8 @@ A formula, unfamiliar notation or a key paper in another language can stall your
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Method explainer'. Instructions: plain language, every symbol defined, the paper's own notation, a small worked example, assumptions named, and anything beyond the paper marked; for translations, UK English, original terms in brackets when unsure, a five-bullet relevance summary, 'for screening only'. Switch on code execution / data analysis if your tool offers it, for worked examples. Starter prompts: 'Explain Section 3 of this paper', 'Translate and summarise this abstract'.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. Choose the part that applies.

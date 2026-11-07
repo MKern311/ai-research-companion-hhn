@@ -62,12 +62,12 @@ Erstellen Sie aus der Arbeit von Christidis et al. (2020) für Verwaltungsmitarb
 ### Prompt
 
 ```text
-Angehängt ist das PDF von Christidis et al. (2020) zu Temperaturen über 30 bis 40 °C im Vereinigten Königreich. Schreibe für Verwaltungsmitarbeitende einer Kommune, die für die Hitzeanpassung zuständig sind: 1) eine Laienzusammenfassung von etwa 150 Wörtern in klarer, einfacher Sprache, die „return time“ in einem Satz erklärt; 2) eine Gliederung für einen einseitigen Policy Brief mit Problem, zentralen Befunden und drei praktischen Empfehlungen; 3) einen Social-Media-Beitrag von bis zu 60 Wörtern. Verwende nur Befunde, die in der Arbeit stehen, halte Zahlen und ihre Bedingungen exakt (zum Beispiel Emissionsszenarien), behalte Unsicherheitswörter wie „likely“ bei und lasse die Ergebnisse nicht stärker oder allgemeiner klingen, als die Arbeit sie darstellt. Liste jede Stelle auf, an der du vereinfacht hast.
+Angehängt ist das PDF von Christidis et al. (2020) zu Temperaturen über 30 bis 40 °C im Vereinigten Königreich. Schreiben Sie für Verwaltungsmitarbeitende einer Kommune, die für die Hitzeanpassung zuständig sind: 1) eine Laienzusammenfassung von etwa 150 Wörtern in klarer, einfacher Sprache, die „return time“ in einem Satz erklärt; 2) eine Gliederung für einen einseitigen Policy Brief mit Problem, zentralen Befunden und drei praktischen Empfehlungen; 3) einen Social-Media-Beitrag von bis zu 60 Wörtern. Verwenden Sie nur Befunde, die in der Arbeit stehen, halten Sie Zahlen und ihre Bedingungen exakt (zum Beispiel Emissionsszenarien), behalten Sie Unsicherheitswörter wie „likely“ bei und lassen Sie die Ergebnisse nicht stärker oder allgemeiner klingen, als die Arbeit sie darstellt. Listen Sie jede Stelle auf, an der Sie vereinfacht haben.
 ```
 
 ### Prüfung
 
-Vergleichen Sie mit dem Abstract: Sommer mit 40-°C-Tagen haben derzeit eine „return time“ von 100–300 Jahren, die bis 2100 nur ohne Minderung der Emissionen auf 3.5 Jahre sinkt. Formulierungen wie „ab jetzt alle paar Jahre“ sind Spin.
+Vergleichen Sie mit dem Abstract: Sommer mit 40-°C-Tagen haben derzeit eine „return time“ von 100–300 Jahren, die bis 2100 nur ohne Minderung der Emissionen auf 3,5 Jahre sinkt. Formulierungen wie „ab jetzt alle paar Jahre“ sind Spin.
 
 ## Mit eigenem Material
 
@@ -85,7 +85,7 @@ Eine Ihrer veröffentlichten Open-Access-Arbeiten oder eine Open-Access-Arbeit a
 ### Prompt
 
 ```text
-Ich bin Forschende/Forschender in [Fach]. Angehängt ist meine Arbeit [Titel]. Schreibe für [Zielgruppe, z. B. Verwaltungsmitarbeitende einer Kommune oder die breite Öffentlichkeit]: 1) eine Laienzusammenfassung von etwa 150 Wörtern in klarer Sprache, ohne Fachjargon; 2) eine Gliederung für einen einseitigen Policy Brief mit Problem, zentralen Befunden und drei praktischen Empfehlungen; 3) einen Social-Media-Beitrag von bis zu 60 Wörtern. Verwende nur Befunde, die in der Arbeit stehen, halte Zahlen exakt und lasse die Ergebnisse nicht stärker oder allgemeiner klingen, als die Arbeit sie darstellt. Nenne jede Stelle, an der du vereinfachen musstest.
+Ich bin Forschende/Forschender in [Fach]. Angehängt ist meine Arbeit [Titel]. Schreiben Sie für [Zielgruppe, z. B. Verwaltungsmitarbeitende einer Kommune oder die breite Öffentlichkeit]: 1) eine Laienzusammenfassung von etwa 150 Wörtern in klarer Sprache, ohne Fachjargon; 2) eine Gliederung für einen einseitigen Policy Brief mit Problem, zentralen Befunden und drei praktischen Empfehlungen; 3) einen Social-Media-Beitrag von bis zu 60 Wörtern. Verwenden Sie nur Befunde, die in der Arbeit stehen, halten Sie Zahlen exakt und lassen Sie die Ergebnisse nicht stärker oder allgemeiner klingen, als die Arbeit sie darstellt. Nennen Sie jede Stelle, an der Sie vereinfachen mussten.
 ```
 
 ### Prüfung
@@ -108,4 +108,4 @@ Fügen Sie B2 als Referenz hinzu sowie ein kurzes Regeldokument mit Ihren Zielgr
 
 ### Eigener Assistent
 
-Anweisungen: die drei Formate mit Wortgrenzen, Zahlen und Bedingungen exakt, Unsicherheitswörter beibehalten, eine Liste jeder Vereinfachung, nie eine Aussage, die die Arbeit nicht trifft. Kein Wissen nötig – hängen Sie jede Arbeit im Chat an. Startprompts: „Laienzusammenfassung, Brief-Gliederung und Beitrag für Verwaltungsmitarbeitende“ und „Prüfe diesen Entwurf gegen die Arbeit auf Spin“. Für jede neue Arbeit wiederverwendbar.
+Anweisungen: die drei Formate mit Wortgrenzen, Zahlen und Bedingungen exakt, Unsicherheitswörter beibehalten, eine Liste jeder Vereinfachung, nie eine Aussage, die die Arbeit nicht trifft. Kein Wissen nötig – hängen Sie jede Arbeit im Chat an. Startprompts: „Laienzusammenfassung, Brief-Gliederung und Beitrag für Verwaltungsmitarbeitende“ und „Prüfen Sie diesen Entwurf gegen die Arbeit auf Spin“. Für jede neue Arbeit wiederverwendbar.

@@ -17,7 +17,9 @@ A per-reference check against DOIs and publisher records, and a support rating (
 
 Wrong reference details and quotation errors – sources that do not say what they are cited for – slip in easily, especially with AI-suggested sources, and damage credibility.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the paragraph and its references.
 2. With web search switched on (if your tool offers it), ask the assistant to check that each reference exists, with a link or DOI.
@@ -29,9 +31,8 @@ Wrong reference details and quotation errors – sources that do not say what th
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant, for example "Reference checker" (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In the standing instructions, set the two-step check: first existence and metadata (working DOI or link, "not found" if absent, flag any difference in authors, year, title, journal, volume or pages), then support (supports, partly, does not) with a quoted passage; never guess. Keep web search on if your tool offers it. Starter prompt: "Check these references and the claims they are cited for." Reusable for every chapter before submission.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am checking the references in a paragraph of my [thesis or paper]. For each reference below: 1) search for it and give a working link or DOI; say 'not found' if you cannot find it, and flag differences in authors, year, title or journal. 2) For each sentence with a citation, say whether the cited source – as far as you can see from its abstract or full text – supports the claim, partly supports it, or does not, and quote the passage you rely on. Do not guess; if you cannot see enough of a source, say so.

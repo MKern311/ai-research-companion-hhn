@@ -1,18 +1,18 @@
 /* Generators for "Bring it into your AI": Agent Skill (SKILL.md), custom-assistant settings, project rules,
    use-case Markdown (same format as content/usecases) and a small ZIP writer.
-   Shared by the page and by tools/build_skills.mjs – plain functions, no DOM. */
+   Shared by the page and by tools/build_plugins.js – plain functions, no DOM. */
 const EXPORT = (() => {
   const W = {
-    en: {goal:'Goal', when:'When to use', proc:'Procedure', rules:'Working rules', prompt:'Starter prompt', check:'Quality check', limits:'Limits',
+    en: {goal:'Goal', when:'When to use', proc:'Workflow with the user', procIntro:'Guide the user through these steps. Where a step says “ask the assistant”, that is you.', rules:'Working rules', prompt:'Typical request', check:'Quality check', limits:'Limits',
       concepts:'Key concepts', refs:'Key references', tools:'Tools that help', ownRisk:'Risk', source:'From the knowledge base “AI in the Research Process” (Heilbronn University of Applied Sciences)',
       always:['Never invent sources, quotes, numbers or DOIs; say when you are not sure.', 'Mark clearly what comes from the user’s material and what is your own suggestion.', 'Stop and ask when the material is missing or ambiguous.'],
-      role:'You support a researcher with this task:', out:'Work step by step and finish with the quality check.', starterDefault:'Let us start: here is my material.',
-      projIntro:'Rules for this project – add this document to the project and start each question with “Follow the rules document”.', files:'Files to add'},
-    de: {goal:'Ziel', when:'Wann einsetzen', proc:'Vorgehen', rules:'Arbeitsregeln', prompt:'Startprompt', check:'Prüfung', limits:'Grenzen',
+      role:'You support a researcher or student with this task:', out:'Work step by step and finish with the quality check.', starterDefault:'Let us start: here is my material.',
+      projIntro:'Rules for this project – add this document to the project and start each question with “Follow the rules document”.', files:'Files to add', procRule:'Follow this procedure'},
+    de: {goal:'Ziel', when:'Wann einsetzen', proc:'Ablauf mit der Nutzerin oder dem Nutzer', procIntro:'Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.', rules:'Arbeitsregeln', prompt:'Typische Anfrage', check:'Prüfung', limits:'Grenzen',
       concepts:'Wichtige Konzepte', refs:'Wichtige Literatur', tools:'Hilfreiche Werkzeuge', ownRisk:'Risiko', source:'Aus der Wissensbasis „KI im Forschungsprozess“ (Hochschule Heilbronn)',
       always:['Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.', 'Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.', 'Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.'],
-      role:'Sie unterstützen Forschende bei dieser Aufgabe:', out:'Arbeiten Sie Schritt für Schritt und schließen Sie mit der Prüfung ab.', starterDefault:'Los geht’s: Hier ist mein Material.',
-      projIntro:'Regeln für dieses Projekt – fügen Sie dieses Dokument dem Projekt hinzu und beginnen Sie jede Frage mit „Folge dem Regeldokument“.', files:'Dateien für das Projekt'}
+      role:'Sie unterstützen Forschende oder Studierende bei dieser Aufgabe:', out:'Arbeiten Sie Schritt für Schritt und schließen Sie mit der Prüfung ab.', starterDefault:'Los geht’s: Hier ist mein Material.',
+      projIntro:'Regeln für dieses Projekt – fügen Sie dieses Dokument dem Projekt hinzu und beginnen Sie jede Frage mit „Folgen Sie dem Regeldokument“.', files:'Dateien für das Projekt', procRule:'Gehen Sie so vor'}
   };
   const UML = { // use-case file headings (same as tools/content.py)
     en:{problem:'Problem', result:'Result', steps:'Steps', concepts:'Concepts', refs:'References', practice:'Practice exercise', own:'Own material', tech:'Technology', levels:'Levels',
@@ -22,26 +22,32 @@ const EXPORT = (() => {
       task:'Aufgabe', prompt:'Prompt', check:'Prüfung', attach_note:'Hinweis zu den Dateien', bring:'Mitbringen', ownsteps:'Schritte', limit:'Grenze',
       chat:'Chat', project:'Projekt / Notebook', assistant:'Eigener Assistent', automation:'Automatisierung / eigener Code'}
   };
-  const slug = s => String(s).toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/&/g, ' and ')
+  const slug = (s, lang) => String(s).toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/&/g, lang === 'de' ? ' und ' : ' and ')
     .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 56).replace(/-+$/, '') || 'use-case';
   const clip = (s, n) => (s = String(s || '').trim()).length <= n ? s : s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…';
   const list = a => (a || []).map((x, i) => `${i + 1}. ${x}`).join('\n');
   const bullets = a => (a || []).map(x => `- ${x}`).join('\n');
-  // quoted starter prompts inside the custom-assistant level text ("…" or „…“)
-  const starters = u => { const t = (u.s.levels || {}).assistant || ''; const m = [...t.matchAll(/[“„"]([^”“"]{8,160})[”"“]/g)].map(x => x[1]); return [...new Set(m)].slice(0, 4); };
+  // starter prompts: the quoted strings after "Starter prompt(s):" / "Startprompt(s):" in the custom-assistant level text
+  function starters(u){
+    const t = (u.s.levels || {}).assistant || '', m = t.match(/(?:Starter prompts?|Startprompts?|Startfragen?)\s*:\s*([\s\S]*)$/i);
+    if (!m) return [];
+    const q = [...m[1].matchAll(/[“„"]([^”“"]{6,200})[”“"]|(?:^|[\s(])'([^']{6,200})'(?=[\s.,;)]|$)/g)].map(x => (x[1] || x[2]).trim());
+    return [...new Set(q)].slice(0, 4);
+  }
   const prompt = u => (u.s.own && u.s.own.prompt) || (u.s.practice && u.s.practice.prompt) || '';
+  const stepsOf = u => { const own = u.s.own || {}; return own.steps && own.steps.length ? own.steps : u.s.steps || []; };
+  const checkOf = u => (u.s.own || {}).check || (u.s.practice || {}).check || '';
 
   function skillMd(u, lang, extra){
     const w = W[lang] || W.en, s = u.s, own = s.own || {};
     const desc = clip(`${u.summary || u.title} ${lang === 'de' ? 'Einsetzen bei' : 'Use when the user works on'}: ${u.title}.`, 1000).replace(/\s+/g, ' ');
-    const L = [`---`, `name: ${slug(u.title)}`, `description: ${JSON.stringify(desc)}`, `---`, '', `# ${u.title}`, '', `> ${w.source}${extra && extra.url ? ` – ${extra.url}` : ''}`, ''];
+    const L = [`---`, `name: ${slug(u.title, lang)}`, `description: ${JSON.stringify(desc)}`, `---`, '', `# ${u.title}`, '', `> ${w.source}${extra && extra.url ? ` – ${extra.url}` : ''}`, ''];
     L.push(`## ${w.goal}`, '', [u.summary, s.result].filter(Boolean).join('\n\n'), '');
     if (s.problem) L.push(`## ${w.when}`, '', s.problem, '');
-    const steps = own.steps && own.steps.length ? own.steps : s.steps;
-    if (steps && steps.length) L.push(`## ${w.proc}`, '', list(steps), '');
-    L.push(`## ${w.rules}`, '', bullets(w.always.concat(s.levels && s.levels.assistant ? [s.levels.assistant] : [])), '');
+    const steps = stepsOf(u); if (steps.length) L.push(`## ${w.proc}`, '', w.procIntro, '', list(steps), '');
+    L.push(`## ${w.rules}`, '', bullets(w.always), '');
     if (prompt(u)) L.push(`## ${w.prompt}`, '', '```text', prompt(u), '```', '');
-    const chk = own.check || (s.practice || {}).check; if (chk) L.push(`## ${w.check}`, '', chk, '');
+    if (checkOf(u)) L.push(`## ${w.check}`, '', checkOf(u), '');
     const lim = [own.limit, extra && extra.riskDef ? `${w.ownRisk}: ${extra.riskDef}` : ''].filter(Boolean); if (lim.length) L.push(`## ${w.limits}`, '', bullets(lim), '');
     if (s.concepts && s.concepts.length) L.push(`## ${w.concepts}`, '', s.concepts.map(([k, v]) => `- **${k}** – ${v}`).join('\n'), '');
     if (s.refs && s.refs.length) L.push(`## ${w.refs}`, '', s.refs.map(r => `- ${r.cite}${r.doi ? ` https://doi.org/${r.doi}` : ''}`).join('\n'), '');
@@ -49,18 +55,23 @@ const EXPORT = (() => {
     return L.join('\n').trim() + '\n';
   }
   function assistant(u, lang){
-    const w = W[lang] || W.en, s = u.s, own = s.own || {}, steps = own.steps && own.steps.length ? own.steps : s.steps || [];
-    const instr = [`${w.role} ${u.title}.`, u.summary, '', `${w.proc}:`, list(steps), '', `${w.rules}:`, bullets(w.always.concat(own.limit ? [own.limit] : [])),
-      own.check ? `\n${w.check}: ${own.check}` : '', '', w.out].join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    const w = W[lang] || W.en, own = u.s.own || {}, steps = stepsOf(u), chk = checkOf(u), p = prompt(u);
+    const parts = [`${w.role} ${u.title}.`, u.summary];
+    if (steps.length) parts.push('', `${w.procRule}:`, list(steps));
+    parts.push('', `${w.rules}:`, bullets(w.always.concat(own.limit ? [own.limit] : [])));
+    if (chk) parts.push('', `${w.check}: ${chk}`);
+    if (p) parts.push('', `${w.prompt}:`, clip(p, 2500));
+    if (chk) parts.push('', w.out);
     const st = starters(u);
-    return {name:clip(u.title, 30), description:clip(u.summary, 200), instructions:instr.slice(0, 7900), starters:st.length ? st : [clip(prompt(u).split('\n')[0], 160) || w.starterDefault]};
+    const short = u.title.length <= 30 ? u.title : u.title.replace(/\s*\([^)]*\)/g, '').split(/\s+[–&:]\s+|\s+(?:and|und)\s+/)[0];
+    return {name:clip(short, 30), description:clip(u.summary, 200), instructions:parts.join('\n').replace(/\n{3,}/g, '\n\n').trim().slice(0, 7900), starters:st.length ? st : [clip((p.split(/(?<=[.?!])\s/)[0] || '').trim(), 160) || w.starterDefault]};
   }
   function projectRules(u, lang){
-    const w = W[lang] || W.en, s = u.s, own = s.own || {};
+    const w = W[lang] || W.en, own = u.s.own || {}, steps = stepsOf(u), chk = checkOf(u);
     const L = [`# ${u.title}`, '', w.projIntro, '', `## ${w.goal}`, '', u.summary, ''];
-    if (own.steps && own.steps.length) L.push(`## ${w.proc}`, '', list(own.steps), '');
-    L.push(`## ${w.rules}`, '', bullets(w.always), '');
-    if (own.check) L.push(`## ${w.check}`, '', own.check, '');
+    if (steps.length) L.push(`## ${w.procRule}`, '', list(steps), '');
+    L.push(`## ${w.rules}`, '', bullets(w.always.concat(own.limit ? [own.limit] : [])), '');
+    if (chk) L.push(`## ${w.check}`, '', chk, '');
     if (own.bring) L.push(`## ${w.files}`, '', own.bring, '');
     return L.join('\n').trim() + '\n';
   }

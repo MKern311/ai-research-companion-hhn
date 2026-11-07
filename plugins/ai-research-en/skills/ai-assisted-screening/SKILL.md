@@ -17,7 +17,9 @@ An AI second opinion per record with the deciding criterion and a quote, plus an
 
 Screening hundreds of titles and abstracts is tedious and a second human screener is hard to find – yet a single tired reader drifts from the criteria and misses eligible records.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Screen the 10 abstracts yourself and note your decisions.
 2. Paste your criteria and the 10 numbered abstracts into your AI assistant.
@@ -29,9 +31,8 @@ Screening hundreds of titles and abstracts is tedious and a second human screene
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Second screener'. Instructions: your criteria word for word, one row per record with decision, deciding criterion and a quote from the abstract, 'unsure' rather than guessing, and 'the human makes the final call'. Knowledge: the protocol. Switch on code execution / data analysis if your tool offers it, to compute kappa. Starter prompt: 'Screen this batch.' Only approved, non-sensitive records go in; you check every decision.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am screening records for a literature review on [topic]. Inclusion criteria: [criteria]. Exclusion criteria: [criteria]. Below are 10 numbered titles with abstracts. For each, give a table row: number, decision (include, exclude or unsure), the criterion that decides it, and a short quote from the abstract that supports the decision. Use 'unsure' when the abstract does not give enough information; do not guess. I will make the final decision.

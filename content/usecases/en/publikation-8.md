@@ -118,7 +118,7 @@ Add the papers you cite as PDFs (for the practice, C3 and B2) and your draft par
 
 ### Custom assistant
 
-Create a configured assistant, for example "Reference checker" (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In the standing instructions, set the two-step check: first existence and metadata (working DOI or link, "not found" if absent, flag any difference in authors, year, title, journal, volume or pages), then support (supports, partly, does not) with a quoted passage; never guess. Keep web search on if your tool offers it. Starter prompt: "Check these references and the claims they are cited for." Reusable for every chapter before submission.
+Create a configured assistant, for example "Reference checker" (e.g. a Copilot agent, a ChatGPT project, a Gemini Gem or a Claude project). In the standing instructions, set the two-step check: first existence and metadata (working DOI or link, "not found" if absent, flag any difference in authors, year, title, journal, volume or pages), then support (supports, partly, does not) with a quoted passage; never guess. Keep web search on if your tool offers it. Starter prompt: "Check these references and the claims they are cited for." Reusable for every chapter before submission.
 
 ### Automation / own code
 

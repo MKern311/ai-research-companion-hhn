@@ -17,7 +17,9 @@ A documented first look at structure, distributions and patterns, with the code 
 
 Before formal analysis you need to know what a dataset contains, but coding every quick question slows you down, and exploratory patterns easily turn into untested claims.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the file and paste the starter prompt with two plain-language questions.
 2. Ask the assistant to show the code behind every number it reports (Python, if it can run code).
@@ -29,9 +31,8 @@ Before formal analysis you need to know what a dataset contains, but coding ever
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, set the exploration routine: describe structure, types and missing values first, check baselines and units, show the code behind every number, add one sentence of caution per finding and label everything exploratory. Switch on code execution / data analysis if your tool offers it. Starter prompts: "Describe this file before we look at patterns." and "How is X distributed across Y?" Reusable for every new dataset.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am exploring a dataset before formal analysis. The attached file contains [description: source, unit, period]. First describe its structure: number of rows and columns, variable types and missing values. Then answer: [question 1, e.g. How is income distributed?] and [question 2, e.g. Does X differ between groups of Y?]. For each answer give a summary table or chart, the Python code used, and one sentence of caution, for example about outliers or small groups. Treat all findings as exploratory, not confirmed.

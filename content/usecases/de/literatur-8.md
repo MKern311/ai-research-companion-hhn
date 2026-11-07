@@ -12,11 +12,11 @@ tools: Covidence
 repos: prisma2020; slr-prisma
 ---
 
-Verwandeln Sie Ihr Suchprotokoll, die Zahlen je Stufe und die Ausschlussgründe in PRISMA-Flusszahlen, entfernen Sie Duplikate, prüfen Sie Ihren Bericht anhand der PRISMA-2020-Checkliste und entwerfen Sie den Methodenabsatz.
+Verwandeln Sie Ihr Suchprotokoll, die Zahlen je Schritt und die Ausschlussgründe in PRISMA-Flusszahlen, entfernen Sie Duplikate, prüfen Sie Ihren Bericht anhand der PRISMA-2020-Checkliste und entwerfen Sie den Methodenabsatz.
 
 ## Problem
 
-Am Ende einer Übersichtsarbeit stimmen die Zahlen je Stufe oft nicht überein, Ausschlussgründe sind über Dateien verstreut, und die PRISMA-2020-Checkliste wird zum Nachgedanken.
+Am Ende einer Übersichtsarbeit stimmen die Zahlen je Schritt oft nicht überein, Ausschlussgründe sind über Dateien verstreut, und die PRISMA-2020-Checkliste wird zum Nachgedanken.
 
 ## Ergebnis
 
@@ -38,7 +38,7 @@ Preferred Reporting Items for Systematic reviews and Meta-Analyses: eine Bericht
 
 ### PRISMA-Flussdiagramm
 
-Zeigt die identifizierten Datensätze je Quelle, Duplikate und andere Entfernungen, gescreente und ausgeschlossene Datensätze, angeforderte und nicht beschaffte Berichte, bewertete Berichte, Ausschlüsse mit Gründen und eingeschlossene Studien. Jede Stufe muss rechnerisch aufgehen.
+Zeigt die identifizierten Datensätze je Quelle, Duplikate und andere Entfernungen, gescreente und ausgeschlossene Datensätze, angeforderte und nicht beschaffte Berichte, bewertete Berichte, Ausschlüsse mit Gründen und eingeschlossene Studien. Jeder Schritt muss rechnerisch aufgehen.
 
 ### PRISMA-S
 
@@ -68,17 +68,17 @@ Ich dokumentiere Suche und Auswahl für eine Übungs-Übersichtsarbeit zu Trends
 
 ### Prüfung
 
-Rechnen Sie nach: Jede Stufe ergibt sich korrekt (768 − 198 = 570, bis 78 − 72 = 6), aber die Ausschlussgründe summieren sich auf 70, nicht auf 72. Der Assistent muss das kennzeichnen, und der Absatz darf keine Suchstrings erfinden.
+Rechnen Sie nach: Jeder Schritt ergibt sich korrekt (768 − 198 = 570, bis 78 − 72 = 6), aber die Ausschlussgründe summieren sich auf 70, nicht auf 72. Der Assistent muss das kennzeichnen, und der Absatz darf keine Suchstrings erfinden.
 
 ## Mit eigenem Material
 
 ### Mitbringen
 
-Ein Suchprotokoll: Datenbanken, Suchdaten, Suchstrings und die Zahl der Datensätze auf jeder Stufe – aus Ihrer eigenen Übersichtsarbeit oder einer Übungssuche.
+Ein Suchprotokoll: Datenbanken, Suchdaten, Suchstrings und die Zahl der Datensätze in jedem Schritt – aus Ihrer eigenen Übersichtsarbeit oder einer Übungssuche.
 
 ### Schritte
 
-1. Fügen Sie Ihr Suchprotokoll und die Zahlen je Stufe ein.
+1. Fügen Sie Ihr Suchprotokoll und die Zahlen je Schritt ein.
 2. Bitten Sie um die PRISMA-2020-Flusszahlen in einer Tabelle und um eine Prüfung, ob sie aufgehen, einschließlich entfernter Duplikate.
 3. Bitten Sie um einen Entwurf des Methodenabsatzes zu Suche und Auswahl.
 4. Fragen Sie, welche Punkte der PRISMA-2020-Checkliste Ihr Bericht noch nicht abdeckt.
@@ -86,7 +86,7 @@ Ein Suchprotokoll: Datenbanken, Suchdaten, Suchstrings und die Zahl der Datensä
 ### Prompt
 
 ```text
-Ich dokumentiere Suche und Auswahl für eine Literaturübersicht. Unten steht mein Suchprotokoll: Datenbanken, Suchdaten, Suchstrings und die Zahl der Datensätze auf jeder Stufe, mit Ausschlussgründen. Ordnen Sie die Zahlen für ein PRISMA-2020-Flussdiagramm in einer Tabelle: identifiziert je Quelle, Duplikate entfernt, gescreent, bei Titel und Abstract ausgeschlossen, Berichte angefordert, nicht beschafft, im Volltext bewertet, mit Gründen ausgeschlossen, eingeschlossen. Prüfen Sie, ob die Zahlen aufgehen, und kennzeichnen Sie jede Unstimmigkeit, statt sie zu korrigieren. Entwerfen Sie dann einen Methodenabsatz zu Suche und Auswahl, der nur Fakten aus meinem Protokoll verwendet, gehen Sie die 27 Punkte der PRISMA-2020-Checkliste durch und listen Sie auf, welche mein Protokoll und mein Entwurf noch nicht abdecken. Wenn ich eine Liste von Datensätzen einfüge, kennzeichnen Sie wahrscheinliche Duplikate (gleiche DOI oder gleicher Titel, gleiches Jahr und gleiche Erstautorin bzw. gleicher Erstautor), statt sie zu löschen.
+Ich dokumentiere Suche und Auswahl für eine Literaturübersicht. Unten steht mein Suchprotokoll: Datenbanken, Suchdaten, Suchstrings und die Zahl der Datensätze in jedem Schritt, mit Ausschlussgründen. Ordnen Sie die Zahlen für ein PRISMA-2020-Flussdiagramm in einer Tabelle: identifiziert je Quelle, Duplikate entfernt, gescreent, bei Titel und Abstract ausgeschlossen, Berichte angefordert, nicht beschafft, im Volltext bewertet, mit Gründen ausgeschlossen, eingeschlossen. Prüfen Sie, ob die Zahlen aufgehen, und kennzeichnen Sie jede Unstimmigkeit, statt sie zu korrigieren. Entwerfen Sie dann einen Methodenabsatz zu Suche und Auswahl, der nur Fakten aus meinem Protokoll verwendet, gehen Sie die 27 Punkte der PRISMA-2020-Checkliste durch und listen Sie auf, welche mein Protokoll und mein Entwurf noch nicht abdecken. Wenn ich eine Liste von Datensätzen einfüge, kennzeichnen Sie wahrscheinliche Duplikate (gleiche DOI oder gleicher Titel, gleiches Jahr und gleiche Erstautorin bzw. gleicher Erstautor), statt sie zu löschen.
 
 [Suchprotokoll einfügen]
 ```
@@ -97,7 +97,7 @@ Jede Zahl in der Tabelle und im Absatz stimmt mit Ihrem Protokoll überein, und 
 
 ### Grenze
 
-Zeichnen Sie das Diagramm selbst mit der offiziellen PRISMA-2020-Vorlage oder einem eigenen Werkzeug; der Assistent bereitet die Zahlen und den Text vor, er erzeugt kein verlässliches Diagramm.
+Zeichnen Sie das Diagramm selbst mit der offiziellen PRISMA-2020-Vorlage oder einem spezialisierten Werkzeug; der Assistent bereitet die Zahlen und den Text vor, er erzeugt kein verlässliches Diagramm.
 
 ## Technik
 
@@ -107,7 +107,7 @@ Fügen Sie das Protokoll in Ihren KI-Assistenten ein; laden Sie einen CSV-Export
 
 ### Chat
 
-Fügen Sie das Übungsprotokoll mit dem Startprompt ein. Bitten Sie den Assistenten im selben Chat, jede Stufe und die Ausschlussgründe getrennt zu addieren und jede Summe zu zeigen – ohne eine Zahl zu verändern.
+Fügen Sie das Übungsprotokoll mit dem Startprompt ein. Bitten Sie den Assistenten im selben Chat, jeden Schritt und die Ausschlussgründe getrennt zu addieren und jede Summe zu zeigen – ohne eine Zahl zu verändern.
 
 ### Projekt / Notebook
 
@@ -115,4 +115,4 @@ Fügen Sie Ihr laufendes Suchprotokoll (.docx oder .xlsx), die Checklisten PRISM
 
 ### Eigener Assistent
 
-Nennen Sie ihn „PRISMA-Prüfer“. Anweisungen: die Zahlen für das PRISMA-2020-Flussdiagramm ordnen, jede Summe prüfen und Unstimmigkeiten kennzeichnen, statt sie zu korrigieren, den Methodenabsatz nur aus Fakten im Protokoll entwerfen, fehlende PRISMA-2020-Punkte auflisten und niemals Suchstrings erfinden. Wissen: die PRISMA-2020-Checkliste. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, für die Summen. Startprompt: „Prüfe dieses Suchprotokoll.“
+Nennen Sie ihn „PRISMA-Prüfer“. Anweisungen: die Zahlen für das PRISMA-2020-Flussdiagramm ordnen, jede Summe prüfen und Unstimmigkeiten kennzeichnen, statt sie zu korrigieren, den Methodenabsatz nur aus Fakten im Protokoll entwerfen, fehlende PRISMA-2020-Punkte auflisten und niemals Suchstrings erfinden. Wissen: die PRISMA-2020-Checkliste. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, für die Summen. Startprompt: „Prüfen Sie dieses Suchprotokoll.“

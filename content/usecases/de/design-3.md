@@ -14,7 +14,7 @@ data: D2
 practice_data: D2
 ---
 
-Erzeugen Sie Berechnungen als nachvollziehbaren Code – der Assistent schreibt Python und führt es aus, wenn Ihr Tool Code ausführen kann; für R schreibt er Code, den Sie selbst ausführen – und machen Sie Annahmen explizit.
+Erzeugen Sie Berechnungen als nachvollziehbaren Code – der Assistent schreibt Python und führt es aus, wenn Ihr Werkzeug Code ausführen kann; für R schreibt er Code, den Sie selbst ausführen – und machen Sie Annahmen explizit.
 
 ## Problem
 
@@ -65,7 +65,7 @@ Sie schätzen eine Effektgröße aus echten Daten – Jahresmittel für Zentrale
 ### Prompt
 
 ```text
-Angehängt ist die monatliche Central-England-Temperature-Datei (meantemp_monthly_totals). Schreibe und führe Python-Code aus, der: 1) die Datei einliest, die Kopfzeilen überspringt und -99.9 als fehlend behandelt; 2) die Spalte „Annual“ für 1961–1990 und für 1991–2020 nimmt und Mittelwert und Standardabweichung jedes Zeitraums ausgibt; 3) Cohens d mit der gepoolten Standardabweichung berechnet; 4) mit statsmodels die Anzahl Jahre je Zeitraum berechnet, die für Power 0,80, Alpha 0,05, zweiseitigen t-Test für unabhängige Stichproben nötig sind, für dieses d und für d = 0,5; 5) die benötigte Stichprobengröße für d von 0,2 bis 1,6 als Grafik darstellt. Zeige den Code und die Ergebnisse. Liste dann jede Annahme der Berechnung auf und sage, welche davon jährliche Temperaturdaten verletzen.
+Angehängt ist die monatliche Central-England-Temperature-Datei (meantemp_monthly_totals). Schreiben und führen Sie Python-Code aus, der: 1) die Datei einliest, die Kopfzeilen überspringt und -99.9 als fehlend behandelt; 2) die Spalte „Annual“ für 1961–1990 und für 1991–2020 nimmt und Mittelwert und Standardabweichung jedes Zeitraums ausgibt; 3) Cohens d mit der gepoolten Standardabweichung berechnet; 4) mit statsmodels die Anzahl Jahre je Zeitraum berechnet, die für Power 0,80, Alpha 0,05, zweiseitigen t-Test für unabhängige Stichproben nötig sind, für dieses d und für d = 0,5; 5) die benötigte Stichprobengröße für d von 0,2 bis 1,6 als Grafik darstellt. Zeigen Sie den Code und die Ergebnisse. Listen Sie dann jede Annahme der Berechnung auf und sagen Sie, welche davon jährliche Temperaturdaten verletzen.
 ```
 
 ### Prüfung
@@ -88,7 +88,7 @@ Ihren geplanten statistischen Test (zum Beispiel einen Zweigruppenvergleich) und
 ### Prompt
 
 ```text
-Ich plane eine Studie in [Fach] mit [statistischer Test, z. B. t-Test für unabhängige Stichproben]. Schreibe und führe Python-Code aus (zum Beispiel mit statsmodels), der die benötigte Stichprobengröße für die Effektgröße [Wert, z. B. Cohens d = 0,5], Alpha 0,05, Power 0,80, zweiseitig berechnet. Zeige den Code, das Ergebnis und eine Grafik der Stichprobengröße für Effektgrößen von 0,2 bis 0,8. Liste jede Annahme auf, die die Berechnung trifft, und erkläre das Ergebnis in zwei klaren Sätzen.
+Ich plane eine Studie in [Fach] mit [statistischer Test, z. B. t-Test für unabhängige Stichproben]. Schreiben und führen Sie Python-Code aus (zum Beispiel mit statsmodels), der die benötigte Stichprobengröße für die Effektgröße [Wert, z. B. Cohens d = 0,5], Alpha 0,05, Power 0,80, zweiseitig berechnet. Zeigen Sie den Code, das Ergebnis und eine Grafik der Stichprobengröße für Effektgrößen von 0,2 bis 0,8. Listen Sie jede Annahme auf, die die Berechnung trifft, und erklären Sie das Ergebnis in zwei klaren Sätzen.
 ```
 
 ### Prüfung
@@ -97,7 +97,7 @@ Führen Sie einen bekannten Fall aus: Für d = 0,5, Alpha 0,05, Power 0,80, zwei
 
 ## Technik
 
-Beschreiben Sie Ihrem KI-Assistenten den Test und die Parameter oder hängen Sie Pilot- oder Archivdaten an. Er schreibt Python (statsmodels) und – wenn Ihr Tool Code ausführen kann – führt ihn aus und liefert Code, Ergebnis und Grafik; andernfalls führen Sie den Code selbst aus. Bewahren Sie den Code auf, führen Sie ihn selbst erneut aus und prüfen Sie quer in G*Power oder Jamovi.
+Beschreiben Sie Ihrem KI-Assistenten den Test und die Parameter oder hängen Sie Pilot- oder Archivdaten an. Er schreibt Python (statsmodels) und – wenn Ihr Werkzeug Code ausführen kann – führt ihn aus und liefert Code, Ergebnis und Grafik; andernfalls führen Sie den Code selbst aus. Bewahren Sie den Code auf, führen Sie ihn selbst erneut aus und prüfen Sie quer in G*Power oder Jamovi.
 
 ## Stufen
 
@@ -107,8 +107,8 @@ Führen Sie den Startprompt mit der monatlichen Central-England-Datei aus, oder 
 
 ### Projekt / Notebook
 
-Fügen Sie die Pilotdaten oder früheren Studien hinzu, aus denen Ihre Effektgröße stammt (D2 funktioniert als .txt), dazu Ihren Analyseplan sowie Code und Ergebnisse aus dem Chat. Fragen Sie, welche Effektgrößen die Quellen stützen und welche Annahmen Ihr Plan verletzt. Je nach Tool führt das Projekt keinen Code aus; es hält Annahmen, Quellen und Ergebnisse zusammen, für den Fall, dass sich die Schätzungen ändern.
+Fügen Sie die Pilotdaten oder früheren Studien hinzu, aus denen Ihre Effektgröße stammt (D2 funktioniert als .txt), dazu Ihren Analyseplan sowie Code und Ergebnisse aus dem Chat. Fragen Sie, welche Effektgrößen die Quellen stützen und welche Annahmen Ihr Plan verletzt. Je nach Werkzeug führt das Projekt keinen Code aus; es hält Annahmen, Quellen und Ergebnisse zusammen, für den Fall, dass sich die Schätzungen ändern.
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Power-Analyst“ und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Tool sie anbietet. Anweisungen: immer Python mit statsmodels schreiben und ausführen, den Code zeigen, die Stichprobengröße über Effektgrößen grafisch darstellen, jede Annahme auflisten und welche Ihre Daten verletzen könnten, und einen bekannten Benchmark ausführen (d = 0,5 ergibt etwa 64 je Gruppe). Startprompt: „Poweranalyse für [Test], Effektgröße [Wert] aus [Quelle]“. Wiederverwendbar für jede Studie oder jeden Antrag.
+Nennen Sie ihn „Power-Analyst“ und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Anweisungen: immer Python mit statsmodels schreiben und ausführen, den Code zeigen, die Stichprobengröße über Effektgrößen grafisch darstellen, jede Annahme auflisten und welche Ihre Daten verletzen könnten, und einen bekannten Benchmark ausführen (d = 0,5 ergibt etwa 64 je Gruppe). Startprompt: „Poweranalyse für [Test], Effektgröße [Wert] aus [Quelle]“. Wiederverwendbar für jede Studie oder jeden Antrag.

@@ -63,7 +63,7 @@ Sie entwerfen einen Datenmanagementplan für ein Projekt, das drei offene Datens
 ### Prompt
 
 ```text
-Ich entwerfe einen Datenmanagementplan für ein Promotionsprojekt, das drei offene Datensätze nachnutzt, angehängt: die monatliche HadCRUT5-CSV, die NOAA-Mauna-Loa-CO₂-CSV und die Datei der Met-Office-Station Oxford. Es sind keine menschlichen Teilnehmenden beteiligt. Verwende diese Überschriften: Datenerhebung; Dokumentation und Metadaten; Ethik und rechtliche Konformität; Speicherung und Sicherung; Auswahl und Langzeitarchivierung; Datenteilung; Verantwortlichkeiten. Gib für jede Überschrift an, was Gutachtende üblicherweise erwarten, welche Fragen ich selbst beantworten muss, und ein kurzes Gerüst mit [Platzhaltern]. Entnimm Lizenz-, Zitier- und Datenqualitätsinformationen nur den Dateikopfzeilen und zitiere sie; wo eine Datei keine Lizenz nennt, schreibe „in Datei nicht angegeben – beim Anbieter prüfen“. Weise darauf hin, wie ich Versionen, vorläufige oder geschätzte Werte und Wechsel des Messstandorts festhalten soll. Nenne keine institutionellen Regeln oder rechtlichen Anforderungen, wenn du dir nicht sicher bist.
+Ich entwerfe einen Datenmanagementplan für ein Promotionsprojekt, das drei offene Datensätze nachnutzt, angehängt: die monatliche HadCRUT5-CSV, die NOAA-Mauna-Loa-CO₂-CSV und die Datei der Met-Office-Station Oxford. Es sind keine menschlichen Teilnehmenden beteiligt. Verwenden Sie diese Überschriften: Datenerhebung; Dokumentation und Metadaten; Ethik und rechtliche Konformität; Speicherung und Sicherung; Auswahl und Langzeitarchivierung; Datenteilung; Verantwortlichkeiten. Geben Sie für jede Überschrift an, was Gutachtende üblicherweise erwarten, welche Fragen ich selbst beantworten muss, und ein kurzes Gerüst mit [Platzhaltern]. Entnehmen Sie Lizenz-, Zitier- und Datenqualitätsinformationen nur den Dateikopfzeilen und zitieren Sie sie; wo eine Datei keine Lizenz nennt, schreiben Sie „in Datei nicht angegeben – beim Anbieter prüfen“. Weisen Sie darauf hin, wie ich Versionen, vorläufige oder geschätzte Werte und Wechsel des Messstandorts festhalten soll. Nennen Sie keine institutionellen Regeln oder rechtlichen Anforderungen, wenn Sie sich nicht sicher sind.
 ```
 
 ### Prüfung
@@ -74,7 +74,7 @@ Die NOAA-Kopfzeile bittet um Zitierung und erwähnt mögliche Koautorschaft und 
 
 ### Mitbringen
 
-Die Abschnittsüberschriften des Ethikformulars Ihrer Einrichtung oder einer öffentlichen Vorlage für einen Datenmanagementplan, dazu eine kurze fiktive oder unkritische Studienzusammenfassung.
+Die Abschnittsüberschriften des Ethikformulars Ihrer Einrichtung oder einer öffentlichen Vorlage für einen Datenmanagementplan, dazu eine kurze fiktive oder nicht sensible Studienzusammenfassung.
 
 ### Schritte
 
@@ -86,7 +86,7 @@ Die Abschnittsüberschriften des Ethikformulars Ihrer Einrichtung oder einer öf
 ### Prompt
 
 ```text
-Ich bereite [einen Ethikantrag oder einen Datenmanagementplan] für eine Studie zu [Thema] vor. Die Überschriften der Vorlage sind: [Überschriften]. Meine Studie in Kürze: [Zusammenfassung]. Gib für jede Überschrift an: was Gutachtende üblicherweise erwarten, welche Fragen ich selbst beantworten muss, und ein kurzes Gerüst mit [Platzhaltern]. Schreibe keine studienspezifische Argumentation zu Einwilligung, Risiken oder Anonymisierung; lass stattdessen klare Aufforderungen an mich. Nenne keine institutionellen Regeln oder rechtlichen Anforderungen, wenn du dir nicht sicher bist; wenn du dir nicht sicher bist, sage das.
+Ich bereite [einen Ethikantrag oder einen Datenmanagementplan] für eine Studie zu [Thema] vor. Die Überschriften der Vorlage sind: [Überschriften]. Meine Studie in Kürze: [Zusammenfassung]. Geben Sie für jede Überschrift an: was Gutachtende üblicherweise erwarten, welche Fragen ich selbst beantworten muss, und ein kurzes Gerüst mit [Platzhaltern]. Schreiben Sie keine studienspezifische Argumentation zu Einwilligung, Risiken oder Anonymisierung; lassen Sie stattdessen klare Aufforderungen an mich. Nennen Sie keine institutionellen Regeln oder rechtlichen Anforderungen, wenn Sie sich nicht sicher sind; wenn Sie sich nicht sicher sind, sagen Sie das.
 ```
 
 ### Prüfung
@@ -105,8 +105,8 @@ Führen Sie den Startprompt mit den Überschriften Ihrer Vorlage aus, oder mit d
 
 ### Projekt / Notebook
 
-Fügen Sie das Ethikformular und die DMP-Vorlage Ihrer Einrichtung mit ihren Hinweisen hinzu, dazu Ihr Protokoll und die Lizenz- oder Dokumentationsseiten nachgenutzter Daten, gespeichert als PDF – in der Übungsversion D7 sowie D3 und D5 (speichern Sie sie vorher als .xlsx, wenn Ihr Tool kein CSV akzeptiert). Fragen Sie, welche Fragen der Vorlage Ihre Entwürfe noch nicht beantworten. Sie kommen darauf zurück, wenn der Antrag Überarbeitungen und Anmerkungen der Gutachtenden durchläuft.
+Fügen Sie das Ethikformular und die DMP-Vorlage Ihrer Einrichtung mit ihren Hinweisen hinzu, dazu Ihr Protokoll und die Lizenz- oder Dokumentationsseiten nachgenutzter Daten, gespeichert als PDF – in der Übungsversion D7 sowie D3 und D5 (speichern Sie sie vorher als .xlsx, wenn Ihr Werkzeug kein CSV akzeptiert). Fragen Sie, welche Fragen der Vorlage Ihre Entwürfe noch nicht beantworten. Sie kommen darauf zurück, wenn der Antrag Überarbeitungen und Anmerkungen der Gutachtenden durchläuft.
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Ethik- und DMP-Entwerfer“. Anweisungen: den Überschriften der Vorlage folgen, Erwartungen der Gutachtenden, offene Fragen und ein Gerüst mit [Platzhaltern] liefern, Lizenzen nur aus Quelldokumenten übernehmen und nie Argumentation zu Einwilligung, Risiko oder Anonymisierung schreiben oder Regeln nennen, die er nicht belegen kann. Wissen: die öffentlichen Vorlagen und Hinweisseiten Ihrer Einrichtung. Startprompt: „Entwirf das Gerüst für [Ethikantrag oder DMP]: [Studienzusammenfassung]“. Wiederverwendbar für jedes neue Projekt.
+Nennen Sie ihn „Ethik- und DMP-Entwerfer“. Anweisungen: den Überschriften der Vorlage folgen, Erwartungen der Gutachtenden, offene Fragen und ein Gerüst mit [Platzhaltern] liefern, Lizenzen nur aus Quelldokumenten übernehmen und nie Argumentation zu Einwilligung, Risiko oder Anonymisierung schreiben oder Regeln nennen, die er nicht belegen kann. Wissen: die öffentlichen Vorlagen und Hinweisseiten Ihrer Einrichtung. Startprompt: „Entwerfen Sie das Gerüst für [Ethikantrag oder DMP]: [Studienzusammenfassung]“. Wiederverwendbar für jedes neue Projekt.

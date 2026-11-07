@@ -110,4 +110,4 @@ Add the raw Oxford file (D7, .txt), a short Word data dictionary with the codes 
 
 ### Custom assistant
 
-In Instructions, fix the order: read the header and codebook first, profile without changing anything, report an issue table, wait for your approval, then clean with flag columns, keep the raw file untouched and return the script and a change log. Never delete rows silently. Switch on "Create documents, charts and code". Starter prompt: "Profile this file and list every problem before cleaning." Reusable for each new data file or survey wave.
+In Instructions, fix the order: read the header and codebook first, profile without changing anything, report an issue table, wait for your approval, then clean with flag columns, keep the raw file untouched and return the script and a change log. Never delete rows silently. Switch on code execution or data analysis if your tool offers it. Starter prompt: "Profile this file and list every problem before cleaning." Reusable for each new data file or survey wave.

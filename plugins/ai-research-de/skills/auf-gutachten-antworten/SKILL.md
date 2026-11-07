@@ -17,7 +17,9 @@ Eine nummerierte Tabelle aller Kommentare mit Ihrer geplanten Maßnahme und ein 
 
 Gutachten mischen wesentliche und geringfügige Punkte über mehrere Gutachtende hinweg; eine vollständige, höfliche Punkt-für-Punkt-Antwort zu entwerfen ist langwierig, und ein übersehener Kommentar kann die Annahme verzögern.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie die Gutachterkommentare ein und bitten Sie um eine nummerierte Tabelle aller Punkte.
 2. Ergänzen Sie Ihre Notizen dazu, was Sie geändert haben oder warum Sie widersprechen.
@@ -29,9 +31,8 @@ Gutachten mischen wesentliche und geringfügige Punkte über mehrere Gutachtende
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Legen Sie in den Anweisungen die Regeln fest: jeden Kommentar in einer Tabelle nummerieren, ihn vor jeder Antwort zitieren, Antworten höflich und knapp halten, [ANTWORT ERGÄNZEN] schreiben, wo Ihre Notizen keine Antwort enthalten, nie eine Änderung behaupten, die Sie nicht aufgeführt haben, und mit einer kurzen Zusammenfassung der Änderungen schließen. Startprompt: „Hier sind die Kommentare und meine Notizen – entwerfen Sie das Antwortschreiben.“ Wiederverwendbar für jede Überarbeitungsrunde. Laden Sie nie Manuskripte hoch, die Sie für andere begutachten.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich überarbeite ein Manuskript im Fach [Disziplin] nach dem Peer Review. Unten stehen die Gutachterkommentare: [Kommentare einfügen]. Meine Notizen zu vorgenommenen Änderungen oder Punkten, denen ich widerspreche: [Notizen einfügen]. Listen Sie zuerst jeden Kommentar in einer Tabelle auf: Nummer, Gutachter, wesentlich oder geringfügig, was gefordert wird, meine geplante Maßnahme. Entwerfen Sie dann ein höfliches, knappes Antwortschreiben, das jeden Kommentar der Reihe nach beantwortet und ihn zuerst zitiert. Wo meine Notizen keine Antwort enthalten, schreiben Sie [ANTWORT ERGÄNZEN], statt eine zu erfinden. Behaupten Sie keine Änderung, die ich nicht aufgeführt habe. Schließen Sie mit einer Zusammenfassung der Änderungen in höchstens fünf Stichpunkten.

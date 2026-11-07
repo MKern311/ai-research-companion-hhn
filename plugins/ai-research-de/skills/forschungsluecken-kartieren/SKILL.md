@@ -17,7 +17,9 @@ Eine Tabelle der Lücken nach Typ, jeweils verknüpft mit den Studien und Textst
 
 Jedes Kapitel „Future Research“ behauptet eine Lücke, aber einen Stapel Studien in eine typisierte, belastbare Lücke zu verwandeln, die Ihr Projekt rechtfertigt, ist schwer; genannte Lücken bleiben oft vage.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie die Studien und Ihre Entwurfs-Forschungsfrage ein oder hängen Sie sie an.
 2. Bitten Sie um die Lücken, die sie hinterlassen, nach Typ sortiert, jeweils mit den Studien, die sie zeigen.
@@ -29,9 +31,8 @@ Jedes Kapitel „Future Research“ behauptet eine Lücke, aber einen Stapel Stu
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Lückenkartierer“. Anweisungen: die fünf Lückentypen, eine Tabelle mit Datensätzen, wörtlicher Textstelle und „genannt“ oder „abgeleitet“, eine Einschätzung, wie gut die Entwurfsfrage eine Lücke füllt, und niemals Studien hinzufügen, die Sie ihm nicht gegeben haben. Kein Code nötig. Startprompts: „Kartiere die Lücken in diesen Abstracts“, „Welche Lücke füllt meine Frage?“ Wiederverwendbar für jede neue Studienauswahl.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet]. Identifizieren Sie ausschließlich anhand der Studien, die ich bereitstelle, die Forschungslücken, die sie hinterlassen. Sortieren Sie sie nach Typ: empirisch (fehlende Populationen, Settings, Länder oder Zeiträume), methodisch (ähnliche Designs, fehlende Methoden oder Datenquellen), theoretisch (Phänomen noch nicht erklärt oder nicht mit bestimmten Theorien verglichen), praktisch (fehlende Evidenz zu Umsetzung oder Anwendung) und widersprüchliche Befunde. Zeigen Sie eine Tabelle: Lückentyp, die Lücke in einem Satz, Studien, die sie zeigen, und die Textstelle, die sie belegt. Sagen Sie dann, welche Lücke meine Entwurfs-Forschungsfrage adressiert und wie überzeugend sie das tut. Meine Frage: [Frage]. Fügen Sie keine Studien hinzu, die ich Ihnen nicht gegeben habe.

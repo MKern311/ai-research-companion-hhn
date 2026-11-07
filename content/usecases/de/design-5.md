@@ -55,24 +55,24 @@ Leitlinien für selbst auszufüllende Befragungen: einheitliche Formulierung und
 
 ### Mitbringen
 
-Ihren fertigen Fragebogen, exportiert als Word- oder PDF-Datei mit sichtbarer Filterführung (Filter, Skip- und Display-Logik), zu einem unkritischen Thema.
+Ihren fertigen Fragebogen, exportiert als Word- oder PDF-Datei mit sichtbarer Filterführung (Filter, Skip- und Display-Logik), zu einem nicht sensiblen Thema.
 
 ### Schritte
 
 1. Hängen Sie den exportierten Fragebogen an und beschreiben Sie die Zielgruppe.
 2. Bitten Sie den Assistenten, ihn entlang dreier unterschiedlicher Antwortpfade durchzugehen.
 3. Bitten Sie um eine Liste der Probleme bei Logik und Antwortoptionen, danach um eine Sprachprüfung.
-4. Testen Sie jedes markierte Problem der Filterführung in der Vorschau des Befragungstools.
+4. Testen Sie jedes markierte Problem der Filterführung in der Vorschau des Befragungswerkzeugs.
 
 ### Prompt
 
 ```text
-Ich habe einen Fragebogen zu [Thema] für [Zielgruppe] fertiggestellt; er ist mit seiner Filterführung angehängt. Handle als sorgfältige Survey-Methodikerin. Gehe den Fragebogen zuerst als drei Befragte auf verschiedenen Pfaden durch (zum Beispiel jemand, der beim ersten Filter „Nein“ antwortet, jemand, der überall „Ja“ antwortet, und jemand, der optionale Fragen überspringt) und liste auf, welche Fragen jede Person sieht. Zeige dann eine Tabelle der Probleme: Fragennummer, Art des Problems (fehlerhafte oder fehlende Filterführung, Frage wird Personen gezeigt, für die sie nicht gilt, Antwortoptionen fehlen oder überlappen, inkonsistente Skalenrichtung oder -beschriftung, Verweis auf eine frühere Antwort, die es möglicherweise nicht gibt, unklare Anweisung) und ein Korrekturvorschlag. Prüfe als Nächstes die Sprache: Rechtschreibung, Grammatik, einheitliche Begriffe und Anrede sowie Formulierungen, die für die Zielgruppe schwer lesbar sind. Schätze zum Schluss die Bearbeitungszeit. Ändere nicht die Bedeutung irgendeiner Frage.
+Ich habe einen Fragebogen zu [Thema] für [Zielgruppe] fertiggestellt; er ist mit seiner Filterführung angehängt. Handeln Sie als sorgfältige Befragungsmethodikerin. Gehen Sie den Fragebogen zuerst als drei Befragte auf verschiedenen Pfaden durch (zum Beispiel jemand, der beim ersten Filter „Nein“ antwortet, jemand, der überall „Ja“ antwortet, und jemand, der optionale Fragen überspringt) und listen Sie auf, welche Fragen jede Person sieht. Zeigen Sie dann eine Tabelle der Probleme: Fragennummer, Art des Problems (fehlerhafte oder fehlende Filterführung, Frage wird Personen gezeigt, für die sie nicht gilt, Antwortoptionen fehlen oder überlappen, inkonsistente Skalenrichtung oder -beschriftung, Verweis auf eine frühere Antwort, die es möglicherweise nicht gibt, unklare Anweisung) und ein Korrekturvorschlag. Prüfen Sie als Nächstes die Sprache: Rechtschreibung, Grammatik, einheitliche Begriffe und Anrede sowie Formulierungen, die für die Zielgruppe schwer lesbar sind. Schätzen Sie zum Schluss die Bearbeitungszeit. Ändern Sie nicht die Bedeutung irgendeiner Frage.
 ```
 
 ### Prüfung
 
-Jedes Problem der Filterführung zeigt sich, wenn Sie in der Vorschau des Befragungstools demselben Pfad folgen, und jede sprachliche Korrektur behält die Bedeutung der Frage bei.
+Jedes Problem der Filterführung zeigt sich, wenn Sie in der Vorschau des Befragungswerkzeugs demselben Pfad folgen, und jede sprachliche Korrektur behält die Bedeutung der Frage bei.
 
 ### Grenze
 
@@ -80,7 +80,7 @@ Der Assistent liest den exportierten Text, nicht die laufende Befragung; Logik, 
 
 ## Technik
 
-Exportieren Sie den Fragebogen mit Filterführung aus Ihrem Befragungstool (zum Beispiel Qualtrics oder Microsoft Forms) als Word oder PDF und laden Sie ihn in Ihren KI-Assistenten hoch; testen Sie markierte Probleme anschließend in der Vorschau des Tools.
+Exportieren Sie den Fragebogen mit Filterführung aus Ihrem Befragungswerkzeug (zum Beispiel Qualtrics oder Microsoft Forms) als Word oder PDF und laden Sie ihn in Ihren KI-Assistenten hoch; testen Sie markierte Probleme anschließend in der Vorschau des Werkzeugs.
 
 ## Stufen
 
@@ -94,4 +94,4 @@ Fügen Sie den exportierten Fragebogen, Ihre Item-Liste oder Ihr Codebuch, die S
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Fragebogen-Prüfer“. Anweisungen: mindestens drei Befragtenpfade durchgehen, die festen Problemtypen und die Tabelle verwenden, eine Sprachprüfung und eine Schätzung der Bearbeitungszeit ergänzen und nie die Bedeutung einer Frage ändern. Wissen: Ihr Styleguide oder die Hinweise Ihrer Einrichtung zu Befragungen. Startprompt: „Prüfe diesen exportierten Fragebogen für [Zielgruppe]“. Wiederverwendbar für jeden Fragebogen und jede Version vor dem Start.
+Nennen Sie ihn „Fragebogen-Prüfer“. Anweisungen: mindestens drei Befragtenpfade durchgehen, die festen Problemtypen und die Tabelle verwenden, eine Sprachprüfung und eine Schätzung der Bearbeitungszeit ergänzen und nie die Bedeutung einer Frage ändern. Wissen: Ihr Styleguide oder die Hinweise Ihrer Einrichtung zu Befragungen. Startprompt: „Prüfen Sie diesen exportierten Fragebogen für [Zielgruppe]“. Wiederverwendbar für jeden Fragebogen und jede Version vor dem Start.

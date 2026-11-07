@@ -110,4 +110,4 @@ Add the Forster report (A3) or, for your own work, the current draft, its tables
 
 ### Custom assistant
 
-Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, define the check: numbers across abstract, text and tables; terms and abbreviations; in-text citations against the reference list; a table of issue type, location, what each place says and suggested fix; report only what is in the document and say which parts were not read. Starter prompt: "Run the consistency check on this draft." Reusable before every submission – plant one mismatch to test it.
+Create a configured assistant (e.g. a Copilot agent, a ChatGPT project, a Gemini Gem or a Claude project). In its standing instructions, define the check: numbers across abstract, text and tables; terms and abbreviations; in-text citations against the reference list; a table of issue type, location, what each place says and suggested fix; report only what is in the document and say which parts were not read. Starter prompt: "Run the consistency check on this draft." Reusable before every submission – plant one mismatch to test it.

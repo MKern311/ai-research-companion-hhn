@@ -63,7 +63,7 @@ Ihre Gruppe braucht Haftnotizen, ein Flipchart oder großes Blatt und ein Smartp
 ### Prompt
 
 ```text
-Das angehängte Foto zeigt einen Card Sort: 12 Haftnotizen mit kurzen Titeln von Forschungsarbeiten zu Wetter und Klimawandel, von unserer Gruppe auf einem Flipchart in Cluster sortiert. 1) Transkribiere jede Notiz exakt, nummeriert, mit dem Cluster, in dem sie sitzt; schreibe [unleserlich] für alles, was du nicht lesen kannst. 2) Gib eine Tabelle: Notiznummer, Text, Cluster. 3) Vergleiche unsere Cluster mit diesen drei Gruppen: „Global temperature records“, „UK and Europe“, „Extremes and attribution“ – sage für jede Notiz, ob unsere Zuordnung übereinstimmt und wo sie abweicht. 4) Schlage erst danach eine Bezeichnung für jedes unserer Cluster vor.
+Das angehängte Foto zeigt einen Card Sort: 12 Haftnotizen mit kurzen Titeln von Forschungsarbeiten zu Wetter und Klimawandel, von unserer Gruppe auf einem Flipchart in Cluster sortiert. 1) Transkribieren Sie jede Notiz exakt, nummeriert, mit dem Cluster, in dem sie sitzt; schreiben Sie [unleserlich] für alles, was Sie nicht lesen können. 2) Geben Sie eine Tabelle: Notiznummer, Text, Cluster. 3) Vergleichen Sie unsere Cluster mit diesen drei Gruppen: „Global temperature records“, „UK and Europe“, „Extremes and attribution“ – sagen Sie für jede Notiz, ob unsere Zuordnung übereinstimmt und wo sie abweicht. 4) Schlagen Sie erst danach eine Bezeichnung für jedes unserer Cluster vor.
 ```
 
 ### Prüfung
@@ -72,7 +72,7 @@ Genau 12 Notizen in der Tabelle; vergleichen Sie die Transkription mit dem Board
 
 ### Hinweis zu den Dateien
 
-Ihr Foto des Flipcharts (JPEG oder PNG) – mit dem Smartphone aufgenommen und in der App Ihres Assistenten angehängt, oder in Ihrem Cloud-Speicher gespeichert und am Laptop angehängt. Wenn Ihr Tool den Dateityp nicht akzeptiert (z. B. HEIC vom iPhone), konvertieren Sie ihn zuerst in JPEG.
+Ihr Foto des Flipcharts (JPEG oder PNG) – mit dem Smartphone aufgenommen und in der App Ihres Assistenten angehängt, oder in Ihrem Cloud-Speicher gespeichert und am Laptop angehängt. Wenn Ihr Werkzeug den Dateityp nicht akzeptiert (z. B. HEIC vom iPhone), konvertieren Sie ihn zuerst in JPEG.
 
 ## Mit eigenem Material
 
@@ -83,14 +83,14 @@ Ein klares, blendfreies Foto eines Whiteboards, Flipcharts oder Card Sorts, das 
 ### Schritte
 
 1. Fotografieren Sie das Board frontal, bei gutem Licht, in einer oder zwei Aufnahmen.
-2. Laden Sie das Foto hoch (JPEG oder PNG; konvertieren Sie andere Formate zuerst, wenn Ihr Tool sie nicht akzeptiert) – aus der mobilen App Ihres Assistenten oder über Ihren Cloud-Speicher – und bitten Sie den Assistenten, jede Karte zu transkribieren, bevor er irgendetwas interpretiert.
+2. Laden Sie das Foto hoch (JPEG oder PNG; konvertieren Sie andere Formate zuerst, wenn Ihr Werkzeug sie nicht akzeptiert) – aus der mobilen App Ihres Assistenten oder über Ihren Cloud-Speicher – und bitten Sie den Assistenten, jede Karte zu transkribieren, bevor er irgendetwas interpretiert.
 3. Bitten Sie um die Cluster oder die Zuordnung von Karten zu Kategorien als Tabelle, mit markierten unsicheren Lesungen.
 4. Vergleichen Sie Transkription und Zuordnung mit dem Board selbst.
 
 ### Prompt
 
 ```text
-Das angehängte Foto zeigt das Ergebnis eines/einer [Card Sort / Item-Sorting-Aufgabe / Brainstormings] aus einem/einer [Workshop oder Experiment] zu [Thema]. 1) Transkribiere jede Karte oder Notiz exakt wie geschrieben, nummeriert, mit ihrer Position (Spalte oder Cluster). Markiere jedes Wort, das du nicht lesen kannst, als [unleserlich], statt zu raten. 2) Gib eine Tabelle: Kartennummer, Text, die Gruppe oder Kategorie, in die sie gelegt wurde, und jeden Pfeil oder jede Linie, die sie mit einer anderen Karte verbindet. 3) Wenn die Aufgabe Items vorgegebenen Kategorien zuordnete ([Kategorien auflisten]), zähle für jedes Item, wie viele Zuordnungen in die vorgesehene Kategorie fallen. 4) Schlage erst danach eine kurze Bezeichnung für jedes Cluster vor und sage, welche Karten schlecht passen. Halte Beobachtung (Schritte 1–3) und Interpretation (Schritt 4) getrennt.
+Das angehängte Foto zeigt das Ergebnis eines/einer [Card Sort / Item-Sorting-Aufgabe / Brainstormings] aus einem/einer [Workshop oder Experiment] zu [Thema]. 1) Transkribieren Sie jede Karte oder Notiz exakt wie geschrieben, nummeriert, mit ihrer Position (Spalte oder Cluster). Markieren Sie jedes Wort, das Sie nicht lesen können, als [unleserlich], statt zu raten. 2) Geben Sie eine Tabelle: Kartennummer, Text, die Gruppe oder Kategorie, in die sie gelegt wurde, und jeden Pfeil oder jede Linie, die sie mit einer anderen Karte verbindet. 3) Wenn die Aufgabe Items vorgegebenen Kategorien zuordnete ([Kategorien auflisten]), zählen Sie für jedes Item, wie viele Zuordnungen in die vorgesehene Kategorie fallen. 4) Schlagen Sie erst danach eine kurze Bezeichnung für jedes Cluster vor und sagen Sie, welche Karten schlecht passen. Halten Sie Beobachtung (Schritte 1–3) und Interpretation (Schritt 4) getrennt.
 ```
 
 ### Prüfung
@@ -117,4 +117,4 @@ Fügen Sie die geprüften Tabellen jeder Sitzung als .xlsx- oder Word-Dateien hi
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Board-Digitalisierer“ und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Tool sie anbietet, für Zählungen und den Tabellenexport. Anweisungen: vor dem Interpretieren jede Karte transkribieren, [unleserlich] statt zu raten, eine Tabelle aus Karte, Text, Cluster und Verbindungen, Zählungen je vorgegebener Kategorie, Interpretation zuletzt. Wissen: Ihre Kategorienliste. Es gehen nur Fotos ohne Gesichter oder Namen hinein, und Sie prüfen jede Tabelle am Board. Startprompt: „Digitalisiere diesen Card Sort“.
+Nennen Sie ihn „Board-Digitalisierer“ und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, für Zählungen und den Tabellenexport. Anweisungen: vor dem Interpretieren jede Karte transkribieren, [unleserlich] statt zu raten, eine Tabelle aus Karte, Text, Cluster und Verbindungen, Zählungen je vorgegebener Kategorie, Interpretation zuletzt. Wissen: Ihre Kategorienliste. Es gehen nur Fotos ohne Gesichter oder Namen hinein, und Sie prüfen jede Tabelle am Board. Startprompt: „Digitalisieren Sie diesen Card Sort“.

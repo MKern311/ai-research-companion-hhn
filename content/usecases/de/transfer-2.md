@@ -21,13 +21,13 @@ Aktuelle Forschung in Seminare zu bringen heißt, Fälle und Fragen von Grund au
 
 ## Ergebnis
 
-Ein Seminarfall, Diskussionsfragen auf der Anwenden-Stufe der überarbeiteten Bloom'schen Taxonomie oder höher und eine Datenübung, abgestimmt auf Ihr Lernergebnis, mit aufgelisteten Vereinfachungen, die Sie prüfen.
+Ein Seminarfall, Diskussionsfragen auf der Anwenden-Niveau der überarbeiteten Bloom'schen Taxonomie oder höher und eine Datenübung, abgestimmt auf Ihr Lernergebnis, mit aufgelisteten Vereinfachungen, die Sie prüfen.
 
 ## Vorgehen
 
 1. Laden Sie die Arbeit mit Modul, Niveau und Lernergebnis hoch
 2. Bitten Sie um eine Fallstudie von 400 Wörtern auf Basis der Arbeit
-3. Ergänzen Sie Fragen und eine Übung auf Anwenden-Stufe oder höher
+3. Ergänzen Sie Fragen und eine Übung auf Anwenden-Niveau oder höher
 4. Prüfen Sie, ob Lernergebnis, Aktivität und Prüfung aufeinander abgestimmt sind
 5. Prüfen Sie Fakten und Zahlen des Falls gegen die Arbeit
 
@@ -39,7 +39,7 @@ Biggs' Prinzip, dass beabsichtigte Lernergebnisse, Lehr-Lern-Aktivitäten und Pr
 
 ### Überarbeitete Bloom'sche Taxonomie (Revised Bloom's taxonomy)
 
-Sechs kognitive Prozessstufen – erinnern, verstehen, anwenden, analysieren, bewerten, erschaffen (Anderson & Krathwohl 2001). Formulieren Sie Diskussionsfragen und Übungen auf der Anwenden-Stufe oder höher, wenn das Lernergebnis mehr als Wiedergabe verlangt.
+Sechs kognitive Prozessstufen – erinnern, verstehen, anwenden, analysieren, bewerten, erschaffen (Anderson & Krathwohl 2001). Formulieren Sie Diskussionsfragen und Übungen auf der Anwenden-Niveau oder höher, wenn das Lernergebnis mehr als Wiedergabe verlangt.
 
 ### Verbindung von Forschung und Lehre (Healey)
 
@@ -64,12 +64,12 @@ Bauen Sie einen Seminarfall zur Arbeit von Christidis et al. (2020) mit einer Da
 ### Prompt
 
 ```text
-Ich unterrichte ein Modul zu Umweltdaten im zweiten Studienjahr (Bachelor). Das Lernergebnis lautet: „Studierende interpretieren beobachtete Temperaturextreme im Lichte der Attributionsforschung.“ Angehängt sind das PDF von Christidis et al. (2020) und die Textdatei der täglichen HadCET-Höchsttemperaturen. 1) Schreibe eine Fallstudie von etwa 400 Wörtern auf Basis der Arbeit, für eine 20-minütige Seminaraktivität. 2) Ergänze drei Diskussionsfragen auf der Stufe Anwenden, Analysieren oder Bewerten der überarbeiteten Bloom'schen Taxonomie, nicht Wiedergabe. 3) Entwirf eine Übung mit der Datendatei: Zähle die Tage mit mindestens 30 °C pro Jahrzehnt seit 1900 und finde den heißesten Tag des Jahres 2022. Gib eine Musterlösung mit Python-Code. Liste jede Vereinfachung auf, die du vorgenommen hast.
+Ich unterrichte ein Modul zu Umweltdaten im zweiten Studienjahr (Bachelor). Das Lernergebnis lautet: „Studierende interpretieren beobachtete Temperaturextreme im Lichte der Attributionsforschung.“ Angehängt sind das PDF von Christidis et al. (2020) und die Textdatei der täglichen HadCET-Höchsttemperaturen. 1) Schreiben Sie eine Fallstudie von etwa 400 Wörtern auf Basis der Arbeit, für eine 20-minütige Seminaraktivität. 2) Ergänzen Sie drei Diskussionsfragen auf dem Niveau Anwenden, Analysieren oder Bewerten der überarbeiteten Bloom'schen Taxonomie, nicht Wiedergabe. 3) Entwerfen Sie eine Übung mit der Datendatei: Zählen Sie die Tage mit mindestens 30 °C pro Jahrzehnt seit 1900 und finden Sie den heißesten Tag des Jahres 2022. Geben Sie eine Musterlösung mit Python-Code. Listen Sie jede Vereinfachung auf, die Sie vorgenommen haben.
 ```
 
 ### Prüfung
 
-Führen Sie den Code erneut aus: Die Datei zeigt 37.3 °C am 19. Juli 2022 und sieben Tage mit mindestens 30 °C im Jahr 2022. Die Fakten des Falls müssen mit der Arbeit übereinstimmen, und der Fall sollte erwähnen, dass CET eine regionale Reihe ist.
+Führen Sie den Code erneut aus: Die Datei zeigt 37,3 °C am 19. Juli 2022 und sieben Tage mit mindestens 30 °C im Jahr 2022. Die Fakten des Falls müssen mit der Arbeit übereinstimmen, und der Fall sollte erwähnen, dass CET eine regionale Reihe ist.
 
 ## Mit eigenem Material
 
@@ -87,7 +87,7 @@ Eine Open-Access-Arbeit aus Ihrem Fach (Ihre eigene oder eine neuere) und das Ni
 ### Prompt
 
 ```text
-Ich unterrichte [Modul] für Studierende auf dem Niveau [Niveau] in [Fach]. Angehängt ist eine aktuelle Arbeit: [Titel]. Das Lernergebnis lautet: [Lernergebnis einfügen]. Schreibe eine Fallstudie von etwa 400 Wörtern auf Basis des Settings und der Befunde der Arbeit, geeignet für eine 20-minütige Seminaraktivität. Ergänze drei Diskussionsfragen, die Studierende Befunde anwenden oder bewerten lassen, nicht nur wiedergeben, und eine kurze angewandte Übung. Behalte Fakten und Zahlen wie in der Arbeit bei und liste jede Vereinfachung auf, damit ich sie prüfen kann.
+Ich unterrichte [Modul] für Studierende auf dem Niveau [Niveau] in [Fach]. Angehängt ist eine aktuelle Arbeit: [Titel]. Das Lernergebnis lautet: [Lernergebnis einfügen]. Schreiben Sie eine Fallstudie von etwa 400 Wörtern auf Basis des Settings und der Befunde der Arbeit, geeignet für eine 20-minütige Seminaraktivität. Ergänzen Sie drei Diskussionsfragen, die Studierende Befunde anwenden oder bewerten lassen, nicht nur wiedergeben, und eine kurze angewandte Übung. Behalten Sie Fakten und Zahlen wie in der Arbeit bei und listen Sie jede Vereinfachung auf, damit ich sie prüfen kann.
 ```
 
 ### Prüfung
@@ -102,7 +102,7 @@ Laden Sie das Open-Access-PDF in Ihren KI-Assistenten hoch; für eine Datenübun
 
 ### Chat
 
-Führen Sie den Startprompt mit beiden angehängten Dateien aus. Bitten Sie den Assistenten im selben Chat, jede Frage und die Übung dem Lernergebnis und einer Bloom-Stufe zuzuordnen und die Zeilen von 2022 zu zeigen, die sein Code gezählt hat.
+Führen Sie den Startprompt mit beiden angehängten Dateien aus. Bitten Sie den Assistenten im selben Chat, jede Frage und die Übung dem Lernergebnis und einer Bloom-Niveau zuzuordnen und die Zeilen von 2022 zu zeigen, die sein Code gezählt hat.
 
 ### Projekt / Notebook
 
@@ -110,4 +110,4 @@ Fügen Sie B2, die D1-Textdatei und Ihre Modulbeschreibung mit ihren Lernergebni
 
 ### Eigener Assistent
 
-Anweisungen: Länge und Format des Falls, Fragen auf der Anwenden-Stufe der überarbeiteten Bloom'schen Taxonomie oder höher, Lernergebnis, Aktivität und Prüfung aufeinander abgestimmt, Fakten nur aus der angehängten Arbeit, eine Liste der Vereinfachungen, Musterlösungen mit Code. Wissen: Ihre Modulbeschreibung und Lernergebnisse. Schalten Sie „Dokumente, Diagramme und Code erstellen“ für Datenübungen ein. Startprompt: „Seminarfall und drei Fragen aus dieser Arbeit“. Für jede neue Arbeit und jedes Modul wiederverwendbar.
+Anweisungen: Länge und Format des Falls, Fragen auf der Anwenden-Niveau der überarbeiteten Bloom'schen Taxonomie oder höher, Lernergebnis, Aktivität und Prüfung aufeinander abgestimmt, Fakten nur aus der angehängten Arbeit, eine Liste der Vereinfachungen, Musterlösungen mit Code. Wissen: Ihre Modulbeschreibung und Lernergebnisse. Schalten Sie Codeausführung bzw. Datenanalyse für Datenübungen ein, wenn Ihr Werkzeug das anbietet. Startprompt: „Seminarfall und drei Fragen aus dieser Arbeit“. Für jede neue Arbeit und jedes Modul wiederverwendbar.

@@ -17,7 +17,9 @@ Eine publikationsreife Abbildung, erzeugt durch Code, den Sie behalten, mit eine
 
 Standarddiagramme erfüllen selten die Richtlinien von Zeitschriften, verbergen oft Unsicherheit oder nutzen irreführende Farbskalen, und jede Abbildung für jede Überarbeitung von Hand anzupassen ist langsam und nicht wiederholbar.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie die Daten an und fügen Sie den Startprompt mit Ihrer Aussage und Ihrem Publikum ein.
 2. Wählen Sie einen der vorgeschlagenen Diagrammtypen und bitten Sie den Assistenten, ihn zu zeichnen.
@@ -29,9 +31,8 @@ Standarddiagramme erfüllen selten die Richtlinien von Zeitschriften, verbergen 
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Schreiben Sie in seine dauerhaften Anweisungen Ihren Hausstil: Schriftart und -größe, farbenblindheitssichere Palette, Breite und Auflösung, Achsenbeschriftungen mit Einheiten, nur vollständige Zeiträume, Unsicherheit dort zeigen, wo die Daten es erlauben, und „immer den vollständigen Code und einen Entwurf der Abbildungsunterschrift zurückgeben“. Fügen Sie die Abbildungsrichtlinien der Zeitschrift als Wissensdatei hinzu (unterstützt Ihr Werkzeug keine Wissensdateien, hängen Sie sie im Chat an) und schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompt: „Zeichnen Sie diese Daten als Zeitschriftenabbildung in meinem Hausstil.“ Wiederverwendbar für jedes Kapitel.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich brauche eine publikationsreife Abbildung für [einen Zeitschriftenartikel oder ein Kapitel meiner Abschlussarbeit] im Fach [Disziplin]. Die angehängte Datei enthält [Variablen]. Die Abbildung soll zeigen, [Aussage, z. B. wie sich X im Zeitverlauf nach Gruppen verändert hat]. Schlagen Sie zwei oder drei geeignete Diagrammtypen mit je einer Zeile vor. Erstellen Sie dann den besten davon in Python (matplotlib), mit klaren Achsenbeschriftungen einschließlich Einheiten, einer farbenblindheitssicheren Palette, ohne unnötige Dekoration und mit einer Größe von [z. B. 17 cm Breite] bei 300 dpi. Zeigen Sie den vollständigen Code, damit ich ihn reproduzieren kann.

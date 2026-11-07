@@ -17,7 +17,9 @@ A table of gaps by type, each tied to the studies and passages that show it and 
 
 Every paper's 'future research' section claims a gap, but turning a pile of studies into a typed, defensible gap that justifies your project is hard; stated gaps often stay vague.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste or attach the studies and your draft research question.
 2. Ask for the gaps they leave, sorted by type, each with the studies that show it.
@@ -29,9 +31,8 @@ Every paper's 'future research' section claims a gap, but turning a pile of stud
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Gap mapper'. Instructions: the five gap types, a table with records, verbatim passage and 'stated' or 'inferred', a judgement of how well the draft question fills one gap, and never add studies you have not given it. No code needed. Starter prompts: 'Map the gaps in these abstracts', 'Which gap does my question fill?' Reusable for every new batch of studies.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. Using only the studies I provide, identify the research gaps they leave. Sort them by type: empirical (missing populations, settings, countries or periods), methodological (similar designs, missing methods or data sources), theoretical (phenomenon not yet explained or compared with certain theories), practical (missing evidence on implementation or use), and contradictory findings. Show a table: gap type, the gap in one sentence, studies that show it, and the passage that supports it. Then say which gap my draft research question addresses and how convincingly it does so. My question: [question]. Do not add studies I have not given you.

@@ -17,7 +17,9 @@ Eine Tabelle übertragbarer Konzepte oder Methoden, was jeweils angepasst werden
 
 Nützliche Konzepte und Methoden existieren oft schon in einer Nachbardisziplin, aber Sie lesen deren Zeitschriften selten und kennen das Vokabular nicht, mit dem man sie suchen würde.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Forschungsfrage ein und nennen Sie Ihre Disziplin.
 2. Bitten Sie um Konzepte oder Methoden aus Nachbardisziplinen, die sich übertragen ließen.
@@ -29,9 +31,8 @@ Nützliche Konzepte und Methoden existieren oft schon in einer Nachbardisziplin,
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Disziplinbrücke“. Anweisungen: vier Konzepte oder Methoden aus benannten Nachbarfächern, die Tabelle des Startprompts (Übertragung, Anpassung, Risiko einer Fehlpassung), das Suchvokabular jedes Fachs und eine Referenz nur, wenn er sicher ist, dass sie existiert. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet und Sie eine Methode an Ihren Daten ausprobieren möchten. Startprompt: „Welche Methoden aus anderen Fächern passen zu dieser Frage?“ Wiederverwendbar für jede neue Frage.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet] und arbeite an: [Forschungsfrage]. Schlagen Sie vier Konzepte, Theorien oder Methoden aus Nachbardisziplinen vor, die helfen könnten, sie zu beantworten. Zeigen Sie eine Tabelle: Disziplin, Konzept oder Methode, wie es sich auf meine Frage übertragen ließe, was angepasst werden müsste, Risiko einer Fehlpassung. Fügen Sie pro Zeile eine Schlüsselreferenz nur hinzu, wenn Sie sicher sind, dass sie existiert, wenn möglich mit Link. Wenn Sie nicht sicher sind, sagen Sie es; erfinden Sie keine Quellen.

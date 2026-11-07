@@ -56,7 +56,7 @@ Teilnehmende müssen wissen, dass sie mit einer KI sprechen, was mit ihren Antwo
 
 ### Mitbringen
 
-Drei Entwürfe von Interview- oder Befragungsfragen zu einem unkritischen Thema aus Ihrer Forschung.
+Drei Entwürfe von Interview- oder Befragungsfragen zu einem nicht sensiblen Thema aus Ihrer Forschung.
 
 ### Schritte
 
@@ -68,7 +68,7 @@ Drei Entwürfe von Interview- oder Befragungsfragen zu einem unkritischen Thema 
 ### Prompt
 
 ```text
-Ich entwerfe ein adaptives Interview zu [Thema] für [Population] und möchte es pilotieren. Handle als interviewende Person. Stelle meine Kernfragen nacheinander: [F1], [F2], [F3]. Stelle nach jeder Antwort höchstens eine neutrale Nachfrage, um sie zu klären oder zu vertiefen. Regeln: keine lenkenden Fragen, keine Fragen zu Gesundheit, Finanzen oder anderen sensiblen Themen, akzeptiere „Das möchte ich lieber nicht sagen“, ohne nachzudrängen, und bleibe beim Thema. Ich antworte als erfundene befragte Person. Liste nach der letzten Frage jede Nachfrage auf, die du gestellt hast, und deine Begründung dafür.
+Ich entwerfe ein adaptives Interview zu [Thema] für [Population] und möchte es pilotieren. Handeln Sie als interviewende Person. Stellen Sie meine Kernfragen nacheinander: [F1], [F2], [F3]. Stellen Sie nach jeder Antwort höchstens eine neutrale Nachfrage, um sie zu klären oder zu vertiefen. Regeln: keine lenkenden Fragen, keine Fragen zu Gesundheit, Finanzen oder anderen sensiblen Themen, akzeptieren Sie „Das möchte ich lieber nicht sagen“, ohne nachzudrängen, und bleiben Sie beim Thema. Ich antworte als erfundene befragte Person. Listen Sie nach der letzten Frage jede Nachfrage auf, die Sie gestellt haben, und Ihre Begründung dafür.
 ```
 
 ### Prüfung
@@ -95,4 +95,4 @@ Fügen Sie Ihren Interviewleitfaden, die Auflagen Ihrer Ethikfreigabe, Ihre Rege
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Interview-Pilot“. Anweisungen: Ihre Kernfragen in der Reihenfolge, höchstens eine neutrale Nachfrage je Antwort, keine lenkenden oder sensiblen Fragen, „Das möchte ich lieber nicht sagen“ akzeptieren und am Ende ein Protokoll jeder Nachfrage mit Begründung. Nutzen Sie ihn nur zum Pilotieren mit erfundenen Befragten, nie mit Teilnehmenden, und prüfen Sie jedes Protokoll selbst. Startprompt: „Starte das Pilotinterview“.
+Nennen Sie ihn „Interview-Pilot“. Anweisungen: Ihre Kernfragen in der Reihenfolge, höchstens eine neutrale Nachfrage je Antwort, keine lenkenden oder sensiblen Fragen, „Das möchte ich lieber nicht sagen“ akzeptieren und am Ende ein Protokoll jeder Nachfrage mit Begründung. Nutzen Sie ihn nur zum Pilotieren mit erfundenen Befragten, nie mit Teilnehmenden, und prüfen Sie jedes Protokoll selbst. Startprompt: „Starten Sie das Pilotinterview“.

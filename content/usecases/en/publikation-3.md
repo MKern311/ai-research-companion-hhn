@@ -115,7 +115,7 @@ Add the author guidelines of your shortlisted journals (PDF or Word), your manus
 
 ### Custom assistant
 
-Create a configured assistant, for example "Journal and BibTeX helper" (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In the standing instructions, set the output: a journal table with publisher, fit, article type, word limit, reference style, open-access options and guideline link; use only the journals' own pages (keep web search on if your tool offers it); BibTeX with correct entry types and missing fields flagged; never invent journals, DOIs or page numbers. Starter prompts: "Suggest five journals for this abstract." and "Convert these references to BibTeX." Reusable for every manuscript.
+Create a configured assistant, for example "Journal and BibTeX helper" (e.g. a Copilot agent, a ChatGPT project, a Gemini Gem or a Claude project). In the standing instructions, set the output: a journal table with publisher, fit, article type, word limit, reference style, open-access options and guideline link; use only the journals' own pages (keep web search on if your tool offers it); BibTeX with correct entry types and missing fields flagged; never invent journals, DOIs or page numbers. Starter prompts: "Suggest five journals for this abstract." and "Convert these references to BibTeX." Reusable for every manuscript.
 
 ### Automation / own code
 

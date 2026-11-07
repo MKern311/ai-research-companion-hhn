@@ -17,7 +17,9 @@ Three reviews from different angles, each tied to a quoted passage, missing repo
 
 Critical feedback usually arrives months after submission, and supervisors rarely have time to read every draft as a sceptical outsider who checks methods, inference and reporting standards.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach or paste the text and name the target journal and article type.
 2. Ask for three short reviews from different roles: methods, theory, devil's advocate.
@@ -29,9 +31,8 @@ Critical feedback usually arrives months after submission, and supervisors rarel
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, define the panel: a methods expert, a field expert and a devil's advocate, each with a short assessment and up to four major comments that quote their passage and propose a fix; then a reporting-guideline check ("say if none fits") and a prioritised roadmap with effort. Add your checklists as knowledge files (if your tool does not support them, attach them in the chat). Starter prompt: "Review this draft for [journal]." Reusable for every manuscript – only your own drafts or with co-authors' consent.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] and plan to submit this [article type] to [journal]. Attached is [section of my draft]. Act as a panel of three critical but fair peer reviewers: a methods expert, a theory expert and a devil's advocate who challenges the central claim. Each reviewer gives a two-sentence assessment and up to four major comments; for each comment, quote the passage it refers to and suggest a concrete fix. Then name any items the reporting guideline for my design would expect that are missing (for example CONSORT, STROBE, COREQ or SRQR – say which one applies). Finish with a revision roadmap: the changes in order of priority, with effort (small, medium, large). Comment only on what is in the text; if something may be covered elsewhere in the paper, say so.

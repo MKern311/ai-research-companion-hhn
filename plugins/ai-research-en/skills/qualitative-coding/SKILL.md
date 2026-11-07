@@ -17,7 +17,9 @@ A draft coding frame with definitions and verbatim evidence that you test agains
 
 First-pass coding takes weeks, and alone it is hard to tell whether codes are applied consistently, whether themes are more than topic summaries, or when new data stop adding codes.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the starter prompt with your research question and the excerpts.
 2. Check that each code has a clear definition and a fitting example quote.
@@ -29,9 +31,8 @@ First-pass coding takes weeks, and alone it is hard to tell whether codes are ap
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant, for example "Qualitative coding helper" (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). Add your coding frame as a knowledge file (if your tool does not support knowledge files, attach it in the chat). In the standing instructions, state your approach (e.g. codebook thematic analysis) and the rules: quote word for word with page or line, stay within the text, flag ambiguous passages, never invent quotes or themes. Starter prompt: "Code this excerpt with my frame and flag every borderline passage." Reusable for each new document – only approved, anonymised material goes in, and you check every coded segment.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a qualitative researcher in [discipline]. My research question is: [question]. Below are [number] short excerpts for practice. Propose a coding frame of 5–8 codes, each with a one-line definition and an example quote. Then code each excerpt, showing the exact passage for every code applied. Finally, suggest how the codes might group into 2–3 candidate themes and point out where an excerpt could be read in more than one way. [Only for codebook or grounded-theory approaches: say whether the last excerpt still produced new codes.] Do not go beyond what the text says. Excerpts: [paste text]

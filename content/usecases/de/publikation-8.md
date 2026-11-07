@@ -60,7 +60,7 @@ scite klassifiziert zitierende Aussagen als stützend, widersprechend oder erwä
 
 ### Aufgabe
 
-Prüfen Sie die ersten 15 Literaturangaben des Artikels von Christidis et al. (2023) und eine Aussage, die er der britischen Studie von 2020 zuschreibt. Sie erfahren, ob der Assistent Metadaten ordentlich verifiziert, fehlerhafte Angaben in einem veröffentlichten Verzeichnis bemerkt und die Stützung von Zitaten mit echten Zitaten beurteilt.
+Prüfen Sie die ersten 15 Literaturangaben des Artikels von Christidis et al. (2023) und eine Aussage, die er der britischen Studie von 2020 zuschreibt. Sie erfahren, ob der Assistent Metadaten ordentlich verifiziert, fehlerhafte Angaben in einem veröffentlichten Verzeichnis bemerkt und die Stützung von Zitaten mit wörtlichen Belegstellen beurteilt.
 
 ### Prompt
 
@@ -104,7 +104,7 @@ Der Assistent durchsucht das offene Web und sieht hinter Bezahlschranken womögl
 
 ## Technik
 
-Viele Assistenten prüfen Literaturangaben je nach Werkzeug und Einstellungen per Websuche; mit OpenAlex oder scite, angebunden über eine Low-Code-Plattform oder eigenen Code (vorher mit Ihrer Hochschule klären), gleicht er Metadaten und Zitataussagen direkt ab. Der Zotero-MCP-Server läuft lokal – mit einem Coding-Assistenten in Ihrem Editor oder einem Desktop-Assistenten, der MCP unterstützt, nicht in einem einfachen Browser-Chat.
+Viele Assistenten prüfen Literaturangaben je nach Werkzeug und Einstellungen per Websuche; mit OpenAlex oder scite, angebunden über eine Low-Code-Plattform oder eigenen Code (vorher mit Ihrer Hochschule klären), gleichen sie Metadaten und Zitataussagen direkt ab. Der Zotero-MCP-Server läuft lokal – mit einem Coding-Assistenten in Ihrem Editor oder einem Desktop-Assistenten, der MCP unterstützt, nicht in einem einfachen Browser-Chat.
 
 ## Stufen
 
@@ -118,7 +118,7 @@ Fügen Sie die Artikel, die Sie zitieren, als PDFs (für die Übung C3 und B2) u
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Literaturprüfer“ (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in den dauerhaften Anweisungen die zweistufige Prüfung fest: zuerst Existenz und Metadaten (funktionierende DOI oder Link, „nicht gefunden“, wenn nichts vorliegt, jeden Unterschied bei Autorinnen und Autoren, Jahr, Titel, Zeitschrift, Band oder Seiten markieren), dann Stützung (stützt, teilweise, stützt nicht) mit zitierter Passage; nie raten. Lassen Sie die Websuche eingeschaltet, wenn Ihr Werkzeug sie bietet. Startprompt: „Prüfen Sie diese Literaturangaben und die Aussagen, für die sie zitiert werden.“ Wiederverwendbar für jedes Kapitel vor der Einreichung.
+Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Literaturprüfer“ (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in den dauerhaften Anweisungen die zweistufige Prüfung fest: zuerst Existenz und Metadaten (funktionierende DOI oder Link, „nicht gefunden“, wenn nichts vorliegt, jeden Unterschied bei Autorinnen und Autoren, Jahr, Titel, Zeitschrift, Band oder Seiten markieren), dann Stützung (stützt, teilweise, stützt nicht) mit zitierter Passage; nie raten. Lassen Sie die Websuche eingeschaltet, wenn Ihr Werkzeug sie bietet. Startprompt: „Prüfen Sie diese Literaturangaben und die Aussagen, für die sie zitiert werden.“ Wiederverwendbar für jedes Kapitel vor der Einreichung.
 
 ### Automatisierung / eigener Code
 

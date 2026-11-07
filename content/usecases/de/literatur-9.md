@@ -117,4 +117,4 @@ Fügen Sie die Checklisten Ihres Fachs (zum Beispiel CASP, MMAT oder JBI als PDF
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Bewertungsassistent“. Anweisungen: eine Checkliste für das Design nennen und begründen oder sagen, dass keine passt, und angepasste Kriterien verwenden; Punkt für Punkt mit ja, nein oder „kann nicht beurteilt werden“, der exakten Textstelle mit Seite und einem Kommentar in einer Zeile; niemals etwas folgern, niemals einen Gesamtwert geben. Wissen: die Checklisten, die Sie nutzen. Startprompt: „Bewerte diese Studie mit [Checkliste].“ Nur freigegebenes Material; ein Mensch trifft jede Bewertung.
+Nennen Sie ihn „Bewertungsassistent“. Anweisungen: eine Checkliste für das Design nennen und begründen oder sagen, dass keine passt, und angepasste Kriterien verwenden; Punkt für Punkt mit ja, nein oder „kann nicht beurteilt werden“, der exakten Textstelle mit Seite und einem Kommentar in einer Zeile; niemals etwas folgern, niemals einen Gesamtwert geben. Wissen: die Checklisten, die Sie nutzen. Startprompt: „Bewerten Sie diese Studie mit [Checkliste].“ Nur freigegebenes Material; ein Mensch trifft jede Bewertung.

@@ -17,7 +17,9 @@ Atomic notes with IDs and sources, a small controlled tag vocabulary and typed l
 
 Notes, highlights and annotations sit in different tools; you remember reading something relevant but cannot find it, and connections between sources stay in your head.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach or paste the notes and ask for atomic notes: one idea each, with an ID and source.
 2. Ask for a controlled vocabulary of 10 to 15 tags with definitions and the synonyms each replaces.
@@ -29,9 +31,8 @@ Notes, highlights and annotations sit in different tools; you remember reading s
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Instructions: the atomic note format (ID, one idea, source, page), your controlled tag vocabulary with definitions, the five link types, a quoted sentence for every link, no links resting only on a shared topic. Knowledge: your tag vocabulary. Starter prompts: "Atomic notes from these highlights" and "Typed links between these notes". Reusable for every batch of reading, so new notes match the old ones.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] building a note system in [Zotero / OneNote / Obsidian / Notion]. Attached are my notes on [number] sources. 1) Rewrite them as atomic notes: one idea per note, in plain words, each with a short ID, the source and the page if my note gives one. 2) Suggest a controlled vocabulary of 10 to 15 tags, each with a one-line definition and the synonyms it replaces, and apply two or three tags to each note. 3) Suggest up to five links between notes, each typed as supports, contradicts, extends, uses data of or uses method of, and name the sentence in my notes that each link rests on. Use only what is in my notes; leave out links that rest only on a shared topic, and say when a link is uncertain.

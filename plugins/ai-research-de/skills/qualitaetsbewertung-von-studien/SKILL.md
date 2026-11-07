@@ -17,7 +17,9 @@ Eine ausgefüllte, zum Design passende Checkliste mit einer Bewertung und belege
 
 Studien Punkt für Punkt zu bewerten ist langsam, und die Urteile driften zwischen Papern oder beruhen auf einem allgemeinen Eindruck statt auf dem, was das Paper tatsächlich berichtet.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie das Paper an und nennen Sie Studiendesign und Checkliste.
 2. Bitten Sie um jeden Punkt der Checkliste mit einer Bewertung und der belegenden Textstelle.
@@ -29,9 +31,8 @@ Studien Punkt für Punkt zu bewerten ist langsam, und die Urteile driften zwisch
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Bewertungsassistent“. Anweisungen: eine Checkliste für das Design nennen und begründen oder sagen, dass keine passt, und angepasste Kriterien verwenden; Punkt für Punkt mit ja, nein oder „kann nicht beurteilt werden“, der exakten Textstelle mit Seite und einem Kommentar in einer Zeile; niemals etwas folgern, niemals einen Gesamtwert geben. Wissen: die Checklisten, die Sie nutzen. Startprompt: „Bewerte diese Studie mit [Checkliste].“ Nur freigegebenes Material; ein Mensch trifft jede Bewertung.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bewerte Studien für eine Literaturübersicht in [Fachgebiet]. Das angehängte Paper ist eine/ein [Studiendesign]. Verwenden Sie [Checkliste, z. B. CASP für qualitative Studien, MMAT für Mixed-Methods-Studien, JBI für das Design] – oder schlagen Sie, falls ich keine genannt habe, die am besten geeignete etablierte Checkliste vor und sagen Sie, warum. Gehen Sie die Checkliste Punkt für Punkt durch: Punkt, Bewertung (ja, nein, kann nicht beurteilt werden), die exakte Textstelle mit Seite oder Abschnitt, die die Bewertung stützt, und ein Kommentar in einer Zeile. Verwenden Sie „kann nicht beurteilt werden“, wenn das Paper nicht genug berichtet; schließen Sie nichts daraus. Fassen Sie abschließend die wichtigsten Stärken und Bedenken in drei Sätzen zusammen, ohne Gesamtwert.

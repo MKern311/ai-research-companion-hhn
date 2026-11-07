@@ -17,7 +17,9 @@ Eine Agenda mit Zeitangaben und den Entscheidungen, die Sie brauchen, sowie eine
 
 Die Betreuungszeit ist knapp: Ohne Agenda gehen wichtige Entscheidungen unter, Erwartungen bleiben unausgesprochen, und vereinbarte Aufgaben liegen in verstreuten Notizen, die niemand ausformuliert.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Notizen ein und bitten Sie um eine Agenda für ein 45-minütiges Gespräch.
 2. Bitten Sie um drei Entscheidungen, die Sie brauchen, und um passende Fragen.
@@ -29,12 +31,11 @@ Die Betreuungszeit ist knapp: Ohne Agenda gehen wichtige Entscheidungen unter, E
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Anweisungen: Agenda mit Zeitfenstern, die drei benötigten Entscheidungen, Fragen je Punkt, Aufgaben als Tabelle mit Zuständigkeit und Frist in SMART-Form, nur die eingefügten Notizen verwenden, nie Vereinbarungen hinzufügen, die nicht dort stehen, offene Fragen auflisten. Kein Wissen nötig. Startprompts: „Agenda für mein 45-minütiges Gespräch“ und „Aufgabenliste aus diesen Notizen“. Für jedes Betreuungsgespräch wiederverwendbar.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich bin Promovierende/Promovierender in [Fach] und bereite ein [45-minütiges] Betreuungsgespräch vor. Meine Notizen zu Fortschritt und offenen Punkten lauten: [Notizen einfügen]. Entwerfe eine Agenda mit Zeitfenstern, die drei Entscheidungen, die ich von meinen Betreuungspersonen brauche, und konkrete Fragen zu jedem Agendapunkt. Nach dem Gespräch füge ich meine Notizen ein; fasse sie dann als Tabelle zusammen: Aufgabe, Zuständigkeit, Frist, und ergänze offene Fragen. Verwende nur, was in meinen Notizen steht, und füge keine Aufgaben oder Vereinbarungen hinzu, die dort nicht stehen.
+Ich bin Promovierende bzw. Promovierender in [Fach] und bereite ein [45-minütiges] Betreuungsgespräch vor. Meine Notizen zu Fortschritt und offenen Punkten lauten: [Notizen einfügen]. Entwerfen Sie eine Agenda mit Zeitfenstern, die drei Entscheidungen, die ich von meinen Betreuungspersonen brauche, und konkrete Fragen zu jedem Agendapunkt. Nach dem Gespräch füge ich meine Notizen ein; fassen Sie sie dann als Tabelle zusammen: Aufgabe, Zuständigkeit, Frist, und ergänzen Sie offene Fragen. Verwenden Sie nur, was in meinen Notizen steht, und fügen Sie keine Aufgaben oder Vereinbarungen hinzu, die dort nicht stehen.
 ```
 
 ## Prüfung

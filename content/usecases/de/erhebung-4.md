@@ -65,7 +65,7 @@ Sie bitten Ihren KI-Assistenten, offene globale und zentralenglische Temperaturd
 ### Prompt
 
 ```text
-Ich promoviere. Forschungsfrage: Wie haben sich die jährlichen globalen und zentralenglischen Temperaturen seit dem späten 19. Jahrhundert verändert, und wie stark unterscheiden sich die wichtigsten globalen Datenreihen? Ich brauche offene monatliche oder tägliche Daten, global und für Zentralengland, ab 1880 oder früher. Suche im Web nach geeigneten Datensätzen. Gib bis zu sechs Optionen als Tabelle an: Name, Anbieter, Link, abgedeckter Zeitraum, zeitliche Auflösung, Basisperiode der Anomalien, Lizenz, Passung und was fehlt. Wenn du dir bei einer Basisperiode oder Lizenz nicht sicher bist, sage das; erfinde keine Datensätze. Lies dann die Kopfzeile der angehängten täglichen ERA5-CSV und sage, ob sie die Basisperiode bestätigt, die du für ERA5 genannt hast.
+Ich promoviere. Forschungsfrage: Wie haben sich die jährlichen globalen und zentralenglischen Temperaturen seit dem späten 19. Jahrhundert verändert, und wie stark unterscheiden sich die wichtigsten globalen Datenreihen? Ich brauche offene monatliche oder tägliche Daten, global und für Zentralengland, ab 1880 oder früher. Suchen Sie im Web nach geeigneten Datensätzen. Geben Sie bis zu sechs Optionen als Tabelle an: Name, Anbieter, Link, abgedeckter Zeitraum, zeitliche Auflösung, Basisperiode der Anomalien, Lizenz, Passung und was fehlt. Wenn Sie sich bei einer Basisperiode oder Lizenz nicht sicher sind, sagen Sie das; erfinden Sie keine Datensätze. Lesen Sie dann die Kopfzeile der angehängten täglichen ERA5-CSV und sagen Sie, ob sie die Basisperiode bestätigt, die Sie für ERA5 genannt haben.
 ```
 
 ### Prüfung
@@ -88,7 +88,7 @@ Ihre Forschungsfrage und eine Notiz zu den Daten, die Sie brauchen: Land, Zeitra
 ### Prompt
 
 ```text
-Ich promoviere in [Fach]. Meine Forschungsfrage lautet: [Frage]. Ich brauche Sekundärdaten, die [Land oder Region] und [Zeitraum] abdecken, auf der Ebene von [Individuen, Unternehmen, Regionen oder Texten], mit Variablen zu [zentrale Variablen]. Suche im Web nach offenen Datensätzen und Repositorien (zum Beispiel dem UK Data Service, nationalen Statistikämtern, Zenodo oder Fach-Repositorien). Gib bis zu sechs Optionen als Tabelle an: Name, Anbieter, Link, Abdeckung, Zugangsbedingungen, Passung und was fehlt. Wenn du dir nicht sicher bist, ob ein Datensatz eine Variable enthält, sage das; erfinde keine Datensätze.
+Ich promoviere in [Fach]. Meine Forschungsfrage lautet: [Frage]. Ich brauche Sekundärdaten, die [Land oder Region] und [Zeitraum] abdecken, auf der Ebene von [Individuen, Unternehmen, Regionen oder Texten], mit Variablen zu [zentrale Variablen]. Suchen Sie im Web nach offenen Datensätzen und Repositorien (zum Beispiel dem UK Data Service, nationalen Statistikämtern, Zenodo oder Fach-Repositorien). Geben Sie bis zu sechs Optionen als Tabelle an: Name, Anbieter, Link, Abdeckung, Zugangsbedingungen, Passung und was fehlt. Wenn Sie sich nicht sicher sind, ob ein Datensatz eine Variable enthält, sagen Sie das; erfinden Sie keine Datensätze.
 ```
 
 ### Prüfung
@@ -97,7 +97,7 @@ Jeder Link führt zu einer echten Datensatzseite, deren Dokumentation die Abdeck
 
 ## Technik
 
-Ihr KI-Assistent listet mögliche Datensätze auf (die Websuche hängt von Ihrem Tool und Ihren Einstellungen ab); Sie öffnen jeden Link und lesen die Dokumentation. Üben Sie an Temperaturreihen: Findet er HadCRUT5, GISTEMP, ERA5 und Central England Temperature? Die Suche in OpenAlex-Datensatzeinträgen braucht einen Konnektor (MCP) oder ein Skript, siehe Stufe 4.
+Ihr KI-Assistent listet mögliche Datensätze auf (die Websuche hängt von Ihrem Werkzeug und Ihren Einstellungen ab); Sie öffnen jeden Link und lesen die Dokumentation. Üben Sie an Temperaturreihen: Findet er HadCRUT5, GISTEMP, ERA5 und Central England Temperature? Die Suche in OpenAlex-Datensatzeinträgen braucht einen Konnektor (MCP) oder ein Skript, siehe Stufe 4.
 
 ## Stufen
 
@@ -107,12 +107,12 @@ Führen Sie den Startprompt mit eingeschalteter Websuche aus, mit der ERA5-Datei
 
 ### Projekt / Notebook
 
-Speichern Sie die Dokumentationsseiten oder Codebücher der möglichen Datensätze als PDF und fügen Sie sie mit Ihrer Variablenliste hinzu – für die Übungsversion D9 (speichern Sie sie vorher als .xlsx, wenn Ihr Tool kein CSV akzeptiert). Fragen Sie, welcher Datensatz welche Variable, welchen Zeitraum und welche Einheit abdeckt, unter welcher Lizenz. Je nach Tool antwortet das Projekt nur aus diesen Dokumenten, sodass jede Aussage aus der Dokumentation stammt, nicht aus dem Web.
+Speichern Sie die Dokumentationsseiten oder Codebücher der möglichen Datensätze als PDF und fügen Sie sie mit Ihrer Variablenliste hinzu – für die Übungsversion D9 (speichern Sie sie vorher als .xlsx, wenn Ihr Werkzeug kein CSV akzeptiert). Fragen Sie, welcher Datensatz welche Variable, welchen Zeitraum und welche Einheit abdeckt, unter welcher Lizenz. Je nach Werkzeug antwortet das Projekt nur aus diesen Dokumenten, sodass jede Aussage aus der Dokumentation stammt, nicht aus dem Web.
 
 ### Eigener Assistent
 
-Nennen Sie ihn „Daten-Scout“. Anweisungen: die feste Tabelle (Name, Anbieter, Link, Abdeckung, Analyseeinheit, Zugang, Lizenz, Passung, Lücken), „sage, wenn du dir nicht sicher bist“ und „erfinde nie Datensätze“. Wissen: die öffentlichen Websites von Repositorien, denen Sie vertrauen, etwa der UK Data Service oder das Archiv Ihres Fachs. Startprompt: „Finde offene Daten für: [Frage, Region, Zeitraum, Variablen]“. Wiederverwendbar für jede neue Frage; Sie öffnen weiterhin jeden Link.
+Nennen Sie ihn „Daten-Scout“. Anweisungen: die feste Tabelle (Name, Anbieter, Link, Abdeckung, Analyseeinheit, Zugang, Lizenz, Passung, Lücken), „sagen Sie, wenn Sie sich nicht sicher sind“ und „erfinden Sie nie Datensätze“. Wissen: die öffentlichen Websites von Repositorien, denen Sie vertrauen, etwa der UK Data Service oder das Archiv Ihres Fachs. Startprompt: „Finden Sie offene Daten für: [Frage, Region, Zeitraum, Variablen]“. Wiederverwendbar für jede neue Frage; Sie öffnen weiterhin jeden Link.
 
 ### Automatisierung / eigener Code
 
-Fügen Sie den MCP-Server von OpenAlex einem eigenen Assistenten oder Workflow hinzu, damit der Assistent einen wissenschaftlichen Katalog nach Datensätzen und den Arbeiten durchsucht, die sie genutzt haben, statt sich auf die allgemeine Websuche zu verlassen. Dafür braucht es ein Tool, das MCP-Konnektoren unterstützt. Auf GitHub: Ein Skript durchsucht die OpenAlex-API nach Arbeiten, die einen Datensatz nutzen, und die DataCite- oder Zenodo-API nach den Datensatzeinträgen selbst. Prüfen Sie Datenschutz und Freigabe vorher mit Ihrer Hochschule.
+Fügen Sie den MCP-Server von OpenAlex einem eigenen Assistenten oder Workflow hinzu, damit der Assistent einen wissenschaftlichen Katalog nach Datensätzen und den Arbeiten durchsucht, die sie genutzt haben, statt sich auf die allgemeine Websuche zu verlassen. Dafür braucht es ein Werkzeug, das MCP-Konnektoren unterstützt. Auf GitHub: Ein Skript durchsucht die OpenAlex-API nach Arbeiten, die einen Datensatz nutzen, und die DataCite- oder Zenodo-API nach den Datensatzeinträgen selbst. Prüfen Sie Datenschutz und Freigabe vorher mit Ihrer Hochschule.

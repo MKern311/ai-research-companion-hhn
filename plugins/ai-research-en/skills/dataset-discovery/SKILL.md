@@ -17,7 +17,9 @@ A shortlist of verified datasets with coverage, unit of analysis, access conditi
 
 Suitable secondary data often exist but sit across statistics offices, archives and repositories you do not know – you find them after collecting your own, or overlook licence and definition differences.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Switch web search on (if your tenant allows it), then paste the starter prompt with your research question and data requirements.
 2. Open each suggested link and check coverage, access conditions and latest update.
@@ -29,9 +31,8 @@ Suitable secondary data often exist but sit across statistics offices, archives 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Data scout'. Instructions: the fixed table (name, provider, link, coverage, unit of analysis, access, licence, fit, gaps), 'say when you are not sure' and 'never invent datasets'. Knowledge: the public websites of repositories you trust, such as the UK Data Service or your discipline's archive. Starter prompt: 'Find open data for: [question, region, period, variables]'. Reusable for every new question; you still open every link.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline]. My research question is: [question]. I need secondary data covering [country or region] and [time period], at the level of [individuals, firms, regions or texts], with variables on [key variables]. Search the web for open datasets and repositories (for example the UK Data Service, national statistics offices, Zenodo or discipline repositories). Give up to six options as a table: name, provider, link, coverage, access conditions, fit and what is missing. If you are not sure a dataset includes a variable, say so; do not invent datasets.

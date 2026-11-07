@@ -17,7 +17,9 @@ Ein pseudonymisierter Entwurf, ein Ersetzungsprotokoll und der Anteil der eingeb
 
 Transkripte von Hand zu pseudonymisieren ist mühsam, und indirekte Identifikatoren – eine seltene Berufsbezeichnung, ein lokales Ereignis – werden leicht übersehen, sodass Kombinationen Teilnehmende weiterhin re-identifizieren können.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Schreiben Sie einen Ausschnitt von 200 Wörtern mit fiktiven Namen, Orten und Daten, oder lassen Sie ihn vom Assistenten erfinden.
 2. Notieren Sie jeden Identifikator, den Sie eingebaut haben, auch indirekte wie eine seltene Berufsbezeichnung.
@@ -29,12 +31,11 @@ Transkripte von Hand zu pseudonymisieren ist mühsam, und indirekte Identifikato
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Pseudonymisierungs-Tester“. Anweisungen: Ihre Ersetzungscodes ([P1], [STADT], [ORG1], [DATUM]), alles andere wortgetreu, indirekte Identifikatoren markiert, aber unverändert, immer der Text plus ein Ersetzungsprotokoll. Nutzen Sie ihn nur an erfundenem oder freigegebenem, de-identifiziertem Testmaterial, und ein Mensch prüft jede Ausgabe. Startprompt: „Pseudonymisiere diesen Ausschnitt und protokolliere die Ersetzungen“.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Unten steht ein erfundener Interviewausschnitt. Pseudonymisiere ihn für die qualitative Analyse. Ersetze Personennamen durch [P1], [P2]; Orte durch [STADT] oder [REGION]; Organisationen durch [ORG1], [ORG2]; genaue Daten durch [DATUM]; und lass alles andere wortgetreu. Markiere außerdem, ohne sie zu ändern, indirekte Identifikatoren, die in Kombination jemanden verraten könnten, etwa seltene Berufsbezeichnungen oder besondere Ereignisse. Gib zurück: 1) den pseudonymisierten Text und 2) eine Tabelle: ursprünglicher Begriff, Ersetzung, Typ. Ausschnitt: [erfundenen Text einfügen]
+Unten steht ein erfundener Interviewausschnitt. Pseudonymisieren Sie ihn für die qualitative Analyse. Ersetzen Sie Personennamen durch [P1], [P2]; Orte durch [STADT] oder [REGION]; Organisationen durch [ORG1], [ORG2]; genaue Daten durch [DATUM]; und lassen Sie alles andere wortgetreu. Markieren Sie außerdem, ohne sie zu ändern, indirekte Identifikatoren, die in Kombination jemanden verraten könnten, etwa seltene Berufsbezeichnungen oder besondere Ereignisse. Geben Sie zurück: 1) den pseudonymisierten Text und 2) eine Tabelle: ursprünglicher Begriff, Ersetzung, Typ. Ausschnitt: [erfundenen Text einfügen]
 ```
 
 ## Prüfung
@@ -50,7 +51,7 @@ Suchen Sie in der Ausgabe nach jedem Identifikator, den Sie eingebaut haben; jed
 
 - **Pseudonymisierung versus Anonymisierung (UK-DSGVO)** – Pseudonymisierte Daten ersetzen Identifikatoren, lassen sich aber mit einem getrennt aufbewahrten Schlüssel wieder zuordnen und bleiben daher personenbezogene Daten. Anonyme Daten können vernünftigerweise niemanden mehr identifizieren. Die meisten qualitativen Transkripte sind pseudonymisiert, nicht anonym.
 - **Direkte und indirekte Identifikatoren** – Direkte Identifikatoren benennen eine Person (Name, E-Mail, Adresse). Indirekte oder Quasi-Identifikatoren – Berufsbezeichnung, Arbeitgeber, seltenes Ereignis, Alter, Ort – identifizieren in Kombination. Sweeney (2002) formalisierte den Schutz als k-Anonymität: Jede Kombination sollte auf mindestens k Personen zutreffen.
-- **Recall und Precision der De-Identifizierung** – Recall ist der Anteil der echten Identifikatoren, die das Tool erkannt hat; Precision ist der Anteil seiner Ersetzungen, die echte Identifikatoren waren. Für die Vertraulichkeit zählt der Recall am meisten, da ein einziger Fehler re-identifizieren kann, messen Sie ihn daher an eingebauten Identifikatoren.
+- **Recall und Precision der De-Identifizierung** – Recall ist der Anteil der echten Identifikatoren, die das Werkzeug erkannt hat; Precision ist der Anteil seiner Ersetzungen, die echte Identifikatoren waren. Für die Vertraulichkeit zählt der Recall am meisten, da ein einziger Fehler re-identifizieren kann, messen Sie ihn daher an eingebauten Identifikatoren.
 - **Konsistente Ersetzung und analytische Integrität** – Verwenden Sie ein stabiles Pseudonym je Person und Kategorienbezeichnungen wie [STADT] oder [ORG1], und bewahren Sie das Ersetzungsprotokoll getrennt und sicher auf. Zu starkes Schwärzen kann analytische Bedeutung zerstören; halten Sie fest, was Sie geändert haben und warum.
 
 ## Wichtige Literatur

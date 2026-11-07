@@ -17,7 +17,9 @@ A theme table with yearly counts and a list of rarely combined themes – a hypo
 
 Judging where a field is moving from scattered reading is unreliable: growing clusters and neglected intersections stay invisible without co-word or citation analysis, which few researchers run early on.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Paste the list of titles and years into your AI assistant.
 2. Ask it to group the papers into themes and count them per year.
@@ -29,9 +31,8 @@ Judging where a field is moving from scattered reading is unreliable: growing cl
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Topic scout'. Instructions: four to six themes, a theme–paper–year table, rarely combined themes, a statement of what the sample can and cannot show, and never add papers that are not in the upload. Switch on code execution / data analysis if your tool offers it, so it counts and charts papers per year. Starter prompt: 'Cluster this title list and chart papers per year.' Reusable for every new export.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] looking for growing topics and gaps. Below are [number] paper titles with their publication years, copied from [source]. Group them into four to six themes. Show a table: theme, paper titles in that theme, number of papers per year. Then list two or three combinations of themes that rarely appear together and could be under-researched. Base this only on the list I give you; say clearly that a small list cannot show real trends.

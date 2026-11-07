@@ -17,7 +17,9 @@ A publication-ready figure produced by code you keep, with an encoding and palet
 
 Default charts rarely meet journal guidelines, often hide uncertainty or use misleading colour scales, and adjusting every figure by hand for each revision is slow and unrepeatable.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the data and paste the starter prompt with your message and audience.
 2. Choose one of the suggested chart types and ask the assistant to draw it.
@@ -29,9 +31,8 @@ Default charts rarely meet journal guidelines, often hide uncertainty or use mis
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, write your house style: font and size, colour-blind-safe palette, width and resolution, axis labels with units, complete periods only, uncertainty shown where the data allow, and "always return the full code and a draft caption". Add the journal's figure guidelines as a knowledge file (if your tool does not support knowledge files, attach it in the chat) and switch on code execution / data analysis if your tool offers it. Starter prompt: "Draw this data as a journal figure in my house style." Reusable for every chapter.
 
-## Starter prompt
+## Typical request
 
 ```text
 I need a publication-quality figure for a [journal article or thesis chapter] in [discipline]. The attached file contains [variables]. The figure should show [message, e.g. how X changed over time by group]. Suggest two or three suitable chart types with one line on each. Then create the best one in Python (matplotlib), with clear axis labels including units, a colour-blind-safe palette, no unnecessary decoration, and a size of [e.g. 17 cm wide] at 300 dpi. Show the full code so I can reproduce it.

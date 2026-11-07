@@ -17,7 +17,9 @@ Eine erste Evidenztabelle auf Basis eines erprobten Extraktionsformulars, mit ei
 
 Designs, Stichproben und Effekte aus Dutzenden Volltexten abzuschreiben ist langsam und fehleranfällig; Zahlen werden leicht falsch übertragen, aus der falschen Tabelle genommen oder stillschweigend umgerechnet.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Hängen Sie das PDF an und fügen Sie Ihre Extraktionsfelder ein.
 2. Bitten Sie um eine Tabellenzeile je Paper mit Seiten- oder Abschnittsverweisen.
@@ -29,9 +31,8 @@ Designs, Stichproben und Effekte aus Dutzenden Volltexten abzuschreiben ist lang
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Evidenz-Extraktor“. Anweisungen: Ihr Extraktionsformular als feste Spalten, nach jedem Wert eine Seite oder ein Abschnitt, Zahlen exakt übernommen – kein Berechnen, Runden oder Umrechnen – und „nicht berichtet“ für Lücken. Wissen: das Formular und seine Kodierregeln. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, um die Tabelle nach Excel zu exportieren. Startprompt: „Extrahiere dieses PDF in die Evidenztabelle.“ Nur freigegebenes Material; ein Mensch prüft jede Zeile.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich erstelle eine Evidenztabelle für eine Übersichtsarbeit zu [Thema]. Extrahieren Sie aus dem angehängten Paper bzw. den angehängten Papern eine Tabellenzeile je Studie mit diesen Spalten: Zitat, Design, Stichprobengröße und Population, Setting, zentrale Variablen oder Messinstrumente, Hauptergebnis mit der berichteten Statistik, genannte Grenzen – und, falls das Paper die Statistiken dafür berichtet, die Effektstärke (zum Beispiel d, r oder ein Odds Ratio) mit ihrem Konfidenzintervall. Geben Sie nach jedem Wert die Seite oder den Abschnitt an, wo Sie ihn gefunden haben. Übernehmen Sie Zahlen genau wie berichtet; berechnen, runden Sie nicht und schließen Sie nichts daraus. Steht ein Feld nicht im Paper, schreiben Sie „nicht berichtet“.

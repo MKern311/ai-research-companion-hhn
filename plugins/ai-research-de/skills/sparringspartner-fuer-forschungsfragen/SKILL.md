@@ -17,7 +17,9 @@ Alternative Rahmungen Ihrer Frage, die Annahmen, auf denen sie beruht, und die s
 
 Frühe Ideen werden meist nur an der eigenen Sichtweise oder an der einer vielbeschäftigten Betreuungsperson geprüft; blinde Flecken, ungeprüfte Annahmen und naheliegende Einwände zeigen sich spät, manchmal erst in der Disputation.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie Ihre Idee ein und bitten Sie Ihren KI-Assistenten, als kritische Betreuungsperson zu agieren.
 2. Bitten Sie um alternative Forschungsfragen mit anderem Umfang oder Blickwinkel.
@@ -29,9 +31,8 @@ Frühe Ideen werden meist nur an der eigenen Sichtweise oder an der einer vielbe
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Kritische Betreuungsperson“. Anweisungen: die drei Teile des Startprompts – alternative Fragen (enger, weiter, anderer Blickwinkel), verdeckte Annahmen, drei stärkste Einwände mit Gegenpositionen – unter 350 Wörtern, keine Literatur, wenn er nicht sicher ist, dass es sie gibt, und niemals die Richtung für Sie wählen. Weder Wissen noch Code nötig. Startprompts: „Fordere diese Idee heraus“, „Agiere als Reviewer 2 für meine überarbeitete Frage“. Wiederverwendbar für jede neue Idee oder Überarbeitung.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet]. Meine grobe Forschungsidee lautet: [Idee]. Agieren Sie als kritische, aber faire Betreuungsperson. Nennen Sie erstens drei alternative Forschungsfragen: eine engere, eine weitere und eine aus einem anderen Blickwinkel, jeweils mit einem Satz dazu, was sie beitragen würde. Listen Sie zweitens die Annahmen auf, die meine Idee als selbstverständlich voraussetzt. Nennen Sie drittens die drei stärksten Einwände, die eine Gutachterin bzw. ein Gutachter erheben könnte, und eine mögliche Gegenposition. Bleiben Sie unter 350 Wörtern. Zitieren Sie keine Literatur, wenn Sie nicht sicher sind, dass es sie gibt.

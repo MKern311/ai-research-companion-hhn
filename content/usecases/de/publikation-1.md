@@ -70,7 +70,7 @@ Angehängt ist das PDF von Vautard et al. (2023). Nehmen Sie sein Abstract (den 
 
 ### Prüfung
 
-Vergleichen Sie beide Fassungen Satz für Satz: 0.8 °C [0.2–1.4 °C], 3.4 °C, 170 simulations und 32 models bleiben unverändert, und die beiden möglichen Erklärungen bleiben abgeschwächt formuliert, statt zu einer Ursache verschmolzen zu werden.
+Vergleichen Sie beide Fassungen Satz für Satz: 0,8 °C [0,2–1,4 °C], 3,4 °C, 170 Simulationen und 32 Modelle bleiben unverändert, und die beiden möglichen Erklärungen bleiben abgeschwächt formuliert, statt zu einer Ursache verschmolzen zu werden.
 
 ## Mit eigenem Material
 

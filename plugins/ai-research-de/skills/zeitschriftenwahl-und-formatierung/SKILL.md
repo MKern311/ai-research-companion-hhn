@@ -17,7 +17,9 @@ Eine Auswahlliste seriöser Zeitschriften mit Links zu deren eigenen Richtlinien
 
 Eine Zeitschrift zu finden, deren Ausrichtung passt, und dann Literaturangaben und Layout nach ihren Richtlinien umzuformatieren, kostet Stunden – und eine Ablehnung ohne Begutachtung (Desk Rejection) wegen mangelnder Passung kostet Wochen.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie bei eingeschalteter Websuche Ihr Abstract ein und bitten Sie um fünf infrage kommende Zeitschriften mit Links zu ihren Autorenrichtlinien.
 2. Öffnen Sie zwei der verlinkten Richtlinienseiten und vergleichen Sie Ausrichtung und Wortlimits.
@@ -29,9 +31,8 @@ Eine Zeitschrift zu finden, deren Ausrichtung passt, und dann Literaturangaben u
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Hilfe für Zeitschriften und BibTeX“ (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in den dauerhaften Anweisungen die Ausgabe fest: eine Zeitschriftentabelle mit Verlag, Passung, Artikeltyp, Wortlimit, Zitierstil, Open-Access-Optionen und Link zu den Richtlinien; nur die eigenen Seiten der Zeitschriften verwenden (lassen Sie die Websuche eingeschaltet, wenn Ihr Werkzeug sie bietet); BibTeX mit korrekten Eintragstypen und markierten fehlenden Feldern; nie Zeitschriften, DOIs oder Seitenzahlen erfinden. Startprompts: „Schlagen Sie fünf Zeitschriften für dieses Abstract vor.“ und „Wandeln Sie diese Literaturangaben in BibTeX um.“ Wiederverwendbar für jedes Manuskript.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender im Fach [Disziplin] und bereite ein Manuskript vor. Mein Abstract lautet: [Abstract einfügen]. Schlagen Sie fünf Peer-Review-Zeitschriften vor, deren veröffentlichte Aims and Scope zu dieser Arbeit passen, darunter [Zeitschrift, die ich in Erwägung ziehe]. Geben Sie eine Tabelle an mit: Zeitschrift, Verlag, warum sie passt, Artikeltyp und Wortlimit, Zitierstil, Open-Access-Optionen und einem Link zur Seite mit den Autorenrichtlinien. Verwenden Sie nur Informationen von den eigenen Websites der Zeitschriften und nennen Sie den Link. Wenn ich einige Literaturangaben oder BibTeX-Einträge einfüge, wandeln Sie sie in den Zitierstil der Zeitschrift um und markieren Sie fehlende Felder. Wenn Sie sich bei einem Detail nicht sicher sind, sagen Sie das; erfinden Sie keine Zeitschriften oder Anforderungen.

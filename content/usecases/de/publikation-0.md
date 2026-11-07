@@ -68,7 +68,7 @@ Angehängt ist das PDF von Vautard et al. (2023) zu Hitzeextremen in Westeuropa.
 
 ### Prüfung
 
-Vergleichen Sie mit dem Abstract: Die Behauptung sollte 0.8 °C [0.2–1.4 °C] von 3.4 °C pro Grad globaler Erwärmung enthalten, und beide Erklärungen (unterschätzte Reaktion der Zirkulation, unterschätzte niederfrequente Variabilität) sollten als Einschränkungen auftauchen.
+Vergleichen Sie mit dem Abstract: Die Behauptung sollte 0,8 °C [0,2–1,4 °C] von 3,4 °C pro Grad globaler Erwärmung enthalten, und beide Erklärungen (unterschätzte Reaktion der Zirkulation, unterschätzte niederfrequente Variabilität) sollten als Einschränkungen auftauchen.
 
 ## Mit eigenem Material
 

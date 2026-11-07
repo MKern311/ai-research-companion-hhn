@@ -23,14 +23,14 @@ Sie wiederholen in jedem Chat dieselben Regeln, und mehrstufige Aufgaben wie ein
 
 ## Ergebnis
 
-Ein wiederverwendbarer Assistent, der Ihren Zitierstil und Ihre Begriffe anwendet, und ein gestufter Arbeitsablauf, der erst weitergeht, nachdem Sie jede Stufe geprüft haben – gewonnene Zeit, bei der Sie verantwortlich bleiben.
+Ein wiederverwendbarer Assistent, der Ihren Zitierstil und Ihre Begriffe anwendet, und ein schrittweiser Arbeitsablauf, der erst weitergeht, nachdem Sie jeden Schritt geprüft haben – gewonnene Zeit, bei der Sie verantwortlich bleiben.
 
 ## Vorgehen
 
 1. Schreiben Sie Standardregeln und eine enge Frage
 2. Fügen Sie die Regeln als erste Nachricht eines Chats ein
 3. Testen Sie ihn zuerst mit einer Routinefrage
-4. Geben Sie jede Stufe erst frei, nachdem Sie jede Quelle geprüft haben
+4. Geben Sie jeden Schritt erst frei, nachdem Sie jede Quelle geprüft haben
 5. Machen Sie aus den Regeln einen Agenten, sobald sie funktionieren
 6. Protokollieren Sie den Arbeitsablauf und erklären Sie die KI-Nutzung
 
@@ -38,7 +38,7 @@ Ein wiederverwendbarer Assistent, der Ihren Zitierstil und Ihre Begriffe anwende
 
 ### Menschliche Kontrollpunkte (Human-in-the-loop)
 
-Der Arbeitsablauf hält nach definierten Stufen an – Suche, Extraktion, Synthese – und geht erst weiter, nachdem eine Person das Ergebnis geprüft hat. Die Verantwortung bleibt bei Ihnen, und frühe Fehler pflanzen sich nicht in spätere Stufen fort.
+Der Arbeitsablauf hält nach definierten Schritten an – Suche, Extraktion, Synthese – und geht erst weiter, nachdem eine Person das Ergebnis geprüft hat. Die Verantwortung bleibt bei Ihnen, und frühe Fehler pflanzen sich nicht in spätere Schritte fort.
 
 ### Automatisierungsbias (Automation bias)
 
@@ -50,7 +50,7 @@ Sprachmodelle können flüssige, aber unbelegte oder erfundene Inhalte erzeugen 
 
 ### Scoping-Review-Rahmen nach Arksey & O'Malley
 
-Fünf Stufen: die Forschungsfrage festlegen, relevante Studien identifizieren, Studien auswählen, die Daten erfassen sowie die Ergebnisse zusammenführen, zusammenfassen und berichten. Ein Agent kann bei einzelnen Stufen helfen, aber Auswahl- und Erfassungsentscheidungen bleiben Ihre.
+Fünf Phasen: die Forschungsfrage festlegen, relevante Studien identifizieren, Studien auswählen, die Daten erfassen sowie die Ergebnisse zusammenführen, zusammenfassen und berichten. Ein Agent kann bei einzelnen Phasen helfen, aber Auswahl- und Erfassungsentscheidungen bleiben Ihre.
 
 ## Literatur
 
@@ -62,17 +62,17 @@ Fünf Stufen: die Forschungsfrage festlegen, relevante Studien identifizieren, S
 
 ### Aufgabe
 
-Starten Sie einen neuen Chat, fügen Sie Ihre Standardregeln als erste Nachricht ein, hängen Sie vier Attributions-PDFs an und führen Sie eine Extraktionsstufe mit Kontrollpunkt aus. Sie lernen, wie oft extrahierte Zahlen, Wiederkehrperioden und Wahrscheinlichkeitsänderungen falsch oder unbelegt sind und warum jede Stufe Ihre Freigabe braucht.
+Starten Sie einen neuen Chat, fügen Sie Ihre Standardregeln als erste Nachricht ein, hängen Sie vier Attributions-PDFs an und führen Sie einen Extraktionsschritt mit Kontrollpunkt aus. Sie lernen, wie oft extrahierte Zahlen, Wiederkehrperioden und Wahrscheinlichkeitsänderungen falsch oder unbelegt sind und warum jeder Schritt Ihre Freigabe braucht.
 
 ### Prompt
 
 ```text
-Du bist für dieses gesamte Gespräch der Forschungsassistent einer Promovierenden/eines Promovierenden. Standardregeln: zitiere im APA-7-Stil; behandle „return time“ und „return period“ als dasselbe Konzept – die durchschnittliche Zeit zwischen Ereignissen einer bestimmten Größe – und schreibe „return period“; „probability ratio“ bedeutet, um das Wievielfache ein Ereignis mit menschlichem Einfluss wahrscheinlicher ist; erfinde nie Quellen, Zitate oder Zahlen und sage, wenn du unsicher bist; verwende nur die vier angehängten PDFs (Christidis et al., 2020; Christidis et al., 2023; Zachariah et al., 2023; Schumacher et al., 2024). Arbeite in zwei Stufen und halte nach jeder zu meiner Freigabe an. Stufe 1, Extraktion: eine Tabelle mit einer Zeile pro Arbeit – Ereignis und Region, Variable, Methode, Änderung der Wahrscheinlichkeit, Änderung der Intensität, Zukunftsprojektion – jede Zelle mit einem wörtlichen Zitat und Seitenzahl. Stufe 2, nach meiner Freigabe: ein Vergleich von 200 Wörtern, der nur freigegebene Zellen zitiert und mit einer Liste von Aussagen endet, die ich noch prüfen sollte.
+Sie sind für dieses gesamte Gespräch der Forschungsassistent einer Promovierenden bzw. eines Promovierenden. Standardregeln: zitieren Sie im APA-7-Stil; behandeln Sie „return time“ und „return period“ als dasselbe Konzept – die durchschnittliche Zeit zwischen Ereignissen einer bestimmten Größe – und schreiben Sie „return period“; „probability ratio“ bedeutet, um das Wievielfache ein Ereignis mit menschlichem Einfluss wahrscheinlicher ist; erfinden Sie nie Quellen, Zitate oder Zahlen und sagen Sie, wenn Sie unsicher sind; verwenden Sie nur die vier angehängten PDFs (Christidis et al., 2020; Christidis et al., 2023; Zachariah et al., 2023; Schumacher et al., 2024). Arbeiten Sie in zwei Schritten und halten Sie nach jedem zu meiner Freigabe an. Schritt 1, Extraktion: eine Tabelle mit einer Zeile pro Arbeit – Ereignis und Region, Variable, Methode, Änderung der Wahrscheinlichkeit, Änderung der Intensität, Zukunftsprojektion – jede Zelle mit einem wörtlichen Zitat und Seitenzahl. Schritt 2, nach meiner Freigabe: ein Vergleich von 200 Wörtern, der nur freigegebene Zellen zitiert und mit einer Liste von Aussagen endet, die ich noch prüfen sollte.
 ```
 
 ### Prüfung
 
-Prüfen Sie jede Zelle gegen die PDFs, z. B. Zachariah et al.: 30 times more likely und etwa 1 °C heißer (Strg+F „30 times more likely“); Christidis et al. (2020): „100-300 years“ für Sommer mit 40 °C, was die Tabelle als „return period“ bezeichnen sollte. Geben Sie erst dann Stufe 2 im selben Chat frei, beobachten Sie, ob die Regeln noch gelten, und protokollieren Sie die KI-Nutzung.
+Prüfen Sie jede Zelle gegen die PDFs, z. B. Zachariah et al.: 30 times more likely und etwa 1 °C heißer (Strg+F „30 times more likely“); Christidis et al. (2020): „100-300 years“ für Sommer mit 40 °C, was die Tabelle als „return period“ bezeichnen sollte. Geben Sie erst dann Schritt 2 im selben Chat frei, beobachten Sie, ob die Regeln noch gelten, und protokollieren Sie die KI-Nutzung.
 
 ## Mit eigenem Material
 
@@ -85,12 +85,12 @@ Ihre Standardregeln für die Arbeit mit KI (Zitierstil, Schlüsselbegriffe, was 
 1. Starten Sie einen neuen Chat und fügen Sie den Prompt mit Ihren Regeln als erste Nachricht ein.
 2. Hängen Sie Ihre PDFs an oder nennen Sie Ihre Websites, falls die Websuche aktiviert ist.
 3. Stellen Sie eine Routinefrage und prüfen Sie, ob der Assistent Ihren Regeln folgt.
-4. Führen Sie nur Stufe 1 aus, prüfen Sie jede Quelle und geben Sie dann Extraktion und Bericht frei.
+4. Führen Sie nur Schritt 1 aus, prüfen Sie jede Quelle und geben Sie dann Extraktion und Bericht frei.
 
 ### Prompt
 
 ```text
-Du bist für dieses gesamte Gespräch der Forschungsassistent einer Promovierenden/eines Promovierenden in [Fach]. Befolge immer diese Standardregeln: verwende [Zitierstil]; verwende diese Begriffe einheitlich: [Schlüsselbegriffe mit Definitionen]; erfinde nie Quellen, Zitate oder Zahlen – sage, wenn du unsicher bist; [weitere Regeln]. Wenn ich eine Scoping-Aufgabe zu [Forschungsfrage] stelle, arbeite in drei Stufen und halte nach jeder zu meiner Freigabe an. Stufe 1, Suche: liste bis zu acht Quellen aus [angehängten PDFs / Websites] oder dem Web auf, mit Titel, Jahr, Link und einer Zeile zur Relevanz. Stufe 2, Extraktion: fülle für die von mir freigegebenen Quellen eine Tabelle mit Ziel, Methode, Stichprobe und Hauptbefund. Stufe 3, Bericht: schreibe eine Zusammenfassung von 300 Wörtern, die nur freigegebene Quellen zitiert. Bestätige zuerst diese Regeln in drei Zeilen und warte auf meine Frage.
+Sie sind für dieses gesamte Gespräch der Forschungsassistent einer Promovierenden bzw. eines Promovierenden in [Fach]. Befolgen Sie immer diese Standardregeln: verwenden Sie [Zitierstil]; verwenden Sie diese Begriffe einheitlich: [Schlüsselbegriffe mit Definitionen]; erfinden Sie nie Quellen, Zitate oder Zahlen – sagen Sie, wenn Sie unsicher sind; [weitere Regeln]. Wenn ich eine Scoping-Aufgabe zu [Forschungsfrage] stelle, arbeiten Sie in drei Schritten und halten Sie nach jedem zu meiner Freigabe an. Schritt 1, Suche: listen Sie bis zu acht Quellen aus [angehängten PDFs / Websites] oder dem Web auf, mit Titel, Jahr, Link und einer Zeile zur Relevanz. Schritt 2, Extraktion: füllen Sie für die von mir freigegebenen Quellen eine Tabelle mit Ziel, Methode, Stichprobe und Hauptbefund. Schritt 3, Bericht: schreiben Sie eine Zusammenfassung von 300 Wörtern, die nur freigegebene Quellen zitiert. Bestätigen Sie zuerst diese Regeln in drei Zeilen und warten Sie auf meine Frage.
 ```
 
 ### Prüfung
@@ -103,22 +103,22 @@ In einem einfachen Chat gelten die Regeln nur für dieses Gespräch – ein neue
 
 ## Technik
 
-Erstellen Sie einen eigenen Assistenten (z. B. einen Copilot-Agenten, ein Custom GPT, ein Gemini Gem oder ein Claude-Projekt) mit Ihren Regeln als Anweisungen und öffentlichen Websites oder Übungs-PDFs als Wissen; wenn Ihr Werkzeug keine Wissensdateien annimmt, hängen Sie sie im Chat an. Suchwerkzeuge wie OpenAlex brauchen eine Anbindung (MCP oder API) – prüfen Sie Datenschutz und Freigabe vorher mit Ihrer Hochschule.
+Erstellen Sie einen eigenen Assistenten (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt) mit Ihren Regeln als Anweisungen und öffentlichen Websites oder Übungs-PDFs als Wissen; wenn Ihr Werkzeug keine Wissensdateien annimmt, hängen Sie sie im Chat an. Suchwerkzeuge wie OpenAlex brauchen eine Anbindung (MCP oder API) – prüfen Sie Datenschutz und Freigabe vorher mit Ihrer Hochschule.
 
 ## Stufen
 
 ### Chat
 
-Fügen Sie die Standardregeln und die gestufte Aufgabe als erste Nachricht ein, hängen Sie B2, C3, C4 und C5 an und führen Sie Stufe 1 aus. Geben Sie im selben Chat nur die Zellen frei, die Sie geprüft haben, und führen Sie Stufe 2 aus – die Regeln gelten nur für dieses Gespräch.
+Fügen Sie die Standardregeln und die schrittweise Aufgabe als erste Nachricht ein, hängen Sie B2, C3, C4 und C5 an und führen Sie Schritt 1 aus. Geben Sie im selben Chat nur die Zellen frei, die Sie geprüft haben, und führen Sie Schritt 2 aus – die Regeln gelten nur für dieses Gespräch.
 
 ### Projekt / Notebook
 
-Fügen Sie die vier PDFs und ein einseitiges Regeldokument (Zitierstil, Begriffe, nie erfinden, nach jeder Stufe anhalten) als Referenzen hinzu – nur freigegebenes, nicht sensibles Material. Beginnen Sie jede Frage mit „Befolge das Regeldokument“. Je nach Werkzeug antwortet das Notebook hauptsächlich aus diesen Quellen, sodass keine ungeprüften Webquellen hineingelangen, und Sie können später Arbeiten ergänzen. Sie prüfen weiterhin jede Zelle.
+Fügen Sie die vier PDFs und ein einseitiges Regeldokument (Zitierstil, Begriffe, nie erfinden, nach jedem Schritt anhalten) als Referenzen hinzu – nur freigegebenes, nicht sensibles Material. Beginnen Sie jede Frage mit „Folgen Sie dem Regeldokument“. Je nach Werkzeug antwortet das Notebook hauptsächlich aus diesen Quellen, sodass keine ungeprüften Webquellen hineingelangen, und Sie können später Arbeiten ergänzen. Sie prüfen weiterhin jede Zelle.
 
 ### Eigener Assistent
 
-Anweisungen: APA 7, Ihre Begriffe mit Definitionen, nie Quellen, Zitate oder Zahlen erfinden, pro Zelle ein wörtliches Zitat mit Seite, nach jeder Stufe zur Freigabe anhalten. Wissen: die vier PDFs oder Ihre eigenen freigegebenen, nicht sensiblen Arbeiten. Startprompts: „Stufe-1-Extraktion für diese Arbeiten“ und „Vergleiche die freigegebenen Zellen“. Ein Mensch prüft jedes Ergebnis; für jede neue Scoping- oder Vergleichsaufgabe wiederverwendbar.
+Anweisungen: APA 7, Ihre Begriffe mit Definitionen, nie Quellen, Zitate oder Zahlen erfinden, pro Zelle ein wörtliches Zitat mit Seite, nach jedem Schritt zur Freigabe anhalten. Wissen: die vier PDFs oder Ihre eigenen freigegebenen, nicht sensiblen Arbeiten. Startprompts: „Schritt-1-Extraktion für diese Arbeiten“ und „Vergleichen Sie die freigegebenen Zellen“. Ein Mensch prüft jedes Ergebnis; für jede neue Scoping- oder Vergleichsaufgabe wiederverwendbar.
 
 ### Automatisierung / eigener Code
 
-Binden Sie den OpenAlex-MCP-Server an, sodass der Assistent nach Quellen suchen und prüfen kann, ob jede Referenz existiert, und verketten Sie die Stufen in einem Arbeitsablauf, der weiterhin für Ihre Freigabe anhält – ein einfacher eigener Assistent erreicht keine wissenschaftlichen Datenbanken. Auf GitHub: Ein Python-Skript verkettet die Stufen, prüft jede Referenz über die API von OpenAlex oder Crossref und hält zwischen den Stufen für Ihre Freigabe an. Prüfen Sie Datenschutz und Freigabe vorher mit Ihrer Hochschule.
+Binden Sie den OpenAlex-MCP-Server an, sodass der Assistent nach Quellen suchen und prüfen kann, ob jede Referenz existiert, und verketten Sie die Schritte in einem Arbeitsablauf, der weiterhin für Ihre Freigabe anhält – ein einfacher eigener Assistent erreicht keine wissenschaftlichen Datenbanken. Auf GitHub: Ein Python-Skript verkettet die Schritte, prüft jede Referenz über die API von OpenAlex oder Crossref und hält zwischen den Schritten für Ihre Freigabe an. Prüfen Sie Datenschutz und Freigabe vorher mit Ihrer Hochschule.

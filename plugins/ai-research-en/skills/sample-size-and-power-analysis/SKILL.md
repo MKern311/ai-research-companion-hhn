@@ -17,7 +17,9 @@ Rerunnable code, a curve of required sample size across plausible effect sizes a
 
 Sample sizes are often calculated once in a web calculator with the assumptions unrecorded – hard to justify to an ethics committee or examiner, and silent about clustering or dependence.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Describe your planned test, effect size, alpha and desired power.
 2. Ask the assistant to write and run Python code for the power analysis (if it cannot run code, run it yourself).
@@ -29,9 +31,8 @@ Sample sizes are often calculated once in a web calculator with the assumptions 
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Call it 'Power analyst' and switch on code execution / data analysis if your tool offers it. Instructions: always write and run Python with statsmodels, show the code, plot sample size across effect sizes, list every assumption and which ones your data may violate, and run a known benchmark (d = 0.5 gives about 64 per group). Starter prompt: 'Power analysis for [test], effect size [value] from [source]'. Reusable for every study or grant.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am planning a study in [discipline] using [statistical test, e.g. independent-samples t-test]. Write and run Python code (for example with statsmodels) to calculate the required sample size for effect size [value, e.g. Cohen's d = 0.5], alpha 0.05, power 0.80, two-sided. Show the code, the result, and a chart of sample size for effect sizes from 0.2 to 0.8. List every assumption the calculation makes, and explain the result in two plain sentences.

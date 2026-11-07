@@ -17,7 +17,9 @@ Eine konzeptzentrierte Matrix (Webster & Watson), die zeigt, welche Studie welch
 
 Nach der Lektüre von zwanzig Papern kennen Sie sie einzeln, aber nicht, wie sie zusammenhängen – wo sie übereinstimmen, wo sie sich widersprechen und warum.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Fügen Sie die Studien ein oder hängen Sie sie an und listen Sie die Konzepte auf, die verglichen werden sollen.
 2. Bitten Sie um eine Konzeptmatrix mit Studien als Zeilen und Konzepten als Spalten.
@@ -29,9 +31,8 @@ Nach der Lektüre von zwanzig Papern kennen Sie sie einzeln, aber nicht, wie sie
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Konzeptmatrix“. Anweisungen: eine Zeile je Studie, Ihre Konzepte als feste Spalten, „vollständig“, „teilweise“ oder „gar nicht“ mit Befund, Textstelle und Seite, dann Übereinstimmungen und Spannungen mit wahrscheinlichen Gründen; niemals Widersprüche glätten oder Studien hinzufügen. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet, um nach Excel zu exportieren. Startprompt: „Füge diese Studie zur Matrix hinzu.“ Nur freigegebenes Material; Sie prüfen jede Zelle und schreiben die Synthese.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
 Ich bin Promovierende bzw. Promovierender in [Fachgebiet] und arbeite an einer Übersichtsarbeit zu [Thema]. Erstellen Sie ausschließlich anhand der Studien, die ich bereitstelle, eine Konzeptmatrix: eine Zeile je Studie, Spalten für [Konzept 1], [Konzept 2], [Konzept 3]. Sagen Sie in jeder Zelle, ob die Studie das Konzept vollständig, teilweise oder gar nicht behandelt, und geben Sie den Befund in wenigen Worten an, einschließlich der Effektrichtung, mit einer kurzen belegenden Textstelle. Listen Sie dann auf, wo die Studien übereinstimmen und wo sie sich widersprechen, mit möglichen Gründen wie Methode, Stichprobe oder Kontext, und nennen Sie zu jedem Punkt die Studie. Fügen Sie keine Studien hinzu, die ich Ihnen nicht gegeben habe.

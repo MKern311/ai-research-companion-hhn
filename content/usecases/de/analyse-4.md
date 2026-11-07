@@ -36,7 +36,7 @@ Ein dokumentierter erster Blick auf Struktur, Verteilungen und Muster, mit dem C
 
 ### Explorative Datenanalyse (Exploratory Data Analysis, EDA)
 
-Der Ansatz von Tukey (1977), Daten mit Kennzahlen und Grafiken zu untersuchen, um vor der Modellierung Struktur, Auffälligkeiten und Fragen zu entdecken. Sie erzeugt Hypothesen; sie testet sie nicht.
+Der Ansatz von Tukey (1977), Daten mit Kennzahlen und Grafiken zu untersuchen, um vor der Modellierung Struktur, Auffälligkeiten und Fragen zu entdecken. EDA erzeugt Hypothesen; sie testet sie nicht.
 
 ### Anscombe-Quartett (Anscombe's Quartet)
 
@@ -70,7 +70,7 @@ Ich erkunde drei globale Temperaturdatensätze vor jeder formalen Analyse. Angeh
 
 ### Prüfung
 
-Nach der Umrechnung der Baseline hat jede Reihe über 1991–2020 den Mittelwert 0.00, und die Werte für 2024 liegen nahe beieinander: etwa 0.63 °C (HadCRUT5), 0.67 °C (GISTEMP) und 0.72 °C (ERA5). Suchen Sie jede zitierte Passage in den PDFs.
+Nach der Umrechnung der Baseline hat jede Reihe über 1991–2020 den Mittelwert 0,00, und die Werte für 2024 liegen nahe beieinander: etwa 0,63 °C (HadCRUT5), 0,67 °C (GISTEMP) und 0,72 °C (ERA5). Suchen Sie jede zitierte Passage in den PDFs.
 
 ## Mit eigenem Material
 
@@ -111,4 +111,4 @@ Fügen Sie die Dateien HadCRUT5, GISTEMP und ERA5 (D3, D4, D9; speichern Sie sie
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen die Erkundungsroutine fest: zuerst Struktur, Typen und fehlende Werte beschreiben, Baselines und Einheiten prüfen, den Code hinter jeder Zahl zeigen, je Befund einen Satz mit Vorbehalt ergänzen und alles als explorativ kennzeichnen. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompts: „Beschreiben Sie diese Datei, bevor wir Muster ansehen.“ und „Wie ist X über Y verteilt?“ Wiederverwendbar für jeden neuen Datensatz.
+Erstellen Sie einen konfigurierten Assistenten (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Legen Sie in seinen dauerhaften Anweisungen die Erkundungsroutine fest: zuerst Struktur, Typen und fehlende Werte beschreiben, Baselines und Einheiten prüfen, den Code hinter jeder Zahl zeigen, je Befund einen Satz mit Vorbehalt ergänzen und alles als explorativ kennzeichnen. Schalten Sie Codeausführung bzw. Datenanalyse ein, wenn Ihr Werkzeug sie anbietet. Startprompts: „Beschreiben Sie diese Datei, bevor wir Muster ansehen.“ und „Wie ist X über Y verteilt?“ Wiederverwendbar für jeden neuen Datensatz.

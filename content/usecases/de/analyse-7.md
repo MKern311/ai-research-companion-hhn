@@ -43,11 +43,11 @@ Für jede Kategorie: Name, Definition, Einschlusskriterien, Ausschlusskriterien 
 
 ### Cohens Kappa
 
-Übereinstimmung zwischen zwei Codierenden, korrigiert um den Zufall: κ = (pₒ − pₑ) / (1 − pₑ) (Cohen, 1960). Weit verbreitete, aber willkürliche Konvention nach Landis und Koch (1977): 0.41–0.60 mäßig, 0.61–0.80 substanziell, 0.81–1.00 nahezu perfekt.
+Übereinstimmung zwischen zwei Codierenden, korrigiert um den Zufall: κ = (pₒ − pₑ) / (1 − pₑ) (Cohen, 1960). Weit verbreitete, aber willkürliche Konvention nach Landis und Koch (1977): 0,41–0,60 mäßig, 0,61–0,80 substanziell, 0,81–1,00 nahezu perfekt.
 
 ### Krippendorffs Alpha
 
-Ein Reliabilitätskoeffizient für beliebig viele Codierende, fehlende Daten und Skalen vom nominalen bis zum Verhältnisniveau. Krippendorffs Konvention: α ≥ 0.800 für verlässliche Daten; 0.667 bis 0.800 nur für vorläufige Schlüsse.
+Ein Reliabilitätskoeffizient für beliebig viele Codierende, fehlende Daten und Skalen vom nominalen bis zum Verhältnisniveau. Krippendorffs Konvention: α ≥ 0,800 für verlässliche Daten; 0,667 bis 0,800 nur für vorläufige Schlüsse.
 
 ## Literatur
 
@@ -114,4 +114,4 @@ Fügen Sie die Christidis-Studien (B2, C3), die Zachariah-Studie (C4) und Ihr Co
 
 ### Eigener Assistent
 
-Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Codebook-Codierer“ (z. B. einen Copilot-Agenten, einen Custom GPT, ein Gemini Gem oder ein Claude-Projekt). Fügen Sie das endgültige Codebook als Wissensdatei hinzu (unterstützt Ihr Werkzeug keine Wissensdateien, hängen Sie es im Chat an). In den dauerhaften Anweisungen: Satz für Satz codieren, Kategorie, genaues Zitat und „eindeutig, unklar oder problematisch“ angeben, „keine davon“ verwenden, wenn nichts passt, und nie einen Anker oder ein Zitat erfinden. Startprompt: „Codieren Sie diese Passage mit dem Codebook und kennzeichnen Sie jede Grenzfall-Entscheidung.“ Wiederverwendbar für jeden neuen Stapel – es kommt nur genehmigtes, anonymisiertes Material hinein, und ein Mensch prüft jede Codierung.
+Erstellen Sie einen konfigurierten Assistenten, zum Beispiel „Codebook-Codierer“ (z. B. einen Copilot-Agenten, ein ChatGPT-Projekt, ein Gemini Gem oder ein Claude-Projekt). Fügen Sie das endgültige Codebook als Wissensdatei hinzu (unterstützt Ihr Werkzeug keine Wissensdateien, hängen Sie es im Chat an). In den dauerhaften Anweisungen: Satz für Satz codieren, Kategorie, genaues Zitat und „eindeutig, unklar oder problematisch“ angeben, „keine davon“ verwenden, wenn nichts passt, und nie einen Anker oder ein Zitat erfinden. Startprompt: „Codieren Sie diese Passage mit dem Codebook und kennzeichnen Sie jede Grenzfall-Entscheidung.“ Wiederverwendbar für jeden neuen Stapel – es kommt nur genehmigtes, anonymisiertes Material hinein, und ein Mensch prüft jede Codierung.

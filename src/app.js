@@ -353,9 +353,10 @@ function formatHtml(u, c){
   const ul = u.textLang || lang;
   const seg = `<div class="seg" role="group" aria-label="${t('wiz.fmt')}">${opts.map(k => `<button type="button" data-wfmt="${k}" aria-pressed="${k === f}">${t('fmt.' + k)}</button>`).join('')}</div><p class="sub">${t('fmt.' + f + '.p')}</p>`;
   const capSteps = k => c && c.caps && c.caps[k] ? capHtml(c, k) : '';
-  if (f === 'skill') return seg + `<div class="row"><button type="button" class="btn btn-primary btn-sm" data-skillzip>${t('btn.skillzip')}</button><button type="button" class="btn btn-quiet btn-sm" data-skillmd>${t('btn.skillmd')}</button></div>` + capSteps('skill') + codeBlock('SKILL.md', EXPORT.skillMd(u, ul, {url:wizUrl(u), riskDef:riskDef(u.meta.risk)}), 'code');
+  const ex = u.meta.excursus ? `<p class="warnhint">${t('uc.excursus')}</p>` : '';
+  if (f === 'skill') return seg + ex + `<div class="row"><button type="button" class="btn btn-primary btn-sm" data-skillzip>${t('btn.skillzip')}</button><button type="button" class="btn btn-quiet btn-sm" data-skillmd>${t('btn.skillmd')}</button></div>` + capSteps('skill') + codeBlock('SKILL.md', EXPORT.skillMd(u, ul, {url:wizUrl(u), riskDef:riskDef(u.meta.risk)}), 'code');
   if (f === 'assistant') { const a = EXPORT.assistant(u, ul);
-    return seg + capSteps('assistant') + codeBlock(t('as.name'), a.name) + codeBlock(t('as.desc'), a.description) + codeBlock(t('as.instr'), a.instructions) + codeBlock(t('as.start'), a.starters.join('\n')); }
+    return seg + ex + capSteps('assistant') + codeBlock(t('as.name'), a.name) + codeBlock(t('as.desc'), a.description) + codeBlock(t('as.instr'), a.instructions) + codeBlock(t('as.start'), a.starters.join('\n')); }
   if (f === 'project') return seg + `<div class="row"><button type="button" class="btn btn-quiet btn-sm" data-rulesmd>${t('btn.rulesmd')}</button></div>` + capSteps('project') + codeBlock(t('fmt.rules'), EXPORT.projectRules(u, ul), 'code');
   return seg + (EXPORT.prompt(u) ? codeBlock(t('uc.prompt'), EXPORT.prompt(u)) : '');
 }
@@ -461,7 +462,7 @@ document.addEventListener('click', e => {
     if (c('[data-wprev]')) { ui.wiz.step = Math.max(0, ui.wiz.step - 1); drawWizard(); return; }
     if ((b = c('[data-wfmt]'))) { ui.wiz.fmt = b.dataset.wfmt; drawWizard(); return; }
     if (c('[data-skillzip]') || c('[data-skillmd]') || c('[data-rulesmd]')) {
-      const u = ucFrom(ui.wiz.id), ul = u.textLang || lang, name = EXPORT.slug(u.title), md = EXPORT.skillMd(u, ul, {url:wizUrl(u), riskDef:riskDef(u.meta.risk)});
+      const u = ucFrom(ui.wiz.id), ul = u.textLang || lang, name = EXPORT.slug(u.title, ul), md = EXPORT.skillMd(u, ul, {url:wizUrl(u), riskDef:riskDef(u.meta.risk)});
       if (c('[data-skillzip]')) download(name + '.zip', new Blob([EXPORT.zip([{name:name + '/SKILL.md', text:md}])], {type:'application/zip'}));
       else if (c('[data-skillmd]')) download('SKILL.md', md, 'text/markdown');
       else download(name + '_rules.md', EXPORT.projectRules(u, ul), 'text/markdown');

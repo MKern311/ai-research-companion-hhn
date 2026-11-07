@@ -1,6 +1,6 @@
 ---
-name: experimentelle-stimuli-and-instrumente
-description: "Erzeugen Sie passende Materialien für jede Bedingung eines Experiments – z. B. Fallvignetten, eine Botschaft in zwei Rahmungen (Framings), eine Mock-Webseite oder einen Mock-Newsfeed – und entwerfen Sie den Studienablauf mit Randomisierung und Variablennamen für Ihr Befragungstool. Einsetzen bei: Experimentelle Stimuli & Instrumente."
+name: experimentelle-stimuli-und-instrumente
+description: "Erzeugen Sie passende Materialien für jede Bedingung eines Experiments – z. B. Fallvignetten, eine Botschaft in zwei Rahmungen (Framings), eine Mock-Webseite oder einen Mock-Newsfeed – und entwerfen Sie den Studienablauf mit Randomisierung und Variablennamen für Ihr Befragungswerkzeug. Einsetzen bei: Experimentelle Stimuli & Instrumente."
 ---
 
 # Experimentelle Stimuli & Instrumente
@@ -9,15 +9,17 @@ description: "Erzeugen Sie passende Materialien für jede Bedingung eines Experi
 
 ## Ziel
 
-Erzeugen Sie passende Materialien für jede Bedingung eines Experiments – z. B. Fallvignetten, eine Botschaft in zwei Rahmungen (Framings), eine Mock-Webseite oder einen Mock-Newsfeed – und entwerfen Sie den Studienablauf mit Randomisierung und Variablennamen für Ihr Befragungstool.
+Erzeugen Sie passende Materialien für jede Bedingung eines Experiments – z. B. Fallvignetten, eine Botschaft in zwei Rahmungen (Framings), eine Mock-Webseite oder einen Mock-Newsfeed – und entwerfen Sie den Studienablauf mit Randomisierung und Variablennamen für Ihr Befragungswerkzeug.
 
-Passende Stimuli für jede Bedingung, eine Manipulationsprüfung und ein Studienablauf mit Variablennamen, die Sie in Ihrem Befragungstool einrichten – schneller gebaut, leichter gleichwertig zu halten, und ein Export, der direkt in Ihre Analyse geht.
+Passende Stimuli für jede Bedingung, eine Manipulationsprüfung und ein Studienablauf mit Variablennamen, die Sie in Ihrem Befragungswerkzeug einrichten – schneller gebaut, leichter gleichwertig zu halten, und ein Export, der direkt in Ihre Analyse geht.
 
 ## Wann einsetzen
 
 Realistische Stimuli für jede Bedingung – Vignetten, gerahmte Botschaften, Mock-Webseiten oder -Feeds – zu bauen und mit Randomisierung in eine Befragung einzubinden, dauert Wochen, und kleine unbeabsichtigte Unterschiede zwischen den Bedingungen verfälschen die Ergebnisse.
 
-## Vorgehen
+## Ablauf mit der Nutzerin oder dem Nutzer
+
+Führen Sie durch diese Schritte. Wo ein Schritt „den Assistenten bitten“ nennt, sind Sie gemeint.
 
 1. Nennen Sie den manipulierten Faktor, seine Stufen und was über die Bedingungen hinweg identisch bleiben muss.
 2. Bitten Sie den Assistenten je Bedingung um die Stimulustexte oder ein einfaches HTML-Mock-up, dazu eine Manipulationsprüfung.
@@ -29,12 +31,11 @@ Realistische Stimuli für jede Bedingung – Vignetten, gerahmte Botschaften, Mo
 - Erfinden Sie nie Quellen, Zitate, Zahlen oder DOIs; sagen Sie, wenn Sie unsicher sind.
 - Kennzeichnen Sie klar, was aus dem Material der Nutzerin oder des Nutzers stammt und was Ihr eigener Vorschlag ist.
 - Halten Sie an und fragen Sie nach, wenn Material fehlt oder unklar ist.
-- Nennen Sie ihn „Stimulus-Bauer“ und schalten Sie Codeausführung bzw. Dateierstellung ein, wenn Ihr Tool sie anbietet, damit er HTML-Dateien liefert. Anweisungen: Bedingungen identisch halten außer dem manipulierten Element, jeden Unterschied auflisten, die Quelle jeder Tatsachenbehauptung zitieren, eine Manipulationsprüfung und einen Studienablauf mit Variablennamen ergänzen, keine realen Organisationen, Marken, Personen oder Logos verwenden. Startprompt: „Baue die Bedingungen [A] und [B] für: [Hypothese]“. Wiederverwendbar für jedes Folgeexperiment.
 
-## Startprompt
+## Typische Anfrage
 
 ```text
-Ich plane ein Between-Subjects-Experiment in [Fach]. Hypothese: [z. B. eine als Verlust gerahmte Botschaft verändert Intentionen stärker als dieselbe Botschaft, als Gewinn gerahmt]. Manipulierter Faktor: [Faktor] mit den Stufen [Stufe A] und [Stufe B]. Outcome-Messungen: [Messungen]. 1) Erstelle den Stimulus für jede Bedingung: [z. B. eine kurze Fallvignette, eine öffentliche Informationsbotschaft oder eine Mock-Webseite als eine eigenständige HTML-Seite]. Halte alles identisch außer dem manipulierten Element und liste jeden Unterschied zwischen den Bedingungen auf. 2) Schreibe eine Frage zur Manipulationsprüfung. 3) Entwirf den vollständigen Studienablauf für ein Befragungstool – Einwilligung, zufällige Zuteilung, Stimulus, Messungen, Manipulationsprüfung, Demografie, Debriefing – als Tabelle mit Variablennamen und Kodierung, sodass der Export direkt analysiert werden kann. Verwende keine realen Organisationen, Marken, Personen oder Logos.
+Ich plane ein Between-Subjects-Experiment in [Fach]. Hypothese: [z. B. eine als Verlust gerahmte Botschaft verändert Intentionen stärker als dieselbe Botschaft, als Gewinn gerahmt]. Manipulierter Faktor: [Faktor] mit den Stufen [Stufe A] und [Stufe B]. Outcome-Messungen: [Messungen]. 1) Erstellen Sie den Stimulus für jede Bedingung: [z. B. eine kurze Fallvignette, eine öffentliche Informationsbotschaft oder eine Mock-Webseite als eine eigenständige HTML-Seite]. Halten Sie alles identisch außer dem manipulierten Element und listen Sie jeden Unterschied zwischen den Bedingungen auf. 2) Schreiben Sie eine Frage zur Manipulationsprüfung. 3) Entwerfen Sie den vollständigen Studienablauf für ein Befragungswerkzeug – Einwilligung, zufällige Zuteilung, Stimulus, Messungen, Manipulationsprüfung, Demografie, Debriefing – als Tabelle mit Variablennamen und Kodierung, sodass der Export direkt analysiert werden kann. Verwenden Sie keine realen Organisationen, Marken, Personen oder Logos.
 ```
 
 ## Prüfung

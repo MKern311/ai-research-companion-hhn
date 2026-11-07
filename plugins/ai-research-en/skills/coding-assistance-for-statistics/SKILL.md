@@ -17,7 +17,9 @@ Commented, runnable code you can explain line by line, with the model's assumpti
 
 You know which model you need but lose hours on syntax, error messages and package options, and forum code rarely matches your data structure or the model's assumptions.
 
-## Procedure
+## Workflow with the user
+
+Guide the user through these steps. Where a step says “ask the assistant”, that is you.
 
 1. Attach the CSV and describe the analysis, naming your software.
 2. Ask for commented code plus a plain explanation of each step.
@@ -29,9 +31,8 @@ You know which model you need but lose hours on syntax, error messages and packa
 - Never invent sources, quotes, numbers or DOIs; say when you are not sure.
 - Mark clearly what comes from the user’s material and what is your own suggestion.
 - Stop and ask when the material is missing or ambiguous.
-- Create a configured assistant (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). In its standing instructions, name your discipline and software and set the rules: commented code, complete cases only, list every dropped observation, state and check assumptions, give R or Stata equivalents without running them, and never report a number without the code behind it. Switch on code execution / data analysis if your tool offers it. Starter prompt: "Here is my dataset and model – write, run and explain the code." Reusable for every new dataset.
 
-## Starter prompt
+## Typical request
 
 ```text
 I am a postgraduate researcher in [discipline] using [R, Python, Stata or SPSS]. The attached file is a [public or dummy] dataset with the variables [key variables]. I want to [analysis, e.g. run a linear regression of Y on X1 and X2 with robust standard errors]. Write commented code that loads the data, checks variable types and missing values, runs the analysis and prints the results. Then explain in plain language what each block does and which assumptions I should check. If a function or option may not exist in my version, say so. (For more complex models – for example structural equation models with lavaan or seminr, or a meta-analysis with metafor – name the package and paste a short excerpt of its documentation, so the code follows it.)
