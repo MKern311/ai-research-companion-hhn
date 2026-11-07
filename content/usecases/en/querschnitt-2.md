@@ -1,0 +1,95 @@
+---
+id: querschnitt-2
+phase: querschnitt
+order: 2
+title: PhD planning & time management
+risk: 1
+mode: Assist
+potential: 2
+capabilities: generierung
+routes: chat
+tools: Notion
+---
+
+Break the doctorate into milestones, plan your weeks and re-plan after setbacks.
+
+## Problem
+
+A doctorate is hard to plan backwards; people systematically underestimate how long tasks take, weeks fill with teaching and admin, and after a setback the plan feels obsolete.
+
+## Result
+
+A backward plan with milestones, dependencies and explicit buffers, a realistic week plan and a quick re-plan after setbacks – an honest view of whether your timeline holds.
+
+## Steps
+
+1. Give submission date, fixed milestones and weekly hours
+2. Plan backwards and mark the critical path
+3. Base estimates on past durations, then add buffers
+4. Plan next week in half-day blocks
+5. Re-plan after a setback and compare
+
+## Concepts
+
+### Planning fallacy
+
+The tendency to underestimate the time your own tasks will take, even when similar past tasks overran (Kahneman & Tversky, 1979; Buehler et al., 1994). Counter it by basing estimates on how long comparable tasks actually took.
+
+### Reference class forecasting
+
+Estimating a task from the actual outcomes of a class of similar past tasks rather than from its own plan (Flyvbjerg, 2006). For a thesis: use how long your last chapter, ethics application or dataset really took.
+
+### Critical path method
+
+Identifies the longest chain of dependent tasks; any delay on it delays submission, while tasks off it have slack. Protect the critical path with an explicit buffer before submission.
+
+### Backward planning
+
+Start from the fixed end date and place milestones in reverse order, including lead times such as supervisor feedback and formatting, so you see the latest start date for each stage.
+
+## References
+
+- Buehler, R., Griffin, D., & Ross, M. (1994). Exploring the "planning fallacy": Why people underestimate their task completion times. Journal of Personality and Social Psychology, 67(3), 366–381. doi:10.1037/0022-3514.67.3.366
+- Kahneman, D., & Tversky, A. (1979). Intuitive prediction: Biases and corrective procedures. TIMS Studies in Management Science, 12, 313–327.
+- Flyvbjerg, B. (2006). From Nobel Prize to project management: Getting risks right. Project Management Journal, 37(3), 5–15. doi:10.1177/875697280603700302
+
+## Own material
+
+### Bring
+
+Your planned submission date, your institution's main milestones (e.g. confirmation review) and a list of your regular commitments.
+
+### Steps
+
+1. Paste your submission date, milestones and commitments.
+2. Ask for a backward plan with quarterly milestones and buffers.
+3. Ask for a realistic plan for next week.
+4. Describe a setback and ask the assistant to re-plan.
+
+### Prompt
+
+```text
+I am a postgraduate researcher in year [year] of [full-time / part-time] study in [discipline]. My submission date is [date]. Fixed milestones: [list]. Regular commitments: [teaching, work, caring, hours per week]. Plan backwards from submission: a table of quarterly milestones with deliverables and a buffer of at least [x] weeks. Then plan my next week in half-day blocks with one main goal per day. Finally, show how the plan changes if [setback, e.g. data collection is delayed by six weeks]. Keep it realistic for the hours I have and point out where the plan is too tight.
+```
+
+### Check
+
+The dates add up to your submission date, the fixed milestones fall on the right dates, and the weekly plan fits your actual available hours.
+
+## Technology
+
+Everything happens in a plain chat with pasted dates and commitments; ask for the plan as a table to copy into Excel, a planner tool or your calendar, and discuss it with your supervisor.
+
+## Levels
+
+### Chat
+
+Run the starter prompt with your dates and commitments. In the same chat, describe a real setback and ask the assistant to re-plan, showing which milestones move and whether the buffer still holds.
+
+### Project / Notebook
+
+Add your plan (as .xlsx or Word), your institution's milestone regulations and a short log of how long past tasks actually took. Come back each month, update the log and ask whether the timeline still holds and what to re-plan – estimates based on your real durations rather than guesses.
+
+### Custom assistant
+
+Instructions: plan backwards from the submission date, mark the critical path, base estimates on past durations and add explicit buffers, weekly plans in half-day blocks with one goal per day, flag any plan that exceeds the stated hours. Knowledge: your milestone regulations. Switch on "Create documents, charts and code" for an Excel timeline. Starter prompts: "Plan my next week" and "Re-plan after this setback". Reusable every week.

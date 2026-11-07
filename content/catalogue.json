@@ -1,0 +1,1566 @@
+{
+ "categories": {
+  "en": [
+   "Literature search",
+   "Search engines",
+   "Literature & source analysis",
+   "Reference management",
+   "Academic writing",
+   "Qualitative analysis & transcription",
+   "Quantitative analysis",
+   "All-rounders & other"
+  ],
+  "de": [
+   "Literaturrecherche",
+   "Suchmaschinen",
+   "Literatur- und Quellenanalyse",
+   "Literaturverwaltung",
+   "Wissenschaftliches Schreiben",
+   "Qualitative Analyse und Transkription",
+   "Quantitative Analyse",
+   "Allrounder und Sonstiges"
+  ]
+ },
+ "types": {
+  "ki": {
+   "en": "AI-native",
+   "de": "KI-nativ"
+  },
+  "gpt": {
+   "en": "Custom GPT",
+   "de": "Custom GPT"
+  },
+  "et": {
+   "en": "Established",
+   "de": "Etabliert"
+  }
+ },
+ "tools": [
+  {
+   "n": "Epsilon",
+   "url": "epsilon-ai.com",
+   "cat": 0,
+   "r": 5,
+   "c": 1,
+   "typ": "ki",
+   "ph": [
+    "literatur",
+    "idee"
+   ],
+   "nt": {
+    "en": "AI search across 200M+ papers and patents; answers with inline citations.",
+    "de": "KI-Suche über mehr als 200 Mio. Aufsätze und Patente; Antworten mit Belegen im Text."
+   }
+  },
+  {
+   "n": "Semantic Scholar",
+   "url": "semanticscholar.org",
+   "cat": 0,
+   "r": 4.7,
+   "c": 6,
+   "typ": "ki",
+   "ph": [
+    "literatur",
+    "idee"
+   ],
+   "nt": {
+    "en": "TL;DR summaries and recommendations; few hits for some specific search terms.",
+    "de": "TL;DR-Zusammenfassungen und Empfehlungen; bei manchen speziellen Suchbegriffen wenige Treffer."
+   }
+  },
+  {
+   "n": "Open Knowledge Maps",
+   "url": "openknowledgemaps.org",
+   "cat": 0,
+   "r": 3.8,
+   "c": 6,
+   "typ": "ki",
+   "ph": [
+    "idee",
+    "literatur"
+   ],
+   "nt": {
+    "en": "Visual topic maps; map generation often fails and search terms stay vague.",
+    "de": "Visuelle Themenlandkarten; die Kartenerstellung schlägt oft fehl und die Suchbegriffe bleiben vage."
+   }
+  },
+  {
+   "n": "Elicit",
+   "url": "elicit.com",
+   "cat": 0,
+   "r": 3.8,
+   "c": 4,
+   "typ": "ki",
+   "ph": [
+    "literatur"
+   ],
+   "nt": {
+    "en": "Research question in natural language; extraction into tables (e.g. population, intervention).",
+    "de": "Forschungsfrage in natürlicher Sprache; Extraktion in Tabellen (z. B. Population, Intervention)."
+   }
+  },
+  {
+   "n": "Inciteful",
+   "url": "incitefulmed.com/academic/",
+   "cat": 0,
+   "r": 2,
+   "c": 1,
+   "typ": "ki",
+   "ph": [
+    "literatur",
+    "idee"
+   ],
+   "nt": {
+    "en": "Citation network from seed papers – good for deep dives, but cluttered.",
+    "de": "Zitationsnetzwerk ausgehend von Startaufsätzen – gut für die Vertiefung, aber unübersichtlich."
+   }
+  },
+  {
+   "n": "Google Scholar",
+   "url": "scholar.google.com",
+   "cat": 1,
+   "r": 4.7,
+   "c": 10,
+   "typ": "et",
+   "ph": [
+    "literatur",
+    "idee"
+   ],
+   "nt": {
+    "en": "Broad coverage and “cited by”; no substitute for subject databases.",
+    "de": "Breite Abdeckung und „Zitiert von“; kein Ersatz für Fachdatenbanken."
+   }
+  },
+  {
+   "n": "Perplexity",
+   "url": "perplexity.ai",
+   "cat": 1,
+   "r": 4.6,
+   "c": 7,
+   "typ": "ki",
+   "ph": [
+    "idee",
+    "literatur"
+   ],
+   "nt": {
+    "en": "Answer engine with sources – strong for getting into a topic. Its Microsoft 365 add-ins are sold as Perplexity Computer.",
+    "de": "Antwortmaschine mit Quellen – stark für den Einstieg in ein Thema. Die Microsoft-365-Add-ins werden als Perplexity Computer vertrieben."
+   }
+  },
+  {
+   "n": "Consensus",
+   "url": "consensus.app",
+   "cat": 1,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "literatur",
+    "idee"
+   ],
+   "nt": {
+    "en": "Answers drawn from peer-reviewed studies; some results lack full-text access.",
+    "de": "Antworten auf Grundlage von Peer-Review-Studien; bei manchen Ergebnissen fehlt der Volltextzugang."
+   }
+  },
+  {
+   "n": "Humata AI",
+   "url": "humata.ai",
+   "cat": 2,
+   "r": 4.8,
+   "c": 6,
+   "typ": "ki",
+   "ph": [
+    "literatur"
+   ],
+   "nt": {
+    "en": "Ask questions of PDFs with highlighted passages; free tier limited to 60 pages.",
+    "de": "Fragen an PDFs mit markierten Textstellen; der kostenlose Tarif ist auf 60 Seiten begrenzt."
+   }
+  },
+  {
+   "n": "Connected Papers",
+   "url": "connectedpapers.com",
+   "cat": 2,
+   "r": 4.8,
+   "c": 5,
+   "typ": "ki",
+   "ph": [
+    "literatur",
+    "idee"
+   ],
+   "nt": {
+    "en": "Accurate forward/backward search from a seed paper; limited thematic overview.",
+    "de": "Präzise Vorwärts- und Rückwärtssuche ausgehend von einem Startaufsatz; begrenzter thematischer Überblick."
+   }
+  },
+  {
+   "n": "Research Rabbit",
+   "url": "researchrabbit.ai",
+   "cat": 2,
+   "r": 5,
+   "c": 1,
+   "typ": "ki",
+   "ph": [
+    "literatur",
+    "idee"
+   ],
+   "nt": {
+    "en": "Network maps of related studies, authors and citations.",
+    "de": "Netzwerkkarten verwandter Studien, Autorinnen und Autoren sowie Zitationen."
+   }
+  },
+  {
+   "n": "ChatPDF",
+   "url": "chatpdf.com",
+   "cat": 2,
+   "r": 4.5,
+   "c": 2,
+   "typ": "ki",
+   "ph": [
+    "literatur"
+   ],
+   "nt": {
+    "en": "Chat with individual PDFs; often compared with Gemini Notebook (formerly NotebookLM).",
+    "de": "Chat mit einzelnen PDFs; wird oft mit Gemini Notebook (früher NotebookLM) verglichen."
+   }
+  },
+  {
+   "n": "Scholar AI",
+   "url": null,
+   "cat": 2,
+   "r": 4,
+   "c": 1,
+   "typ": "gpt",
+   "ph": [
+    "literatur"
+   ],
+   "nt": {
+    "en": "Custom GPT: find, analyse and summarise sources. ScholarAI has since joined Jenni AI – check that the GPT is still available.",
+    "de": "Custom GPT: Quellen finden, analysieren und zusammenfassen. ScholarAI ist inzwischen zu Jenni AI gewechselt – prüfen Sie, ob das GPT noch verfügbar ist."
+   }
+  },
+  {
+   "n": "Zotero",
+   "url": "zotero.org",
+   "cat": 3,
+   "r": 4.8,
+   "c": 12,
+   "typ": "et",
+   "ph": [
+    "literatur",
+    "publikation",
+    "querschnitt"
+   ],
+   "nt": {
+    "en": "Free and open source; browser connector and shared group libraries.",
+    "de": "Kostenlos und Open Source; Browser-Connector und gemeinsame Gruppenbibliotheken."
+   }
+  },
+  {
+   "n": "Citavi",
+   "url": "lumivero.com",
+   "cat": 3,
+   "r": 5,
+   "c": 2,
+   "typ": "et",
+   "ph": [
+    "literatur",
+    "publikation"
+   ],
+   "nt": {
+    "en": "References, knowledge organisation and task planning in one tool.",
+    "de": "Literaturverwaltung, Wissensorganisation und Aufgabenplanung in einem Werkzeug."
+   }
+  },
+  {
+   "n": "EndNote",
+   "url": "endnote.com",
+   "cat": 3,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "literatur",
+    "publikation"
+   ],
+   "nt": {
+    "en": "Comprehensive reference management with 7,000+ citation styles.",
+    "de": "Umfassende Literaturverwaltung mit über 7.000 Zitierstilen."
+   }
+  },
+  {
+   "n": "Mendeley",
+   "url": "mendeley.com",
+   "cat": 3,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "literatur",
+    "publikation"
+   ],
+   "nt": {
+    "en": "Free; automatic metadata capture and shared libraries.",
+    "de": "Kostenlos; automatische Metadatenerfassung und gemeinsame Bibliotheken."
+   }
+  },
+  {
+   "n": "Paperpile",
+   "url": "paperpile.com",
+   "cat": 3,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "literatur",
+    "publikation"
+   ],
+   "nt": {
+    "en": "Browser-based and tightly integrated with Google Docs.",
+    "de": "Browserbasiert und eng in Google Docs integriert."
+   }
+  },
+  {
+   "n": "Scholar GPT",
+   "url": null,
+   "cat": 4,
+   "r": 5,
+   "c": 3,
+   "typ": "gpt",
+   "ph": [
+    "publikation",
+    "idee"
+   ],
+   "nt": {
+    "en": "Custom GPT: sharpen research questions and write in an academic register.",
+    "de": "Custom GPT: Forschungsfragen schärfen und im wissenschaftlichen Register schreiben."
+   }
+  },
+  {
+   "n": "QuillBot",
+   "url": "quillbot.com",
+   "cat": 4,
+   "r": 4.7,
+   "c": 3,
+   "typ": "ki",
+   "ph": [
+    "publikation"
+   ],
+   "nt": {
+    "en": "Paraphrasing and grammar; double-check meaning and citations.",
+    "de": "Umformulieren und Grammatik; Bedeutung und Zitate gegenprüfen."
+   }
+  },
+  {
+   "n": "DeepL Write",
+   "url": "deepl.com/en/write",
+   "cat": 4,
+   "r": 4.5,
+   "c": 11,
+   "typ": "ki",
+   "ph": [
+    "publikation",
+    "transfer"
+   ],
+   "nt": {
+    "en": "Style, tone and grammar in several languages – widely used for academic text.",
+    "de": "Stil, Ton und Grammatik in mehreren Sprachen – für wissenschaftliche Texte weit verbreitet."
+   }
+  },
+  {
+   "n": "Napkin AI",
+   "url": "napkin.ai",
+   "cat": 4,
+   "r": 4,
+   "c": 1,
+   "typ": "ki",
+   "ph": [
+    "transfer",
+    "publikation"
+   ],
+   "nt": {
+    "en": "Turns text into diagrams, infographics and mind maps.",
+    "de": "Wandelt Text in Diagramme, Infografiken und Mindmaps um."
+   }
+  },
+  {
+   "n": "Hemingway",
+   "url": "hemingwayapp.com",
+   "cat": 4,
+   "r": 3.5,
+   "c": 2,
+   "typ": "ki",
+   "ph": [
+    "publikation"
+   ],
+   "nt": {
+    "en": "Readability analysis; file upload and AI features are subscription-only.",
+    "de": "Lesbarkeitsanalyse; Dateiupload und KI-Funktionen nur im Abonnement."
+   }
+  },
+  {
+   "n": "Hesse AI",
+   "url": "hesse.ai/en",
+   "cat": 4,
+   "r": 3,
+   "c": 2,
+   "typ": "ki",
+   "ph": [
+    "publikation"
+   ],
+   "nt": {
+    "en": "German provider, site defaults to German (English version available). Essay generation and flashcards; paid, with an academic-integrity risk.",
+    "de": "Deutscher Anbieter, die Seite öffnet standardmäßig auf Deutsch (englische Version verfügbar). Essay-Generierung und Karteikarten; kostenpflichtig, mit Risiko für die wissenschaftliche Integrität."
+   }
+  },
+  {
+   "n": "Abstract Generator",
+   "url": null,
+   "cat": 4,
+   "r": null,
+   "c": 0,
+   "typ": "gpt",
+   "ph": [
+    "publikation"
+   ],
+   "nt": {
+    "en": "Custom GPT: structured abstracts from aim, method and results.",
+    "de": "Custom GPT: strukturierte Abstracts aus Ziel, Methode und Ergebnissen."
+   }
+  },
+  {
+   "n": "Jenni AI",
+   "url": "jenni.ai",
+   "cat": 4,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "publikation"
+   ],
+   "nt": {
+    "en": "Autocomplete, outlining and automatic citation.",
+    "de": "Autovervollständigung, Gliederung und automatisches Zitieren."
+   }
+  },
+  {
+   "n": "Paperpal",
+   "url": "paperpal.com",
+   "cat": 4,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "publikation"
+   ],
+   "nt": {
+    "en": "Academic language editing and a submission-readiness check.",
+    "de": "Wissenschaftliches Sprachlektorat und Prüfung der Einreichungsreife."
+   }
+  },
+  {
+   "n": "Mimir Mentor",
+   "url": "mimir-mentor.com/en/",
+   "cat": 4,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "publikation",
+    "literatur"
+   ],
+   "nt": {
+    "en": "German provider, site defaults to German (English version available). Search, text generation and correction for academic work.",
+    "de": "Deutscher Anbieter, die Seite öffnet standardmäßig auf Deutsch (englische Version verfügbar). Recherche, Textgenerierung und Korrektur für wissenschaftliche Arbeiten."
+   }
+  },
+  {
+   "n": "TurboScribe",
+   "url": "turboscribe.ai",
+   "cat": 5,
+   "r": 5,
+   "c": 1,
+   "typ": "ki",
+   "ph": [
+    "erhebung"
+   ],
+   "nt": {
+    "en": "Fast, accurate transcription in many languages.",
+    "de": "Schnelle, genaue Transkription in vielen Sprachen."
+   }
+  },
+  {
+   "n": "Sally AI",
+   "url": "sally.io",
+   "cat": 5,
+   "r": 5,
+   "c": 1,
+   "typ": "ki",
+   "ph": [
+    "erhebung",
+    "querschnitt"
+   ],
+   "nt": {
+    "en": "Meeting transcription with summary and action items.",
+    "de": "Transkription von Besprechungen mit Zusammenfassung und Aufgabenliste."
+   }
+  },
+  {
+   "n": "MAXQDA",
+   "url": "maxqda.com",
+   "cat": 5,
+   "r": 4.7,
+   "c": 3,
+   "typ": "et",
+   "ph": [
+    "analyse",
+    "erhebung"
+   ],
+   "nt": {
+    "en": "Professional QDA software incl. AI features; powerful, but a steep learning curve.",
+    "de": "Professionelle QDA-Software inkl. KI-Funktionen; leistungsstark, aber mit steiler Lernkurve."
+   }
+  },
+  {
+   "n": "AudioPen",
+   "url": "audiopen.ai",
+   "cat": 5,
+   "r": 3,
+   "c": 1,
+   "typ": "ki",
+   "ph": [
+    "erhebung"
+   ],
+   "nt": {
+    "en": "Turns voice notes into cleaned-up draft text.",
+    "de": "Wandelt Sprachnotizen in bereinigte Textentwürfe um."
+   }
+  },
+  {
+   "n": "Otter.ai",
+   "url": "otter.ai",
+   "cat": 5,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "erhebung",
+    "querschnitt"
+   ],
+   "nt": {
+    "en": "Meeting transcription; language coverage varies – check before use.",
+    "de": "Transkription von Besprechungen; die Sprachabdeckung variiert – vor der Nutzung prüfen."
+   }
+  },
+  {
+   "n": "Qualitative Insights",
+   "url": null,
+   "cat": 5,
+   "r": null,
+   "c": 0,
+   "typ": "gpt",
+   "ph": [
+    "analyse"
+   ],
+   "nt": {
+    "en": "Custom GPT: themes, patterns and initial codes.",
+    "de": "Custom GPT: Themen, Muster und erste Codes."
+   }
+  },
+  {
+   "n": "Qualitative Data Analysis",
+   "url": null,
+   "cat": 5,
+   "r": null,
+   "c": 0,
+   "typ": "gpt",
+   "ph": [
+    "analyse"
+   ],
+   "nt": {
+    "en": "Custom GPT: thematic coding and condensation.",
+    "de": "Custom GPT: thematisches Kodieren und Verdichten."
+   }
+  },
+  {
+   "n": "Taguette",
+   "url": "taguette.org",
+   "cat": 5,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "analyse"
+   ],
+   "nt": {
+    "en": "Free, open-source QDA: highlight, tag and export.",
+    "de": "Kostenlose Open-Source-QDA-Software: markieren, verschlagworten und exportieren."
+   }
+  },
+  {
+   "n": "NVivo",
+   "url": "lumivero.com/products/nvivo",
+   "cat": 5,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "analyse"
+   ],
+   "nt": {
+    "en": "Established QDA software; paid – check for a campus licence.",
+    "de": "Etablierte QDA-Software; kostenpflichtig – prüfen Sie, ob eine Campuslizenz besteht."
+   }
+  },
+  {
+   "n": "Whisper (OpenAI)",
+   "url": "github.com/openai/whisper",
+   "cat": 5,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "erhebung"
+   ],
+   "nt": {
+    "en": "Open-source speech recognition model; can run locally so that audio stays on your machine.",
+    "de": "Open-Source-Spracherkennungsmodell; kann lokal laufen, sodass die Audiodaten auf Ihrem Rechner bleiben."
+   }
+  },
+  {
+   "n": "Statistik GPT",
+   "url": null,
+   "cat": 6,
+   "r": 5,
+   "c": 3,
+   "typ": "gpt",
+   "ph": [
+    "analyse",
+    "design"
+   ],
+   "nt": {
+    "en": "Custom GPT (German-language): choosing methods, explaining them and writing up results.",
+    "de": "Custom GPT (deutschsprachig): Methoden auswählen, erklären und Ergebnisse verschriftlichen."
+   }
+  },
+  {
+   "n": "Jamovi",
+   "url": "jamovi.org",
+   "cat": 6,
+   "r": 5,
+   "c": 1,
+   "typ": "et",
+   "ph": [
+    "analyse"
+   ],
+   "nt": {
+    "en": "Free; shows the underlying R code.",
+    "de": "Kostenlos; zeigt den zugrunde liegenden R-Code."
+   }
+  },
+  {
+   "n": "Statistic & Data Analyst",
+   "url": null,
+   "cat": 6,
+   "r": 4,
+   "c": 2,
+   "typ": "gpt",
+   "ph": [
+    "analyse"
+   ],
+   "nt": {
+    "en": "Custom GPT: test selection, explaining R/Python/SPSS, methods section.",
+    "de": "Custom GPT: Testauswahl, Erklärung von R/Python/SPSS, Methodenteil."
+   }
+  },
+  {
+   "n": "JASP",
+   "url": "jasp-stats.org",
+   "cat": 6,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "analyse"
+   ],
+   "nt": {
+    "en": "Frequentist and Bayesian analyses with APA-style tables.",
+    "de": "Frequentistische und Bayes-Analysen mit Tabellen im APA-Stil."
+   }
+  },
+  {
+   "n": "Arena (formerly LMArena)",
+   "url": "arena.ai",
+   "cat": 7,
+   "r": 5,
+   "c": 2,
+   "typ": "ki",
+   "ph": [
+    "querschnitt"
+   ],
+   "nt": {
+    "en": "Blind comparison of language models – guidance for choosing a model.",
+    "de": "Blindvergleich von Sprachmodellen – Orientierung bei der Modellwahl."
+   }
+  },
+  {
+   "n": "Obsidian",
+   "url": "obsidian.md",
+   "cat": 7,
+   "r": 5,
+   "c": 2,
+   "typ": "et",
+   "ph": [
+    "querschnitt",
+    "literatur"
+   ],
+   "nt": {
+    "en": "Local, linked knowledge management with Zotero integration.",
+    "de": "Lokale, verknüpfte Wissensverwaltung mit Zotero-Integration."
+   }
+  },
+  {
+   "n": "Notion",
+   "url": "notion.com",
+   "cat": 7,
+   "r": 4.3,
+   "c": 6,
+   "typ": "et",
+   "ph": [
+    "querschnitt"
+   ],
+   "nt": {
+    "en": "Project and literature organisation with AI features.",
+    "de": "Projekt- und Literaturorganisation mit KI-Funktionen."
+   }
+  },
+  {
+   "n": "Gemini Notebook (formerly NotebookLM)",
+   "url": "notebook.google",
+   "cat": 7,
+   "r": 4.3,
+   "c": 10,
+   "typ": "ki",
+   "ph": [
+    "literatur",
+    "querschnitt",
+    "transfer"
+   ],
+   "nt": {
+    "en": "Google’s NotebookLM, now called Gemini Notebook: ask questions of your own sources; audio overviews and flashcards.",
+    "de": "Googles NotebookLM, jetzt Gemini Notebook: Fragen an Ihre eigenen Quellen; Audio-Übersichten und Karteikarten."
+   }
+  },
+  {
+   "n": "STORM",
+   "url": "storm.genie.stanford.edu",
+   "cat": 7,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "idee",
+    "publikation"
+   ],
+   "nt": {
+    "en": "Researches automatically and produces an outline with citations.",
+    "de": "Recherchiert automatisch und erstellt eine Gliederung mit Belegen."
+   }
+  },
+  {
+   "n": "PopAI",
+   "url": "popai.pro",
+   "cat": 7,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "querschnitt"
+   ],
+   "nt": {
+    "en": "All-in-one platform; check subscription terms carefully.",
+    "de": "All-in-one-Plattform; Abonnementbedingungen sorgfältig prüfen."
+   }
+  },
+  {
+   "n": "Litmaps",
+   "url": "litmaps.com",
+   "cat": 0,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "literatur",
+    "idee"
+   ],
+   "nt": {
+    "en": "Citation maps that grow from seed papers and track new publications.",
+    "de": "Zitationskarten, die ausgehend von Startaufsätzen wachsen und neue Veröffentlichungen verfolgen."
+   }
+  },
+  {
+   "n": "ASReview",
+   "url": "asreview.nl",
+   "cat": 2,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "literatur"
+   ],
+   "nt": {
+    "en": "Open-source active-learning screening for systematic reviews.",
+    "de": "Open-Source-Screening mit aktivem Lernen für systematische Übersichtsarbeiten."
+   }
+  },
+  {
+   "n": "Rayyan",
+   "url": "rayyan.ai",
+   "cat": 2,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "literatur"
+   ],
+   "nt": {
+    "en": "Collaborative screening for systematic reviews with AI-assisted prioritisation.",
+    "de": "Kollaboratives Screening für systematische Übersichtsarbeiten mit KI-gestützter Priorisierung."
+   }
+  },
+  {
+   "n": "Covidence",
+   "url": "covidence.org",
+   "cat": 2,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "literatur"
+   ],
+   "nt": {
+    "en": "Systematic review management: screening, extraction and appraisal; often licensed by universities.",
+    "de": "Verwaltung systematischer Übersichtsarbeiten: Screening, Datenextraktion und Bewertung; oft von Hochschulen lizenziert."
+   }
+  },
+  {
+   "n": "scite",
+   "url": "scite.ai",
+   "cat": 2,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "literatur",
+    "publikation"
+   ],
+   "nt": {
+    "en": "Shows whether citing papers support or contrast a finding.",
+    "de": "Zeigt, ob zitierende Aufsätze einen Befund stützen oder ihm widersprechen."
+   }
+  },
+  {
+   "n": "Transkribus",
+   "url": "transkribus.org",
+   "cat": 5,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "erhebung"
+   ],
+   "nt": {
+    "en": "Handwritten text recognition (HTR) for historical documents.",
+    "de": "Handschrifterkennung (HTR) für historische Dokumente."
+   }
+  },
+  {
+   "n": "Overleaf",
+   "url": "overleaf.com",
+   "cat": 4,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "publikation"
+   ],
+   "nt": {
+    "en": "Collaborative LaTeX writing, common for theses in STEM subjects.",
+    "de": "Kollaboratives Schreiben mit LaTeX, in MINT-Fächern für Abschlussarbeiten üblich."
+   }
+  },
+  {
+   "n": "GitHub Copilot",
+   "url": "github.com/features/copilot",
+   "cat": 7,
+   "r": null,
+   "c": 0,
+   "typ": "ki",
+   "ph": [
+    "analyse"
+   ],
+   "nt": {
+    "en": "AI coding assistant in the code editor; in VS Code it can also run local MCP servers. Education offers are available.",
+    "de": "KI-Programmierassistent im Code-Editor; in VS Code kann er auch lokale MCP-Server ausführen. Es gibt Bildungsangebote."
+   }
+  },
+  {
+   "n": "GitHub (repositories)",
+   "url": "github.com",
+   "cat": 7,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "analyse",
+    "querschnitt"
+   ],
+   "nt": {
+    "en": "Hosting for code, data and documentation; via its MCP server or Copilot connector an agent can read repositories, issues and pull requests.",
+    "de": "Hosting für Code, Daten und Dokumentation; über den MCP-Server oder den Copilot-Connector kann ein Agent Repositories, Issues und Pull Requests lesen."
+   }
+  },
+  {
+   "n": "OpenAlex",
+   "url": "openalex.org",
+   "cat": 0,
+   "r": null,
+   "c": 0,
+   "typ": "et",
+   "ph": [
+    "literatur",
+    "idee",
+    "publikation"
+   ],
+   "nt": {
+    "en": "Free, open catalogue of scholarly works, authors, sources and institutions; its MCP server can also check whether references exist.",
+    "de": "Kostenloser, offener Katalog wissenschaftlicher Werke, Autorinnen und Autoren, Quellen und Institutionen; sein MCP-Server kann auch prüfen, ob Literaturangaben existieren."
+   }
+  }
+ ],
+ "mcp": {
+  "OpenAlex": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://help.openalex.org/access/connector/",
+   "note": {
+    "en": "Run by OpenAlex; sign-in, free daily allowance; can also check whether references exist.",
+    "de": "Betrieben von OpenAlex; Anmeldung, kostenloses Tageskontingent; kann auch prüfen, ob Literaturangaben existieren."
+   }
+  },
+  "draw.io": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://www.drawio.com/mcp/",
+   "note": {
+    "en": "Run by draw.io; hosted server, no install; also reads Mermaid and draw.io XML.",
+    "de": "Betrieben von draw.io; gehosteter Server, keine Installation; liest auch Mermaid und draw.io-XML."
+   }
+  },
+  "Figma": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://developers.figma.com/docs/figma-mcp-server/",
+   "note": {
+    "en": "Run by Figma; remote server with sign-in; writing to FigJam and Figma files, call limits depend on the Figma plan.",
+    "de": "Betrieben von Figma; Remote-Server mit Anmeldung; Schreiben in FigJam- und Figma-Dateien, Aufruflimits hängen vom Figma-Tarif ab."
+   }
+  },
+  "Paper Search MCP": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/openags/paper-search-mcp",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Searches several open sources at once (e.g. OpenAlex, Crossref, Semantic Scholar).",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Durchsucht mehrere offene Quellen gleichzeitig (z. B. OpenAlex, Crossref, Semantic Scholar)."
+   }
+  },
+  "Semantic Scholar": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://allenai.org/asta/resources/mcp",
+   "note": {
+    "en": "Ai2 Asta server on the Semantic Scholar corpus; API key optional.",
+    "de": "Asta-Server von Ai2 auf dem Semantic-Scholar-Korpus; API-Schlüssel optional."
+   }
+  },
+  "Elicit": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://support.elicit.com/en/articles/14757404-use-elicit-via-mcp-server",
+   "note": {
+    "en": "Sign-in with your account; Pro plan or higher.",
+    "de": "Anmeldung mit Ihrem Konto; Pro-Tarif oder höher."
+   }
+  },
+  "Perplexity": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://docs.perplexity.ai/docs/getting-started/integrations/mcp-server",
+   "note": {
+    "en": "Hosted server with sign-in or API key, or local; uses the paid Perplexity API.",
+    "de": "Gehosteter Server mit Anmeldung oder API-Schlüssel, oder lokal; nutzt die kostenpflichtige Perplexity-API."
+   }
+  },
+  "Consensus": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://docs.consensus.app/consensus-mcp",
+   "note": {
+    "en": "Sign-in; small free monthly allowance.",
+    "de": "Anmeldung; kleines kostenloses Monatskontingent."
+   }
+  },
+  "DeepL Write": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://developers.deepl.com/docs/mcp",
+   "note": {
+    "en": "Remote with sign-in or local with API key; rephrasing needs Write.",
+    "de": "Remote mit Anmeldung oder lokal mit API-Schlüssel; Umformulieren erfordert Write."
+   }
+  },
+  "Napkin AI": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://api.napkin.ai/faq/index.html",
+   "note": {
+    "en": "Beta; sign-in, uses Napkin credits.",
+    "de": "Beta; Anmeldung, verbraucht Napkin-Credits."
+   }
+  },
+  "Litmaps": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://docs.litmaps.com/en/articles/17508256-use-litmaps-with-your-ai-assistant-mcp",
+   "note": {
+    "en": "Beta; reads and edits your maps.",
+    "de": "Beta; liest und bearbeitet Ihre Karten."
+   }
+  },
+  "scite": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://scite.ai/mcp",
+   "note": {
+    "en": "Sign-in; paid plan or trial.",
+    "de": "Anmeldung; kostenpflichtiger Tarif oder Testzugang."
+   }
+  },
+  "Sally AI": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://www.sally.io/api-integration/claude",
+   "note": {
+    "en": "Read-only access to meetings; admin must enable it.",
+    "de": "Lesezugriff auf Meetings; muss von der Administration freigeschaltet werden."
+   }
+  },
+  "Otter.ai": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+   "note": {
+    "en": "Sign-in; search and fetch your transcripts.",
+    "de": "Anmeldung; Suche und Abruf Ihrer Transkripte."
+   }
+  },
+  "Notion": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://developers.notion.com/guides/mcp/overview",
+   "note": {
+    "en": "Remote with sign-in, or local with a token.",
+    "de": "Remote mit Anmeldung oder lokal mit Token."
+   }
+  },
+  "GitHub (repositories)": {
+   "kind": "o",
+   "remote": true,
+   "doc": "https://github.com/github/github-mcp-server",
+   "note": {
+    "en": "GitHub’s official server for repositories, issues and pull requests; hosted or local.",
+    "de": "Offizieller GitHub-Server für Repositories, Issues und Pull Requests; gehostet oder lokal."
+   }
+  },
+  "JASP": {
+   "kind": "o",
+   "remote": false,
+   "doc": "https://github.com/jasp-stats/jasp-mcp",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Early stage; JASP must be running with its remote RPC server enabled.",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Frühes Stadium; JASP muss laufen und der Remote-RPC-Server aktiviert sein."
+   }
+  },
+  "Zotero": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/54yyyu/zotero-mcp",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Reads your local Zotero library or uses the Zotero web API.",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Liest Ihre lokale Zotero-Bibliothek oder nutzt die Zotero-Web-API."
+   }
+  },
+  "EndNote": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/gokmengokhan/endnote-mcp",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Works on an XML export of your library.",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Arbeitet mit einem XML-Export Ihrer Bibliothek."
+   }
+  },
+  "Mendeley": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/pallaprolus/mendeley-mcp",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Uses the Mendeley API; register your own app.",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Nutzt die Mendeley-API; registrieren Sie Ihre eigene App."
+   }
+  },
+  "Google Scholar": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/JackKuo666/Google-Scholar-MCP-Server",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. No official API – scrapes results; may break.",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Keine offizielle API – liest Ergebnisse per Scraping aus; kann ausfallen."
+   }
+  },
+  "Whisper (OpenAI)": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/kachiO/mlx-whisper-mcp",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Apple Silicon Macs only; not updated since June 2025. Audio stays on your machine.",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Nur für Macs mit Apple Silicon; seit Juni 2025 nicht aktualisiert. Die Audiodaten bleiben auf Ihrem Rechner."
+   }
+  },
+  "Jamovi": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/yjm110517/jamovi-mcp",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Controls a local jamovi installation.",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Steuert eine lokale jamovi-Installation."
+   }
+  },
+  "Obsidian": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/MarkusPfundstein/mcp-obsidian",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Needs the Local REST API plugin.",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Benötigt das Plugin „Local REST API“."
+   }
+  },
+  "Transkribus": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/lazyants/transkribus-mcp-server",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Needs your Transkribus credentials.",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Benötigt Ihre Transkribus-Zugangsdaten."
+   }
+  },
+  "Overleaf": {
+   "kind": "c",
+   "remote": false,
+   "doc": "https://github.com/mjyoo2/OverleafMCP",
+   "note": {
+    "en": "Runs locally – e.g. in VS Code or a desktop assistant. Via Overleaf’s Git integration (paid plans).",
+    "de": "Läuft lokal – z. B. in VS Code oder einem Desktop-Assistenten. Über die Git-Integration von Overleaf (kostenpflichtige Tarife)."
+   }
+  }
+ },
+ "m365": {
+  "Consensus": [
+   [
+    "copilot",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery-microsoft"
+   ]
+  ],
+  "scite": [
+   [
+    "copilot",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview"
+   ]
+  ],
+  "DeepL Write": [
+   [
+    "copilot",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery-microsoft"
+   ],
+   [
+    "word",
+    "https://www.deepl.com/en/word-addin"
+   ],
+   [
+    "power",
+    "https://learn.microsoft.com/en-us/connectors/deepl/"
+   ],
+   [
+    "outlook",
+    "https://marketplace.microsoft.com/en-us/product/WA200006684"
+   ]
+  ],
+  "Notion": [
+   [
+    "copilot",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview"
+   ],
+   [
+    "teams",
+    "https://www.notion.com/help/microsoft-teams-notifications"
+   ],
+   [
+    "powerip",
+    "https://learn.microsoft.com/en-us/connectors/notionip/"
+   ]
+  ],
+  "GitHub (repositories)": [
+   [
+    "copilot",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/github-cloud-knowledge-overview"
+   ],
+   [
+    "teams",
+    "https://docs.github.com/en/integrations/how-tos/teams/integrate-github-with-teams"
+   ],
+   [
+    "power",
+    "https://learn.microsoft.com/en-us/connectors/github/"
+   ]
+  ],
+  "Perplexity": [
+   [
+    "word",
+    "https://marketplace.microsoft.com/en-us/product/WA200010847"
+   ],
+   [
+    "teams",
+    "https://marketplace.microsoft.com/en-us/product/WA200010619"
+   ],
+   [
+    "powerip",
+    "https://learn.microsoft.com/en-us/connectors/perplexityai/"
+   ],
+   [
+    "outlook",
+    "https://marketplace.microsoft.com/en-us/product/WA200010911"
+   ]
+  ],
+  "Zotero": [
+   [
+    "word",
+    "https://www.zotero.org/support/word_processor_plugin_usage"
+   ],
+   [
+    "edge",
+    "https://microsoftedge.microsoft.com/addons/detail/nmhdhpibnnopknkmonacoephklnflpho"
+   ]
+  ],
+  "Citavi": [
+   [
+    "word",
+    "https://marketplace.microsoft.com/en-us/product/WA200002891"
+   ]
+  ],
+  "EndNote": [
+   [
+    "word",
+    "https://docs.endnote.com/docs/endnote/2025/v1/windows/en/content/09word/installing_cwywsprtinword.htm"
+   ],
+   [
+    "edge",
+    "https://microsoftedge.microsoft.com/addons/detail/endnote-click/jaleebmaoohbjjohjlfmihkkopgfibne"
+   ]
+  ],
+  "Mendeley": [
+   [
+    "word",
+    "https://marketplace.microsoft.com/en-us/product/wa104382081"
+   ],
+   [
+    "edge",
+    "https://microsoftedge.microsoft.com/addons/detail/mendeley-web-importer/mbcgpelmjnpfbdnkbebdlfjmeckpnhha"
+   ]
+  ],
+  "Paperpile": [
+   [
+    "word",
+    "https://paperpile.com/word-plugin/"
+   ]
+  ],
+  "Paperpal": [
+   [
+    "word",
+    "https://marketplace.microsoft.com/en-us/product/wa200001361"
+   ]
+  ],
+  "QuillBot": [
+   [
+    "word",
+    "https://quillbot.com/word"
+   ],
+   [
+    "edge",
+    "https://microsoftedge.microsoft.com/addons/detail/quillbot-ai-writing-and-/cphpplikchcioccedpjacdanfibnimmh"
+   ]
+  ],
+  "Google Scholar": [
+   [
+    "edge",
+    "https://microsoftedge.microsoft.com/addons/detail/google-scholar-button/fciokoalnclhnonofghacdplgpafdcgl"
+   ]
+  ],
+  "Otter.ai": [
+   [
+    "teams",
+    "https://otter.ai/integration/microsoft-teams"
+   ],
+   [
+    "outlook",
+    "https://otter.ai/integration/microsoft-outlook"
+   ],
+   [
+    "files",
+    "https://otter.ai/integration/microsoft-onedrive"
+   ]
+  ],
+  "Sally AI": [
+   [
+    "teams",
+    "https://www.sally.io/api-integration/microsoft-teams"
+   ],
+   [
+    "outlook",
+    "https://www.sally.io/api-integration/automation-zapier-make-power-automate"
+   ]
+  ],
+  "Whisper (OpenAI)": [
+   [
+    "azure",
+    "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/whisper-overview"
+   ]
+  ]
+ },
+ "m365_types": {
+  "copilot": {
+   "en": "Copilot connector",
+   "de": "Copilot-Connector"
+  },
+  "word": {
+   "en": "Word add-in",
+   "de": "Word-Add-in"
+  },
+  "teams": {
+   "en": "Teams",
+   "de": "Teams"
+  },
+  "power": {
+   "en": "Power Automate",
+   "de": "Power Automate"
+  },
+  "powerip": {
+   "en": "Power Automate (third-party connector)",
+   "de": "Power Automate (Connector von Drittanbietern)"
+  },
+  "outlook": {
+   "en": "Outlook",
+   "de": "Outlook"
+  },
+  "files": {
+   "en": "OneDrive / SharePoint",
+   "de": "OneDrive / SharePoint"
+  },
+  "edge": {
+   "en": "Edge extension",
+   "de": "Edge-Erweiterung"
+  },
+  "azure": {
+   "en": "Azure AI Speech",
+   "de": "Azure AI Speech"
+  }
+ },
+ "repos": {
+  "ars-deep-research": {
+   "label": "academic-research-skills · deep-research",
+   "url": "https://github.com/Imbad0202/academic-research-skills/tree/main/deep-research",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "ars-paper": {
+   "label": "academic-research-skills · academic-paper",
+   "url": "https://github.com/Imbad0202/academic-research-skills/tree/main/academic-paper",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "ars-reviewer": {
+   "label": "academic-research-skills · paper reviewer",
+   "url": "https://github.com/Imbad0202/academic-research-skills/tree/main/academic-paper-reviewer",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "ars-screener": {
+   "label": "academic-research-skills · sr-screener",
+   "url": "https://github.com/Imbad0202/academic-research-skills/tree/main/sr-screener",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "kd-literature-review": {
+   "label": "scientific-agent-skills · literature-review",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/literature-review",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "kd-peer-review": {
+   "label": "scientific-agent-skills · peer-review",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/peer-review",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "kd-writing": {
+   "label": "scientific-agent-skills · scientific-writing",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/scientific-writing",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "kd-stats": {
+   "label": "scientific-agent-skills · statistical-analysis",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/statistical-analysis",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "kd-power": {
+   "label": "scientific-agent-skills · statistical-power",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/statistical-power",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "kd-hypothesis": {
+   "label": "scientific-agent-skills · hypothesis-generation",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/hypothesis-generation",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "kd-citation": {
+   "label": "scientific-agent-skills · citation-management",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/citation-management",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "kd-viz": {
+   "label": "scientific-agent-skills · scientific-visualization",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/scientific-visualization",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "kd-eda": {
+   "label": "scientific-agent-skills · exploratory-data-analysis",
+   "url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/exploratory-data-analysis",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "slr-prisma": {
+   "label": "slr-prisma",
+   "url": "https://github.com/keemanxp/slr-prisma",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "prisma2020": {
+   "label": "PRISMA2020 flow diagram",
+   "url": "https://github.com/prisma-flowdiagram/PRISMA2020",
+   "type": {
+    "en": "R package and Shiny web app (not an agent skill)",
+    "de": "R-Paket und Shiny-Web-App (kein Agent Skill)"
+   }
+  },
+  "peer-review-panel": {
+   "label": "ai-peer-review-skill",
+   "url": "https://github.com/AlexWortega/ai-peer-review-skill",
+   "type": {
+    "en": "Agent skill",
+    "de": "Agent Skill"
+   }
+  },
+  "seminr": {
+   "label": "SEMinR",
+   "url": "https://github.com/sem-in-r/seminr",
+   "type": {
+    "en": "R package for structural equation modelling, PLS-SEM and CB-SEM (not an agent skill)",
+    "de": "R-Paket für Strukturgleichungsmodelle, PLS-SEM und CB-SEM (kein Agent Skill)"
+   }
+  },
+  "lavaan": {
+   "label": "lavaan",
+   "url": "https://github.com/yrosseel/lavaan",
+   "type": {
+    "en": "R package for structural equation modelling (not an agent skill)",
+    "de": "R-Paket für Strukturgleichungsmodelle (kein Agent Skill)"
+   }
+  },
+  "metafor": {
+   "label": "metafor",
+   "url": "https://github.com/wviechtb/metafor",
+   "type": {
+    "en": "R package for meta-analysis (not an agent skill)",
+    "de": "R-Paket für Metaanalysen (kein Agent Skill)"
+   }
+  },
+  "truman": {
+   "label": "Truman platform (2.0)",
+   "url": "https://github.com/cornellsocialmedialab/truman_2023",
+   "type": {
+    "en": "Open-source mock social network for experiments (software, not an agent skill)",
+    "de": "Open-Source-Nachbildung eines sozialen Netzwerks für Experimente (Software, kein Agent Skill)"
+   }
+  },
+  "mock-social-media": {
+   "label": "Mock Social Media Website Tool",
+   "url": "https://docs.studysocial.media",
+   "type": {
+    "en": "Open-source research tool for mock feeds (software, not an agent skill)",
+    "de": "Open-Source-Forschungswerkzeug für nachgebildete Feeds (Software, kein Agent Skill)"
+   }
+  },
+  "awesome-copilot": {
+   "label": "awesome-copilot",
+   "url": "https://github.com/github/awesome-copilot",
+   "type": {
+    "en": "Community collection of instructions, agents and skills for GitHub Copilot (a collection, not a single skill)",
+    "de": "Community-Sammlung von Anweisungen, Agenten und Skills für GitHub Copilot (eine Sammlung, kein einzelner Skill)"
+   }
+  }
+ }
+}

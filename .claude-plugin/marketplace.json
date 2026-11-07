@@ -1,0 +1,19 @@
+{
+  "name": "hhn-ai-research",
+  "description": "HHN knowledge base: AI in the Research Process",
+  "owner": {
+    "name": "Manuel Kern"
+  },
+  "plugins": [
+    {
+      "name": "ai-research-en",
+      "source": "./plugins/ai-research-en",
+      "description": "AI use cases along the research process as skills – from the HHN knowledge base “AI in the Research Process” (English)."
+    },
+    {
+      "name": "ai-research-de",
+      "source": "./plugins/ai-research-de",
+      "description": "KI-Use-Cases entlang des Forschungsprozesses als Skills – aus der HHN-Wissensbasis „KI im Forschungsprozess“ (Deutsch)."
+    }
+  ]
+}

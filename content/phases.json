@@ -1,0 +1,385 @@
+[
+ {
+  "id": "idee",
+  "en": {
+   "name": "Ideation & Research Question",
+   "short": "Idea & Question",
+   "q": "Which relevant, open question is worth investigating?",
+   "goal": "Identify a research gap and formulate a precise, answerable research question.",
+   "tasks": [
+    "Scope the research field",
+    "Check relevance and novelty",
+    "Formulate the research question and objectives",
+    "Derive hypotheses or propositions"
+   ],
+   "limits": [
+    "Apparent “gaps” may simply be gaps in the model’s knowledge – always verify against subject databases.",
+    "Popularity bias: models reinforce established mainstream topics.",
+    "Judging originality and relevance remains your task – and your supervisor’s."
+   ],
+   "disc": [
+    "Where do you get stuck most when narrowing down a topic?",
+    "Under what conditions would you trust an AI-generated research question?"
+   ]
+  },
+  "de": {
+   "name": "Ideenfindung und Forschungsfrage",
+   "short": "Idee & Frage",
+   "q": "Welche relevante, offene Frage lohnt die Untersuchung?",
+   "goal": "Eine Forschungslücke identifizieren und eine präzise, beantwortbare Forschungsfrage formulieren.",
+   "tasks": [
+    "Forschungsfeld eingrenzen",
+    "Relevanz und Neuheit prüfen",
+    "Forschungsfrage und Ziele formulieren",
+    "Hypothesen oder Propositionen ableiten"
+   ],
+   "limits": [
+    "Scheinbare „Lücken“ können schlicht Lücken im Wissen des Modells sein – prüfen Sie stets in Fachdatenbanken.",
+    "Popularitätsverzerrung: Modelle verstärken etablierte Mainstream-Themen.",
+    "Die Beurteilung von Originalität und Relevanz bleibt Ihre Aufgabe – und die Ihrer Betreuungsperson."
+   ],
+   "disc": [
+    "Wo kommen Sie bei der Themeneingrenzung am häufigsten ins Stocken?",
+    "Unter welchen Bedingungen würden Sie einer KI-generierten Forschungsfrage vertrauen?"
+   ]
+  }
+ },
+ {
+  "id": "literatur",
+  "en": {
+   "name": "Literature Search & Review",
+   "short": "Literature",
+   "q": "What do we already know – and how robust is it?",
+   "goal": "Find, understand, appraise and synthesise relevant literature into a state of the art.",
+   "tasks": [
+    "Choose the review type and protocol",
+    "Develop a search strategy",
+    "Search subject databases",
+    "Read and understand key papers",
+    "Screen, extract and appraise",
+    "Synthesise findings"
+   ],
+   "limits": [
+    "Fabricated or misattributed references – verify every source.",
+    "Uploading papers: publisher licences and your library’s guidance decide what may be shared with AI tools.",
+    "Coverage gaps: paywalled content and non-English literature are often missing.",
+    "Systematic reviews need a pre-specified, ideally registered protocol and reproducible, documented decisions, reported in line with PRISMA 2020 – document every AI step."
+   ],
+   "disc": [
+    "Which review step takes you the most time?",
+    "How would you document AI steps so that your review stays reproducible?"
+   ]
+  },
+  "de": {
+   "name": "Literaturrecherche und Literaturübersicht",
+   "short": "Literatur",
+   "q": "Was wissen wir bereits – und wie belastbar ist es?",
+   "goal": "Relevante Literatur finden, verstehen, bewerten und zu einem Forschungsstand zusammenführen.",
+   "tasks": [
+    "Art der Übersichtsarbeit und Protokoll festlegen",
+    "Suchstrategie entwickeln",
+    "Fachdatenbanken durchsuchen",
+    "Zentrale Aufsätze lesen und verstehen",
+    "Screenen, extrahieren und bewerten",
+    "Befunde synthetisieren"
+   ],
+   "limits": [
+    "Erfundene oder falsch zugeordnete Literaturangaben – prüfen Sie jede Quelle.",
+    "Hochladen von Aufsätzen: Verlagslizenzen und die Vorgaben Ihrer Bibliothek bestimmen, was mit KI-Werkzeugen geteilt werden darf.",
+    "Abdeckungslücken: Inhalte hinter Bezahlschranken und nicht englischsprachige Literatur fehlen oft.",
+    "Systematische Übersichtsarbeiten brauchen ein vorab festgelegtes, möglichst registriertes Protokoll und nachvollziehbare, dokumentierte Entscheidungen, berichtet nach PRISMA 2020 – dokumentieren Sie jeden KI-Schritt."
+   ],
+   "disc": [
+    "Welcher Schritt der Übersichtsarbeit kostet Sie am meisten Zeit?",
+    "Wie würden Sie KI-Schritte dokumentieren, damit Ihre Übersichtsarbeit reproduzierbar bleibt?"
+   ]
+  }
+ },
+ {
+  "id": "design",
+  "en": {
+   "name": "Research Design & Methodology",
+   "short": "Design & Methods",
+   "q": "How do we answer the question validly and ethically?",
+   "goal": "Develop a robust design with a suitable method, sample and instruments, plus ethics approval and a data management plan.",
+   "tasks": [
+    "Choose method and design",
+    "Develop instruments (questionnaire, interview guide, protocol)",
+    "Plan the sample",
+    "Ethics approval and data management plan",
+    "Pre-registration where relevant"
+   ],
+   "limits": [
+    "Synthetic “respondents” do not validly represent real populations.",
+    "Methodological responsibility and disciplinary conventions rest with you and your supervisory team.",
+    "Ethics committees expect study-specific reflection – generic AI text on consent or anonymisation can be wrong."
+   ],
+   "disc": [
+    "Where could AI measurably improve the quality of your instruments?",
+    "What role should synthetic data be allowed to play in your research?"
+   ]
+  },
+  "de": {
+   "name": "Forschungsdesign und Methodik",
+   "short": "Design & Methoden",
+   "q": "Wie beantworten wir die Frage valide und ethisch vertretbar?",
+   "goal": "Ein belastbares Design mit passender Methode, Stichprobe und passenden Instrumenten entwickeln, dazu Ethikvotum und Datenmanagementplan.",
+   "tasks": [
+    "Methode und Design wählen",
+    "Instrumente entwickeln (Fragebogen, Interviewleitfaden, Protokoll)",
+    "Stichprobe planen",
+    "Ethikvotum und Datenmanagementplan",
+    "Präregistrierung, wo relevant"
+   ],
+   "limits": [
+    "Synthetische „Befragte“ bilden reale Populationen nicht valide ab.",
+    "Die methodische Verantwortung und die fachlichen Konventionen liegen bei Ihnen und Ihrem Betreuungsteam.",
+    "Ethikkommissionen erwarten studienspezifische Überlegungen – generische KI-Texte zu Einwilligung oder Anonymisierung können falsch sein."
+   ],
+   "disc": [
+    "Wo könnte KI die Qualität Ihrer Instrumente messbar verbessern?",
+    "Welche Rolle sollen synthetische Daten in Ihrer Forschung spielen dürfen?"
+   ]
+  }
+ },
+ {
+  "id": "erhebung",
+  "en": {
+   "name": "Data Collection",
+   "short": "Data Collection",
+   "q": "How do we obtain the data we need – efficiently and lawfully?",
+   "goal": "Collect, capture and document high-quality data.",
+   "tasks": [
+    "Field access and recruitment",
+    "Fieldwork (interviews, surveys, experiments, archives)",
+    "Transcription",
+    "Capturing unstructured sources",
+    "Documentation"
+   ],
+   "limits": [
+    "Process personal and sensitive data only in approved, protected environments – and only as your ethics approval allows.",
+    "Participant information and ethics approval must cover AI processing; clarify the legal basis with your ethics committee or data protection officer.",
+    "Check transcription and annotation errors systematically through sampling."
+   ],
+   "disc": [
+    "Do you know which of your data may go into which AI tool?",
+    "Where is your biggest manual data-capture effort?"
+   ]
+  },
+  "de": {
+   "name": "Datenerhebung",
+   "short": "Datenerhebung",
+   "q": "Wie gewinnen wir die benötigten Daten – effizient und rechtmäßig?",
+   "goal": "Hochwertige Daten erheben, erfassen und dokumentieren.",
+   "tasks": [
+    "Feldzugang und Rekrutierung",
+    "Feldarbeit (Interviews, Befragungen, Experimente, Archive)",
+    "Transkription",
+    "Unstrukturierte Quellen erfassen",
+    "Dokumentation"
+   ],
+   "limits": [
+    "Verarbeiten Sie personenbezogene und sensible Daten nur in genehmigten, geschützten Umgebungen – und nur so, wie Ihr Ethikvotum es erlaubt.",
+    "Teilnehmendeninformation und Ethikvotum müssen die KI-Verarbeitung abdecken; klären Sie die Rechtsgrundlage mit Ihrer Ethikkommission oder Ihrer bzw. Ihrem Datenschutzbeauftragten.",
+    "Prüfen Sie Transkriptions- und Annotationsfehler systematisch per Stichprobe."
+   ],
+   "disc": [
+    "Wissen Sie, welche Ihrer Daten in welches KI-Werkzeug dürfen?",
+    "Wo liegt Ihr größter manueller Erfassungsaufwand?"
+   ]
+  }
+ },
+ {
+  "id": "analyse",
+  "en": {
+   "name": "Data Preparation & Analysis",
+   "short": "Analysis",
+   "q": "What do the data say – and how sure are we?",
+   "goal": "Clean and analyse data and derive results transparently and reproducibly.",
+   "tasks": [
+    "Data cleaning",
+    "Quantitative analysis",
+    "Qualitative analysis",
+    "Code, simulation and visualisation",
+    "Robustness checks"
+   ],
+   "limits": [
+    "Plausible-looking but wrong code – verify results independently.",
+    "Easier “fishing” for significance: pre-specify analysis plans.",
+    "Reproducibility: record date, tool, prompt and the saved output; keep analyses as code."
+   ],
+   "disc": [
+    "Which analysis steps would you never leave to AI without checking?",
+    "How do you keep your analysis reproducible when the tools keep changing?"
+   ]
+  },
+  "de": {
+   "name": "Datenaufbereitung und Analyse",
+   "short": "Analyse",
+   "q": "Was sagen die Daten – und wie sicher sind wir?",
+   "goal": "Daten bereinigen und analysieren und Ergebnisse transparent und reproduzierbar ableiten.",
+   "tasks": [
+    "Datenbereinigung",
+    "Quantitative Analyse",
+    "Qualitative Analyse",
+    "Code, Simulation und Visualisierung",
+    "Robustheitsprüfungen"
+   ],
+   "limits": [
+    "Plausibel aussehender, aber falscher Code – überprüfen Sie Ergebnisse unabhängig.",
+    "Leichteres „Fischen“ nach Signifikanz: legen Sie Analysepläne vorab fest.",
+    "Reproduzierbarkeit: Halten Sie Datum, Werkzeug, Prompt und die gespeicherte Ausgabe fest; führen Sie Analysen als Code."
+   ],
+   "disc": [
+    "Welche Analyseschritte würden Sie nie ungeprüft der KI überlassen?",
+    "Wie halten Sie Ihre Analyse reproduzierbar, wenn sich die Werkzeuge ständig ändern?"
+   ]
+  }
+ },
+ {
+  "id": "publikation",
+  "en": {
+   "name": "Writing, Thesis & Publishing",
+   "short": "Writing & Thesis",
+   "q": "How do we make results verifiable and visible?",
+   "goal": "Write the thesis and papers clearly, accurately and in line with the rules – and be able to defend every part of it.",
+   "tasks": [
+    "Structure and write chapters and papers",
+    "Revise language and style",
+    "Select a journal and format",
+    "Submission, peer review and revision",
+    "Viva preparation"
+   ],
+   "limits": [
+    "AI-drafted text must be reworked and declared – many universities restrict it in the thesis, so check the rules before drafting with AI.",
+    "AI cannot be an author; responsibility lies with you (COPE). In a thesis, you must be able to explain and defend every passage.",
+    "Declare AI use as your university and publisher require.",
+    "Co-authored or third parties’ unpublished manuscripts only with their consent – never upload peer-review manuscripts."
+   ],
+   "disc": [
+    "How would you declare AI use in your thesis or paper?",
+    "Where does language polishing end and substantive contribution begin?"
+   ]
+  },
+  "de": {
+   "name": "Schreiben, Abschlussarbeit und Publizieren",
+   "short": "Schreiben",
+   "q": "Wie machen wir Ergebnisse nachprüfbar und sichtbar?",
+   "goal": "Abschlussarbeit und Aufsätze klar, korrekt und regelkonform schreiben – und jeden Teil davon verteidigen können.",
+   "tasks": [
+    "Kapitel und Aufsätze gliedern und schreiben",
+    "Sprache und Stil überarbeiten",
+    "Zeitschrift und Format auswählen",
+    "Einreichung, Begutachtung und Überarbeitung",
+    "Vorbereitung auf die Disputation"
+   ],
+   "limits": [
+    "KI-entworfene Texte müssen überarbeitet und deklariert werden – viele Hochschulen schränken sie in der Abschlussarbeit ein; prüfen Sie die Regeln, bevor Sie mit KI entwerfen.",
+    "KI kann keine Autorenschaft übernehmen; die Verantwortung liegt bei Ihnen (COPE). In einer Abschlussarbeit müssen Sie jede Passage erklären und verteidigen können.",
+    "Deklarieren Sie die KI-Nutzung so, wie Ihre Hochschule und der Verlag es verlangen.",
+    "Unveröffentlichte Manuskripte von Koautorinnen und Koautoren oder Dritten nur mit deren Zustimmung – laden Sie niemals Manuskripte aus Begutachtungsverfahren hoch."
+   ],
+   "disc": [
+    "Wie würden Sie die KI-Nutzung in Ihrer Abschlussarbeit oder Ihrem Aufsatz deklarieren?",
+    "Wo endet das sprachliche Glätten und wo beginnt der inhaltliche Beitrag?"
+   ]
+  }
+ },
+ {
+  "id": "transfer",
+  "en": {
+   "name": "Knowledge Exchange & Impact",
+   "short": "Impact",
+   "q": "Who should know about it – and what should change?",
+   "goal": "Communicate findings to each audience, and create and evidence societal impact.",
+   "tasks": [
+    "Conference talks and posters",
+    "Science communication",
+    "Transfer to practice and policy",
+    "Teaching duties",
+    "Documenting impact"
+   ],
+   "limits": [
+    "Simplification must not overstate findings – key messages need your expert sign-off.",
+    "Label AI-generated images as such and check copyright and image rights.",
+    "Marking or feedback on student work with AI is usually not permitted – check your department’s rules."
+   ],
+   "disc": [
+    "Which formats do you never get round to producing?",
+    "Who checks a simplified version of your findings before it goes out?"
+   ]
+  },
+  "de": {
+   "name": "Wissensaustausch und Wirkung",
+   "short": "Wirkung",
+   "q": "Wer sollte davon erfahren – und was soll sich ändern?",
+   "goal": "Befunde zielgruppengerecht vermitteln sowie gesellschaftliche Wirkung erzeugen und belegen.",
+   "tasks": [
+    "Konferenzvorträge und Poster",
+    "Wissenschaftskommunikation",
+    "Transfer in Praxis und Politik",
+    "Lehrverpflichtungen",
+    "Wirkung dokumentieren"
+   ],
+   "limits": [
+    "Vereinfachung darf Befunde nicht überhöhen – Kernbotschaften brauchen Ihre fachliche Freigabe.",
+    "Kennzeichnen Sie KI-generierte Bilder als solche und prüfen Sie Urheber- und Bildrechte.",
+    "Die Bewertung oder Rückmeldung zu Studierendenarbeiten mit KI ist meist nicht erlaubt – prüfen Sie die Regeln Ihrer Fakultät."
+   ],
+   "disc": [
+    "Welche Formate kommen bei Ihnen nie zustande?",
+    "Wer prüft eine vereinfachte Fassung Ihrer Befunde, bevor sie hinausgeht?"
+   ]
+  }
+ },
+ {
+  "id": "querschnitt",
+  "cross": true,
+  "en": {
+   "name": "Your research toolkit: planning, supervision, data & skills",
+   "short": "Toolkit",
+   "q": "What helps across the whole project – thesis or doctorate?",
+   "goal": "Plan your doctorate, work well with your supervisors, manage your data and build skills – responsibly.",
+   "tasks": [
+    "PhD planning and time management",
+    "Supervision",
+    "Annual and progress reviews",
+    "Research data management",
+    "Skills development",
+    "AI declarations and integrity"
+   ],
+   "limits": [
+    "Your university’s AI policy and data rules decide which tools you may use – check before uploading anything.",
+    "Use the university-provided tool with your university login rather than personal accounts.",
+    "Keep your thesis your own: be ready to explain and defend every passage in your viva."
+   ],
+   "disc": [
+    "What would go into your own AI use log – and who would read it?",
+    "Which part of your doctorate would you never hand to AI?"
+   ]
+  },
+  "de": {
+   "name": "Ihr Werkzeugkasten: Planung, Betreuung, Daten und Kompetenzen",
+   "short": "Werkzeugkasten",
+   "q": "Was hilft über das ganze Vorhaben hinweg – Abschlussarbeit oder Promotion?",
+   "goal": "Ihre Promotion planen, gut mit Ihren Betreuungspersonen zusammenarbeiten, Ihre Daten verwalten und Kompetenzen aufbauen – verantwortungsvoll.",
+   "tasks": [
+    "Promotionsplanung und Zeitmanagement",
+    "Betreuung",
+    "Jahres- und Fortschrittsgespräche",
+    "Forschungsdatenmanagement",
+    "Kompetenzentwicklung",
+    "KI-Erklärungen und Integrität"
+   ],
+   "limits": [
+    "Die KI-Richtlinie und die Datenregeln Ihrer Hochschule bestimmen, welche Werkzeuge Sie nutzen dürfen – prüfen Sie dies, bevor Sie etwas hochladen.",
+    "Nutzen Sie das von der Hochschule bereitgestellte Werkzeug mit Ihrem Hochschul-Login statt privater Konten.",
+    "Halten Sie Ihre Arbeit Ihre eigene: Seien Sie bereit, jede Passage in der Disputation zu erklären und zu verteidigen."
+   ],
+   "disc": [
+    "Was gehörte in Ihr eigenes Protokoll der KI-Nutzung – und wer würde es lesen?",
+    "Welchen Teil Ihrer Promotion würden Sie nie an KI abgeben?"
+   ]
+  }
+ }
+]

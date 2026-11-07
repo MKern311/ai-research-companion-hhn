@@ -1,0 +1,9 @@
+{
+  "name": "ai-research-de",
+  "description": "KI-Use-Cases entlang des Forschungsprozesses als Skills – aus der HHN-Wissensbasis „KI im Forschungsprozess“ (Deutsch).",
+  "version": "2.0.0",
+  "author": {
+    "name": "Manuel Kern"
+  },
+  "homepage": "https://mkern311.github.io/ai-research-companion-hhn/"
+}

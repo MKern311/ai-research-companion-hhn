@@ -1,0 +1,531 @@
+{
+  "checked": "2026-11-07",
+  "mcp": {
+    "OpenAlex": {
+      "remoteUrl": "https://mcp.openalex.org/mcp",
+      "transport": "streamable-http",
+      "auth": "oauth",
+      "auth_note": "Sign in at openalex.org and approve; queries run on your OpenAlex API key and daily budget, no key to paste.",
+      "local": null,
+      "install": null,
+      "cli": "claude mcp add --transport http openalex https://mcp.openalex.org/mcp",
+      "plan": "Free; free OpenAlex account required, usage counts against your daily budget.",
+      "verified": true,
+      "source": "https://help.openalex.org/access/connector/",
+      "note_en": "Hosted by OpenAlex – sign in with a free account; usage counts against your daily OpenAlex budget.",
+      "note_de": "Von OpenAlex betrieben – Anmeldung mit kostenlosem Konto; Abfragen zählen gegen Ihr tägliches OpenAlex-Kontingent."
+    },
+    "draw.io": {
+      "remoteUrl": "https://mcp.draw.io/mcp",
+      "transport": "http",
+      "transport_note": "Docs use \"type\": \"http\" / --transport http; streamable HTTP vs SSE not named explicitly.",
+      "auth": "none",
+      "auth_note": "Docs: the server needs no sign-in.",
+      "local": {"command": "npx", "args": ["-y", "@drawio/mcp"], "env": {}},
+      "install": "Node.js with npx (local variant only)",
+      "cli": "claude mcp add drawio -- npx -y @drawio/mcp",
+      "plan": null,
+      "verified": true,
+      "source": "https://www.drawio.com/mcp/",
+      "note_en": "Hosted server without sign-in, or run locally via npx; also reads Mermaid and draw.io XML.",
+      "note_de": "Gehosteter Server ohne Anmeldung oder lokal per npx; liest auch Mermaid und draw.io-XML."
+    },
+    "Figma": {
+      "remoteUrl": "https://mcp.figma.com/mcp",
+      "transport": "http",
+      "transport_note": "Docs use --transport http / \"type\": \"http\"; SSE not mentioned.",
+      "auth": "account",
+      "auth_note": "Browser sign-in with your Figma account on first connect (\"Allow access\"). Only clients in the Figma MCP catalogue can connect.",
+      "local": null,
+      "install": "Desktop server alternative runs inside the Figma desktop app (no URL documented on the overview page).",
+      "cli": "claude mcp add --transport http figma https://mcp.figma.com/mcp",
+      "plan": "Rate limits by plan/seat: Starter (View/Collab) up to 20 calls per month; Professional Full/Dev 200/day, 10/min; Organization 200/day, 15/min; Enterprise 600/day, 20/min; Education as Professional. Writing to canvas outside drafts needs a Full seat. Desktop server needs Dev or Full seat on a paid/Education plan.",
+      "verified": true,
+      "source": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/ ; https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/",
+      "note_en": "Sign in with your Figma account; only listed clients can connect. Free Starter seats get just 20 calls a month.",
+      "note_de": "Anmeldung mit Figma-Konto; nur gelistete Clients. Kostenlose Starter-Plätze erhalten nur 20 Aufrufe pro Monat."
+    },
+    "Paper Search MCP": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "none",
+      "auth_note": "No key required; optional free keys raise limits (e.g. PAPER_SEARCH_MCP_SEMANTIC_SCHOLAR_API_KEY, PAPER_SEARCH_MCP_CORE_API_KEY); IEEE needs a key to activate.",
+      "local": {
+        "command": "uvx",
+        "args": ["paper-search-mcp"],
+        "env": {
+          "PAPER_SEARCH_MCP_UNPAYWALL_EMAIL": "<your e-mail>",
+          "PAPER_SEARCH_MCP_CORE_API_KEY": "<optional>",
+          "PAPER_SEARCH_MCP_SEMANTIC_SCHOLAR_API_KEY": "<optional>"
+        }
+      },
+      "install": "Python 3.10+ and uv (on macOS uvx may need 'brew install coreutils', or use 'uv tool run paper-search-mcp')",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/openags/paper-search-mcp",
+      "note_en": "Runs locally via uvx; searches many open sources at once. Free API keys are optional and only raise rate limits.",
+      "note_de": "Läuft lokal per uvx; durchsucht viele offene Quellen gleichzeitig. Kostenlose API-Schlüssel sind optional und erhöhen nur Limits."
+    },
+    "Semantic Scholar": {
+      "remoteUrl": "https://asta-tools.allen.ai/mcp/v1",
+      "transport": "streamable-http",
+      "auth": "none",
+      "auth_note": "Optional API key in header x-api-key for higher rate limits; request a key via the form linked on the Ai2 page.",
+      "local": null,
+      "install": null,
+      "plan": null,
+      "verified": true,
+      "source": "https://allenai.org/asta/resources/mcp",
+      "note_en": "Ai2 Asta server on the Semantic Scholar corpus; works without a key, an optional x-api-key raises rate limits.",
+      "note_de": "Ai2-Asta-Server auf dem Semantic-Scholar-Korpus; funktioniert ohne Schlüssel, ein optionaler x-api-key erhöht die Limits."
+    },
+    "Elicit": {
+      "remoteUrl": "https://elicit.com/api/mcp",
+      "transport": "http",
+      "transport_note": "Docs say 'HTTP transport' / --transport http.",
+      "auth": "oauth",
+      "auth_note": "OAuth 2.0 sign-in with your Elicit account.",
+      "local": null,
+      "install": null,
+      "cli": "claude mcp add --transport http elicit https://elicit.com/api/mcp",
+      "plan": "Pro, Scale or Enterprise plan.",
+      "verified": true,
+      "source": "https://support.elicit.com/en/articles/14757404-use-elicit-via-mcp-server",
+      "note_en": "Sign in with your Elicit account via OAuth; requires a Pro, Scale or Enterprise plan.",
+      "note_de": "Anmeldung mit Ihrem Elicit-Konto per OAuth; erfordert einen Pro-, Scale- oder Enterprise-Tarif."
+    },
+    "Perplexity": {
+      "remoteUrl": "https://api.perplexity.ai/mcp",
+      "transport": "streamable-http",
+      "auth": "oauth",
+      "auth_note": "OAuth sign-in (admin of a paying API organisation) or header 'Authorization: Bearer <API key>'.",
+      "local": {"command": "npx", "args": ["-y", "@perplexity-ai/mcp-server"], "env": {"PERPLEXITY_API_KEY": "<your Perplexity API key>"}},
+      "install": "Node.js with npx (local variant only)",
+      "plan": "Billed at standard Perplexity API pricing; OAuth requires admin of an API organisation that can pay for usage.",
+      "verified": true,
+      "source": "https://docs.perplexity.ai/docs/getting-started/integrations/mcp-server",
+      "note_en": "Hosted with sign-in or API key, or local via npx; every call is billed at Perplexity API prices.",
+      "note_de": "Gehostet mit Anmeldung oder API-Schlüssel oder lokal per npx; jeder Aufruf wird zu Perplexity-API-Preisen abgerechnet."
+    },
+    "Consensus": {
+      "remoteUrl": "https://mcp.consensus.app/mcp",
+      "transport": "streamable-http",
+      "transport_note": "Implied by the troubleshooting entry 'OAuth login is only supported for streamable HTTP servers'; not stated as a field.",
+      "auth": "oauth",
+      "auth_note": "OAuth in most clients; other clients via API key as Bearer token. 'search' works without an account; thread tools need sign-in or key.",
+      "local": null,
+      "install": null,
+      "plan": "Consensus plan sets results per search, monthly calls, DOIs/full-text excerpts; no account needed to try search.",
+      "verified": true,
+      "source": "https://docs.consensus.app/consensus-mcp",
+      "note_en": "Search works without an account; signing in unlocks research threads. Your Consensus plan sets monthly calls and result depth.",
+      "note_de": "Suche funktioniert ohne Konto; die Anmeldung schaltet Recherche-Threads frei. Ihr Consensus-Tarif bestimmt Aufrufe und Ergebnistiefe."
+    },
+    "DeepL Write": {
+      "remoteUrl": "https://mcp.deepl.com/v1/mcp",
+      "transport": "streamable-http",
+      "auth": "oauth",
+      "auth_note": "OAuth 2.1 sign-in with your DeepL account; no client ID, secret or API key needed.",
+      "local": null,
+      "install": null,
+      "plan": "DeepL Free and seat-based plans (Individual, Team, Business, Enterprise); rephrasing/correction (Write) only on seat-based plans that include Write.",
+      "verified": true,
+      "source": "https://developers.deepl.com/docs/mcp",
+      "note_en": "Hosted server with DeepL sign-in; translation also on Free, rephrasing only on seat-based plans that include Write.",
+      "note_de": "Gehosteter Server mit DeepL-Anmeldung; Übersetzen auch im Free-Tarif, Umformulieren nur in Platz-Tarifen mit Write."
+    },
+    "Napkin AI": {
+      "remoteUrl": "https://mcp.api.napkin.ai/mcp",
+      "transport": null,
+      "transport_note": "Not stated in the docs (only 'remote MCP server').",
+      "auth": "oauth",
+      "auth_note": "OAuth 2.0 browser sign-in with your Napkin account; no API token pasted.",
+      "local": null,
+      "install": null,
+      "plan": "Creating a visual spends Napkin credits at REST API rates; listing styles is free. No plan tier named.",
+      "verified": true,
+      "source": "https://api.napkin.ai/mcp ; https://api.napkin.ai/faq/index.html",
+      "note_en": "Beta; sign in with your Napkin account. Each generated visual spends Napkin credits.",
+      "note_de": "Beta; Anmeldung mit Ihrem Napkin-Konto. Jede erzeugte Grafik verbraucht Napkin-Credits."
+    },
+    "Litmaps": {
+      "remoteUrl": "https://mcp.litmaps.com/mcp",
+      "transport": null,
+      "transport_note": "Not stated (only 'remote MCP servers').",
+      "auth": "account",
+      "auth_note": "Log in to Litmaps when prompted and click 'Allow'; protocol not named.",
+      "local": null,
+      "install": null,
+      "plan": null,
+      "plan_note": "Plan requirement not stated on the page.",
+      "verified": true,
+      "source": "https://docs.litmaps.com/en/articles/17508256-use-litmaps-with-your-ai-assistant-mcp",
+      "note_en": "Beta; add manually as a custom connector and log in to Litmaps. Reads and edits your maps.",
+      "note_de": "Beta; manuell als eigener Connector hinzufügen und bei Litmaps anmelden. Liest und bearbeitet Ihre Maps."
+    },
+    "scite": {
+      "remoteUrl": "https://api.scite.ai/mcp",
+      "transport": "streamable-http",
+      "auth": "oauth",
+      "auth_note": "OAuth 2.0, scope 'mcp'; endpoints under https://api.scite.ai/mcp/oauth/, discovered automatically by most clients.",
+      "local": null,
+      "install": null,
+      "plan": "Paid scite plan, free trial, or organisation Enterprise licence.",
+      "verified": true,
+      "source": "https://scite.ai/llms.txt ; https://scite.ai/mcp",
+      "source_note": "Endpoint URL is only stated in scite.ai/llms.txt, not on the /mcp page itself.",
+      "note_en": "Sign in with your scite account via OAuth; needs a paid plan, a trial or an institutional licence.",
+      "note_de": "Anmeldung mit Ihrem scite-Konto per OAuth; erfordert Bezahltarif, Testphase oder institutionelle Lizenz."
+    },
+    "Sally AI": {
+      "remoteUrl": "https://app.sally.io/api/v1/McpExternal",
+      "transport": null,
+      "transport_note": "Not stated.",
+      "auth": "account",
+      "auth_note": "Leave OAuth fields empty; Sally sign-in runs on Connect.",
+      "local": null,
+      "install": null,
+      "plan": "A Sally admin must enable MCP for the company account; in Claude, custom connectors need a paid Claude plan.",
+      "verified": true,
+      "source": "https://www.sally.io/api-integration/claude",
+      "note_en": "Read-only access to your own and shared meetings; a Sally admin must first enable MCP for the company.",
+      "note_de": "Nur Lesezugriff auf eigene und geteilte Meetings; ein Sally-Admin muss MCP zuerst für das Unternehmen freischalten."
+    },
+    "Otter.ai": {
+      "remoteUrl": "https://mcp.otter.ai/mcp",
+      "transport": null,
+      "transport_note": "Not stated; configs give only a URL.",
+      "auth": "oauth",
+      "auth_note": "OAuth sign-in with your Otter account ('Authorize access').",
+      "local": null,
+      "install": null,
+      "plan": null,
+      "plan_note": "Plan requirement not stated in the help article.",
+      "verified": true,
+      "source": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+      "note_en": "Sign in with your Otter account via OAuth; searches and fetches your meeting transcripts.",
+      "note_de": "Anmeldung mit Ihrem Otter-Konto per OAuth; durchsucht und lädt Ihre Meeting-Transkripte."
+    },
+    "Notion": {
+      "remoteUrl": "https://mcp.notion.com/mcp",
+      "transport": "streamable-http",
+      "transport_note": "SSE fallback https://mcp.notion.com/sse only for clients without streamable HTTP.",
+      "auth": "oauth",
+      "auth_note": "OAuth by default; Business/Enterprise workspace owners can create MCP tokens (Bearer) in the Developer portal.",
+      "local": {"command": "npx", "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp"], "env": {}},
+      "local_note": "This is the documented stdio bridge to the hosted server, not a local server. The open-source notion-mcp-server is 'no longer actively maintained'; no env var named.",
+      "install": "Node.js with npx (bridge only)",
+      "cli": "claude mcp add --transport http notion https://mcp.notion.com/mcp",
+      "plan": "Workspace members only (guests refused); MCP tokens and some features depend on plan.",
+      "verified": true,
+      "source": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+      "note_en": "Hosted server with OAuth sign-in; the old local server is no longer maintained, so use the hosted one.",
+      "note_de": "Gehosteter Server mit OAuth-Anmeldung; der alte lokale Server wird nicht mehr gepflegt – nutzen Sie den gehosteten."
+    },
+    "GitHub (repositories)": {
+      "remoteUrl": "https://api.githubcopilot.com/mcp/",
+      "transport": "http",
+      "transport_note": "Configs use \"type\": \"http\" (streamable HTTP).",
+      "auth": "oauth",
+      "auth_note": "OAuth where the host supports it, otherwise a GitHub Personal Access Token as Bearer header.",
+      "local": {"command": "docker", "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"], "env": {"GITHUB_PERSONAL_ACCESS_TOKEN": "<your GitHub PAT>"}},
+      "install": "Docker installed and running (local variant); PAT from github.com/settings/personal-access-tokens",
+      "plan": null,
+      "plan_note": "No paid plan stated; organisations may need to enable MCP policies.",
+      "verified": true,
+      "source": "https://github.com/github/github-mcp-server",
+      "note_en": "GitHub's official server: hosted with OAuth or token, or local via Docker. Organisation policies may need enabling.",
+      "note_de": "Offizieller GitHub-Server: gehostet mit OAuth oder Token oder lokal per Docker. Organisationsrichtlinien ggf. freischalten."
+    },
+    "JASP": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "none",
+      "local": {"command": "uvx", "args": ["--from", "git+https://github.com/jasp-stats/jasp-mcp", "jasp-mcp"], "env": {"JASP_RPC_URL": "http://127.0.0.1:48164/rpc"}},
+      "install": "uv installed; JASP running with its remote RPC server enabled",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/jasp-stats/jasp-mcp",
+      "note_en": "Runs locally via uvx; JASP must be running with its remote RPC server enabled. Early stage.",
+      "note_de": "Läuft lokal per uvx; JASP muss mit aktiviertem Remote-RPC-Server laufen. Frühes Entwicklungsstadium."
+    },
+    "Zotero": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "none",
+      "auth_note": "Local mode needs no key; writes on older Zotero need ZOTERO_API_KEY and ZOTERO_LIBRARY_ID (web API).",
+      "local": {"command": "zotero-mcp", "args": [], "env": {"ZOTERO_LOCAL": "true"}},
+      "install": "Python 3.10+; 'uv tool install zotero-mcp-server' (or pip); Zotero 7+ running with 'Allow other applications … to communicate with Zotero' enabled",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/54yyyu/zotero-mcp",
+      "note_en": "Install with uv, enable Zotero's local API; 'zotero-mcp setup' configures Claude Desktop automatically.",
+      "note_de": "Mit uv installieren, lokale Zotero-API aktivieren; 'zotero-mcp setup' richtet Claude Desktop automatisch ein."
+    },
+    "EndNote": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "none",
+      "local": {"command": "endnote-mcp", "args": ["serve"], "env": {}},
+      "local_note": "No JSON config is printed; 'endnote-mcp setup' writes the Claude Desktop config. Alternative: .mcpb bundle from Releases (no Python needed).",
+      "install": "EndNote 20+ with an XML export; Python 3.10+ and 'uv tool install endnote-mcp', then 'endnote-mcp setup'",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/gokmengokhan/endnote-mcp",
+      "note_en": "Works on an XML export of your library; easiest via the .mcpb bundle for Claude Desktop, no Python needed.",
+      "note_de": "Arbeitet mit einem XML-Export Ihrer Bibliothek; am einfachsten per .mcpb-Paket für Claude Desktop, ohne Python."
+    },
+    "Mendeley": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "apikey",
+      "auth_note": "Register an app at dev.mendeley.com/myapps.html (Client ID/Secret), then 'mendeley-auth login' stores tokens in the system keyring.",
+      "local": {"command": "uvx", "args": ["mendeley-mcp"], "env": {}},
+      "local_note": "Env alternative: MENDELEY_CLIENT_ID, MENDELEY_CLIENT_SECRET, MENDELEY_REFRESH_TOKEN.",
+      "install": "Python 3.10+ and 'uv tool install mendeley-mcp'; Mendeley account and own API app",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/pallaprolus/mendeley-mcp",
+      "note_en": "Register your own Mendeley API app, then run 'mendeley-auth login' once; credentials stay in your keyring.",
+      "note_de": "Eigene Mendeley-API-App registrieren, dann einmal 'mendeley-auth login' ausführen; Zugangsdaten bleiben im Schlüsselbund."
+    },
+    "Google Scholar": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "none",
+      "local": {"command": "python", "args": ["/absolute/path/to/Google-Scholar-MCP-Server/google_scholar_server.py"], "env": {}},
+      "local_note": "README's macOS config 'python -m google_scholar_mcp_server' does not match the repo (only google_scholar_server.py exists); path variant taken from its Windows/Cline configs. Smithery: npx -y @smithery/cli@latest install @JackKuo666/google-scholar-mcp-server --client claude --config \"{}\".",
+      "install": "git clone the repo and 'pip install -r requirements.txt' (Python)",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/JackKuo666/Google-Scholar-MCP-Server",
+      "note_en": "Scrapes Google Scholar without an official API and may break; repo not updated since March 2025.",
+      "note_de": "Liest Google Scholar ohne offizielle API aus und kann ausfallen; Repository seit März 2025 nicht aktualisiert."
+    },
+    "Whisper (OpenAI)": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "none",
+      "local": {"command": "uv", "args": ["run", "mlx_whisper_mcp.py"], "env": {}, "cwd": "/absolute/path/to/mlx-whisper-mcp/"},
+      "install": "Apple Silicon Mac, Python 3.12+ and uv; clone the repo (first run downloads ~1.6 GB model)",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/kachiO/mlx-whisper-mcp",
+      "note_en": "Apple Silicon Macs only; audio stays on your machine. Not updated since June 2025.",
+      "note_de": "Nur für Macs mit Apple Silicon; Audio bleibt auf Ihrem Rechner. Seit Juni 2025 nicht aktualisiert."
+    },
+    "Jamovi": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "none",
+      "local": {"command": "uvx", "args": ["--from", "git+https://github.com/yjm110517/jamovi-mcp.git", "jamovi-mcp"], "env": {}},
+      "local_note": "Optional env JAMOVI_HOME only if jamovi is not found; README warns not to copy the placeholder.",
+      "install": "Windows only; jamovi installed locally; uv (e.g. 'winget install astral-sh.uv')",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/yjm110517/jamovi-mcp",
+      "note_en": "Windows only – controls a local jamovi installation via uvx; check with 'jamovi-mcp --check'.",
+      "note_de": "Nur Windows – steuert eine lokale jamovi-Installation per uvx; Prüfung mit 'jamovi-mcp --check'."
+    },
+    "Obsidian": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "apikey",
+      "auth_note": "API key from the Obsidian Local REST API plugin settings.",
+      "local": {"command": "uvx", "args": ["mcp-obsidian"], "env": {"OBSIDIAN_API_KEY": "<your Local REST API key>", "OBSIDIAN_HOST": "127.0.0.1", "OBSIDIAN_PORT": "27124"}},
+      "install": "Python 3.11+ and uv; Obsidian with the Local REST API community plugin enabled",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/MarkusPfundstein/mcp-obsidian",
+      "note_en": "Needs the Obsidian Local REST API plugin and its API key; runs locally via uvx.",
+      "note_de": "Erfordert das Obsidian-Plugin Local REST API und dessen API-Schlüssel; läuft lokal per uvx."
+    },
+    "Transkribus": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "account",
+      "auth_note": "Transkribus user name and password (OS keyring recommended, or env TRANSKRIBUS_USER / TRANSKRIBUS_PASSWORD).",
+      "local": {"command": "npx", "args": ["-y", "@lazyants/transkribus-mcp-server"], "env": {"TRANSKRIBUS_USER": "<your Transkribus e-mail>", "TRANSKRIBUS_PASSWORD": "<your Transkribus password>"}},
+      "local_note": "Env block optional if credentials are stored in the OS keyring. 304 tools by default; split entry points exist for tool limits.",
+      "install": "Node.js with npx; Transkribus account",
+      "plan": null,
+      "verified": true,
+      "source": "https://github.com/lazyants/transkribus-mcp-server",
+      "note_en": "Runs locally via npx with your Transkribus login; over 300 tools, so use split servers if your client limits tools.",
+      "note_de": "Läuft lokal per npx mit Ihrem Transkribus-Login; über 300 Tools – bei Tool-Limits geteilte Server nutzen."
+    },
+    "Overleaf": {
+      "remoteUrl": null,
+      "transport": "stdio",
+      "auth": "apikey",
+      "auth_note": "Overleaf Git token (Account Settings → Git Integration → Create Token) plus the project ID.",
+      "local": {"command": "npx", "args": ["-y", "@mjyoo2/overleaf-mcp"], "env": {"OVERLEAF_PROJECT_ID": "<your project ID>", "OVERLEAF_GIT_TOKEN": "<your Overleaf Git token>"}},
+      "local_note": "On Windows use command 'cmd' with args ['/c','npx','-y','@mjyoo2/overleaf-mcp'].",
+      "install": "Node.js with npx; Overleaf project owner with paid subscription (Git integration)",
+      "plan": "Git integration is a premium feature – project owner needs a paid Overleaf subscription (Overleaf docs).",
+      "verified": true,
+      "source": "https://github.com/mjyoo2/OverleafMCP ; https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/git-integration",
+      "note_en": "Uses Overleaf's Git integration, a paid feature; the Git token grants full read and write access to the project.",
+      "note_de": "Nutzt die Git-Integration von Overleaf (kostenpflichtig); das Git-Token gewährt vollen Lese- und Schreibzugriff auf das Projekt."
+    }
+  },
+  "repos": {
+    "ars-deep-research": {
+      "install": "Claude Code: /plugin marketplace add Imbad0202/academic-research-skills, then /plugin install academic-research-skills (installs all ARS skills). claude.ai/Desktop (paid): Customize → Plugins → Add marketplace → from repository.",
+      "verified": true,
+      "source": "https://github.com/Imbad0202/academic-research-skills",
+      "note_en": "Installed with the whole ARS plugin; the skills share repo-level files, so prefer the plugin to copying one folder.",
+      "note_de": "Wird als Teil des ARS-Plugins installiert; die Skills teilen Dateien im Repo – Plugin statt Einzelordner verwenden."
+    },
+    "ars-paper": {
+      "install": "Claude Code: /plugin marketplace add Imbad0202/academic-research-skills, then /plugin install academic-research-skills (installs all ARS skills).",
+      "verified": true,
+      "source": "https://github.com/Imbad0202/academic-research-skills",
+      "note_en": "Part of the ARS plugin; also importable in Claude Science via Skills → Import from GitHub.",
+      "note_de": "Teil des ARS-Plugins; in Claude Science auch über Skills → Import from GitHub importierbar."
+    },
+    "ars-reviewer": {
+      "install": "Claude Code: /plugin marketplace add Imbad0202/academic-research-skills, then /plugin install academic-research-skills (installs all ARS skills).",
+      "verified": true,
+      "source": "https://github.com/Imbad0202/academic-research-skills",
+      "note_en": "Part of the ARS plugin; one install provides the reviewer together with the other ARS skills.",
+      "note_de": "Teil des ARS-Plugins; eine Installation liefert den Reviewer zusammen mit den übrigen ARS-Skills."
+    },
+    "ars-screener": {
+      "install": "Claude Code: /plugin marketplace add Imbad0202/academic-research-skills, then /plugin install academic-research-skills (installs all ARS skills).",
+      "verified": true,
+      "source": "https://github.com/Imbad0202/academic-research-skills",
+      "note_en": "Part of the ARS plugin; Codex users install the separate academic-research-skills-codex distribution.",
+      "note_de": "Teil des ARS-Plugins; Codex-Nutzende installieren die separate Distribution academic-research-skills-codex."
+    },
+    "kd-literature-review": {
+      "install": "gh skill install K-Dense-AI/scientific-agent-skills literature-review (GitHub CLI 2.90+), or whole collection: npx skills add K-Dense-AI/scientific-agent-skills",
+      "verified": true,
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "note_en": "Install this single skill with gh skill, or the full 177-skill collection with npx skills add.",
+      "note_de": "Einzelnen Skill per gh skill installieren oder die gesamte Sammlung (177 Skills) per npx skills add."
+    },
+    "kd-peer-review": {
+      "install": "gh skill install K-Dense-AI/scientific-agent-skills peer-review (GitHub CLI 2.90+), or whole collection: npx skills add K-Dense-AI/scientific-agent-skills",
+      "verified": true,
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "note_en": "Install this single skill with gh skill, or the full collection with npx skills add.",
+      "note_de": "Einzelnen Skill per gh skill installieren oder die gesamte Sammlung per npx skills add."
+    },
+    "kd-writing": {
+      "install": "gh skill install K-Dense-AI/scientific-agent-skills scientific-writing (GitHub CLI 2.90+), or whole collection: npx skills add K-Dense-AI/scientific-agent-skills",
+      "verified": true,
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "note_en": "Install this single skill with gh skill, or the full collection with npx skills add.",
+      "note_de": "Einzelnen Skill per gh skill installieren oder die gesamte Sammlung per npx skills add."
+    },
+    "kd-stats": {
+      "install": "gh skill install K-Dense-AI/scientific-agent-skills statistical-analysis (GitHub CLI 2.90+), or whole collection: npx skills add K-Dense-AI/scientific-agent-skills",
+      "verified": true,
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "note_en": "Install this single skill with gh skill, or the full collection with npx skills add.",
+      "note_de": "Einzelnen Skill per gh skill installieren oder die gesamte Sammlung per npx skills add."
+    },
+    "kd-power": {
+      "install": "gh skill install K-Dense-AI/scientific-agent-skills statistical-power (GitHub CLI 2.90+), or whole collection: npx skills add K-Dense-AI/scientific-agent-skills",
+      "verified": true,
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "note_en": "Install this single skill with gh skill, or the full collection with npx skills add.",
+      "note_de": "Einzelnen Skill per gh skill installieren oder die gesamte Sammlung per npx skills add."
+    },
+    "kd-hypothesis": {
+      "install": "gh skill install K-Dense-AI/scientific-agent-skills hypothesis-generation (GitHub CLI 2.90+), or whole collection: npx skills add K-Dense-AI/scientific-agent-skills",
+      "verified": true,
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "note_en": "Install this single skill with gh skill, or the full collection with npx skills add.",
+      "note_de": "Einzelnen Skill per gh skill installieren oder die gesamte Sammlung per npx skills add."
+    },
+    "kd-citation": {
+      "install": "gh skill install K-Dense-AI/scientific-agent-skills citation-management (GitHub CLI 2.90+), or whole collection: npx skills add K-Dense-AI/scientific-agent-skills",
+      "verified": true,
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "note_en": "Install this single skill with gh skill, or the full collection with npx skills add.",
+      "note_de": "Einzelnen Skill per gh skill installieren oder die gesamte Sammlung per npx skills add."
+    },
+    "kd-viz": {
+      "install": "gh skill install K-Dense-AI/scientific-agent-skills scientific-visualization (GitHub CLI 2.90+), or whole collection: npx skills add K-Dense-AI/scientific-agent-skills",
+      "verified": true,
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "note_en": "Install this single skill with gh skill, or the full collection with npx skills add.",
+      "note_de": "Einzelnen Skill per gh skill installieren oder die gesamte Sammlung per npx skills add."
+    },
+    "kd-eda": {
+      "install": "gh skill install K-Dense-AI/scientific-agent-skills exploratory-data-analysis (GitHub CLI 2.90+), or whole collection: npx skills add K-Dense-AI/scientific-agent-skills",
+      "verified": true,
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "note_en": "Install this single skill with gh skill, or the full collection with npx skills add.",
+      "note_de": "Einzelnen Skill per gh skill installieren oder die gesamte Sammlung per npx skills add."
+    },
+    "slr-prisma": {
+      "install": "Download slr-prisma.skill from the repo's Releases and add it in Claude under Customise → Skills; or copy SKILL.md and references/ into your skills folder (e.g. ~/.claude/skills/slr-prisma/).",
+      "verified": true,
+      "source": "https://github.com/keemanxp/slr-prisma",
+      "note_en": "Upload the .skill file in Claude; the companion apa-referencing skill is recommended.",
+      "note_de": "Die .skill-Datei in Claude hochladen; der Begleit-Skill apa-referencing wird empfohlen."
+    },
+    "prisma2020": {
+      "install": "install.packages(\"PRISMA2020\") – or use the web app https://estech.shinyapps.io/prisma_flowdiagram/",
+      "install_note": "README gives only Docker and the Shiny app; CRAN listing (v1.1.5) confirmed on cran.r-project.org/package=PRISMA2020.",
+      "verified": true,
+      "source": "https://github.com/prisma-flowdiagram/PRISMA2020 ; https://cran.r-project.org/package=PRISMA2020",
+      "note_en": "R package on CRAN, or the point-and-click Shiny web app without any installation.",
+      "note_de": "R-Paket auf CRAN oder die Shiny-Web-App zum Klicken ganz ohne Installation."
+    },
+    "peer-review-panel": {
+      "install": "git clone https://github.com/AlexWortega/ai-peer-review-skill.git && ln -s \"$(pwd)/ai-peer-review-skill\" ~/.claude/skills/paper-review – then restart Claude Code",
+      "verified": true,
+      "source": "https://github.com/AlexWortega/ai-peer-review-skill",
+      "note_en": "Claude Code skill; parallel reviewers come from one model family, not truly different models.",
+      "note_de": "Claude-Code-Skill; die parallelen Gutachter stammen aus einer Modellfamilie, nicht aus verschiedenen Modellen."
+    },
+    "seminr": {
+      "install": "install.packages(\"seminr\")",
+      "verified": true,
+      "source": "https://github.com/sem-in-r/seminr",
+      "note_en": "CRAN package for PLS-SEM and CB-SEM; vignette(\"SEMinR\") gives a guided introduction.",
+      "note_de": "CRAN-Paket für PLS-SEM und CB-SEM; vignette(\"SEMinR\") bietet eine geführte Einführung."
+    },
+    "lavaan": {
+      "install": "install.packages(\"lavaan\")",
+      "verified": true,
+      "source": "https://github.com/yrosseel/lavaan",
+      "note_en": "Stable version from CRAN; development version via remotes::install_github(\"yrosseel/lavaan\").",
+      "note_de": "Stabile Version von CRAN; Entwicklungsversion über remotes::install_github(\"yrosseel/lavaan\")."
+    },
+    "metafor": {
+      "install": "install.packages(\"metafor\")",
+      "verified": true,
+      "source": "https://github.com/wviechtb/metafor",
+      "note_en": "Official CRAN release; development version via remotes::install_github(\"wviechtb/metafor\").",
+      "note_de": "Offizielle CRAN-Version; Entwicklungsversion über remotes::install_github(\"wviechtb/metafor\")."
+    },
+    "truman": {
+      "install": "Self-hosted Node.js web app with a MongoDB database – follow 'Installing Truman' at https://truman.gitbook.io/the-truman-platform (uses the newer repo cornellsocialmedialab/truman_2023).",
+      "verified": true,
+      "source": "https://github.com/cornellsml/truman ; https://github.com/cornellsocialmedialab/truman_2023",
+      "outdated": "cornellsml/truman README says the up-to-date code is at https://github.com/cornellsocialmedialab/truman_2023; old repo last pushed July 2024.",
+      "note_en": "Linked repo is superseded – use Truman 2.0 (truman_2023); needs Node.js, MongoDB and own hosting.",
+      "note_de": "Verlinktes Repo ist überholt – Truman 2.0 (truman_2023) nutzen; erfordert Node.js, MongoDB und eigenes Hosting."
+    },
+    "mock-social-media": {
+      "install": "Self-hosted – follow the 'Deploying Locally' or 'Deploying Online' guides at docs.studysocial.media; code at https://github.com/arvinsroom/mocksocialmediawebsite (Apache-2.0).",
+      "install_note": "Concrete requirements are on the deployment subpages, not on the docs start page that was read.",
+      "verified": true,
+      "source": "https://docs.studysocial.media",
+      "note_en": "Self-hosted research tool; after deployment a researcher portal creates studies and exports data.",
+      "note_de": "Selbst gehostetes Forschungstool; nach der Einrichtung erstellt ein Forschendenportal Studien und exportiert Daten."
+    },
+    "awesome-copilot": {
+      "install": "copilot plugin install <plugin-name>@awesome-copilot (if unknown: copilot plugin marketplace add github/awesome-copilot first)",
+      "verified": true,
+      "source": "https://github.com/github/awesome-copilot",
+      "note_en": "Marketplace for GitHub Copilot CLI and VS Code; entries come from third parties, so inspect before installing.",
+      "note_de": "Marketplace für GitHub Copilot CLI und VS Code; Beiträge stammen von Dritten – vor der Installation prüfen."
+    }
+  }
+}

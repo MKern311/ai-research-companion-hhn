@@ -1,843 +1,518 @@
-/* ================================================================
-   AI in the Research Process – working basis for researchers (static page, HHN edition)
-   Remote mode: Supabase RPCs with group codes (see supabase/migrations).
-   Local mode (no config or "explore without a code"): this browser only.
-   ================================================================ */
-const CFG = window.AIRP_CONFIG || {};
-const REMOTE_OK = !!(CFG.supabaseUrl && CFG.anonKey);
-const TABLES = ['Group 1','Group 2','Group 3','Group 4','Group 5','Group 6','Group 7','Group 8','Group 9','Group 10','Group 11','Group 12','Facilitator'];
-const TYP = {ki:'AI-native', gpt:'Custom GPT', et:'Established'};
+/* AI in the Research Process – knowledge base (static page, HHN edition)
+   Views: start · library · use case · my collection · editor · bring into your AI (setup) · tools · practice data.
+   All content comes from window.KB (built from content/); everything the user does stays in localStorage. */
+'use strict';
+const KB = window.KB;
+const REPO = 'https://github.com/MKern311/ai-research-companion-hhn';
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const SHORT = Object.fromEntries(PHASES.map(p => [p.id, p.short]));
-const CLUSTER_OF = Object.fromEntries(CLUSTERS.flatMap(c => c.ph.map(id => [id, c.n])));
-const TOOL = Object.fromEntries(TOOLS.map(t => [t.n, t]));
-const wscore = t => t.r ? (t.c * t.r + 3 * 4) / (t.c + 3) : 0;   // weighted rating: single ratings do not dominate
-const byScore = (a, b) => wscore(b) - wscore(a) || b.c - a.c;
-const gainLabel = g => (GAINS.find(x => x[0] === g) || [g, g])[1];
-const chkOf = r => !!(r && (r.c || r.g === 'n' || r.g === 'u'));   // older data used a permission answer
-const toast = msg => { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 2600); };
+const toast = msg => { const el = $('#toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('show'), 2600); };
 
-/* ---------- state ---------- */
-const KEY = 'airp-v5', SKEY = 'airp-session';
-const blank = () => ({t:{}, c:[], a:'Group 1'});
-let state = blank();
-try { const v = JSON.parse(localStorage.getItem(KEY) || 'null'); if (v && v.t) state = {t:v.t, c:Array.isArray(v.c) ? v.c : [], a:(v.a && v.a !== 'Table 1' ? v.a : 'Group 1'), off:!!v.off, remote:!!v.remote}; } catch(e) {}
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {} };
-let session = null;            // {code, role, table, workshop}
-const ui = {gmode:'practice', view:'agenda', lens:1, phase:0, scope:'room', resTable:null, resPhase:null, resDisc:'', toolPhase:null, toolMcp:false, open:null, back:null, explore:false};
-const sync = {dirty:false, timer:0, poll:0, last:null, err:null, busy:false, rev:0};
-// step and explore choice survive a reload within the same browser tab
-const UKEY = 'airp-ui';
-try { const v = JSON.parse(sessionStorage.getItem(UKEY) || 'null'); if (v) { ui.lens = v.lens === 2 ? 2 : 1; ui.explore = !!v.explore; } } catch(e) {}
-const saveUi = () => { try { sessionStorage.setItem(UKEY, JSON.stringify({lens:ui.lens, explore:ui.explore})); } catch(e) {} };
+/* ---------- store (this browser only) ---------- */
+const KEY = 'airp-kb-v1';
+let store = {r:{}, own:[], lang:'', app:''};
+try { store = Object.assign(store, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch(e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch(e) {} };
+const rOf = id => store.r[id] || {};
+const rSet = id => (store.r[id] = store.r[id] || {});
+const rated = r => !!(r.n && r.u);
+const inColl = id => { const r = rOf(id); return !!(r.f || rated(r) || r.o || r.note || r.x || r.c); };
 
-const remote = () => !!session;
-// the facilitator rates as "Facilitator" to demonstrate the tool; those ratings never count in room values, rankings or results
-const DEMO = 'Facilitator';
-const myTable = () => session ? (session.role === 'facilitator' ? DEMO : session.table || 'Viewer') : state.a;
-const readOnly = () => !!session && session.role === 'viewer';
-const tbl = n => (state.t[n] = state.t[n] || {r:{}, fd:{f1:'', f2:'', f3:'', q:''}, disc:''});
-const tblFrom = d => ({r:(d && d.r) || {}, fd:Object.assign({f1:'', f2:'', f3:'', q:''}, (d && d.fd) || {}), disc:String((d && d.disc) || '').slice(0, 60), plan:planClean(d && d.plan) || undefined});
-// discipline of a group, e.g. "Marketing"; groups with the same discipline are compared together
-const discOf = k => ((state.t[k] && state.t[k].disc) || '').trim();
-const discKey = s => s.trim().toLowerCase().replace(/\s+/g, ' ');
-const groupLabel = k => discOf(k) ? `${k} · ${discOf(k)}` : k;
-const myR = id => (state.t[myTable()] && state.t[myTable()].r[id]) || {};
-const ucsOf = p => p.uc.concat(state.c.filter(c => c.phase === p.id));
-const allUcs = () => PHASES.flatMap(ucsOf);
-const findUc = id => allUcs().find(u => u.id === id);
+/* ---------- language ---------- */
+let lang = store.lang || ((navigator.language || 'en').toLowerCase().startsWith('de') ? 'de' : 'en');
+const t = (k, ...a) => { let s = (I18N[lang] && I18N[lang][k]) ?? I18N.en[k] ?? k; a.forEach((v, i) => { s = s.split('{' + i + '}').join(v); }); return s; };
+const L = o => o == null ? '' : (typeof o === 'object' && !Array.isArray(o) && ('en' in o || 'de' in o)) ? (o[lang] ?? o.en) : o;
 
-/* ---------- Supabase RPC ---------- */
-async function rpc(fn, args){
-  const r = await fetch(`${CFG.supabaseUrl}/rest/v1/rpc/${fn}`, {method:'POST',
-    headers:{'Content-Type':'application/json', apikey:CFG.anonKey, Authorization:'Bearer ' + CFG.anonKey}, body:JSON.stringify(args)});
-  const txt = await r.text(); let data = null; try { data = txt ? JSON.parse(txt) : null; } catch(e) {}
-  if (!r.ok) { const e = new Error((data && (data.message || data.hint)) || ('HTTP ' + r.status)); e.status = r.status; throw e; }
-  return data;
+/* ---------- content access ---------- */
+const PHASES = KB.phases;
+const PH = Object.fromEntries(PHASES.map(p => [p.id, p]));
+const phName = id => PH[id] ? L(PH[id]).name : id;
+const phShort = id => PH[id] ? L(PH[id]).short : id;
+const SEC_KEYS = ['problem','result','steps','concepts','refs','practice','own','tech','levels'];
+const filled = v => !!(v && (Array.isArray(v) ? v.length : typeof v === 'object' ? Object.keys(v).length : v));
+function ucFrom(id){
+  const own = store.own.find(o => o.id === id);
+  if (own) return {id, own:true, meta:own.meta, title:own.title, summary:own.summary, s:own.s, lang:own.lang, textLang:own.lang};
+  const en = KB.ucs.en[id]; if (!en) return null;
+  const de = lang === 'de' ? KB.ucs.de[id] : null, src = de || en, s = {};
+  SEC_KEYS.forEach(k => { s[k] = filled(src.sections[k]) ? src.sections[k] : en.sections[k]; });
+  return {id, own:false, meta:en.meta, title:src.meta.title || en.meta.title, summary:src.summary || en.summary, s, textLang:de ? 'de' : 'en'};
 }
-async function signIn(code, ask){
-  const info = await rpc('join_workshop', {p_code:code});
-  const local = !session && !state.remote && state.t[state.a], localN = local ? Object.keys(local.r).filter(id => findUc(id)).length : 0;
-  session = {code:code.trim().toUpperCase(), role:info.role, table:info.table, workshop:info.workshop};
-  try { localStorage.setItem(SKEY, session.code); } catch(e) {}
-  await pull(true);
-  // ratings made in explore mode before signing in: offer to carry them over instead of dropping them
-  if (ask && localN && session.role === 'table' && window.confirm(`Transfer the ${localN} ${localN === 1 ? 'use case' : 'use cases'} you rated or tested in explore mode into ${session.table}? What ${session.table} already has is kept.`)) {
-    const T = tbl(myTable());
-    Object.entries(local.r).forEach(([id, r]) => { if (!findUc(id) || T.r[id]) return; const c = Object.assign({}, r); if (c.tt && myTests().length >= MAXTEST) { delete c.tt; delete c.o; delete c.note; } T.r[id] = c; });
-    if (!T.disc && local.disc) T.disc = local.disc;
-    push(); softRender();
-  }
-  startPolling();
-}
-function signOut(){
-  session = null; try { localStorage.removeItem(SKEY); } catch(e) {}
-  state = blank(); save();                        // do not keep the room's data in explore mode
-  clearInterval(sync.poll); renderAll(); showLogin();
-}
-async function pull(force){
-  if (!session || sync.busy) return;
-  if (!force && sync.dirty) return;            // own edits are still being saved
-  sync.busy = true;
-  try {
-    const room = await rpc('load_room', {p_code:session.code});
-    const mine = myTable(), keepMine = sync.dirty ? state.t[mine] : null;
-    const t = {};
-    (room.tables || []).forEach(x => { t[x.name] = tblFrom(x.data); });
-    if (keepMine) t[mine] = keepMine;
-    state.t = t; state.c = (room.additions || []).filter(c => c && c.id); state.remote = true;
-    sync.last = new Date(); sync.err = null; save(); softRender();
-  } catch(e) { sync.err = e.message; renderIdent(); }
-  finally { sync.busy = false; }
-}
-function startPolling(){ clearInterval(sync.poll); sync.poll = setInterval(() => { if (document.visibilityState === 'visible') pull(false); }, 12000); }
-function push(){
-  save();
-  if (!session || readOnly()) return;
-  sync.dirty = true; renderIdent();
-  clearTimeout(sync.timer);
-  const rev = ++sync.rev;                     // a newer edit during the request keeps the group "dirty"
-  sync.timer = setTimeout(async () => {
-    try { await rpc('save_table', {p_code:session.code, p_data:tbl(myTable())}); if (sync.rev === rev) sync.dirty = false; sync.last = new Date(); sync.err = null; }
-    catch(e) { sync.err = 'Not saved – ' + e.message; setTimeout(push, 5000); }
-    renderIdent();
-  }, 700);
-}
-async function pushAddition(c, del){
-  save();
-  if (!session || readOnly()) return;
-  try { if (del) await rpc('delete_addition', {p_code:session.code, p_id:c.id}); else await rpc('save_addition', {p_code:session.code, p_item:c}); }
-  catch(e) { toast('Could not save the use case: ' + e.message); }
-}
+const ALL_IDS = PHASES.flatMap(p => Object.values(KB.ucs.en).filter(u => u.meta.phase === p.id).sort((a, b) => a.meta.order - b.meta.order).map(u => u.meta.id));
+const allUcs = () => ALL_IDS.concat(store.own.map(o => o.id)).map(ucFrom).filter(Boolean);
+const riskLabel = k => L(KB.meta.risk[k] && KB.meta.risk[k].label);
+const riskDef = k => L(KB.meta.risk[k] && KB.meta.risk[k].def);
+const LV = KB.meta.levels;   // chat, project, assistant, automation
+const CLIENTS = (KB.clients && KB.clients.clients) || [];
+const client = id => CLIENTS.find(c => c.id === id);
+const CAT = KB.catalogue;
+const TOOL = Object.fromEntries(CAT.tools.map(x => [x.n, x]));
+const toolUrl = n => TOOL[n] && TOOL[n].url ? 'https://' + TOOL[n].url.replace(/^https?:\/\//, '') : null;
+const CON = (KB.connect && KB.connect.mcp) || {};
+const REPOINFO = (KB.connect && KB.connect.repos) || {};
+const note2 = d => d ? L({en:d.note_en, de:d.note_de || d.note_en}) : '';
 
-/* ---------- room aggregation ---------- */
-// disc: only groups of this discipline (key from discKey); empty = whole room
-const inDisc = (k, disc) => k !== DEMO && (!disc || discKey(discOf(k)) === disc);
-function room(id, disc){
-  const rs = Object.entries(state.t).filter(([k]) => inDisc(k, disc)).map(([k, T]) => [k, T.r[id]]).filter(([, r]) => r);
-  const both = rs.filter(([, r]) => r.n && r.u && !r.x);
-  const avg = k => both.length ? both.reduce((s, [, r]) => s + r[k], 0) / both.length : 0;
-  return {k:both.length, n:avg('n'), u:avg('u'), stars:rs.filter(([, r]) => r.f).length,
-    gain:Object.fromEntries(GAINS.map(([g]) => [g, rs.filter(([, r]) => (r.b || []).includes(g)).length])),
-    x:rs.filter(([, r]) => r.x).map(([k]) => k), chk:rs.filter(([, r]) => chkOf(r)).map(([k]) => k),
-    tests:rs.filter(([, r]) => r.tt).map(([k, r]) => ({table:k, o:r.o || '', note:r.note || ''}))};
-}
-// room ranking: means shrunk towards the scale midpoint by two virtual groups, so one group's 5×5 does not beat three groups' 5×4
-const shrink = (v, k) => (k * v + 2 * 3) / (k + 2);
-const roomScore = rm => shrink(rm.n, rm.k) * shrink(rm.u, rm.k);
-const byRoom = (a, b) => roomScore(b) - roomScore(a) || b.k - a.k || b.n - a.n;
-/* Step 2: each group picks up to three use cases and tries them with an AI assistant */
-const MAXTEST = 3;
-const OUTCOME = {y:['Worked well', '#2F6410'], p:['Partly', '#7A4700'], n:['Did not work', '#5F5F5F']};
-const myTests = () => allUcs().filter(u => myR(u.id).tt);
+/* ---------- router: #/ · #/library · #/uc/<id> · #/collection · #/new · #/edit/<id> · #/setup[/<client>] · #/tools · #/data ---------- */
+const ui = {q:'', phase:'', risk:'', only:'', mode:'practice', wiz:null, toolPhase:'', toolMcp:'', dupFrom:null};
+const route = () => { const h = location.hash.replace(/^#\/?/, '').split('/'); return {v:h[0] || 'start', a:decodeURIComponent(h[1] || '')}; };
+const go = h => { if (location.hash === h) render(); else location.hash = h; };
+window.addEventListener('hashchange', () => { render(); window.scrollTo({top:0}); });
 
 /* ---------- header ---------- */
-function renderIdent(){
-  const el = $('#ident');
-  const st = sync.err ? `<span class="sync err">${esc(sync.err)}</span>`
-    : session ? `<span class="sync ok">${sync.dirty ? 'Saving…' : sync.last ? 'Saved · updated ' + sync.last.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) : 'Connected'}</span>`
-    : `<span class="sync">This browser only</span>`;
-  const who = session
-    ? `<span class="who" title="${esc(session.role === 'viewer' ? 'Viewing results' : groupLabel(session.table))}">${esc(session.role === 'viewer' ? 'Viewing results' : groupLabel(session.table))}</span><button class="btn btn-quiet btn-sm" type="button" id="signOut">Sign out</button>`
-    : `<span class="who">${state.off ? 'Offline · ' + esc(groupLabel(state.a)) : 'Explore mode'}</span>${REMOTE_OK ? '<button class="btn btn-ghost btn-sm" type="button" id="signIn">Sign in</button>' : ''}`;
-  const gear = (!session || session.role === 'facilitator') ? `<button class="icon-btn" type="button" id="menuBtn" aria-label="Groups, export and reset" title="Groups, export and reset"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>` : '';
-  el.innerHTML = st + who + gear;
+const NAV = [['start','#/'],['library','#/library'],['collection','#/collection'],['setup','#/setup'],['tools','#/tools'],['data','#/data']];
+const countColl = () => allUcs().filter(u => inColl(u.id) || u.own).length;
+function renderHeader(){
+  const v = route().v, cur = v === 'uc' ? 'library' : v === 'new' || v === 'edit' ? 'collection' : v;
+  const n = countColl();
+  $('#nav').innerHTML = NAV.map(([k, h]) => `<a href="${h}"${k === cur ? ' aria-current="page"' : ''}>${t('nav.' + k)}${k === 'collection' && n ? ` <span class="nbadge">${n}</span>` : ''}</a>`).join('');
+  $('#langSw').innerHTML = ['en','de'].map(l => `<button type="button" data-lang="${l}" aria-pressed="${l === lang}" lang="${l}" title="${l === 'en' ? 'English' : 'Deutsch'}">${l.toUpperCase()}</button>`).join('');
+  $('#brandTitle').textContent = t('app.title');
+  document.documentElement.lang = lang;
+  $('#foot').innerHTML = `<span>${t('foot.by')} · <a href="${REPO}" target="_blank" rel="noopener">GitHub</a> · ${esc(KB.version)}</span><span>${t('foot.local')}</span>`;
 }
 
-/* ---------- use cases view ---------- */
-const canRate = () => !readOnly();
-function renderDisc(){
-  const el = $('#discBar');
-  el.hidden = !canRate() || myTable() === DEMO;
-  if (el.hidden) return;
-  const own = discOf(myTable()), inp = $('#discIn');
-  const others = [...new Set(Object.keys(state.t).filter(k => k !== myTable()).map(discOf).filter(Boolean))].sort();
-  if (!inp) {
-    el.innerHTML = `<label for="discIn">Your group’s discipline</label>
-      <input id="discIn" list="discList" maxlength="60" autocomplete="off" placeholder="e.g. Marketing, Mechanical engineering, Psychology">
-      <datalist id="discList"></datalist>
-      <p class="q-hint">Rate and test every use case from the point of view of this discipline – in Step 1 and Step 2. Two groups may share a discipline; the results compare disciplines.</p>`;
-  }
-  if (document.activeElement !== $('#discIn')) $('#discIn').value = own;
-  $('#discList').innerHTML = others.map(d => `<option value="${esc(d)}">`).join('');
+/* ---------- shared pieces ---------- */
+const kicker = s => `<span class="kicker">${s}</span>`;
+const pill = (cls, s) => `<span class="pill ${cls}">${s}</span>`;
+const OUT = {y:['out.y','#2F6410'], p:['out.p','#7A4700'], n:['out.n','#5F5F5F']};
+function ucPills(u){
+  const r = rOf(u.id), p = [];
+  if (u.own) p.push(pill('own', t('pill.own')));
+  if (u.meta.excursus) p.push(pill('ex', t('pill.ex')));
+  if (r.f) p.push(pill('star', '★ ' + t('pill.star')));
+  if (r.x) p.push(pill('notai', t('pill.notai')));
+  else if (rated(r)) p.push(pill('rated', t('pill.rated', r.n, r.u)));
+  if (r.o) p.push(`<span class="pill v" style="--vc:${OUT[r.o][1]}">${t(OUT[r.o][0])}</span>`);
+  if (+u.meta.risk === 3) p.push(pill('hi', riskLabel(3)));
+  if ((u.s.levels || {}).automation) p.push(pill('lv4', t('pill.lv4')));
+  return p.join('');
 }
-function renderLens(){
-  document.querySelectorAll('[data-lens]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.lens === ui.lens)));
-  const n = myTests().length;
-  $('#lensHint').textContent = ui.lens === 1
-    ? 'Rate the value for your research, the kind of gain and whether you could start on Monday.'
-    : readOnly() ? 'View only – open a use case to see how to try it with an AI assistant.'
-    : `Pick one to three of your highest-rated use cases and try them with your AI assistant · ${n} of ${MAXTEST} selected.`;
-  $('#levels').hidden = ui.lens !== 2;
-  $('#levels').innerHTML = `<h2>Four levels of working with an AI assistant</h2><p class="sub">Every use case shows levels 1 to 3 in its guide – start with the chat and go further when you are ready. They work with any general assistant your university provides or permits (e.g. Copilot, ChatGPT, Claude or Gemini); names and features differ by tool. Level 4 (automation / own code) is suggested only where it adds something.</p>
-    <ol class="lv-grid">${LEVELS.map(([t, d], i) => `<li><span class="lv-n">Level ${i + 1}</span><b>${t}</b><p>${d}</p></li>`).join('')}</ol>${studioHtml()}`;
+const card = u => `<a class="card" href="#/uc/${encodeURIComponent(u.id)}"><span class="cph">${esc(phShort(u.meta.phase))}</span><h3>${esc(u.title)}</h3>${u.summary ? `<p>${esc(u.summary)}</p>` : ''}<span class="foot">${ucPills(u)}</span></a>`;
+function copyText(text, msg){
+  const done = () => toast(msg || t('toast.copied'));
+  const fb = () => { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch(e) { toast(t('toast.copyfail')); } ta.remove(); };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fb); else fb();
 }
-// level 4 overview: the use cases where automation or own code adds something, with the proposal for each
-function studioHtml(){
-  const list = PHASES.flatMap(p => p.uc.filter(u => lvOf(u).studio));
-  if (!list.length) return '';
-  return `<details class="studio-ov"><summary>Level 4 · Automation / own code – where it fits: ${list.length} use cases</summary>
-    <p class="sub">A proposal per use case. Check data protection and approval with your university before you connect anything.</p>
-    <table><thead><tr><th>Use case</th><th>Phase</th><th>What level 4 would add</th></tr></thead><tbody>${list.map(u => `<tr><td><button type="button" class="linkbtn" data-open="${esc(u.id)}">${esc(u.t)}</button></td><td>${esc(SHORT[u.phase])}</td><td>${esc(lvOf(u).studio)}</td></tr>`).join('')}</tbody></table></details>`;
+function download(name, data, type){
+  const a = document.createElement('a'); a.href = URL.createObjectURL(data instanceof Blob ? data : new Blob([data], {type:(type || 'text/plain') + ';charset=utf-8'}));
+  a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
 }
-function renderPhases(){
-  $('#phases').innerHTML = PHASES.map((p, i) => {
-    const list = ucsOf(p), rated = list.filter(u => { const r = myR(u.id); return r.n && r.u; }).length;
-    return `<button class="phase" role="tab" type="button" data-phase="${i}" aria-selected="${ui.phase === i}">
-      <span class="no">${p.cross ? 'All phases' : 'Phase ' + (i + 1)}</span><span class="nm">${p.short}</span>
-      <span class="ct">${list.length} use cases${rated ? ` · ${rated} rated` : ''}</span></button>`;
-  }).join('');
+const stamp = () => new Date().toISOString().slice(0, 10);
+// copyable block: data-copy holds an index into COPY, filled while rendering
+let COPY = [];
+const codeBlock = (label, text, cls) => { COPY.push(text); return `<div class="prompt${cls ? ' ' + cls : ''}"><div class="ptools"><b>${esc(label)}</b><button type="button" class="btn btn-primary btn-sm" data-copy="${COPY.length - 1}">${t('btn.copy')}</button></div><pre>${esc(text)}</pre></div>`; };
+
+/* ---------- start ---------- */
+function viewStart(){
+  const n = ALL_IDS.length;
+  const traps = [1,2,3,4].map(i => `<div class="trap"><span class="trap-n">${t('trap.n', i)}</span><b>${t('trap.' + i + '.t')}</b><p>${t('trap.' + i + '.p')}</p><p class="guard"><b>${t('trap.guard')}:</b> ${t('trap.' + i + '.g')}</p></div>`).join('');
+  const entry = (i, h) => `<a class="entry" href="${h}"><span class="ov-n">0${i}</span><h2>${t('start.e' + i + '.t')}</h2><p>${t('start.e' + i + '.p', n)}</p><span class="go">${t('start.e' + i + '.go')} →</span></a>`;
+  return `<div class="view-head"><div>${kicker(t('start.kicker'))}<h1>${t('app.title')}</h1><p class="lede">${t('start.lede', n)}</p></div></div>
+    <div class="entry-grid">${entry(1, '#/library')}${entry(2, '#/collection')}${entry(3, '#/setup')}</div>
+    <div class="panel"><h2>${t('start.levels.t')}</h2><p class="sub">${t('start.levels.p')}</p>
+      <ol class="lv-grid">${LV.map((l, i) => `<li><span class="lv-n">${t('level')} ${i + 1}</span><b>${esc(L(l.name))}</b><p>${esc(L(l.desc))}</p></li>`).join('')}</ol></div>
+    <div class="panel"><h2>${t('start.traps.t')}</h2><p class="sub">${t('start.traps.p')}</p><div class="traps">${traps}</div></div>
+    <div class="st-grid">
+      <div class="panel"><h2>${t('start.rules.t')}</h2><ul class="st-list">${[1,2,3,4].map(i => `<li>${t('start.rules.' + i)}</li>`).join('')}</ul></div>
+      <div class="panel"><h2>${t('start.repo.t')}</h2><ul class="st-list">${[1,2,3].map(i => `<li>${t('start.repo.' + i)}</li>`).join('')}</ul>
+        <p class="row"><a class="btn btn-quiet btn-sm" href="${REPO}" target="_blank" rel="noopener">GitHub ↗</a> <a class="btn btn-quiet btn-sm" href="#/setup">${t('nav.setup')}</a></p></div>
+    </div>
+    <div class="panel"><h2>${t('start.sources.t')}</h2><ul class="note">${KB.meta.sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${esc(L(s.title))}</a></li>`).join('')}</ul>
+      <p class="sub">${t('start.about', esc(KB.version))}</p></div>`;
 }
-function renderIntro(){
-  const p = PHASES[ui.phase], el = $('#intro'), open = el.open;
-  el.innerHTML = `<summary><h2>${p.name}</h2><span class="q">${p.q}</span><span class="more">Limits & discussion questions</span></summary>
-    <div class="body">
-      <div><h3>Objective</h3><ul><li>${p.goal}</li></ul></div>
-      <div><h3>Limits & guardrails</h3><ul>${p.limits.map(t => `<li>${t}</li>`).join('')}</ul></div>
-      <div><h3>Discussion questions</h3><ul>${p.disc.map(t => `<li>${t}</li>`).join('')}</ul></div>
-    </div>`;
-  el.open = open;
+
+/* ---------- library ---------- */
+function matches(u){
+  if (ui.phase && u.meta.phase !== ui.phase) return false;
+  if (ui.risk && String(u.meta.risk) !== ui.risk) return false;
+  if (ui.only === 'coll' && !(inColl(u.id) || u.own)) return false;
+  if (ui.only === 'tools' && !(u.meta.connect || []).length) return false;
+  if (ui.only === 'lv4' && !(u.s.levels || {}).automation) return false;
+  if (!ui.q) return true;
+  const hay = [u.title, u.summary, u.s.problem, u.s.result, (u.meta.connect || []).join(' '), (u.meta.tools || []).join(' ')].join(' ').toLowerCase();
+  return ui.q.toLowerCase().split(/\s+/).filter(Boolean).every(w => hay.includes(w));
 }
-function card(u, rank){
-  const r = myR(u.id), rm = room(u.id);
-  const pills = [];
-  if (u.ex) pills.push('<span class="pill ex">Excursus</span>');
-  if (r.x) pills.push('<span class="pill notai">Not an AI task</span>');
-  else if (r.n && r.u) pills.push(`<span class="pill rated">Value ${r.n} · Feasibility ${r.u}</span>`);
-  if (r.tt) pills.push(r.o ? `<span class="pill v" style="--vc:${OUTCOME[r.o][1]}">Test: ${OUTCOME[r.o][0]}</span>` : '<span class="pill test">Testing with AI</span>');
-  else if (ui.lens === 2 && r.n && r.u && !r.x) pills.push('<span class="pill">Candidate for a test</span>');
-  if (!u.custom && u.risk === 3) pills.push('<span class="pill hi">High risk</span>');
-  if (u.custom) pills.push(`<span class="pill">${u.by === 'Survey' ? 'From the survey' : 'Added by you'}</span>`);
-  if (rm.k && session) pills.push(`<span class="pill room">${rm.k} ${rm.k === 1 ? 'group' : 'groups'}</span>`);
-  const low = ui.lens === 2 && !readOnly() && (r.x || !(r.n && r.u));
-  if (low && !r.x) pills.push('<span class="pill">Not rated yet</span>');
-  return `<button class="card${r.tt ? ' tested' : ''}${low ? ' low' : ''}" type="button" data-open="${esc(u.id)}" aria-current="${ui.open === u.id}">
-    ${rank ? `<span class="rankno">#${rank} in this phase · ${r.n}×${r.u}</span>` : ''}<h3>${r.f ? '<span class="star" aria-label="starred">★</span> ' : ''}${esc(u.t)}</h3>${u.d ? `<p>${esc(u.d)}</p>` : ''}
-    <span class="foot">${pills.join('')}</span></button>`;
+function viewLibrary(){
+  const phaseBtns = `<button type="button" data-fphase="" aria-pressed="${!ui.phase}">${t('lib.all')}</button>` + PHASES.map((p, i) => `<button type="button" data-fphase="${p.id}" aria-pressed="${ui.phase === p.id}">${p.cross ? '' : (i + 1) + ' · '}${esc(L(p).short)}</button>`).join('');
+  const sel = (id, cur, label, opts) => `<label class="sr" for="${id}">${label}</label><select id="${id}" class="selectbox">${opts.map(([v, l]) => `<option value="${v}"${v === cur ? ' selected' : ''}>${esc(l)}</option>`).join('')}</select>`;
+  return `<div class="view-head"><div>${kicker(t('nav.library'))}<h1>${t('lib.h1')}</h1><p class="lede">${t('lib.lede')}</p></div></div>
+    <div class="filters">
+      <label class="search"><span class="sr">${t('lib.search')}</span><input id="q" type="search" placeholder="${t('lib.search')}" value="${esc(ui.q)}" autocomplete="off"></label>
+      ${sel('fRisk', ui.risk, t('ed.risk'), [['', t('lib.anyrisk')], ['1', riskLabel(1)], ['2', riskLabel(2)], ['3', riskLabel(3)]])}
+      ${sel('fOnly', ui.only, t('lib.show'), [['', t('lib.anything')], ['coll', t('lib.only.coll')], ['tools', t('lib.only.tools')], ['lv4', t('lib.only.lv4')]])}
+      <a class="btn btn-ghost btn-sm" href="#/new">+ ${t('btn.newuc')}</a>
+    </div>
+    <div class="tchips" role="group" aria-label="${t('lib.phase')}">${phaseBtns}</div>
+    ${ui.phase ? phaseIntro(PH[ui.phase]) : ''}
+    <p class="sub" id="libCount" aria-live="polite"></p><div class="cards" id="cards"></div>`;
 }
-const prio = u => { const r = myR(u.id); return r.x ? -2 : (r.n && r.u) ? r.n * r.u + (r.f ? .5 : 0) + (r.tt ? .25 : 0) : -1; };
+function phaseIntro(p){
+  const x = L(p);
+  return `<details class="intro"><summary><h2>${esc(x.name)}</h2><span class="q">${esc(x.q)}</span><span class="more">${t('lib.limits')}</span></summary>
+    <div class="body"><div><h3>${t('lib.goal')}</h3><ul><li>${esc(x.goal)}</li></ul></div><div><h3>${t('lib.guard')}</h3><ul>${x.limits.map(l => `<li>${esc(l)}</li>`).join('')}</ul></div><div><h3>${t('lib.disc')}</h3><ul>${x.disc.map(l => `<li>${esc(l)}</li>`).join('')}</ul></div></div></details>`;
+}
 function renderCards(){
-  const p = PHASES[ui.phase];
-  let list = ucsOf(p);
-  if (ui.lens === 2) list = list.slice().sort((a, b) => prio(b) - prio(a));
-  let rank = 0;
-  // Step 2: the group's best-rated use cases across all phases, so the pick is not limited to the phase on screen
-  const top = ui.lens === 2 && !readOnly() ? allUcs().filter(u => prio(u) > 0).sort((a, b) => prio(b) - prio(a)).slice(0, 5) : [];
-  const topHtml = top.length ? `<div class="topstrip"><b>Your top use cases (all phases)</b><ol>${top.map(u => { const r = myR(u.id); return `<li><button type="button" class="linkbtn" data-open="${esc(u.id)}">${r.tt ? '✓ ' : ''}${esc(u.t)}</button> <small>${SHORT[u.phase]} · ${r.n}×${r.u}</small></li>`; }).join('')}</ol></div>` : '';
-  $('#cards').innerHTML = (ui.lens === 2 && !readOnly() ? `${topHtml}<p class="sortnote">Sorted by your group’s priority in this phase (value × feasibility). Pick one to three use cases in total and try them with your AI assistant.</p>` : '') +
-    list.map(u => card(u, ui.lens === 2 && prio(u) > 0 ? ++rank : 0)).join('') + (readOnly() ? '' : '<button class="card add" type="button" data-add>+ Add a use case</button>');
+  const list = allUcs().filter(matches);
+  $('#cards').innerHTML = list.map(card).join('') || `<p class="empty">${t('lib.none')}</p>`;
+  $('#libCount').textContent = t('lib.count', list.length, ALL_IDS.length + store.own.length);
 }
 
-/* ---------- drawer ---------- */
-function scale(key, val, label, hint){
-  return `<div><div class="q-label">${label}</div><div class="q-hint">${hint}</div>
-    <div class="scale" role="group" aria-label="${label}">${[1,2,3,4,5].map(n => `<button type="button" data-rate="${key}" data-v="${n}" aria-pressed="${val === n}">${n}</button>`).join('')}</div></div>`;
+/* ---------- one use case ---------- */
+const scale = (key, val, label, hint) => `<div><div class="q-label">${label}</div><div class="q-hint">${hint}</div><div class="scale" role="group" aria-label="${label}">${[1,2,3,4,5].map(n => `<button type="button" data-rate="${key}" data-v="${n}" aria-pressed="${val === n}">${n}</button>`).join('')}</div></div>`;
+function assessHtml(u){
+  const r = rOf(u.id);
+  return `<div class="panel assess"><h2>${t('uc.assess')}</h2><p class="sub">${t('uc.assess.p')}</p>
+    ${scale('n', r.n, t('uc.value'), t('uc.value.h'))}
+    <div><div class="q-label">${t('uc.gain')}</div><div class="chips" role="group" aria-label="${t('uc.gain')}">${KB.meta.gains.map(g => `<button type="button" data-gain="${g.id}" aria-pressed="${(r.b || []).includes(g.id)}">${esc(L(g))}</button>`).join('')}</div></div>
+    ${scale('u', r.u, t('uc.feas'), t('uc.feas.h'))}
+    <div class="toggles"><button type="button" class="toggle" data-flag="f" aria-pressed="${!!r.f}">★ ${t('pill.star')}</button><button type="button" class="toggle" data-flag="x" aria-pressed="${!!r.x}">${t('pill.notai')}</button><button type="button" class="toggle warn" data-flag="c" aria-pressed="${!!r.c}">${t('uc.checkrules')}</button></div>
+    <div><div class="q-label">${t('uc.tried')}</div><div class="chips" role="group" aria-label="${t('uc.tried')}">${Object.keys(OUT).map(k => `<button type="button" data-out="${k}" aria-pressed="${r.o === k}">${t(OUT[k][0])}</button>`).join('')}</div></div>
+    <div class="field"><label for="ucNote">${t('uc.note')}</label><textarea id="ucNote" data-note maxlength="1000" placeholder="${t('uc.note.ph')}">${esc(r.note || '')}</textarea></div>
+    <p class="q-hint">${t('uc.saved')}</p></div>`;
 }
-const GENERIC = {bring:'Material for your own example: a short text, an open-access paper or a dummy dataset – nothing personal or confidential.',
-  steps:['Open the AI assistant your university provides or permits, signed in with your university account where possible.','Describe your goal and attach or paste the material.','Say what a good result looks like (format, length).','Compare the answer with your material and note what happened.'],
-  prompt:'I am a postgraduate researcher in [discipline]. My goal: [what you want to achieve]. Material: [attached file / pasted text]. Please [task]. Give the result as [format, length]. If you are not sure about something, say so; do not invent sources.',
-  check:'The result is correct against your material and saves you real time.'};
-const practiceOf = id => (typeof DETAILS !== 'undefined' && DETAILS[id] && DETAILS[id].practice) || null;
-// the group's discipline replaces the placeholder in own-material prompts
-const withDisc = t => discOf(myTable()) ? t.replace(/\[(your )?discipline\]/gi, discOf(myTable())) : t;
-const promptOf = id => { const pr = practiceOf(id); return pr && ui.gmode === 'practice' ? pr.prompt : withDisc(((typeof GUIDES !== 'undefined' && GUIDES[id]) || GENERIC).prompt); };
-const refList = () => PACK.papers.map(p => `${p.id} ${p.cite} https://doi.org/${p.doi}`).join('\n');
-function packFiles(id){
-  if (id === 'papers') return `<li><b>All ${PACK.papers.length} papers</b> <a href="${PACK_URL}ai-research-practice-pack.zip" download>practice pack · ZIP · ${mb(PACK.zips.all)}</a> <button type="button" class="linkbtn" data-copyrefs>Copy all ${PACK.papers.length} references</button></li>`;
-  const x = (PACK.extras || []).find(e => e.id === id);
-  if (x) return `<li><b>${id}</b> <a href="${fileUrl(x.file)}" download>${esc(x.title)} · ${x.file.split('.').pop().toUpperCase()} · ${mb(x.size)}</a></li>`;
-  const p = PACK.papers.find(x => x.id === id);
-  if (p) return `<li><b>${id}</b> <a href="${fileUrl(p.file)}" target="_blank" rel="noopener">${esc(packLabel(id))} · PDF · ${mb(p.size)}</a></li>`;
-  const d = PACK.data.find(x => x.id === id);
-  return d ? `<li><b>${id}</b> ${esc(d.title)}: ${d.files.map(f => `<a href="${fileUrl(f.f)}" download>${esc(f.f.split('/').pop())} · ${mb(f.size)}</a>`).join(', ')}</li>` : '';
+const PACK_URL = REPO + '/releases/download/practice-data-' + KB.pack.snapshot + '/';
+const fileHref = f => 'materials/' + f.split('/').map(encodeURIComponent).join('/');
+function packFile(id){
+  const P = KB.pack, x = (P.extras || []).find(e => e.id === id);
+  if (id === 'papers') return `<li><b>${t('data.allpapers', P.papers.length)}</b> <a href="${PACK_URL}ai-research-practice-pack.zip" download>ZIP</a></li>`;
+  if (x) return `<li><b>${id}</b> <a href="${fileHref(x.file)}" download>${esc(x.title)}</a></li>`;
+  const p = P.papers.find(e => e.id === id); if (p) return `<li><b>${id}</b> <a href="${fileHref(p.file)}" target="_blank" rel="noopener">${esc(p.cite.split('(')[0].trim())} · PDF</a></li>`;
+  const d = P.data.find(e => e.id === id); return d ? `<li><b>${id}</b> ${esc(d.title)}: ${d.files.map(f => `<a href="${fileHref(f.f)}" download>${esc(f.f.split('/').pop())}</a>`).join(', ')}</li>` : '';
 }
-// every use case shows the same ladder: 1 chat, 2 project / notebook, 3 custom assistant – and 4 automation / own code only where it makes sense
-const LV_GENERIC = {chat:'Run the starter prompt in one chat and refine the result there with follow-up questions.',
-  notebook:'Create a project or notebook in your assistant, add the files you work with and a short document with your rules, and come back to it as your material grows. Depending on your tool, it answers only from those files or can also search the web.',
-  agent:'Set up a custom assistant (e.g. a Copilot agent, a custom GPT or a Gemini Gem): put your rules and the output format into its instructions, add stable reference files as knowledge and test it with a real example. Reuse it whenever the task comes up again.', studio:''};
-const lvOf = u => (typeof DETAILS !== 'undefined' && DETAILS[u.id] && DETAILS[u.id].levels) || LV_GENERIC;
-function ladderHtml(u){
-  const L = lvOf(u), item = (n, t, txt, extra) => `<li><span class="ln">Level ${n} · ${t}</span><p>${esc(txt)}</p>${extra || ''}</li>`;
-  return `<div class="ladder"><h4>Three levels with an AI assistant${L.studio ? ' – and a fourth' : ''}</h4><ol>
-    ${item(1, 'Chat', L.chat)}${item(2, 'Project / Notebook', L.notebook)}${item(3, 'Custom assistant', L.agent)}
-    ${L.studio ? item(4, 'Automation / own code', L.studio, '<button type="button" class="linkbtn" data-view="tools" data-mcpinfo>How connecting works →</button>') : ''}</ol></div>`;
-}
-function guideHtml(u, open){
-  const g = (typeof GUIDES !== 'undefined' && GUIDES[u.id]) || GENERIC, pr = practiceOf(u.id), pm = pr && ui.gmode === 'practice';
-  const seg = pr ? `<div class="seg gseg" role="group" aria-label="Material for the test"><button type="button" data-gmode="practice" aria-pressed="${pm}">With the practice data</button><button type="button" data-gmode="own" aria-pressed="${!pm}">With your own material</button></div>` : '';
-  if (pm) return `<details class="guide"${open ? ' open' : ''}><summary>How to try it with an AI assistant</summary>${seg}
-    <p>${esc(pr.task)}</p>
-    ${pr.data.length || pr.attach_note ? `<p><b>Attach to the chat:</b></p><ul class="pfiles">${pr.data.map(id => packFiles(id)).join('')}${pr.attach_note ? `<li>${esc(pr.attach_note)}</li>` : ''}</ul>` : '<p><b>Nothing to attach</b> – the prompt contains all the assistant needs.</p>'}
-    ${(pr.ref || []).length ? `<p><b>Keep open for checking – do not attach:</b></p><ul class="pfiles ref">${pr.ref.map(id => packFiles(id)).join('')}</ul>` : ''}
-    <div class="prompt"><div class="ptools"><b>Starter prompt · practice data</b><span class="row"><button type="button" class="btn btn-primary btn-sm" data-copyprompt>Copy prompt</button></span></div><pre>${esc(pr.prompt)}</pre></div>
-    <p><b>Check:</b> ${esc(pr.check)}</p>${g.limit ? `<p class="limit"><b>Limit:</b> ${esc(g.limit)}</p>` : ''}
-    ${ladderHtml(u)}
-    <p class="sub">All files and test ideas: <button type="button" class="linkbtn" data-view="data">Practice data →</button></p></details>`;
-  return `<details class="guide"${open ? ' open' : ''}><summary>How to try it with an AI assistant</summary>${seg}
-    <p><b>Bring:</b> ${esc(g.bring)}</p>
-    <ol class="howto">${g.steps.map(x => `<li>${esc(x)}</li>`).join('')}</ol>
-    <div class="prompt"><div class="ptools"><b>Starter prompt</b><span class="row"><button type="button" class="btn btn-primary btn-sm" data-copyprompt>Copy prompt</button></span></div><pre>${esc(withDisc(g.prompt))}</pre></div>
-    <p><b>Check:</b> ${esc(g.check)}</p>${g.limit ? `<p class="limit"><b>Limit:</b> ${esc(g.limit)}</p>` : ''}
-    ${ladderHtml(u)}
-    <p class="sub">No suitable material at hand? <button type="button" class="linkbtn" data-view="data">Use the practice data →</button></p></details>`;
-}
-function testHtml(u){
-  const r = myR(u.id), n = myTests().length, full = !r.tt && n >= MAXTEST;
-  if (!canRate()) return guideHtml(u, false);
-  const warn = r.tt ? '' : r.x ? ' You flagged this as not an AI task in Step 1.' : !(r.n && r.u) ? ' Not rated yet – rate it in Step 1 first.' : '';
-  let h = `<button type="button" class="toggle" data-test aria-pressed="${!!r.tt}" ${full ? 'disabled title="Your group already tests three use cases"' : ''}>${r.tt ? '✓ Selected for a test' : 'Test this with your AI assistant'}</button>
-    <p class="q-hint">${full ? 'Your group already tests three use cases – deselect one first.' : `${n} of ${MAXTEST} selected for your group.`}${warn ? `<span class="warnhint">${warn}</span>` : ''}</p>`;
-  h += guideHtml(u, !!r.tt);
-  if (r.tt) h += `
-    <div><div class="q-label">After testing: how did it go?</div><div class="chips" role="group" aria-label="Test result">${Object.entries(OUTCOME).map(([k, v]) => `<button type="button" data-out="${k}" aria-pressed="${r.o === k}">${v[0]}</button>`).join('')}</div></div>
-    <div class="field"><label for="testNote">What did you notice?</label><textarea id="testNote" data-note maxlength="400" placeholder="e.g. good first draft, but two invented references">${esc(r.note || '')}</textarea></div>`;
-  return h;
-}
-let drawerHtml = '';
-function step1Html(u){
-  const r = myR(u.id), rm = room(u.id);
-  return `<div class="block">
-          <h3>Step 1 · Research value${session && canRate() ? ' · ' + (myTable() === DEMO ? 'Facilitator demo' : esc(groupLabel(myTable()))) : ''}</h3>
-          ${myTable() === DEMO ? '<p class="q-hint">Your ratings as facilitator are for demonstration only and never count in the results.</p>' : ''}
-          ${!canRate() ? '<p class="later">View only – this code cannot rate.</p>' : `
-          ${scale('n', r.n, 'Value', '1 nice to have · 3 saves real time · 5 removes a real bottleneck')}
-          <div><div class="q-label">Kind of gain</div><div class="q-hint">Choose all that apply.</div>
-            <div class="chips" role="group" aria-label="Kind of gain">${GAINS.map(([k, l]) => `<button type="button" data-gain="${k}" aria-pressed="${(r.b || []).includes(k)}">${l}</button>`).join('')}</div></div>
-          ${scale('u', r.u, 'Feasibility', '1 needs data or skills you don’t have · 3 possible with effort · 5 you could start on Monday')}
-          <div class="toggles">
-            <button type="button" class="toggle" data-flag="f" aria-pressed="${!!r.f}">★ Star</button>
-            <button type="button" class="toggle" data-flag="x" aria-pressed="${!!r.x}">Not an AI task</button>
-            <button type="button" class="toggle warn" data-flag="c" aria-pressed="${chkOf(r)}">Check rules first</button>
-          </div>
-          <p class="q-hint">★ = we want to try this in Step 2 · Not an AI task = AI is the wrong instrument here · Check rules first = ethics, data or policy rules to clarify before use</p>`}
-          ${rm.k ? `<div class="roomline">All groups: ${rm.k} ${rm.k === 1 ? 'group' : 'groups'} · value ${rm.n.toFixed(1)} · feasibility ${rm.u.toFixed(1)}${rm.x.length ? ` · ${rm.x.length}× not an AI task` : ''}</div>` : ''}
-        </div>`;
-}
-function step2Html(u){
-  return `<div class="block tech">
-          <h3>Step 2 · Try it with AI</h3>
-          ${ui.lens === 2 ? testHtml(u) : `<p class="later">Opens in Step 2 – first discuss the value for your research. <button type="button" class="linkbtn" data-lens="2">Switch to Step 2 →</button></p>`}
-        </div>`;
-}
-function openDrawer(id){
-  const d = $('#drawer'), again = !d.hidden && ui.open === id;   // re-render of the open use case (poll, rating, lens)
-  const sc = again && d.querySelector('.scroll'), top = sc ? sc.scrollTop : 0;
-  const gd = again && d.querySelector('details.guide'), gOpen = gd ? gd.open : null;
-  const bd = again && d.querySelector('details.bg'), bOpen = bd ? bd.open : null;
-  if (!again) ui.gmode = 'practice';                              // every use case starts with the practice data
-  ui.open = id;
-  const u = id === '__new' ? null : findUc(id);
-  let h;
-  if (!u) {
-    h = `<header><h2 id="drawerTitle">Add a use case · ${PHASES[ui.phase].short}</h2><button class="icon-btn" type="button" data-close aria-label="Close">✕</button></header>
-      <form class="scroll" id="addForm" autocomplete="off">
-        <div class="field"><label for="fTitle">Title</label><input id="fTitle" required maxlength="80" placeholder="e.g. Summarise conference talks"></div>
-        <div class="field"><label for="fDesc">What should AI do – and what do you check?</label><textarea id="fDesc" maxlength="300"></textarea></div>
-        <div><button class="btn btn-primary" type="submit">Add use case</button></div>
-      </form>`;
-  } else {
-    const ro = readOnly(), x = (typeof DETAILS !== 'undefined' && DETAILS[u.id]) || null;
-    // the step in progress comes first; background, methods and technology are folded away below
-    h = `<header><h2 id="drawerTitle">${esc(u.t)}</h2><button class="icon-btn" type="button" data-close aria-label="Close">✕</button></header>
-      <div class="scroll">
-        ${u.ex ? '<p class="exnote"><b>Excursus.</b> Research on language models, not a method for every discipline: model outputs are not valid data about real people.</p>' : ''}
-        ${u.d ? `<p class="desc">${esc(u.d)}</p>` : ''}
-        <div class="meta">${u.custom ? `<span>${u.by === 'Survey' ? 'Imported' : 'Added by you'} · ${SHORT[u.phase]}</span>` :
-          `<span><b>${u.mode}:</b> ${MODE_DEF[u.mode]}</span><span><b>${RISK[u.risk]}:</b> ${RISK_DEF[u.risk]}</span>`}</div>
-        ${x ? `<div class="ux"><div class="ux-pr"><div><h4>The problem</h4><p>${esc(x.problem)}</p></div><div><h4>Result and value</h4><p>${esc(x.result)}</p></div></div></div>` : ''}
-        ${ui.lens === 2 ? step2Html(u) + step1Html(u) : step1Html(u) + step2Html(u)}
-        ${backgroundHtml(u)}
-        ${u.custom && !ro && (!session || u.by === myTable() || session.role === 'facilitator') ? '<div><button class="btn btn-quiet btn-sm" type="button" data-del>Remove this use case</button></div>' : ''}
-      </div>`;
+function tryHtml(u){
+  const s = u.s, pr = s.practice || {}, own = s.own || {}, hasP = !!pr.prompt, pm = hasP && ui.mode === 'practice';
+  const seg = hasP ? `<div class="seg gseg" role="group"><button type="button" data-mode="practice" aria-pressed="${pm}">${t('uc.withpractice')}</button><button type="button" data-mode="own" aria-pressed="${!pm}">${t('uc.withown')}</button></div>` : '';
+  if (pm) {
+    const att = u.meta.practice_data || [], ref = u.meta.practice_ref || [];
+    return `${seg}${pr.task ? `<p>${esc(pr.task)}</p>` : ''}
+      ${att.length || pr.attach_note ? `<p><b>${t('uc.attach')}</b></p><ul class="pfiles">${att.map(packFile).join('')}${pr.attach_note ? `<li>${esc(pr.attach_note)}</li>` : ''}</ul>` : `<p>${t('uc.noattach')}</p>`}
+      ${ref.length ? `<p><b>${t('uc.keepopen')}</b></p><ul class="pfiles ref">${ref.map(packFile).join('')}</ul>` : ''}
+      ${codeBlock(t('uc.prompt.practice'), pr.prompt)}${pr.check ? `<p><b>${t('uc.check')}:</b> ${esc(pr.check)}</p>` : ''}${own.limit ? `<p class="limit"><b>${t('uc.limit')}:</b> ${esc(own.limit)}</p>` : ''}`;
   }
-  if (again && h === drawerHtml) return;                          // nothing changed – leave the DOM and scroll position alone
-  drawerHtml = h; d.innerHTML = h;
-  if (again) {
-    const g = d.querySelector('details.guide'); if (g && gOpen !== null) g.open = gOpen;
-    const b = d.querySelector('details.bg'); if (b && bOpen !== null) b.open = bOpen;
-    const s2 = d.querySelector('.scroll'); if (s2) s2.scrollTop = top;
-  }
-  d.hidden = false; $('#scrim').hidden = false; setInert(true);
-  renderCards();
-  if (!again) setTimeout(() => (d.querySelector('#fTitle') || d.querySelector('h2')).focus({preventScroll:true}), 30);
-  if (d.querySelector('h2')) d.querySelector('h2').tabIndex = -1;
+  return `${seg}${own.bring ? `<p><b>${t('uc.bring')}:</b> ${esc(own.bring)}</p>` : ''}${(own.steps || []).length ? `<ol class="howto">${own.steps.map(x => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
+    ${own.prompt ? codeBlock(t('uc.prompt'), own.prompt) : ''}${own.check ? `<p><b>${t('uc.check')}:</b> ${esc(own.check)}</p>` : ''}${own.limit ? `<p class="limit"><b>${t('uc.limit')}:</b> ${esc(own.limit)}</p>` : ''}`;
 }
-function closeDrawer(){
-  const id = ui.open; ui.open = null; $('#drawer').hidden = true; $('#scrim').hidden = true; setInert(false); renderCards();
-  const back = id && document.querySelector(`[data-open="${CSS.escape(id)}"]`); if (back) back.focus();
+function levelsHtml(u){
+  const lv = u.s.levels || {};
+  return `<ol class="ladder-l">${['chat','project','assistant','automation'].map((k, i) => lv[k] ? `<li><span class="ln">${t('level')} ${i + 1} · ${esc(L(LV[i].name))}</span><p>${esc(lv[k])}</p></li>` : '').join('')}</ol>`;
 }
-
-/* ---------- results view ---------- */
-const inPhase = u => !ui.resPhase || u.phase === ui.resPhase;
-const groupOrder = (a, b) => (TABLES.indexOf(a) + 1 || 99) - (TABLES.indexOf(b) + 1 || 99) || a.localeCompare(b);
-// facilitator, viewer and explore mode may open any group; a group sees itself
-const canPick = () => !session || session.role !== 'table';
-const hasData = k => !!state.t[k] && (Object.keys(state.t[k].r).length > 0 || Object.values(state.t[k].fd || {}).some(Boolean));
-const shownTable = () => canPick() ? (ui.resTable || TABLES.find(hasData) || TABLES[0]) : myTable();
-const rOf = (k, id) => (state.t[k] && state.t[k].r[id]) || {};
-// disciplines entered by the groups: spelling variants ("marketing", "Marketing ") count as one
-function disciplines(){
-  const m = new Map();
-  Object.keys(state.t).filter(k => k !== DEMO && discOf(k) && Object.keys(state.t[k].r).length).sort(groupOrder).forEach(k => { const key = discKey(discOf(k)); if (!m.has(key)) m.set(key, {key, label:discOf(k), groups:[]}); m.get(key).groups.push(k); });
-  return [...m.values()].sort((a, b) => a.label.localeCompare(b.label));
-}
-const discLabel = key => (disciplines().find(d => d.key === key) || {label:key}).label;
-const roomTabs = disc => Object.keys(state.t).filter(k => Object.keys(state.t[k].r).length && inDisc(k, disc));
-function rated(){
-  const mine = shownTable();
-  if (ui.scope === 'table') {
-    return allUcs().filter(inPhase).map(u => ({u, r:(state.t[mine] && state.t[mine].r[u.id]) || {}})).filter(e => e.r.n && e.r.u && !e.r.x)
-      .map(e => ({u:e.u, n:e.r.n, m:e.r.u, f:!!e.r.f, k:1, chk:chkOf(e.r), t:!!e.r.tt})).sort((a, b) => b.n*b.m - a.n*a.m || b.n - a.n);
-  }
-  return allUcs().filter(inPhase).map(u => ({u, rm:room(u.id, ui.resDisc)})).filter(e => e.rm.k).sort((a, b) => byRoom(a.rm, b.rm))
-    .map(({u, rm}) => ({u, n:rm.n, m:rm.u, f:rm.stars > 0, k:rm.k, chk:rm.chk.length > 0, t:rm.tests.length > 0}));
-}
-function renderMatrix(list){
-  const W = 620, H = 460, L = 54, R = 14, T = 14, B = 52;
-  const sx = v => L + (v - .5) / 5 * (W - L - R), sy = v => T + (5.5 - v) / 5 * (H - T - B), mx = sx(3), my = sy(3);
-  let g = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Matrix of value against feasibility; the numbers match the list of top use cases">`;
-  g += `<rect x="${mx}" y="${T}" width="${W-R-mx}" height="${my-T}" fill="#E3E8F5"/><rect x="${L}" y="${T}" width="${mx-L}" height="${my-T}" fill="#F1F3F9"/>`;
-  g += `<rect x="${mx}" y="${my}" width="${W-R-mx}" height="${H-B-my}" fill="#F7F7F7"/><rect x="${L}" y="${my}" width="${mx-L}" height="${H-B-my}" fill="#FBFBFB"/>`;
-  [[W-R-10, T+20, 'Quick wins', 'end', '#002896'], [L+10, T+20, 'Strategic bets', 'start', '#3D5FB4'], [W-R-10, H-B-12, 'Easy add-ons', 'end', '#5F5F5F'], [L+10, H-B-12, 'Deprioritise', 'start', '#5F5F5F']]
-    .forEach(q => g += `<text x="${q[0]}" y="${q[1]}" text-anchor="${q[3]}" font-size="13" font-weight="700" fill="${q[4]}">${q[2]}</text>`);
-  for (let v = 1; v <= 5; v++) g += `<text x="${sx(v)}" y="${H-B+20}" text-anchor="middle" font-size="12" fill="#5F5F5F">${v}</text><text x="${L-12}" y="${sy(v)+4}" text-anchor="end" font-size="12" fill="#5F5F5F">${v}</text>`;
-  g += `<line x1="${mx}" y1="${T}" x2="${mx}" y2="${H-B}" stroke="#CFCFCF" stroke-dasharray="4 4"/><line x1="${L}" y1="${my}" x2="${W-R}" y2="${my}" stroke="#CFCFCF" stroke-dasharray="4 4"/>`;
-  g += `<line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#454545"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H-B}" stroke="#454545"/>`;
-  g += `<text x="${(L+W-R)/2}" y="${H-10}" text-anchor="middle" font-size="13" font-weight="700" fill="#1F1F1F">Feasibility →</text><text transform="translate(16 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" font-size="13" font-weight="700" fill="#1F1F1F">Value →</text>`;
-  // start at the exact position, then push overlapping points apart (deterministic, a few px per step)
-  const P = list.map((e, i) => ({x:sx(e.m) + (i % 3 - 1) * .01, y:sy(e.n) + (i % 2 ? .01 : -.01)}));
-  for (let it = 0; it < 60; it++) {
-    let moved = false;
-    for (let i = 0; i < P.length; i++) for (let j = i + 1; j < P.length; j++) {
-      const dx = P[j].x - P[i].x, dy = P[j].y - P[i].y, dist = Math.hypot(dx, dy) || .01;
-      if (dist < 24) { const push = (24 - dist) / 2, ux = dx / dist, uy = dy / dist; P[i].x -= ux * push; P[i].y -= uy * push; P[j].x += ux * push; P[j].y += uy * push; moved = true; }
-    }
-    P.forEach(p => { p.x = Math.min(W - R - 12, Math.max(L + 12, p.x)); p.y = Math.min(H - B - 12, Math.max(T + 12, p.y)); });
-    if (!moved) break;
-  }
-  list.forEach((e, i) => {
-    const {x, y} = P[i];
-    g += `<g class="pt" style="cursor:pointer" data-open="${esc(e.u.id)}" tabindex="0" role="button" aria-label="${i+1}: ${esc(e.u.t)}"><title>${i+1} · ${esc(e.u.t)} – value ${e.n.toFixed(1)}, feasibility ${e.m.toFixed(1)}</title>${e.f ? `<circle cx="${x}" cy="${y}" r="15" fill="none" stroke="#1F1F1F" stroke-width="2.5"/>` : ''}<circle cx="${x}" cy="${y}" r="11" fill="#002896" stroke="#fff" stroke-width="2"/><text x="${x}" y="${y+4}" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">${i+1}</text></g>`;
-  });
-  if (!list.length) g += `<text x="${(L+W-R)/2}" y="${(T+H-B)/2}" text-anchor="middle" font-size="14" fill="#5F5F5F">No ratings yet – rate use cases in Step 1.</text>`;
-  $('#matrix').innerHTML = `<div class="mx-scroll">${g}</svg></div>` + `<div class="legend"><span><i style="background:#fff;box-shadow:0 0 0 2px #1F1F1F"></i>Starred – the group wants to try it in Step 2</span></div>`;
-}
-function renderGroups(){
-  const el = $('#groups');
-  el.hidden = !(canPick() && ui.scope === 'room');
-  if (el.hidden) return;
-  const rows = Object.keys(state.t).filter(k => hasData(k) && inDisc(k, ui.resDisc)).sort(groupOrder).map(k => {
-    const r = state.t[k].r, ids = Object.keys(r).filter(id => findUc(id) && inPhase(findUc(id)));
-    const ok = ids.filter(id => r[id].n && r[id].u && !r[id].x).sort((a, b) => r[b].n*r[b].u - r[a].n*r[a].u);
-    return {k, n:ok.length, top:ok.slice(0, 3).map(id => findUc(id).t), tests:ids.filter(id => r[id].tt).length, fd:Object.values(state.t[k].fd || {}).filter(Boolean).length};
-  });
-  el.innerHTML = `<h2>Groups</h2><p class="sub">${rows.length} ${rows.length === 1 ? 'group' : 'groups'} with results. Select a group to see its own matrix, ranking and tests.</p>` +
-    (rows.length ? `<div class="gtable"><table><thead><tr><th>Group</th><th>Discipline</th><th>Rated</th><th>Top use cases</th><th>Tests</th><th>Findings</th></tr></thead><tbody>${rows.map(x =>
-      `<tr data-group="${esc(x.k)}"><th><button type="button" class="linkbtn" data-group="${esc(x.k)}">${esc(x.k)}</button></th><td>${esc(discOf(x.k)) || '–'}</td><td>${x.n}</td><td>${x.top.length ? x.top.map(esc).join(' · ') : '–'}</td><td>${x.tests}</td><td>${x.fd ? '✓' : '–'}</td></tr>`).join('')}</tbody></table></div>` : '<p class="empty">No group has saved results yet.</p>');
-}
-// "3 selected · 2 tested (1 worked well)" – the same count in the results panel and in the report
-const testCount = tests => { const done = tests.filter(x => x.o), ok = done.filter(x => x.o === 'y').length; return `${tests.length} selected · ${done.length} tested (${ok} worked well)`; };
-function renderResults(){
-  const mine = shownTable();
-  const ds = disciplines();
-  if (ui.resDisc && !ds.some(d => d.key === ui.resDisc)) ui.resDisc = '';
-  const room1 = ui.scope === 'room';
-  const list = rated();
-  const pick = $('#scopePick');
-  pick.hidden = !(canPick() && ui.scope === 'table');
-  if (canPick()) pick.innerHTML = [...new Set(TABLES.concat(Object.keys(state.t).filter(hasData)))].sort(groupOrder).map(k => `<option value="${esc(k)}"${k === mine ? ' selected' : ''}>${esc(groupLabel(k))}${hasData(k) ? '' : ' (no results yet)'}</option>`).join('');
-  renderGroups();
-  $('#resPhase').innerHTML = `<button type="button" data-rph="" aria-pressed="${!ui.resPhase}">All phases</button>` + PHASES.map(p => `<button type="button" data-rph="${p.id}" aria-pressed="${ui.resPhase === p.id}">${p.short}</button>`).join('');
-  const rd = $('#resDisc');
-  rd.hidden = !room1 || !ds.length;
-  rd.innerHTML = rd.hidden ? '' : `<span class="tlab">Discipline</span><button type="button" data-rdisc="" aria-pressed="${!ui.resDisc}">All disciplines</button>` + ds.map(d => `<button type="button" data-rdisc="${esc(d.key)}" aria-pressed="${ui.resDisc === d.key}">${esc(d.label)} (${d.groups.length})</button>`).join('');
-  $('#scopeTable').textContent = canPick() ? 'One group' : 'My group';
-  document.querySelectorAll('[data-scope]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.scope === ui.scope)));
-  const tabs = roomTabs(ui.resDisc);
-  $('#resSub').textContent = (ui.resPhase ? SHORT[ui.resPhase] : 'All phases') + ' · ' + (room1 ? `${ui.resDisc ? discLabel(ui.resDisc) + ' · ' : ''}averages over ${tabs.length} ${tabs.length === 1 ? 'group' : 'groups'} · ${list.length} rated use cases.` : `${groupLabel(mine)} · ${list.length} rated use cases.`);
-  renderMatrix(list);
-  $('#rankSub').textContent = room1 ? 'Ranked by value × feasibility; use cases rated by more groups count more. The numbers match the matrix.' : 'Ranked by value × feasibility. The numbers match the matrix.';
-  $('#rank').innerHTML = list.length ? list.map((e, i) => `<li data-open="${esc(e.u.id)}" tabindex="0" role="button"${i >= 20 ? ' class="pmore"' : ''}><span class="n" style="background:var(--red)">${i+1}</span><span><b>${esc(e.u.t)}</b><small>${SHORT[e.u.phase]}${room1 ? ` · ${e.k} ${e.k === 1 ? 'group' : 'groups'}` : ''}${e.chk ? ' · check rules first' : ''}${e.t ? ' · tested with Copilot' : ''}</small></span><span class="sc">V ${e.n.toFixed(1)} · F ${e.m.toFixed(1)}</span></li>`).join('')
-    : '<li class="empty" style="display:block;cursor:default">No use cases rated yet.</li>';
-  if (list.length > 20) $('#rank').insertAdjacentHTML('beforeend', `<li class="pnote">Top 20 of ${list.length} – the full list is in the results export (.csv).</li>`);
-  const scope = id => room1 ? room(id, ui.resDisc) : (r => ({x:r.x ? [mine] : [], chk:chkOf(r) ? [mine] : []}))(rOf(mine, id));
-  const all = allUcs().filter(inPhase).map(u => ({u, s:scope(u.id)}));
-  const notai = all.filter(e => e.s.x.length), chk = all.filter(e => e.s.chk.length);
-  const tests = allUcs().filter(inPhase).flatMap(u => (room1 ? room(u.id, ui.resDisc).tests : (r => r.tt ? [{table:mine, o:r.o || '', note:r.note || ''}] : [])(rOf(mine, u.id))).map(x => ({u, ...x})));
-  const li = (e, who) => `<li data-open="${esc(e.u.id)}" tabindex="0" role="button">${esc(e.u.t)} <small>· ${SHORT[e.u.phase]}${room1 && who.length ? ' · ' + who.map(k => esc(groupLabel(k))).join(', ') : ''}</small></li>`;
-  $('#tests').innerHTML = `<h2>Tried with AI</h2><p class="sub">${testCount(tests)}${room1 ? ' across all groups' : ''}.</p>` + (tests.length ? `<ul class="tests">${tests.map(x => `<li data-open="${esc(x.u.id)}" tabindex="0" role="button"><span class="pill v" style="--vc:${x.o ? OUTCOME[x.o][1] : '#BDBDBD'}">${x.o ? OUTCOME[x.o][0] : 'Not yet tested'}</span> <b>${esc(x.u.t)}</b> <small>· ${esc(groupLabel(x.table))}</small>${x.note ? `<p>${esc(x.note)}</p>` : ''}</li>`).join('')}</ul>` : '<p class="empty">No use cases selected for a test yet (Step 2).</p>');
-  $('#lists').innerHTML = `<div class="panel"><h2>Not an AI task</h2><p class="sub">Where AI is the wrong instrument.</p>${notai.length ? `<ul>${notai.map(e => li(e, e.s.x)).join('')}</ul>` : '<p class="empty">None flagged yet.</p>'}</div>
-    <div class="panel"><h2>Check rules before use</h2><p class="sub">Ethics, data or policy rules to clarify first.</p>${chk.length ? `<ul>${chk.map(e => li(e, e.s.chk)).join('')}</ul>` : '<p class="empty">None flagged yet.</p>'}</div>`;
-  if (!$('#fdForm').contains(document.activeElement)) renderFindingsForm();
-  renderFindingsAll(); renderReport();
-}
-function fdList(f){ return `<ul>${['f1','f2','f3'].filter(x => f[x]).map(x => `<li>${esc(f[x])}</li>`).join('')}</ul>${f.q ? `<p><b>Open question:</b> ${esc(f.q)}</p>` : ''}`; }
-function renderFindingsForm(){
-  const el = $('#fdForm'), other = ui.scope === 'table' && canPick() && shownTable() !== myTable();
-  if (other || !canRate()) {
-    const k = other ? shownTable() : null, f = k && state.t[k] ? state.t[k].fd : null;
-    el.innerHTML = k ? `<h2>Findings · ${esc(groupLabel(k))}</h2>${f && Object.values(f).some(Boolean) ? fdList(f) : '<p class="empty">This group has not entered findings yet.</p>'}`
-      : '<h2>Findings</h2><p class="empty">View only – each group enters its findings with its own code.</p>';
-    return;
-  }
-  const fd = tbl(myTable()).fd;
-  el.innerHTML = `<h2>Findings · ${esc(groupLabel(myTable()))}</h2><p class="sub">Three findings and one open question from your group.</p>
-    <div class="fd-form">${['f1','f2','f3'].map((k, i) => `<div class="field"><label for="fd-${k}">Finding ${i+1}</label><textarea id="fd-${k}" data-fd="${k}" maxlength="280">${esc(fd[k])}</textarea></div>`).join('')}
-    <div class="field"><label for="fd-q">Open question</label><textarea id="fd-q" data-fd="q" maxlength="280">${esc(fd.q)}</textarea></div></div>`;
-}
-function fdTables(){ return Object.keys(state.t).sort(groupOrder).filter(k => Object.values(state.t[k].fd || {}).some(Boolean)); }
-function renderFindingsAll(){
-  const rows = fdTables().filter(k => ui.scope !== 'room' || inDisc(k, ui.resDisc));
-  $('#fdAll').innerHTML = `<h2>Findings of all groups</h2><p class="sub">${rows.length} ${rows.length === 1 ? 'group' : 'groups'} with findings${ui.scope === 'room' && ui.resDisc ? ' · ' + esc(discLabel(ui.resDisc)) : ''}.</p>` +
-    (rows.length ? rows.map(k => `<div class="fdt"><h3>${esc(groupLabel(k))}</h3>${fdList(state.t[k].fd)}</div>`).join('') : '<p class="empty">No findings yet.</p>');
-}
-
-/* ---------- report ---------- */
-const METHOD = 'Step 1 research value (value 1–5 · kind of gain · feasibility 1–5), rated by each group from the point of view of its discipline; Step 2 each group tried up to three of its use cases with an AI assistant. Values for all groups are means over the groups that rated a use case; “not an AI task” ratings are excluded from the means. The ranking shrinks each mean towards the scale midpoint by two virtual groups, so use cases rated by more groups count more.';
-function reportData(){
-  const ucs = allUcs().map(u => ({u, rm:room(u.id)}));
-  const ranked = ucs.filter(e => e.rm.k).sort((a, b) => byRoom(a.rm, b.rm));
-  const byDisc = disciplines().map(d => ({d, top:allUcs().map(u => ({u, rm:room(u.id, d.key)})).filter(e => e.rm.k).sort((a, b) => byRoom(a.rm, b.rm)).slice(0, 3)})).filter(x => x.top.length);
-  return {ranked, byDisc, tabs:Object.keys(state.t).filter(k => k !== DEMO).filter(k => Object.keys(state.t[k].r).length || Object.values(state.t[k].fd || {}).some(Boolean)),
-    notai:ucs.filter(e => e.rm.x.length), chk:ranked.filter(e => e.rm.chk.length),
-    tests:ucs.flatMap(e => e.rm.tests.map(x => ({u:e.u, ...x}))),
-    gains:GAINS.map(([g, l]) => ({l, n:ucs.reduce((s, e) => s + e.rm.gain[g], 0), top:ranked.filter(e => e.rm.gain[g]).sort((a, b) => b.rm.gain[g] - a.rm.gain[g] || byRoom(a.rm, b.rm)).slice(0, 3)})),
-    fds:fdTables().map(k => [k, state.t[k].fd])};
-}
-function renderReport(){
-  const d = reportData(), el = $('#reportBody');
-  if (!d.ranked.length && !d.fds.length && !d.tests.length) { el.innerHTML = '<p class="empty">The report fills automatically once groups have rated use cases or entered findings.</p>'; return; }
-  const top = d.ranked.slice(0, 10), done = d.tests.filter(x => x.o), ok = done.filter(x => x.o === 'y').length;
-  el.innerHTML = `<p class="sub">Always all groups, whatever is selected above.</p><div class="rk"><div><b>${d.tabs.length}</b><span>groups contributed</span></div><div><b>${d.ranked.length}</b><span>use cases rated</span></div><div><b>${done.length}</b><span>AI tests (${d.tests.length} selected · ${ok} worked well)</span></div><div><b>${d.notai.length}</b><span>not an AI task</span></div></div>
-    <div class="rgrid"><div><h3>Top use cases (all groups)</h3><ol class="rlist">${top.map(e => `<li><b>${esc(e.u.t)}</b> <small>· ${SHORT[e.u.phase]} · value ${e.rm.n.toFixed(1)} · feasibility ${e.rm.u.toFixed(1)} · ${e.rm.k} ${e.rm.k === 1 ? 'group' : 'groups'}</small></li>`).join('')}</ol></div>
-      <div><h3>Top use case per cluster</h3><ul class="rlist">${CLUSTERS.map(c => { const e = d.ranked.find(x => c.ph.includes(x.u.phase)); return `<li><b>${c.n}:</b> ${e ? esc(e.u.t) : '<small>not rated</small>'}</li>`; }).join('')}</ul>
-      ${d.chk.length ? `<h3>Check rules before use</h3><ul class="rlist">${d.chk.map(e => `<li>${esc(e.u.t)}</li>`).join('')}</ul>` : ''}</div></div>
-    ${d.byDisc.length ? `<h3>Top use cases per discipline</h3><div class="gains">${d.byDisc.map(x => `<div><b>${esc(x.d.label)}</b><span>${x.d.groups.length} ${x.d.groups.length === 1 ? 'group' : 'groups'}</span><ol>${x.top.map(e => `<li>${esc(e.u.t)}</li>`).join('')}</ol></div>`).join('')}</div>` : ''}
-    ${d.tests.length ? `<h3>Tried with AI</h3><ul class="rlist">${d.tests.map(x => `<li><b>${esc(x.u.t)}</b> <small>· ${esc(groupLabel(x.table))} · ${x.o ? OUTCOME[x.o][0] : 'not yet tested'}</small>${x.note ? ` – ${esc(x.note)}` : ''}</li>`).join('')}</ul>` : ''}
-    ${d.gains.some(x => x.n) ? `<h3>Where the groups see the gain</h3><div class="gains">${d.gains.map(x => `<div><b>${x.n}</b><span>${x.l}</span>${x.top.length ? `<ul>${x.top.map(e => `<li>${esc(e.u.t)}</li>`).join('')}</ul>` : ''}</div>`).join('')}</div>` : ''}
-    <p class="rnote">Method: ${METHOD}</p>`;
-}
-function reportMarkdown(){
-  const d = reportData(), top = d.ranked.slice(0, 10);
-  const L = ['# Results report – AI in the Research Process', `Generated ${new Date().toISOString().slice(0, 10)} · ${VERSION}`, '',
-    `- Groups contributed: ${d.tabs.length}`, `- Use cases rated: ${d.ranked.length}`, `- AI tests: ${testCount(d.tests)}`, `- Flagged “not an AI task”: ${d.notai.length}`, `- Groups with findings: ${d.fds.length}`, '',
-    '## Top use cases (all groups)', ...top.map((e, i) => `${i+1}. **${e.u.t}** (${SHORT[e.u.phase]}) – value ${e.rm.n.toFixed(1)}, feasibility ${e.rm.u.toFixed(1)}, ${e.rm.k} ${e.rm.k === 1 ? 'group' : 'groups'}`), '',
-    '## Top use case per cluster', ...CLUSTERS.map(c => { const e = d.ranked.find(x => c.ph.includes(x.u.phase)); return `- ${c.n}: ${e ? e.u.t : 'not rated'}`; }), ''];
-  if (d.byDisc.length) L.push('## Top use cases per discipline', ...d.byDisc.map(x => `- ${x.d.label} (${x.d.groups.length} ${x.d.groups.length === 1 ? 'group' : 'groups'}): ${x.top.map(e => e.u.t).join('; ')}`), '');
-  if (d.tests.length) L.push('## Tried with AI', ...d.tests.map(x => `- ${x.u.t} (${groupLabel(x.table)}): ${x.o ? OUTCOME[x.o][0] : 'not yet tested'}${x.note ? ' – ' + x.note : ''}`), '');
-  if (d.gains.some(x => x.n)) L.push('## Where the groups see the gain', ...d.gains.map(x => `- ${x.l}: ${x.n}${x.top.length ? ' – e.g. ' + x.top.map(e => e.u.t).join('; ') : ''}`), '');
-  if (d.notai.length) L.push('## Not an AI task', ...d.notai.map(e => `- ${e.u.t} (${SHORT[e.u.phase]})`), '');
-  if (d.chk.length) L.push('## Check rules before use', ...d.chk.map(e => `- ${e.u.t} (${SHORT[e.u.phase]})`), '');
-  if (d.fds.length) { L.push('## Findings and open questions'); d.fds.forEach(([k, f]) => { L.push(`### ${groupLabel(k)}`, ...['f1','f2','f3'].filter(x => f[x]).map(x => `- ${f[x]}`)); if (f.q) L.push(`- Open question: ${f.q}`); L.push(''); }); }
-  L.push('## Method', METHOD, '', 'Prof. Dr. Manuel Kern · Heilbronn University of Applied Sciences');
-  return L.join('\n');
-}
-/* ---------- tools view ---------- */
-const packLabel = id => { if (id === 'papers') return `All ${PACK.papers.length} papers`; const x = (PACK.extras || []).find(e => e.id === id); if (x) return x.title; const p = PACK.papers.find(x => x.id === id); if (p) return `${p.cite.split(',')[0]} ${(p.cite.match(/\((\d{4})\)/) || [])[1] || ''}`.trim(); const d = PACK.data.find(x => x.id === id); return d ? d.title : id; };
-const toolUrl = n => { const t = TOOLS.find(x => x.n === n); return t && t.url ? 'https://' + t.url.replace(/^https?:\/\//, '') : null; };
-function connectHtml(names){
-  return names.map(n => {
-    const m = MCP[n], c = (M365[n] || []).find(x => x[0] === 'copilot');
-    return `<li><b>${esc(n)}</b>${c ? `<a class="msb cp" href="${c[1]}" target="_blank" rel="noopener">Copilot connector</a>` : ''}${m ? `<a class="mcpb ${m[0]}" href="${m[2]}" target="_blank" rel="noopener" title="${m[0] === 'o' ? 'Official MCP server' : 'Community MCP server'} – open the documentation">MCP · ${m[0] === 'o' ? 'official' : 'community'}</a>${m[1] ? '' : '<span class="mcpr loc" title="Runs on your own computer – not reachable from cloud platforms">runs locally</span>'}` : ''}</li>`;
-  }).join('');
+function connectRow(names){
+  return names.map(n => { const m = CAT.mcp[n], d = CON[n];
+    return `<li><b>${toolUrl(n) ? `<a href="${toolUrl(n)}" target="_blank" rel="noopener">${esc(n)}</a>` : esc(n)}</b>${m ? `<span class="mcpb ${m.kind}">MCP · ${m.kind === 'o' ? t('mcp.official') : t('mcp.community')}</span><span class="mcpr${m.remote ? '' : ' loc'}">${m.remote ? t('mcp.remote') : t('mcp.local')}</span>` : ''}${note2(d) ? `<small>${esc(note2(d))}</small>` : m ? `<small>${esc(L(m.note))}</small>` : ''}</li>`; }).join('');
 }
 function backgroundHtml(u){
-  const x = (typeof DETAILS !== 'undefined' && DETAILS[u.id]) || null, t = x ? x.tech : {routes:[], data:[], tools:[], connect:[], repos:[]};
-  const con = (u.ix || []).concat((t.connect || []).filter(n => !(u.ix || []).includes(n)));
-  if (!x && !con.length) return '';
+  const s = u.s, m = u.meta;
   const row = (label, html) => html ? `<div class="ux-row"><span class="ux-l">${label}</span><div>${html}</div></div>` : '';
-  const tech = `<div class="ux-tech"><h4>How it works technically</h4>
-    ${t.routes.length ? `<div class="ux-routes">${t.routes.map((r, i) => `<span class="route${i ? '' : ' main'}" title="${esc(ROUTES[r][1])}">${esc(ROUTES[r][0])}</span>`).join('')}</div>` : ''}
-    ${t.text ? `<p>${esc(t.text)}</p>` : ''}
-    ${row('AI levels', (() => { const st = !!lvOf(u).studio; return LEVELS.map(([n, d], i) => { const on = i < 3 || st; return `<span class="lvl${on ? ' on' : ''}" title="${esc(d)}">${i + 1} ${esc(n)}</span>`; }).join('') + '<small class="lvl-note">Levels 1 to 3 work for every use case; level 4 is highlighted where automation or own code adds something – see the guide above.</small>'; })())}
-    ${row('Practice data', t.data.map(id => `<button type="button" class="pk" data-pack="${id}" title="${esc(packLabel(id))}">${id === 'papers' ? '' : `<b>${id}</b> `}${esc(packLabel(id))}</button>`).join(''))}
-    ${row('Academic extensions & tools', t.tools.map(n => toolUrl(n) ? `<a class="tk" href="${toolUrl(n)}" target="_blank" rel="noopener">${esc(n)}</a>` : `<span class="tk">${esc(n)}</span>`).join(''))}
-    ${row('Connect to an AI assistant', con.length ? `<ul class="ux-con">${connectHtml(con)}</ul><button type="button" class="linkbtn" data-view="tools" data-mcpinfo>How to connect a tool to an AI assistant →</button>` : '')}
-    ${row('Open source', t.repos.filter(k => REPOS[k]).map(k => `<a class="tk repo" href="${REPOS[k][1]}" target="_blank" rel="noopener" title="${esc(REPOS[k][0] + ' – ' + REPOS[k][2])}">${esc(REPOS[k][0])}</a>`).join(''))}
-  </div>`;
-  if (!x) return `<details class="bg"><summary>Technology</summary><div class="ux">${tech}</div></details>`;
-  return `<details class="bg"><summary>Background, methods and technology</summary><div class="ux">
-    <div><h4>How you go about it</h4><ol class="ux-steps">${x.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol></div>
-    ${x.method ? `<div class="ux-method"><h4>Methods and concepts</h4><dl>${x.method.concepts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
-      ${x.method.refs.length ? `<p class="ux-refs-h">Key references</p><ul class="ux-refs">${x.method.refs.map(r => `<li>${esc(r.cite)}${r.doi ? ` <a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">doi.org/${esc(r.doi)}</a>` : ''}</li>`).join('')}</ul>` : ''}</div>` : ''}
-    ${tech}</div></details>`;
+  const repos = (m.repos || []).filter(k => CAT.repos[k]).map(k => `<a class="tk repo" href="${CAT.repos[k].url}" target="_blank" rel="noopener" title="${esc(L(CAT.repos[k].type))}">${esc(CAT.repos[k].label)}</a>`).join('');
+  return `${(s.steps || []).length ? `<details class="bg" open><summary>${t('uc.how')}</summary><ol class="ux-steps">${s.steps.map(x => `<li>${esc(x)}</li>`).join('')}</ol></details>` : ''}
+    ${(s.concepts || []).length || (s.refs || []).length ? `<details class="bg"><summary>${t('uc.methods')}</summary><div class="ux-method"><dl>${(s.concepts || []).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+      ${(s.refs || []).length ? `<p class="ux-refs-h">${t('uc.refs')}</p><ul class="ux-refs">${s.refs.map(r => `<li>${esc(r.cite)}${r.doi ? ` <a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">doi.org/${esc(r.doi)}</a>` : ''}</li>`).join('')}</ul>` : ''}</div></details>` : ''}
+    <details class="bg"><summary>${t('uc.tech')}</summary><div class="ux-tech">
+      ${(m.routes || []).length ? `<div class="ux-routes">${m.routes.map((r, i) => KB.meta.routes[r] ? `<span class="route${i ? '' : ' main'}" title="${esc(L(KB.meta.routes[r].desc))}">${esc(L(KB.meta.routes[r].label))}</span>` : '').join('')}</div>` : ''}
+      ${s.tech ? `<p>${esc(s.tech)}</p>` : ''}
+      ${row(t('nav.data'), (m.data || []).map(id => `<a class="pk" href="#/data" data-packjump="${id}"><b>${id}</b></a>`).join(''))}
+      ${row(t('uc.tools'), (m.tools || []).map(n => toolUrl(n) ? `<a class="tk" href="${toolUrl(n)}" target="_blank" rel="noopener">${esc(n)}</a>` : `<span class="tk">${esc(n)}</span>`).join(''))}
+      ${row(t('uc.connect'), (m.connect || []).length ? `<ul class="ux-con">${connectRow(m.connect)}</ul>` : '')}
+      ${row(t('uc.repos'), repos)}
+    </div></details>`;
 }
-function mcpHtml(t){
-  const m = MCP[t.n], ms = M365[t.n];
-  const m365 = ms ? `<span class="mcp m365"><span class="mlab">Microsoft 365</span>${ms.map(([k, url]) => `<a class="msb${k === 'copilot' ? ' cp' : ''}" href="${url}" target="_blank" rel="noopener">${M365_TYPE[k]}</a>`).join('')}</span>` : '';
-  if (!m) return m365;
-  return m365 + `<span class="mcp"><a class="mcpb ${m[0]}" href="${m[2]}" target="_blank" rel="noopener" title="${m[0] === 'o' ? 'Official MCP server' : 'Community MCP server'} – open the documentation">MCP · ${m[0] === 'o' ? 'official' : 'community'}</a>${m[1] ? '<span class="mcpr">remote</span>' : '<span class="mcpr loc">local</span>'} ${esc(m[3])}</span>`;
-}
-function renderTools(){
-  const counts = PHASES.map(p => TOOLS.filter(t => t.ph.includes(p.id)).length);
-  $('#toolFilter').innerHTML = `<button type="button" data-tph="" aria-pressed="${!ui.toolPhase && !ui.toolMcp}">All (${TOOLS.length})</button>` +
-    PHASES.map((p, i) => `<button type="button" data-tph="${p.id}" aria-pressed="${ui.toolPhase === p.id}">${p.short} (${counts[i]})</button>`).join('') +
-    `<button type="button" class="mcpf" data-tmcp="mcp" aria-pressed="${ui.toolMcp === 'mcp'}">MCP server (${TOOLS.filter(t => MCP[t.n]).length})</button>` +
-    `<button type="button" class="mcpf" data-tmcp="m365" aria-pressed="${ui.toolMcp === 'm365'}">Microsoft 365 integration (${TOOLS.filter(t => M365[t.n]).length})</button>`;
-  $('#toolGrid').innerHTML = TCATS.map((c, ci) => {
-    const ts = TOOLS.filter(t => t.cat === ci && (!ui.toolPhase || t.ph.includes(ui.toolPhase)) && (!ui.toolMcp || (ui.toolMcp === 'mcp' ? MCP : M365)[t.n])).sort(byScore);
-    if (!ts.length) return '';
-    return `<div class="panel tcat"><h2>${c}<span>${ts.length}</span></h2>${ts.map(t => `<div class="tool"><span>${t.url ? `<a href="https://${t.url}" target="_blank" rel="noopener">${esc(t.n)}</a>` : `<span class="nm">${esc(t.n)}</span>`}<span class="typ">${TYP[t.typ]}</span></span>${t.r ? `<span class="stars${t.c < 3 ? ' low' : ''}" title="${t.c < 3 ? 'Fewer than 3 ratings – indicative only' : 'Mean rating'}"><span class="bar"><i style="width:${t.r/5*100}%"></i></span>${t.r.toFixed(1)} <small>(${t.c})</small></span>` : '<span class="stars nr">not rated</span>'}<span class="nt">${esc(t.nt)}</span>${mcpHtml(t)}</div>`).join('')}</div>`;
-  }).join('');
+function viewUc(id){
+  const u = ucFrom(id);
+  if (!u) return `<div class="panel"><h1>${t('uc.missing')}</h1><p><a href="#/library">${t('nav.library')} →</a></p></div>`;
+  const m = u.meta, p = PH[m.phase];
+  const fallback = lang === 'de' && u.textLang === 'en' && !u.own ? `<p class="fbnote">${t('uc.onlyen')}</p>` : '';
+  const side = u.own
+    ? `<div class="panel"><h2>${t('own.t')}</h2><div class="row col"><a class="btn btn-quiet btn-sm" href="#/edit/${encodeURIComponent(u.id)}">${t('btn.edit')}</a><button type="button" class="btn btn-quiet btn-sm" data-ownmd="${esc(u.id)}">${t('btn.md')}</button><button type="button" class="btn btn-quiet btn-sm" data-suggest="${esc(u.id)}">${t('btn.suggest')}</button><button type="button" class="btn btn-quiet btn-sm" data-owndel="${esc(u.id)}">${t('btn.delete')}</button></div><p class="q-hint">${t('own.hint')}</p></div>`
+    : `<div class="panel"><h2>${t('uc.share')}</h2><div class="row col"><button type="button" class="btn btn-quiet btn-sm" data-copylink>${t('btn.copylink')}</button><a class="btn btn-quiet btn-sm" href="${REPO}/blob/main/content/usecases/${u.textLang}/${encodeURIComponent(u.id)}.md" target="_blank" rel="noopener">${t('btn.source')} ↗</a><button type="button" class="btn btn-quiet btn-sm" data-dup="${esc(u.id)}">${t('btn.dup')}</button></div></div>`;
+  return `<p class="crumb"><a href="#/library">← ${t('nav.library')}</a> · <button type="button" class="linkbtn" data-fphase-go="${m.phase}">${esc(phName(m.phase))}</button></p>
+    <div class="uc-grid"><article class="uc-main">
+      <header class="uc-head">${kicker(esc(p ? L(p).short : m.phase))}<h1>${esc(u.title)}</h1>${fallback}${u.summary ? `<p class="lede">${esc(u.summary)}</p>` : ''}
+        <div class="meta">${m.mode && KB.meta.modes[m.mode] ? `<span><b>${esc(m.mode)}:</b> ${esc(L(KB.meta.modes[m.mode]))}</span>` : ''}${m.risk ? `<span><b>${riskLabel(m.risk)}:</b> ${esc(riskDef(m.risk))}</span>` : ''}</div>
+        ${m.excursus ? `<p class="exnote">${t('uc.excursus')}</p>` : ''}</header>
+      ${u.s.problem || u.s.result ? `<div class="ux-pr panel"><div><h4>${t('uc.problem')}</h4><p>${esc(u.s.problem)}</p></div><div><h4>${t('uc.result')}</h4><p>${esc(u.s.result)}</p></div></div>` : ''}
+      <section class="panel"><h2>${t('uc.try')}</h2>${tryHtml(u)}</section>
+      ${Object.values(u.s.levels || {}).some(Boolean) ? `<section class="panel"><h2>${t('uc.levels')}</h2><p class="sub">${t('uc.levels.p')}</p>${levelsHtml(u)}</section>` : ''}
+      <section class="panel bring"><div><h2>${t('uc.bring.t')}</h2><p>${t('uc.bring.p')}</p></div><button type="button" class="btn btn-primary" data-wizard="${esc(u.id)}">${t('uc.bring.btn')} →</button></section>
+      <section class="panel">${backgroundHtml(u)}</section>
+    </article>
+    <aside class="uc-side">${assessHtml(u)}${side}</aside></div>`;
 }
 
-/* ---------- facilitator menu ---------- */
-function openMenu(){
-  const fac = session && session.role === 'facilitator';
-  $('#modal').innerHTML = `<div class="box" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
-    <div class="ptools"><h2 id="menuTitle">Groups, export and reset</h2><button class="icon-btn" type="button" data-mclose aria-label="Close">✕</button></div>
-    <section><h3>Export</h3><div class="row"><button class="btn btn-quiet btn-sm" type="button" id="mCsv">Download results (.csv)</button><button class="btn btn-quiet btn-sm" type="button" id="mJson">Download all data (.json)</button><button class="btn btn-quiet btn-sm" type="button" id="mTsv">Copy results for Excel</button></div></section>
-    <section><h3 id="svHead">Import survey use cases</h3><p class="sub">Paste rows copied from the survey spreadsheet (tab-separated) or a CSV file: column 1 = stage of the research journey, column 2 = use case text, optional column 3 = short title. Rows with an e-mail address, a link, a phone number or a titled name (Dr, Prof …) are skipped; other names are not detected, so check the rows first. Example rows and rows already imported are skipped too.</p>
-      <textarea id="svText" aria-labelledby="svHead" placeholder="Data analysis&#9;Help me check my R code for a mixed model"></textarea><p class="sub" id="svInfo"></p><div class="row"><button class="btn btn-primary btn-sm" type="button" id="svGo">Import</button></div></section>
-    ${session ? '' : `<section><h3>Work as a group</h3><p class="sub">Everything is stored in this browser only. In a workshop, give each laptop its own group name; afterwards each group copies its data and one laptop merges them – the results then compare the groups.</p>
-      <div class="row"><label class="sr" for="tableSel">Rate as</label><select id="tableSel" class="selectbox"><option value=""${state.off ? '' : ' selected'}>Explore mode (no group)</option>${TABLES.filter(t => t !== 'Facilitator').map(t => `<option${state.off && t === state.a ? ' selected' : ''}>${t}</option>`).join('')}</select></div></section>
-    <section><h3 id="mgHead">Merge data from other laptops</h3><p class="sub">Paste the “group data” each offline laptop copied, or choose the exported files.</p>
-      <textarea id="mgText" aria-labelledby="mgHead"></textarea><div class="row"><button class="btn btn-primary btn-sm" type="button" id="mgGo">Merge</button><button class="btn btn-quiet btn-sm" type="button" id="mgCopy">Copy this group’s data</button><label class="btn btn-quiet btn-sm">Choose files<input type="file" id="mgFile" accept="application/json" multiple hidden></label></div></section>`}
-    <section><h3>Reset</h3><p class="sub">${fac ? 'Deletes all ratings, findings and additions for everyone.' : 'Deletes everything stored in this browser.'}</p><div class="row"><button class="btn btn-quiet btn-sm" type="button" id="mReset">${fac ? 'Reset workshop' : 'Reset this browser'}</button></div></section>
-  </div>`;
-  $('#modal').hidden = false; setInert(true); $('#modal').querySelector('[data-mclose]').focus();
+/* ---------- my collection ---------- */
+function renderMatrix(list){
+  const W = 620, H = 440, Lm = 54, R = 14, T = 14, B = 52;
+  const sx = v => Lm + (v - .5) / 5 * (W - Lm - R), sy = v => T + (5.5 - v) / 5 * (H - T - B), mx = sx(3), my = sy(3);
+  let g = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t('coll.matrix'))}">`;
+  g += `<rect x="${mx}" y="${T}" width="${W-R-mx}" height="${my-T}" fill="#E3E8F5"/><rect x="${Lm}" y="${T}" width="${mx-Lm}" height="${my-T}" fill="#F1F3F9"/><rect x="${mx}" y="${my}" width="${W-R-mx}" height="${H-B-my}" fill="#F7F7F7"/><rect x="${Lm}" y="${my}" width="${mx-Lm}" height="${H-B-my}" fill="#FBFBFB"/>`;
+  [[W-R-10, T+20, t('q.quick'), 'end', '#002896'], [Lm+10, T+20, t('q.bets'), 'start', '#3D5FB4'], [W-R-10, H-B-12, t('q.easy'), 'end', '#5F5F5F'], [Lm+10, H-B-12, t('q.depri'), 'start', '#5F5F5F']]
+    .forEach(q => g += `<text x="${q[0]}" y="${q[1]}" text-anchor="${q[3]}" font-size="13" font-weight="700" fill="${q[4]}">${esc(q[2])}</text>`);
+  for (let v = 1; v <= 5; v++) g += `<text x="${sx(v)}" y="${H-B+20}" text-anchor="middle" font-size="12" fill="#5F5F5F">${v}</text><text x="${Lm-12}" y="${sy(v)+4}" text-anchor="end" font-size="12" fill="#5F5F5F">${v}</text>`;
+  g += `<line x1="${mx}" y1="${T}" x2="${mx}" y2="${H-B}" stroke="#CFCFCF" stroke-dasharray="4 4"/><line x1="${Lm}" y1="${my}" x2="${W-R}" y2="${my}" stroke="#CFCFCF" stroke-dasharray="4 4"/><line x1="${Lm}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#454545"/><line x1="${Lm}" y1="${T}" x2="${Lm}" y2="${H-B}" stroke="#454545"/>`;
+  g += `<text x="${(Lm+W-R)/2}" y="${H-10}" text-anchor="middle" font-size="13" font-weight="700" fill="#1F1F1F">${esc(t('uc.feas'))} →</text><text transform="translate(16 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" font-size="13" font-weight="700" fill="#1F1F1F">${esc(t('uc.value'))} →</text>`;
+  const P = list.map((e, i) => ({x:sx(e.r.u) + (i % 3 - 1) * .01, y:sy(e.r.n) + (i % 2 ? .01 : -.01)}));
+  for (let it = 0; it < 60; it++) { let moved = false;
+    for (let i = 0; i < P.length; i++) for (let j = i + 1; j < P.length; j++) { const dx = P[j].x - P[i].x, dy = P[j].y - P[i].y, d = Math.hypot(dx, dy) || .01; if (d < 24) { const k = (24 - d) / 2, ux = dx / d, uy = dy / d; P[i].x -= ux * k; P[i].y -= uy * k; P[j].x += ux * k; P[j].y += uy * k; moved = true; } }
+    P.forEach(p => { p.x = Math.min(W - R - 12, Math.max(Lm + 12, p.x)); p.y = Math.min(H - B - 12, Math.max(T + 12, p.y)); }); if (!moved) break; }
+  list.forEach((e, i) => { const {x, y} = P[i]; g += `<a href="#/uc/${encodeURIComponent(e.u.id)}" aria-label="${i+1}: ${esc(e.u.title)}"><title>${i+1} · ${esc(e.u.title)}</title>${e.r.f ? `<circle cx="${x}" cy="${y}" r="15" fill="none" stroke="#1F1F1F" stroke-width="2.5"/>` : ''}<circle cx="${x}" cy="${y}" r="11" fill="#002896" stroke="#fff" stroke-width="2"/><text x="${x}" y="${y+4}" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">${i+1}</text></a>`; });
+  if (!list.length) g += `<text x="${(Lm+W-R)/2}" y="${(T+H-B)/2}" text-anchor="middle" font-size="14" fill="#5F5F5F">${esc(t('coll.norated'))}</text>`;
+  return `<div class="mx-scroll">${g}</svg></div><div class="legend"><span><i style="background:#fff;box-shadow:0 0 0 2px #1F1F1F"></i>${t('pill.star')}</span></div>`;
 }
-function closeMenu(){ $('#modal').hidden = true; setInert(!$('#drawer').hidden); const b = $('#menuBtn'); if (b) b.focus(); }
-// while a dialog is open, the page behind it is inert (no tabbing or clicking past the scrim)
+function viewCollection(){
+  const withR = allUcs().map(u => ({u, r:rOf(u.id)}));
+  const ranked = withR.filter(e => rated(e.r) && !e.r.x).sort((a, b) => b.r.n * b.r.u - a.r.n * a.r.u || b.r.n - a.r.n);
+  const li = e => `<li><a href="#/uc/${encodeURIComponent(e.u.id)}">${esc(e.u.title)}</a> <small>· ${esc(phShort(e.u.meta.phase))}${e.r.o ? ' · ' + t(OUT[e.r.o][0]) : ''}</small>${e.r.note ? `<p>${esc(e.r.note)}</p>` : ''}</li>`;
+  const box = (title, sub, arr) => `<div class="panel"><h2>${title}</h2><p class="sub">${sub}</p>${arr.length ? `<ul class="clist">${arr.map(li).join('')}</ul>` : `<p class="empty">${t('coll.none')}</p>`}</div>`;
+  const own = store.own.map(o => ucFrom(o.id));
+  return `<div class="view-head"><div>${kicker(t('nav.collection'))}<h1>${t('coll.h1')}</h1><p class="lede">${t('coll.lede')}</p></div></div>
+    <div class="rk"><div><b>${withR.filter(e => e.r.f).length}</b><span>${t('coll.k.star')}</span></div><div><b>${ranked.length}</b><span>${t('coll.k.rated')}</span></div><div><b>${withR.filter(e => e.r.o).length}</b><span>${t('coll.k.tried')}</span></div><div><b>${own.length}</b><span>${t('coll.k.own')}</span></div></div>
+    <div class="res-grid"><div class="panel"><h2>${t('coll.matrix')}</h2>${renderMatrix(ranked)}</div>
+      <div class="panel"><h2>${t('coll.top')}</h2><p class="sub">${t('coll.top.p')}</p><ol class="rank">${ranked.length ? ranked.map((e, i) => `<li><a href="#/uc/${encodeURIComponent(e.u.id)}"><span class="n">${i+1}</span><span><b>${esc(e.u.title)}</b><small>${esc(phShort(e.u.meta.phase))}${e.r.c ? ' · ' + t('uc.checkrules') : ''}${e.r.o ? ' · ' + t(OUT[e.r.o][0]) : ''}</small></span><span class="sc">${e.r.n} × ${e.r.u}</span></a></li>`).join('') : `<li class="empty">${t('coll.norated')}</li>`}</ol></div></div>
+    <div class="lists">${box('★ ' + t('coll.starred'), t('coll.starred.p'), withR.filter(e => e.r.f))}${box(t('coll.tried'), t('coll.tried.p'), withR.filter(e => e.r.o || e.r.note))}
+      ${box(t('pill.notai'), t('coll.notai.p'), withR.filter(e => e.r.x))}${box(t('uc.checkrules'), t('coll.rules.p'), withR.filter(e => e.r.c))}</div>
+    <div class="panel"><div class="ptools"><div><h2>${t('coll.own')}</h2><p class="sub">${t('coll.own.p')}</p></div><a class="btn btn-primary btn-sm" href="#/new">+ ${t('btn.newuc')}</a></div>
+      ${own.length ? `<ul class="clist">${own.map(u => `<li><a href="#/uc/${encodeURIComponent(u.id)}">${esc(u.title)}</a> <small>· ${esc(phShort(u.meta.phase))} · ${esc((u.lang || '').toUpperCase())}</small></li>`).join('')}</ul>
+        <p class="row"><button type="button" class="btn btn-quiet btn-sm" data-ownzip>${t('btn.ownzip')}</button></p>` : `<p class="empty">${t('coll.own.none')}</p>`}</div>
+    <div class="panel"><h2>${t('coll.data')}</h2><p class="sub">${t('coll.data.p')}</p>
+      <div class="row"><button type="button" class="btn btn-quiet btn-sm" data-exp="json">${t('btn.backup')}</button><button type="button" class="btn btn-quiet btn-sm" data-exp="csv">${t('btn.csv')}</button><button type="button" class="btn btn-quiet btn-sm" data-exp="md">${t('btn.report')}</button>
+        <label class="btn btn-quiet btn-sm">${t('btn.import')}<input type="file" id="impFile" accept="application/json" hidden></label><button type="button" class="btn btn-quiet btn-sm" data-reset>${t('btn.reset')}</button></div></div>`;
+}
+
+/* ---------- own use case editor ---------- */
+function viewEditor(id){
+  const o = id ? store.own.find(x => x.id === id) : null, src = !o && ui.dupFrom ? ucFrom(ui.dupFrom) : null;
+  const v = o || (src ? {title:src.title + (lang === 'de' ? ' (Kopie)' : ' (copy)'), summary:src.summary, meta:Object.assign({}, src.meta), s:JSON.parse(JSON.stringify(src.s))} : {title:'', summary:'', meta:{phase:PHASES[0].id, risk:1, mode:'Assist'}, s:{own:{}}});
+  const own = v.s.own || {};
+  const f = (k, lbl, val, rows, hint) => `<div class="field"><label for="e_${k}">${lbl}</label>${rows ? `<textarea id="e_${k}" rows="${rows}">${esc(val || '')}</textarea>` : `<input id="e_${k}" value="${esc(val || '')}">`}${hint ? `<span class="q-hint">${hint}</span>` : ''}</div>`;
+  return `<p class="crumb"><a href="#/collection">← ${t('nav.collection')}</a></p>
+    <div class="view-head"><div>${kicker(t('own.t'))}<h1>${o ? t('ed.edit') : t('ed.new')}</h1><p class="lede">${t('ed.lede')}</p></div></div>
+    <form class="panel ed" id="edForm" data-id="${esc(id || '')}" autocomplete="off">
+      ${f('title', t('ed.title'), v.title)}
+      <div class="ed-row"><div class="field"><label for="e_phase">${t('lib.phase')}</label><select id="e_phase" class="selectbox">${PHASES.map(p => `<option value="${p.id}"${p.id === v.meta.phase ? ' selected' : ''}>${esc(L(p).name)}</option>`).join('')}</select></div>
+        <div class="field"><label for="e_risk">${t('ed.risk')}</label><select id="e_risk" class="selectbox">${[1,2,3].map(k => `<option value="${k}"${+v.meta.risk === k ? ' selected' : ''}>${esc(riskLabel(k))}</option>`).join('')}</select></div>
+        <div class="field"><label for="e_mode">${t('ed.mode')}</label><select id="e_mode" class="selectbox">${Object.keys(KB.meta.modes).map(k => `<option${k === v.meta.mode ? ' selected' : ''}>${k}</option>`).join('')}</select></div></div>
+      ${f('summary', t('ed.summary'), v.summary, 2)}${f('problem', t('uc.problem'), v.s.problem, 3)}${f('result', t('uc.result'), v.s.result, 3)}
+      ${f('bring', t('uc.bring'), own.bring, 2)}${f('steps', t('ed.steps'), (own.steps || v.s.steps || []).join('\n'), 5, t('ed.steps.h'))}
+      ${f('prompt', t('uc.prompt'), own.prompt, 8)}${f('check', t('uc.check'), own.check, 3)}${f('limit', t('uc.limit'), own.limit, 2)}
+      ${f('connect', t('uc.connect'), (v.meta.connect || []).join('; '), 0, t('ed.connect.h'))}
+      <div class="row"><button type="submit" class="btn btn-primary">${t('btn.save')}</button><a class="btn btn-quiet" href="${o ? '#/uc/' + encodeURIComponent(o.id) : '#/collection'}">${t('btn.cancel')}</a></div>
+      <p class="q-hint">${t('ed.privacy')}</p></form>`;
+}
+function saveEditor(form){
+  const g = k => (form.querySelector('#e_' + k) || {}).value || '', id = form.dataset.id;
+  const title = g('title').trim(); if (!title) { toast(t('ed.needtitle')); return; }
+  const prev = id ? store.own.find(x => x.id === id) : null, base = !prev && ui.dupFrom ? ucFrom(ui.dupFrom) : null;
+  const o = prev || {id:'own-' + Date.now().toString(36), lang, meta:{}, s:{}};
+  o.title = title; o.summary = g('summary').trim();
+  o.meta = Object.assign({}, prev ? prev.meta : base ? base.meta : {}, {id:o.id, phase:g('phase'), risk:+g('risk'), mode:g('mode'), title, connect:g('connect').split(';').map(x => x.trim()).filter(Boolean), added:prev && prev.meta.added ? prev.meta.added : stamp()});
+  delete o.meta.order;
+  o.s = Object.assign({}, prev ? prev.s : base ? JSON.parse(JSON.stringify(base.s)) : {}, {problem:g('problem').trim(), result:g('result').trim()});
+  o.s.own = {bring:g('bring').trim(), steps:g('steps').split('\n').map(x => x.replace(/^\s*(\d+[.)]|[-*])\s*/, '').trim()).filter(Boolean), prompt:g('prompt').trim(), check:g('check').trim(), limit:g('limit').trim()};
+  if (!prev) store.own.push(o);
+  ui.dupFrom = null; save(); toast(t('toast.saved')); go('#/uc/' + encodeURIComponent(o.id));
+}
+
+/* ---------- setup: bring things into your AI app ---------- */
+const CAPS = ['skill','assistant','project','mcpRemote','mcpLocal','repo','notes'];
+const docs = x => (x.docs || []).length ? `<p class="docs">${t('cap.docs')}: ${x.docs.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').split('/').slice(0, 3).join('/'))}</a>`).join(' · ')}</p>` : '';
+function capHtml(c, k, fill){
+  const x = c.caps && c.caps[k]; if (!x) return '';
+  if (x.supported === false) return `<div class="cap no"><h3>${t('cap.' + k)}</h3><p>${esc(L(x.requires) || t('cap.unsupported'))}</p>${docs(x)}</div>`;
+  const steps = L(x.steps) || [], tpl = x.template ? (fill ? fill(x.template) : x.template) : '';
+  return `<div class="cap"><h3>${t('cap.' + k)}</h3>${steps.length ? `<ol class="howto">${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>` : ''}${tpl ? codeBlock(t('cap.template'), tpl, 'code') : ''}${L(x.requires) ? `<p class="q-hint"><b>${t('cap.requires')}:</b> ${esc(L(x.requires))}</p>` : ''}${docs(x)}</div>`;
+}
+function viewSetup(cid){
+  const c = client(cid || store.app) || null;
+  const tabs = CLIENTS.map(x => `<a href="#/setup/${x.id}" class="ctab"${c && c.id === x.id ? ' aria-current="page"' : ''}>${esc(x.name)}</a>`).join('');
+  return `<div class="view-head"><div>${kicker(t('nav.setup'))}<h1>${t('setup.h1')}</h1><p class="lede">${t('setup.lede')}</p></div></div>
+    ${CLIENTS.length ? `<nav class="ctabs" aria-label="${t('wiz.app')}">${tabs}</nav>` : `<p class="empty">${t('setup.noclients')}</p>`}
+    ${c ? `<div class="panel caps"><h2>${esc(c.name)}</h2><p class="sub">${t('setup.checked', esc((KB.clients && KB.clients.checked) || ''))}</p>${CAPS.map(k => capHtml(c, k)).join('')}</div>` : CLIENTS.length ? `<div class="panel"><p>${t('setup.pick')}</p></div>` : ''}
+    <div class="panel"><h2>${t('setup.repo.t')}</h2><p class="sub">${t('setup.repo.p')}</p>
+      ${codeBlock(t('setup.clone'), `git clone ${REPO}.git\ncd ai-research-companion-hhn\npython3 build.py`)}
+      <ul class="st-list">${[1,2,3,4].map(i => `<li>${t('setup.repo.' + i)}</li>`).join('')}</ul></div>`;
+}
+
+/* ---------- wizard: one use case into one AI app ---------- */
+const wizUrl = u => location.href.split('#')[0] + '#/uc/' + encodeURIComponent(u.id);
+function wizardHtml(){
+  const w = ui.wiz, u = ucFrom(w.id), c = client(w.app);
+  const head = `<div class="ptools"><h2 id="wizTitle">${t('wiz.t')} · ${esc(u.title)}</h2><button class="icon-btn" type="button" data-wclose aria-label="${t('btn.close')}">✕</button></div>`;
+  const bar = `<ol class="wsteps">${[t('wiz.s1'), t('wiz.s2'), t('wiz.s3'), t('wiz.s4')].map((s, i) => `<li${i === w.step ? ' aria-current="step"' : ''}${i < w.step ? ' class="done"' : ''}><button type="button" data-wstep="${i}"${!w.app && i > 0 ? ' disabled' : ''}>${i + 1} · ${s}</button></li>`).join('')}</ol>`;
+  let body = '';
+  if (w.step === 0) body = `<p>${t('wiz.app.p')}</p><div class="apps">${CLIENTS.map(x => `<button type="button" class="appbtn" data-wapp="${x.id}" aria-pressed="${w.app === x.id}">${esc(x.name)}</button>`).join('')}<button type="button" class="appbtn" data-wapp="other" aria-pressed="${w.app === 'other'}">${t('wiz.other')}</button></div>`;
+  if (w.step === 1) body = formatHtml(u, c);
+  if (w.step === 2) body = toolsHtml(u, c);
+  if (w.step === 3) { const ck = (u.s.own || {}).check || (u.s.practice || {}).check;
+    body = `<p>${t('wiz.test.p')}</p>${EXPORT.prompt(u) ? codeBlock(t('uc.prompt'), EXPORT.prompt(u)) : ''}${ck ? `<p><b>${t('uc.check')}:</b> ${esc(ck)}</p>` : ''}<p>${t('wiz.test.after')}</p>`; }
+  const nav = `<div class="row wnav"><button type="button" class="btn btn-quiet btn-sm" data-wprev${w.step ? '' : ' disabled'}>← ${t('btn.back')}</button>${w.step < 3 ? `<button type="button" class="btn btn-primary btn-sm" data-wnext${!w.app ? ' disabled' : ''}>${t('btn.next')} →</button>` : `<button type="button" class="btn btn-primary btn-sm" data-wclose>${t('btn.done')}</button>`}</div>`;
+  return `<div class="box wiz" role="dialog" aria-modal="true" aria-labelledby="wizTitle">${head}${bar}<div class="wbody">${body}</div>${nav}</div>`;
+}
+function formatHtml(u, c){
+  const has = k => !c || !c.caps || !c.caps[k] || c.caps[k].supported !== false;
+  const opts = ['skill', 'assistant', 'project'].filter(has).concat('chat');
+  const f = opts.includes(ui.wiz.fmt) ? ui.wiz.fmt : opts[0]; ui.wiz.fmt = f;
+  const ul = u.textLang || lang;
+  const seg = `<div class="seg" role="group" aria-label="${t('wiz.fmt')}">${opts.map(k => `<button type="button" data-wfmt="${k}" aria-pressed="${k === f}">${t('fmt.' + k)}</button>`).join('')}</div><p class="sub">${t('fmt.' + f + '.p')}</p>`;
+  const capSteps = k => c && c.caps && c.caps[k] ? capHtml(c, k) : '';
+  if (f === 'skill') return seg + `<div class="row"><button type="button" class="btn btn-primary btn-sm" data-skillzip>${t('btn.skillzip')}</button><button type="button" class="btn btn-quiet btn-sm" data-skillmd>${t('btn.skillmd')}</button></div>` + capSteps('skill') + codeBlock('SKILL.md', EXPORT.skillMd(u, ul, {url:wizUrl(u), riskDef:riskDef(u.meta.risk)}), 'code');
+  if (f === 'assistant') { const a = EXPORT.assistant(u, ul);
+    return seg + capSteps('assistant') + codeBlock(t('as.name'), a.name) + codeBlock(t('as.desc'), a.description) + codeBlock(t('as.instr'), a.instructions) + codeBlock(t('as.start'), a.starters.join('\n')); }
+  if (f === 'project') return seg + `<div class="row"><button type="button" class="btn btn-quiet btn-sm" data-rulesmd>${t('btn.rulesmd')}</button></div>` + capSteps('project') + codeBlock(t('fmt.rules'), EXPORT.projectRules(u, ul), 'code');
+  return seg + (EXPORT.prompt(u) ? codeBlock(t('uc.prompt'), EXPORT.prompt(u)) : '');
+}
+function toolsHtml(u, c){
+  const con = (u.meta.connect || []).filter(n => CAT.mcp[n]), repos = (u.meta.repos || []).filter(k => CAT.repos[k]);
+  if (!con.length && !repos.length) return `<p>${t('wiz.notools')}</p>`;
+  const fillFor = n => tpl => { const d = CON[n] || {}, loc = d.local || {};
+    return tpl.split('{name}').join(EXPORT.slug(n)).split('{url}').join(d.remoteUrl || '<server-url>').split('{command}').join(loc.command || '<command>').split('{args}').join(JSON.stringify(loc.args || [])); };
+  const items = con.map(n => { const m = CAT.mcp[n], d = CON[n] || {}, remote = !!d.remoteUrl || (m.remote && !d.local), cap = remote ? 'mcpRemote' : 'mcpLocal', capx = c && c.caps && c.caps[cap];
+    return `<div class="cap"><h3>${esc(n)} <span class="mcpb ${m.kind}">MCP · ${m.kind === 'o' ? t('mcp.official') : t('mcp.community')}</span> <span class="mcpr${remote ? '' : ' loc'}">${remote ? t('mcp.remote') : t('mcp.local')}</span></h3>
+      <p>${esc(note2(d) || L(m.note))}</p>
+      ${d.remoteUrl ? `<p class="q-hint"><b>URL:</b> <code>${esc(d.remoteUrl)}</code></p>` : ''}${d.auth_note || d.auth ? `<p class="q-hint"><b>${t('wiz.auth')}:</b> ${esc(d.auth_note || d.auth)}</p>` : ''}
+      ${d.local && d.local.env && Object.keys(d.local.env).length ? `<p class="q-hint"><b>${t('wiz.env')}:</b> <code>${esc(Object.entries(d.local.env).map(([k, v]) => k + '=' + v).join('  '))}</code></p>` : ''}
+      ${d.install ? `<p class="q-hint"><b>${t('cap.requires')}:</b> ${esc(d.install)}</p>` : ''}${d.plan ? `<p class="q-hint"><b>${t('wiz.plan')}:</b> ${esc(d.plan)}</p>` : ''}
+      ${capx ? (capx.supported === false ? `<p class="warnhint">${esc(L(capx.requires) || t('cap.unsupported'))}</p>` : capHtml(c, cap, fillFor(n))) : `<p>${t('wiz.genericmcp')}</p>`}
+      <p class="docs">${t('cap.docs')}: <a href="${esc(m.doc)}" target="_blank" rel="noopener">${esc(m.doc.replace(/^https?:\/\//, '').split('/').slice(0, 3).join('/'))}</a></p>
+      ${m.kind === 'c' ? `<p class="warnhint">${t('wiz.community')}</p>` : ''}</div>`; }).join('');
+  const rp = repos.map(k => { const r = CAT.repos[k], d = REPOINFO[k] || {};
+    return `<div class="cap"><h3>${esc(r.label)} <small>${esc(L(r.type))}</small></h3>${d.install ? codeBlock(t('wiz.install'), d.install, 'code') : ''}${note2(d) ? `<p>${esc(note2(d))}</p>` : ''}<p class="docs"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.url.replace(/^https?:\/\//, ''))}</a></p></div>`; }).join('');
+  return `<p>${t('wiz.tools.p')}</p><p class="warnhint">${t('wiz.datarule')}</p>${items}${rp ? `<h3 class="wh">${t('uc.repos')}</h3>${rp}` : ''}`;
+}
 function setInert(on){ ['header.top', 'main', 'footer'].forEach(q => { const el = document.querySelector(q); if (el) el.inert = on; }); }
+function drawWizard(){ COPY = []; $('#modal').innerHTML = wizardHtml(); const h = $('#wizTitle'); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
+function openWizard(id){ ui.wiz = {id, app:store.app || '', step:store.app ? 1 : 0, fmt:''}; $('#modal').hidden = false; setInert(true); drawWizard(); }
+function closeWizard(){ ui.wiz = null; $('#modal').hidden = true; $('#modal').innerHTML = ''; setInert(false); COPY = []; render(); }
 
-/* ---------- login ---------- */
-function showLogin(msg){
-  $('#login').innerHTML = `<div class="box" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
-    <h2 id="loginTitle">Sign in with your group code</h2>
-    <p>Your facilitator gives you the code, e.g. “group 3”. Ratings are saved for your group and appear in the results for the whole room.</p>
-    <p class="sub"><b>One laptop per group signs in.</b> Everyone else in the group explores without a code – two laptops with the same group code overwrite each other.</p>
-    <form id="loginForm" autocomplete="off"><label class="sr" for="codeIn">Group code</label><input id="codeIn" placeholder="group 3" required>
-    <p class="err" id="loginErr">${msg ? esc(msg) : ''}</p>
-    <div class="acts"><button class="btn btn-primary" type="submit">Sign in</button><button class="link" type="button" id="explore">Explore without a code (this browser only)</button></div></form></div>`;
-  $('#login').hidden = false; setInert(true); setTimeout(() => $('#codeIn').focus(), 30);
+/* ---------- tools catalogue ---------- */
+function viewTools(){
+  const counts = PHASES.map(p => CAT.tools.filter(x => x.ph.includes(p.id)).length);
+  const f = ui.toolPhase, fm = ui.toolMcp, score = x => x.r ? (x.c * x.r + 12) / (x.c + 3) : 0;
+  const btns = `<button type="button" data-tph="" aria-pressed="${!f && !fm}">${t('lib.all')} (${CAT.tools.length})</button>` + PHASES.map((p, i) => `<button type="button" data-tph="${p.id}" aria-pressed="${f === p.id}">${esc(L(p).short)} (${counts[i]})</button>`).join('') +
+    `<button type="button" class="mcpf" data-tmcp="mcp" aria-pressed="${fm === 'mcp'}">MCP (${CAT.tools.filter(x => CAT.mcp[x.n]).length})</button><button type="button" class="mcpf" data-tmcp="m365" aria-pressed="${fm === 'm365'}">Microsoft 365 (${CAT.tools.filter(x => CAT.m365[x.n]).length})</button>`;
+  const grid = L(CAT.categories).map((cn, ci) => { const ts = CAT.tools.filter(x => x.cat === ci && (!f || x.ph.includes(f)) && (!fm || (fm === 'mcp' ? CAT.mcp : CAT.m365)[x.n])).sort((a, b) => score(b) - score(a) || b.c - a.c);
+    if (!ts.length) return '';
+    return `<div class="panel tcat"><h2>${esc(cn)}<span>${ts.length}</span></h2>${ts.map(x => { const m = CAT.mcp[x.n], ms = CAT.m365[x.n];
+      return `<div class="tool"><span>${x.url ? `<a href="https://${x.url}" target="_blank" rel="noopener">${esc(x.n)}</a>` : `<span class="nm">${esc(x.n)}</span>`}<span class="typ">${esc(L(CAT.types[x.typ]))}</span></span>${x.r ? `<span class="stars${x.c < 3 ? ' low' : ''}"><span class="bar"><i style="width:${x.r / 5 * 100}%"></i></span>${x.r.toFixed(1)} <small>(${x.c})</small></span>` : `<span class="stars nr">${t('tools.nr')}</span>`}<span class="nt">${esc(L(x.nt))}</span>
+        ${ms ? `<span class="mcp m365"><span class="mlab">Microsoft 365</span>${ms.map(([k, url]) => `<a class="msb" href="${url}" target="_blank" rel="noopener">${esc(L(CAT.m365_types[k]))}</a>`).join('')}</span>` : ''}
+        ${m ? `<span class="mcp"><a class="mcpb ${m.kind}" href="${m.doc}" target="_blank" rel="noopener">MCP · ${m.kind === 'o' ? t('mcp.official') : t('mcp.community')}</a><span class="mcpr${m.remote ? '' : ' loc'}">${m.remote ? t('mcp.remote') : t('mcp.local')}</span> ${esc(note2(CON[x.n]) || L(m.note))}</span>` : ''}</div>`; }).join('')}</div>`; }).join('');
+  return `<div class="view-head"><div>${kicker(t('nav.tools'))}<h1>${t('tools.h1')}</h1><p class="lede">${t('tools.lede')}</p><p class="sub">${t('tools.legend')}</p></div></div>
+    <div class="tchips">${btns}</div><div class="tgrid">${grid}</div>`;
 }
-function closeLogin(){ $('#login').hidden = true; setInert(!$('#drawer').hidden); }
+
+/* ---------- practice data ---------- */
+function viewData(){
+  const P = KB.pack, mb = n => n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1) + ' MB' : Math.max(1, Math.round(n / 1e3)) + ' kB';
+  const lic = l => `<span class="lic${/NC/.test(l) ? ' nc' : ''}">${esc(l)}</span>`;
+  let grp = '';
+  return `<div class="view-head"><div>${kicker(t('nav.data'))}<h1>${t('data.h1')}</h1><p class="lede">${t('data.lede')}</p>${lang === 'de' ? `<p class="sub">${t('data.en')}</p>` : ''}</div></div>
+    <div class="dl-grid"><div class="panel dl-main"><h2>${t('data.dl')}</h2><p class="sub">${t('data.dl.p', P.papers.length, P.data.reduce((n, d) => n + d.files.length, 0), P.snapshot)}</p>
+      <div class="dl-btns"><a class="btn btn-primary" href="${PACK_URL}ai-research-practice-pack.zip" download>${t('data.all')} (.zip, ${mb(P.zips.all)})</a><a class="btn btn-quiet" href="${PACK_URL}ai-research-practice-data.zip" download>${t('data.only')} (.zip, ${mb(P.zips.data)})</a><a class="btn btn-quiet" href="${REPO}/blob/main/materials/README.md" target="_blank" rel="noopener">README</a></div>
+      <p class="sub">${t('data.inrepo')}</p></div>
+      <div class="panel"><h2>${t('data.how')}</h2><ol class="howto">${[1,2,3,4].map(i => `<li>${t('data.how.' + i)}</li>`).join('')}</ol></div></div>
+    <div class="panel"><h2>${t('data.ideas')}</h2><div class="gtable"><table><thead><tr><th>${t('data.paper')}</th><th>${t('data.data')}</th><th>${t('data.idea')}</th><th>Use case</th></tr></thead><tbody>${P.pairs.map(([a, b, c, id]) => { const u = id && ucFrom(id); return `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${esc(c)}</td><td>${u ? `<a href="#/uc/${encodeURIComponent(id)}">${esc(u.title)}</a>` : '–'}</td></tr>`; }).join('')}</tbody></table></div></div>
+    <div class="panel" id="dlPapers"><h2>${t('data.papers')}</h2>${(P.extras || []).map(x => `<div class="dl-item" id="pk-${x.id}"><span class="dl-id">${x.id}</span><div><p class="dl-cite"><b>${esc(x.title)}</b></p><p class="dl-about">${esc(x.about)}</p><p class="dl-meta">${lic(x.licence)}<a href="${fileHref(x.file)}" download>${esc(x.file.split('/').pop())} · ${mb(x.size)}</a></p></div></div>`).join('')}
+      ${P.papers.map(p => (p.group !== grp ? `<h3 class="dl-grp">${esc(grp = p.group)}</h3>` : '') + `<div class="dl-item" id="pk-${p.id}"><span class="dl-id">${p.id}</span><div><p class="dl-cite">${esc(p.cite)}</p><p class="dl-about">${esc(p.about)}</p><p class="dl-meta">${lic(p.licence)}<a href="${fileHref(p.file)}" target="_blank" rel="noopener">PDF · ${mb(p.size)}</a><a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi.org/${esc(p.doi)}</a></p></div></div>`).join('')}</div>
+    <div class="panel"><h2>${t('data.raw')}</h2>${P.data.map(d => `<div class="dl-item" id="pk-${d.id}"><span class="dl-id">${d.id}</span><div><p class="dl-cite"><b>${esc(d.title)}</b> · ${esc(d.provider)}</p><p class="dl-about">${esc(d.span)} · ${esc(d.format)}. ${esc(d.notes)}</p><p class="dl-meta">${lic(d.licence)}${d.files.map(x => `<a href="${fileHref(x.f)}" download>${esc(x.f.split('/').pop())} · ${mb(x.size)}</a>`).join('')}<a href="${d.source}" target="_blank" rel="noopener">${t('data.source')}</a></p><p class="dl-about"><small>${t('data.cite')}: ${esc(d.cite)}</small></p></div></div>`).join('')}</div>`;
+}
+
+/* ---------- exports ---------- */
+const backup = () => JSON.stringify({app:'airp-kb', version:1, exported:new Date().toISOString(), r:store.r, own:store.own}, null, 2);
+function csv(){
+  const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+  const head = [t('lib.phase'), 'Use case', t('uc.value'), t('uc.gain'), t('uc.feas'), 'V×F', t('pill.star'), t('pill.notai'), t('uc.checkrules'), t('uc.tried'), t('uc.note'), t('pill.own')];
+  const rows = allUcs().filter(u => inColl(u.id) || u.own).map(u => { const r = rOf(u.id); return [phName(u.meta.phase), u.title, r.n || '', (r.b || []).map(g => L(KB.meta.gains.find(x => x.id === g))).join(', '), r.u || '', rated(r) ? r.n * r.u : '', r.f ? '✓' : '', r.x ? '✓' : '', r.c ? '✓' : '', r.o ? t(OUT[r.o][0]) : '', r.note || '', u.own ? '✓' : ''].map(q).join(','); });
+  return [head.map(q).join(','), ...rows].join('\r\n');
+}
+function reportMd(){
+  const all = allUcs().map(u => ({u, r:rOf(u.id)})), ranked = all.filter(e => rated(e.r) && !e.r.x).sort((a, b) => b.r.n * b.r.u - a.r.n * a.r.u);
+  const out = [`# ${t('rep.t')}`, `${t('app.title')} · ${stamp()}`, '', `## ${t('coll.top')}`, ...ranked.map((e, i) => `${i + 1}. **${e.u.title}** (${phShort(e.u.meta.phase)}) – ${t('uc.value')} ${e.r.n}, ${t('uc.feas')} ${e.r.u}${e.r.o ? ' · ' + t(OUT[e.r.o][0]) : ''}`), ''];
+  const sec = (h, arr) => { if (arr.length) out.push(`## ${h}`, ...arr.map(e => `- ${e.u.title}${e.r.note ? ' – ' + e.r.note.replace(/\n+/g, ' ') : ''}`), ''); };
+  sec(t('coll.tried'), all.filter(e => e.r.o || e.r.note)); sec(t('pill.notai'), all.filter(e => e.r.x)); sec(t('uc.checkrules'), all.filter(e => e.r.c));
+  return out.join('\n');
+}
+const ownMd = u => EXPORT.ucMarkdown(u, u.lang || lang);
+function suggestUrl(u){
+  const md = ownMd(u), p = new URLSearchParams({template:'new-use-case.yml', title:(lang === 'de' ? 'Neuer Use Case: ' : 'New use case: ') + u.title, phase:phName(u.meta.phase), summary:u.summary || '', markdown:md.length > 6000 ? md.slice(0, 6000) + '\n…' : md});
+  return `${REPO}/issues/new?${p}`;
+}
 
 /* ---------- render ---------- */
-/* ---------- practice data ---------- */
-const PACK_URL = 'https://github.com/MKern311/ai-research-companion-hhn/releases/download/practice-data-' + PACK.snapshot + '/';
-const mb = n => n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1) + ' MB' : Math.max(1, Math.round(n / 1e3)) + ' kB';
-const fileUrl = f => 'materials/' + f.split('/').map(encodeURIComponent).join('/');
-const linkify = t => esc(t).replace(/https:\/\/[^\s<)]+[^\s<).,;]/g, m => `<a href="${m}" target="_blank" rel="noopener">${m}</a>`);
-// banner in the data and tools views that leads back to the use case the participant came from
-const backHtml = () => { const u = ui.back && findUc(ui.back); return u ? `<div class="backbar"><button type="button" class="btn btn-quiet btn-sm" data-back>← Back to: ${esc(u.t)}</button></div>` : ''; };
-const licChip = l => `<span class="lic${/NC/.test(l) ? ' nc' : ''}">${esc(l)}</span>`;
-function renderData(){
-  const date = new Date(PACK.snapshot + 'T12:00:00Z').toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
-  $('#dlMain').innerHTML = `<h2>Download</h2><p class="sub">${PACK.papers.length} papers and ${PACK.data.reduce((n, d) => n + d.files.length, 0)} data files on ${esc(PACK.topic.toLowerCase())} · snapshot of ${date} · with a README listing licences and how to cite.</p>
-    <div class="dl-btns"><a class="btn btn-primary" href="${PACK_URL}ai-research-practice-pack.zip" download>Download papers and data (.zip, ${mb(PACK.zips.all)})</a>
-    <a class="btn btn-quiet" href="${PACK_URL}ai-research-practice-data.zip" download>Data only (.zip, ${mb(PACK.zips.data)})</a>
-    <a class="btn btn-quiet" href="https://github.com/MKern311/ai-research-companion-hhn/blob/main/materials/README.md" target="_blank" rel="noopener">README</a></div>
-    <p class="sub">If the download is slow, take the data-only pack and download single papers below as you need them.</p>`;
-  $('#dlPairs').innerHTML = `<h2>Ideas for your test</h2><p class="sub">Each idea combines papers and data files from the pack, so you can check the assistant’s summary or analysis against the source. The last column opens the matching use case with a step-by-step guide.</p>
-    <div class="gtable"><table><thead><tr><th>Paper</th><th>Data</th><th>Test idea</th><th>Use case</th></tr></thead><tbody>${PACK.pairs.map(([a, b, c, id]) => { const u = id && findUc(id); return `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td>${esc(c)}</td><td>${u ? `<button type="button" class="linkbtn" data-open="${esc(u.id)}">${esc(u.t)}</button>` : '–'}</td></tr>`; }).join('')}</tbody></table></div>`;
-  let grp = '';
-  $('#dlPapers').innerHTML = `<h2>Papers</h2><p class="sub">Open access. A1 is the accepted manuscript, C6 a preprint.</p>` + (PACK.extras || []).map(x => `<div class="dl-item" id="pk-${x.id}"><span class="dl-id">${x.id}</span><div><p class="dl-cite"><b>${esc(x.title)}</b></p><p class="dl-about">${esc(x.about)}</p>
-      <p class="dl-meta">${licChip(x.licence)}<a href="${fileUrl(x.file)}" download>${esc(x.file.split('/').pop())} · ${mb(x.size)}</a><button type="button" class="linkbtn" data-copyrefs>Copy all ${PACK.papers.length} references</button></p></div></div>`).join('') + PACK.papers.map(p => {
-    const h = p.group !== grp ? `<h3 class="dl-grp">${esc(grp = p.group)}</h3>` : '';
-    return h + `<div class="dl-item" id="pk-${p.id}"><span class="dl-id">${p.id}</span><div><p class="dl-cite">${esc(p.cite)}</p><p class="dl-about">${esc(p.about)}${p.version ? ` <i>${esc(p.version)}.</i>` : ''}</p>
-      <p class="dl-meta">${licChip(p.licence)}<a href="${fileUrl(p.file)}" target="_blank" rel="noopener">PDF · ${mb(p.size)}</a><a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi.org/${esc(p.doi)}</a>${p.data.length ? `<span>Data: ${p.data.join(' · ')}</span>` : ''}</p></div></div>`;
-  }).join('');
-  $('#dlData').innerHTML = `<h2>Raw data</h2><p class="sub">Original provider files, unchanged. Format quirks are part of the exercise.</p>` + PACK.data.map(d => `<div class="dl-item" id="pk-${d.id}"><span class="dl-id">${d.id}</span><div>
-      <p class="dl-cite"><b>${esc(d.title)}</b> · ${esc(d.provider)}</p><p class="dl-about">${esc(d.span)} · ${esc(d.format)}. ${esc(d.notes)}</p>
-      <p class="dl-meta">${licChip(d.licence)}${d.files.map(x => `<a href="${fileUrl(x.f)}" download>${esc(x.f.split('/').pop())} · ${mb(x.size)}</a>`).join('')}<a href="${d.source}" target="_blank" rel="noopener">Source</a></p>
-      <p class="dl-about"><small>Cite: ${esc(d.cite)}</small></p></div></div>`).join('') +
-    `<h3 class="dl-grp">Not included</h3><ul class="dl-excl">${PACK.excluded.map(([a, b]) => `<li><b>${esc(a)}</b> – ${linkify(b)}</li>`).join('')}</ul>`;
+function render(){
+  COPY = []; renderHeader();
+  const {v, a} = route();
+  if (v === 'setup' && a && client(a)) { store.app = a; save(); }
+  const views = {start:viewStart, library:viewLibrary, uc:() => viewUc(a), collection:viewCollection, new:() => viewEditor(''), edit:() => viewEditor(a), setup:() => viewSetup(a), tools:viewTools, data:viewData};
+  $('#view').innerHTML = (views[v] || viewStart)();
+  if (v === 'library') renderCards();
+  const u = v === 'uc' ? ucFrom(a) : null;
+  document.title = (u ? u.title + ' · ' : '') + t('app.title') + ' · HHN';
 }
-
-function setView(v, back){
-  ui.view = v; ui.back = back || null;
-  ['agenda','cases','data','results','tools'].forEach(k => { $('#view-' + k).hidden = k !== v; $('#tab-' + k).setAttribute('aria-selected', String(k === v)); });
-  if (v === 'results') renderResults(); if (v === 'tools') renderTools(); if (v === 'data') renderData();
-  $('#dataBack').innerHTML = v === 'data' ? backHtml() : ''; $('#toolsBack').innerHTML = v === 'tools' ? backHtml() : '';
-  window.scrollTo({top:0});
-}
-// marked target in the data or tools view stays highlighted until the next click
-function mark(el){ document.querySelectorAll('.marked').forEach(x => x.classList.remove('marked')); if (el) el.classList.add('marked'); }
-function softRender(){
-  renderIdent(); renderDisc(); renderPhases(); renderCards();
-  if (ui.view === 'results') renderResults();
-  if (ui.open && ui.open !== '__new' && !$('#drawer').hidden && !$('#drawer').contains(document.activeElement)) openDrawer(ui.open);
-}
-function renderAll(){ renderIdent(); renderDisc(); renderLens(); renderPhases(); renderIntro(); renderCards(); if (ui.view === 'results') renderResults(); if (ui.view === 'tools') renderTools(); }
 
 /* ---------- events ---------- */
 document.addEventListener('click', e => {
-  const t = e.target;
-  if (!t.closest('[data-pack]')) mark(null);
-  const from = () => { const d = $('#drawer'), id = !d.hidden && ui.open && ui.open !== '__new' ? ui.open : null;
-    if (id) { const sc = d.querySelector('.scroll'), g = d.querySelector('details.guide'), bg = d.querySelector('details.bg'); ui.backState = {top:sc ? sc.scrollTop : 0, g:g ? g.open : null, bg:bg ? bg.open : null, gmode:ui.gmode}; }
-    if (!d.hidden) closeDrawer(); return id; };
-  const pk = t.closest('[data-pack]'); if (pk) { setView('data', from()); const papers = pk.dataset.pack === 'papers', el = papers ? $('#dlPapers') : document.getElementById('pk-' + pk.dataset.pack); if (el) { el.scrollIntoView({block:papers ? 'start' : 'center'}); mark(el); } return; }
-  if (t.closest('[data-back]')) { const id = ui.back, bs = ui.backState; setView('cases'); const u = findUc(id); if (u) { ui.phase = PHASES.findIndex(p => p.id === u.phase); renderPhases(); renderIntro(); openDrawer(id);
-    if (bs) { ui.gmode = bs.gmode; drawerHtml = ''; openDrawer(id); const d = $('#drawer'), g = d.querySelector('details.guide'), bg = d.querySelector('details.bg'); if (g && bs.g !== null) g.open = bs.g; if (bg && bs.bg !== null) bg.open = bs.bg; const sc = d.querySelector('.scroll'); if (sc) sc.scrollTop = bs.top; } } return; }
-  const tab = t.closest('[data-view]'); if (tab) { const id = tab.closest('#drawer') ? from() : (from(), null); setView(tab.dataset.view, id); if (tab.hasAttribute('data-mcpinfo')) { const b = $('#mcpBox'); b.open = true; b.scrollIntoView(); } return; }
-  const ln = t.closest('[data-lens]'); if (ln) { const inD = !!ln.closest('#drawer'); ui.lens = +ln.dataset.lens; saveUi(); renderLens(); renderCards();
-    if (ui.open && !$('#drawer').hidden) { openDrawer(ui.open); if (inD) { const sc = $('#drawer .scroll'); if (sc) sc.scrollTop = 0; const tb = $('#drawer [data-test]') || $('#drawer h2'); if (tb) tb.focus({preventScroll:true}); } } return; }
-  const rdc = t.closest('[data-rdisc]'); if (rdc) { ui.resDisc = rdc.dataset.rdisc; renderResults(); return; }
-  if (t.closest('[data-copyrefs]')) { copyText(refList(), 'References', `All ${PACK.papers.length} references copied`); return; }
-  const ph = t.closest('[data-phase]'); if (ph) { ui.phase = +ph.dataset.phase; renderPhases(); renderIntro(); renderCards(); return; }
-  const op = t.closest('[data-open]'); if (op) { const u = findUc(op.dataset.open); if (u) { ui.phase = PHASES.findIndex(p => p.id === u.phase); if (ui.view !== 'cases') setView('cases'); renderPhases(); renderIntro(); openDrawer(u.id); } return; }
-  if (t.closest('[data-add]')) { openDrawer('__new'); return; }
-  if (t.closest('[data-close]') || t === $('#scrim')) { closeDrawer(); return; }
-  const sc = t.closest('[data-scope]'); if (sc && !sc.disabled) { ui.scope = sc.dataset.scope; renderResults(); return; }
-  const gr = t.closest('[data-group]'); if (gr) { ui.scope = 'table'; ui.resTable = gr.dataset.group; renderResults(); window.scrollTo({top:0, behavior:'smooth'}); const sp = $('#scopePick'); if (sp) sp.focus({preventScroll:true}); return; }
-  const rp = t.closest('[data-rph]'); if (rp) { ui.resPhase = rp.dataset.rph || null; renderResults(); return; }
-  if (t.closest('#pdfBtn')) { if (ui.view !== 'results') setView('results'); document.title = 'Results – AI in the Research Process – ' + new Date().toISOString().slice(0, 10); window.print(); setTimeout(() => { document.title = 'AI in the Research Process'; }, 1000); return; }
-  const tp = t.closest('[data-tph]'); if (tp) { ui.toolPhase = tp.dataset.tph || null; if (!ui.toolPhase) ui.toolMcp = false; renderTools(); return; }
-  const tm = t.closest('[data-tmcp]'); if (tm) { ui.toolMcp = ui.toolMcp === tm.dataset.tmcp ? false : tm.dataset.tmcp; renderTools(); return; }
-  if (t.closest('#signOut')) { signOut(); return; }
-  if (t.closest('#signIn')) { showLogin(); return; }
-  if (t.closest('#explore')) { ui.explore = true; saveUi(); closeLogin(); renderAll(); return; }
-  if (t.closest('#menuBtn')) { openMenu(); return; }
-  if (t.closest('[data-mclose]') || t === $('#modal')) { closeMenu(); return; }
-  if (t === $('#login')) return;
-  if (t.closest('[data-copyprompt]') && ui.open) { copyText(promptOf(ui.open), 'Prompt', 'Prompt copied – paste it into your AI assistant'); return; }
-  const gm = t.closest('[data-gmode]'); if (gm && ui.open) { ui.gmode = gm.dataset.gmode; const gd = gm.closest('details.guide'); if (gd) { const tmp = document.createElement('div'); tmp.innerHTML = guideHtml(findUc(ui.open), true); gd.replaceWith(tmp.firstElementChild); } return; }
-  if (t.closest('#repCopy')) { copyText(reportMarkdown(), 'Report'); return; }
-  if (t.closest('#repDl')) { download(`${stamp()}_ai-research-process_report.md`, reportMarkdown(), 'text/markdown'); return; }
-  if (t.closest('#mCsv')) { download(`${stamp()}_ai-research-process_results.csv`, '﻿' + csv(), 'text/csv'); return; }
-  if (t.closest('#mJson')) { download(`${stamp()}_ai-research-process_data.json`, JSON.stringify({version:5, exported:new Date().toISOString(), t:state.t, c:state.c}, null, 2), 'application/json'); return; }
-  if (t.closest('#mTsv')) { copyText(tsv(), 'Results'); return; }
-  if (t.closest('#mgCopy')) { copyText(JSON.stringify({version:5, t:{[myTable()]:tbl(myTable())}, c:state.c.filter(c => c.by === myTable())}), 'Group data'); return; }
-  if (t.closest('#mgGo')) { try { const n = merge(parseBlocks($('#mgText').value)); toast(`Merged ${n} ${n === 1 ? 'group' : 'groups'}${merge.skipped ? ` · ${merge.skipped} unknown ${merge.skipped === 1 ? 'name' : 'names'} skipped` : ''}`); $('#mgText').value = ''; } catch(err) { toast('Could not read the pasted text'); } return; }
-  if (t.closest('#svGo')) { importSurvey(); return; }
-  if (t.closest('#mReset')) { resetArmed(t.closest('#mReset')); return; }
-
-  // drawer controls
-  const d = $('#drawer'); if (d.hidden || !d.contains(t)) return;
-  const id = ui.open, u = findUc(id); if (!u || readOnly()) return;
-  const rb = t.closest('[data-rate]'), gb = t.closest('[data-gain]'), fb = t.closest('[data-flag]'), tb = t.closest('[data-test]'), ob = t.closest('[data-out]');
-  const T = tbl(myTable()); const r = T.r[id] = T.r[id] || {};
-  if (rb) { const k = rb.dataset.rate, v = +rb.dataset.v; r[k] = r[k] === v ? 0 : v; }
-  else if (gb) { const g = gb.dataset.gain, b = r.b || []; r.b = b.includes(g) ? b.filter(x => x !== g) : b.concat(g); }
-  else if (fb) { const k = fb.dataset.flag; if (k === 'c') { r.c = !chkOf(r); delete r.g; } else r[k] = !r[k]; }
-  else if (tb) { if (!r.tt && myTests().length >= MAXTEST) { toast('Your group already tests three use cases'); return; } r.tt = !r.tt; renderLens(); }
-  else if (ob) { r.o = r.o === ob.dataset.out ? '' : ob.dataset.out; }
-  else if (t.closest('[data-del]')) { state.c = state.c.filter(x => x.id !== id); Object.values(state.t).forEach(X => delete X.r[id]); pushAddition(u, true); push(); closeDrawer(); renderPhases(); renderLens(); const add = $('[data-add]'); if (add) add.focus(); toast('Use case removed'); return; }
-  else return;
-  push(); openDrawer(id); renderPhases();
-  if (tb && r.tt) { const g = $('#drawer').querySelector('details.guide'); if (g) { g.open = true; g.scrollIntoView({block:'start', behavior:'smooth'}); } }
-  const again = $('#drawer').querySelector(rb ? `[data-rate="${rb.dataset.rate}"][data-v="${rb.dataset.v}"]` : gb ? `[data-gain="${gb.dataset.gain}"]` : fb ? `[data-flag="${fb.dataset.flag}"]` : tb ? '[data-test]' : `[data-out="${ob.dataset.out}"]`); if (again) again.focus();
-});
-document.addEventListener('change', e => {
-  if (e.target.id === 'tableSel') { state.off = !!e.target.value; state.a = e.target.value || 'Group 1'; save(); renderAll(); toast(state.off ? 'Rating as ' + state.a : 'Explore mode'); }
-  if (e.target.id === 'scopePick') { ui.resTable = e.target.value; renderResults(); }
-  if (e.target.id === 'mgFile') { Promise.all([...e.target.files].map(f => f.text().then(JSON.parse))).then(list => { const n = merge(list); toast(`Merged ${n} ${n === 1 ? 'group' : 'groups'}${merge.skipped ? ` · ${merge.skipped} unknown ${merge.skipped === 1 ? 'name' : 'names'} skipped` : ''}`); }).catch(() => toast('Could not read the file')); e.target.value = ''; }
+  const c = s => e.target.closest(s);
+  let b;
+  if ((b = c('[data-copy]'))) { copyText(COPY[+b.dataset.copy]); return; }
+  // wizard (open modal)
+  if (ui.wiz) {
+    if (c('[data-wclose]') || e.target === $('#modal')) { closeWizard(); return; }
+    if ((b = c('[data-wapp]'))) { ui.wiz.app = b.dataset.wapp; if (b.dataset.wapp !== 'other') { store.app = b.dataset.wapp; save(); } ui.wiz.step = 1; drawWizard(); return; }
+    if ((b = c('[data-wstep]'))) { ui.wiz.step = +b.dataset.wstep; drawWizard(); return; }
+    if (c('[data-wnext]')) { ui.wiz.step = Math.min(3, ui.wiz.step + 1); drawWizard(); return; }
+    if (c('[data-wprev]')) { ui.wiz.step = Math.max(0, ui.wiz.step - 1); drawWizard(); return; }
+    if ((b = c('[data-wfmt]'))) { ui.wiz.fmt = b.dataset.wfmt; drawWizard(); return; }
+    if (c('[data-skillzip]') || c('[data-skillmd]') || c('[data-rulesmd]')) {
+      const u = ucFrom(ui.wiz.id), ul = u.textLang || lang, name = EXPORT.slug(u.title), md = EXPORT.skillMd(u, ul, {url:wizUrl(u), riskDef:riskDef(u.meta.risk)});
+      if (c('[data-skillzip]')) download(name + '.zip', new Blob([EXPORT.zip([{name:name + '/SKILL.md', text:md}])], {type:'application/zip'}));
+      else if (c('[data-skillmd]')) download('SKILL.md', md, 'text/markdown');
+      else download(name + '_rules.md', EXPORT.projectRules(u, ul), 'text/markdown');
+    }
+    return;
+  }
+  if ((b = c('[data-lang]'))) { lang = b.dataset.lang; store.lang = lang; save(); render(); return; }
+  if ((b = c('[data-fphase]'))) { ui.phase = b.dataset.fphase; render(); return; }
+  if ((b = c('[data-fphase-go]'))) { ui.phase = b.dataset.fphaseGo; go('#/library'); return; }
+  if ((b = c('[data-mode]'))) { ui.mode = b.dataset.mode; const sy = window.scrollY; render(); window.scrollTo({top:sy}); return; }
+  if ((b = c('[data-packjump]'))) { e.preventDefault(); const id = b.dataset.packjump; go('#/data'); setTimeout(() => { const el = document.getElementById('pk-' + id); if (el) { el.scrollIntoView({block:'center'}); el.classList.add('marked'); } }, 60); return; }
+  if (c('[data-copylink]')) { copyText(location.href, t('toast.link')); return; }
+  if ((b = c('[data-dup]'))) { ui.dupFrom = b.dataset.dup; go('#/new'); return; }
+  if ((b = c('[data-wizard]'))) { openWizard(b.dataset.wizard); return; }
+  if ((b = c('[data-tph]'))) { ui.toolPhase = b.dataset.tph; if (!ui.toolPhase) ui.toolMcp = ''; render(); return; }
+  if ((b = c('[data-tmcp]'))) { ui.toolMcp = ui.toolMcp === b.dataset.tmcp ? '' : b.dataset.tmcp; render(); return; }
+  // collection
+  if ((b = c('[data-exp]'))) { const k = b.dataset.exp; if (k === 'json') download(`${stamp()}_ai-research_collection.json`, backup(), 'application/json'); if (k === 'csv') download(`${stamp()}_ai-research_collection.csv`, '﻿' + csv(), 'text/csv'); if (k === 'md') download(`${stamp()}_ai-research_report.md`, reportMd(), 'text/markdown'); return; }
+  if ((b = c('[data-reset]'))) { if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = t('btn.confirm'); setTimeout(() => { delete b.dataset.armed; b.textContent = t('btn.reset'); }, 4000); return; } store.r = {}; store.own = []; save(); render(); toast(t('toast.reset')); return; }
+  if (c('[data-ownzip]')) { download(`${stamp()}_own-use-cases.zip`, new Blob([EXPORT.zip(store.own.map(o => ({name:`content/usecases/${o.lang}/${o.id}.md`, text:ownMd(ucFrom(o.id))})))], {type:'application/zip'})); return; }
+  if ((b = c('[data-ownmd]'))) { const u = ucFrom(b.dataset.ownmd); download(`${u.id}.md`, ownMd(u), 'text/markdown'); return; }
+  if ((b = c('[data-suggest]'))) { window.open(suggestUrl(ucFrom(b.dataset.suggest)), '_blank', 'noopener'); return; }
+  if ((b = c('[data-owndel]'))) { if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = t('btn.confirm'); setTimeout(() => { delete b.dataset.armed; b.textContent = t('btn.delete'); }, 4000); return; } store.own = store.own.filter(o => o.id !== b.dataset.owndel); delete store.r[b.dataset.owndel]; save(); go('#/collection'); toast(t('toast.deleted')); return; }
+  // assessment on the use-case page
+  const {v, a} = route(); if (v !== 'uc') return;
+  if (!(b = c('[data-rate],[data-gain],[data-flag],[data-out]'))) return;
+  const r = rSet(a);
+  if (b.dataset.rate) { const k = b.dataset.rate, val = +b.dataset.v; r[k] = r[k] === val ? 0 : val; }
+  else if (b.dataset.gain) { const g = b.dataset.gain, l = r.b || []; r.b = l.includes(g) ? l.filter(y => y !== g) : l.concat(g); }
+  else if (b.dataset.flag) { const k = b.dataset.flag; r[k] = !r[k]; }
+  else { r.o = r.o === b.dataset.out ? '' : b.dataset.out; }
+  save();
+  const sel = b.dataset.rate ? `[data-rate="${b.dataset.rate}"][data-v="${b.dataset.v}"]` : b.dataset.gain ? `[data-gain="${b.dataset.gain}"]` : b.dataset.flag ? `[data-flag="${b.dataset.flag}"]` : `[data-out="${b.dataset.out}"]`;
+  const sy = window.scrollY; render(); window.scrollTo({top:sy}); const again = document.querySelector(sel); if (again) again.focus({preventScroll:true});
 });
 document.addEventListener('input', e => {
-  const k = e.target.dataset && e.target.dataset.fd;
-  if (e.target.dataset && 'note' in e.target.dataset && ui.open && !readOnly()) { const T = tbl(myTable()); (T.r[ui.open] = T.r[ui.open] || {}).note = e.target.value; push(); }
-  if (e.target.id === 'discIn' && canRate()) { tbl(myTable()).disc = e.target.value.slice(0, 60); push(); clearTimeout(renderDisc.t); renderDisc.t = setTimeout(() => { renderIdent(); if (ui.open && !$('#drawer').hidden) openDrawer(ui.open); }, 600); }
-  if (k && !readOnly()) { tbl(myTable()).fd[k] = e.target.value; push(); clearTimeout(renderFindingsAll.t); renderFindingsAll.t = setTimeout(() => { renderFindingsAll(); renderReport(); }, 500); }
-  if (e.target.id === 'svText') { const rows = parseSurvey(e.target.value), bad = rows.filter(r => !r.phase).length, risky = rows.filter(r => r.risky).length;
-    $('#svInfo').textContent = rows.length ? `${rows.length} rows · ${rows.length - bad - risky} ready${bad ? ` · ${bad} without a recognised stage` : ''}${risky ? ` · ${risky} skipped (possible personal data)` : ''}` : ''; }
+  if (e.target.id === 'q') { ui.q = e.target.value; renderCards(); }
+  if (e.target.matches && e.target.matches('[data-note]')) { rSet(route().a).note = e.target.value; save(); }
 });
-document.addEventListener('submit', async e => {
-  e.preventDefault();
-  if (e.target.id === 'addForm') {
-    const t = $('#fTitle').value.trim(); if (!t) return;
-    const nc = {id:'c-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), phase:PHASES[ui.phase].id, t, d:$('#fDesc').value.trim(), cap:[], mode:'Assist', custom:true, by:myTable()};
-    state.c.push(nc); pushAddition(nc); renderPhases(); openDrawer(nc.id); toast('Use case added');
-  }
-  if (e.target.id === 'loginForm') {
-    const code = $('#codeIn').value.trim(); if (!code) return;
-    try { await signIn(code, true); closeLogin(); renderAll(); toast('Signed in as ' + (session.table || 'viewer')); if (session.role === 'viewer') setView('results'); }
-    catch(err) { $('#loginErr').textContent = err.status === 400 || /Unknown code/.test(err.message) ? 'This code is not valid – check the spelling.' : 'Could not connect – check the network and try again.'; }
+document.addEventListener('change', e => {
+  if (e.target.id === 'fRisk') { ui.risk = e.target.value; renderCards(); }
+  if (e.target.id === 'fOnly') { ui.only = e.target.value; renderCards(); }
+  if (e.target.id === 'impFile' && e.target.files[0]) {
+    e.target.files[0].text().then(JSON.parse).then(d => { if (!d || d.app !== 'airp-kb') throw 0; Object.assign(store.r, d.r || {}); (d.own || []).forEach(o => { const i = store.own.findIndex(x => x.id === o.id); if (i >= 0) store.own[i] = o; else store.own.push(o); }); save(); render(); toast(t('toast.imported')); }).catch(() => toast(t('toast.badfile')));
   }
 });
+document.addEventListener('submit', e => { if (e.target.id === 'edForm') { e.preventDefault(); saveEditor(e.target); } });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { if (!$('#login').hidden) { ui.explore = true; saveUi(); closeLogin(); renderAll(); } else if (!$('#modal').hidden) closeMenu(); else if (!$('#drawer').hidden) closeDrawer(); }
-  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('li[data-open], g[data-open]')) { e.preventDefault(); e.target.dispatchEvent(new MouseEvent('click', {bubbles:true})); }
-  // keep Tab inside the dialog on top: login, then menu, then drawer
-  if (e.key === 'Tab') {
-    const box = ['#login', '#modal', '#drawer'].map(q => $(q)).find(x => !x.hidden);
-    if (!box) return;
-    const f = [...box.querySelectorAll('a[href],button:not([disabled]),input,select,textarea,summary,[tabindex="0"]')].filter(x => x.offsetParent !== null && !(x.tagName !== 'SUMMARY' && x.closest('details:not([open])')));
-    if (!f.length) return;
-    const i = f.indexOf(document.activeElement);
-    if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); } else if (!e.shiftKey && (i === f.length - 1 || i < 0)) { e.preventDefault(); f[0].focus(); }
-  }
+  if (!ui.wiz) return;
+  if (e.key === 'Escape') { closeWizard(); return; }
+  if (e.key === 'Tab') { const f = [...$('#modal').querySelectorAll('a[href],button:not([disabled]),input,select,textarea')].filter(x => x.offsetParent !== null); if (!f.length) return; const i = f.indexOf(document.activeElement);
+    if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); } else if (!e.shiftKey && (i === f.length - 1 || i < 0)) { e.preventDefault(); f[0].focus(); } }
 });
-
-/* ---------- helpers: export, merge, survey ---------- */
-const stamp = () => new Date().toISOString().slice(0, 10);
-function download(name, text, type){ const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], {type:type + ';charset=utf-8'})); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); }
-function copyText(text, what, msg){
-  const done = () => toast(msg || what + ' copied');
-  const fallback = () => { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch(e) { toast('Copy failed – select and copy manually'); } ta.remove(); };
-  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
-}
-function csv(){
-  const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
-  const head = ['Group','Discipline','Phase','Cluster','Use case','Description','Value (1-5)','Kind of gain','Feasibility (1-5)','Score','Starred','Not an AI task','Check rules first','Tested with AI','Test result','Test note','Workshop addition'];
-  const rows = [];
-  Object.entries(state.t).forEach(([tn, T]) => PHASES.forEach(p => ucsOf(p).forEach(u => { const r = T.r[u.id]; if (!r || !(r.n || r.u || (r.b || []).length || chkOf(r) || r.f || r.x || r.tt)) return;
-    rows.push([tn, discOf(tn), p.name, CLUSTER_OF[p.id], u.t, u.d, r.n || '', (r.b || []).map(gainLabel).join(', '), r.u || '', (r.n && r.u) ? r.n * r.u : '', r.f ? 'yes' : '', r.x ? 'yes' : '', chkOf(r) ? 'yes' : '', r.tt ? 'yes' : '', r.tt && r.o ? OUTCOME[r.o][0] : '', r.tt ? r.note || '' : '', u.custom ? 'yes' : ''].map(q).join(',')); })));
-  Object.entries(state.t).forEach(([tn, T]) => ['f1','f2','f3','q'].forEach(k => { if ((T.fd || {})[k]) rows.push([tn, discOf(tn), '', '', k === 'q' ? 'OPEN QUESTION' : 'FINDING', T.fd[k]].map(q).join(',')); }));
-  return [head.map(q).join(','), ...rows].join('\r\n');
-}
-function tsv(){
-  const c = v => String(v ?? '').replace(/[\t\r\n]+/g, ' ');
-  const head = ['Use case','Phase','Groups rated','Value (avg)','Feasibility (avg)','Value × feasibility (raw)','Ranking score (weighted by groups)','Stars','Kind of gain','Not an AI task','Check rules first','AI tests'];
-  const rows = allUcs().map(u => ({u, rm:room(u.id)})).filter(e => e.rm.k || e.rm.x.length || e.rm.chk.length || e.rm.stars || e.rm.tests.length).sort((a, b) => byRoom(a.rm, b.rm))
-    .map(({u, rm}) => [u.t, SHORT[u.phase], rm.k, rm.k ? rm.n.toFixed(1) : '', rm.k ? rm.u.toFixed(1) : '', rm.k ? (rm.n*rm.u).toFixed(1) : '', rm.k ? roomScore(rm).toFixed(1) : '', rm.stars, GAINS.filter(([g]) => rm.gain[g]).map(([g, l]) => `${l} ×${rm.gain[g]}`).join(', '), rm.x.map(groupLabel).join(' / '), rm.chk.map(groupLabel).join(' / '), rm.tests.map(x => `${groupLabel(x.table)}: ${x.o ? OUTCOME[x.o][0] : 'selected'}`).join(' / ')].map(c).join('\t'));
-  const fds = fdTables().flatMap(k => ['f1','f2','f3','q'].filter(x => state.t[k].fd[x]).map(x => [k, c(discOf(k)), x === 'q' ? 'Open question' : 'Finding', c(state.t[k].fd[x])].join('\t')));
-  return [head.join('\t'), ...rows, '', 'Group\tDiscipline\tType\tText', ...fds].join('\n');
-}
-function parseBlocks(text){
-  const out = []; let depth = 0, start = -1, inStr = false, escp = false;
-  for (let i = 0; i < text.length; i++) { const ch = text[i];
-    if (inStr) { if (escp) escp = false; else if (ch === '\\') escp = true; else if (ch === '"') inStr = false; continue; }
-    if (ch === '"') inStr = true; else if (ch === '{') { if (!depth) start = i; depth++; } else if (ch === '}') { depth--; if (!depth && start >= 0) { out.push(JSON.parse(text.slice(start, i + 1))); start = -1; } } }
-  if (!out.length) throw new Error('empty'); return out;
-}
-// group names from older exports ("Table 3") are mapped to "Group 3"; unknown names are skipped
-const groupName = k => { const m = String(k).match(/^(?:table|group)\s*(\d{1,2})$/i); const g = m ? 'Group ' + +m[1] : String(k); return TABLES.includes(g) ? g : null; };
-function merge(list){
-  let n = 0, skipped = 0;
-  list.forEach(s => { if (!s || !s.t) throw new Error('bad');
-    Object.entries(s.t).forEach(([k0, T]) => { const k = groupName(k0); if (!k) { skipped++; return; } if (T && (Object.keys(T.r || {}).length || Object.values(T.fd || {}).some(Boolean))) { state.t[k] = tblFrom(T); n++; } });
-    (s.c || []).forEach(c => { const i = state.c.findIndex(x => x.id === c.id); if (i >= 0) state.c[i] = c; else state.c.push(c); }); });
-  merge.skipped = skipped;
-  save(); renderAll(); return n;
-}
-// order matters: the first pattern that matches a survey stage wins
-const STAGE = [[/\blit(erature)?\b|\breview|\bsearch/i,'literatur'],[/\bidea|ideation|\bgap|question/i,'idee'],[/analy|statist|qualitative|quantitative|coding/i,'analyse'],[/design|method/i,'design'],[/collect|fieldwork|survey|interview/i,'erhebung'],[/writ|publish/i,'publikation'],[/impact|exchange|dissem|transfer|engage/i,'transfer'],[/plan|admin|toolkit|across|general/i,'querschnitt']];
-const RISKY = [/[\w.+-]+@[\w-]+\.[\w.]+/, /https?:\/\//i, /(?:\+|\b0)\d[\d\s()-]{8,}\d/, /\b(Dr|Prof|Professor|Mr|Mrs|Ms)\.?\s+[A-Z][a-z]+/];
-// one CSV line: commas inside quotes stay, doubled quotes become one
-const csvCells = l => { const out = []; let cur = '', q = false; for (let i = 0; i < l.length; i++) { const ch = l[i]; if (q) { if (ch === '"' && l[i + 1] === '"') { cur += '"'; i++; } else if (ch === '"') q = false; else cur += ch; } else if (ch === '"') q = true; else if (ch === ',' || ch === ';') { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out; };
-function parseSurvey(text){
-  const phaseFor = s => { s = String(s || '').trim(); const low = s.toLowerCase(); const p = PHASES.find(p => p.id === s || p.short.toLowerCase() === low || p.name.toLowerCase() === low); if (p) return p.id; const m = STAGE.find(([re]) => re.test(s)); return m ? m[1] : null; };
-  // without tabs or quotes a comma may belong to the text: keep everything after the first separator as the use case
-  const cells = l => l.includes('\t') ? l.split('\t') : l.includes('"') ? csvCells(l) : (m => m ? [m[1], m[2]] : [l])(l.match(/^([^,;]*)[,;](.*)$/));
-  return text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).map(l => cells(l).map(x => (x = x.trim(), /^".*"$/.test(x) ? x.slice(1, -1).replace(/""/g, '"') : x)))
-    .filter(r => r.length >= 2 && r[1] && !/^(stage|phase|cluster)$/i.test(r[0]) && !/^example\b/i.test(r[0]) && !/^example\b/i.test(r[1]))
-    .map(r => { const d = r.length > 3 && !r[2] ? r.slice(1).join(', ') : r[1], words = d.split(/\s+/);
-      return {phase:phaseFor(r[0]), d, t:(r[2] || words.slice(0, 7).join(' ') + (words.length > 7 ? ' …' : '')).slice(0, 80), risky:RISKY.some(re => re.test(r.join(' ')))}; });
-}
-function importSurvey(){
-  const seen = new Set(state.c.map(c => c.phase + '|' + (c.d || '').toLowerCase()));
-  const rows = parseSurvey($('#svText').value).filter(r => r.phase && !r.risky).filter(r => { const k = r.phase + '|' + r.d.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
-  if (!rows.length) { toast('No new rows to import – check the column order: stage, use case text'); return; }
-  rows.forEach((r, i) => { const nc = {id:'s-' + Date.now().toString(36) + i, phase:r.phase, t:r.t, d:r.d, cap:[], mode:'Assist', custom:true, by:'Survey'}; state.c.push(nc); pushAddition(nc); });
-  save(); renderAll(); $('#svText').value = ''; $('#svInfo').textContent = ''; toast(`${rows.length} survey use cases imported`);
-}
-function resetArmed(b){
-  if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = 'Click again to confirm'; b.classList.add('btn-dark'); setTimeout(() => { delete b.dataset.armed; b.classList.remove('btn-dark'); b.textContent = session ? 'Reset workshop' : 'Reset this browser'; }, 4000); return; }
-  if (session && session.role === 'facilitator') { rpc('reset_workshop', {p_code:session.code}).then(() => { state.t = {}; state.c = []; save(); renderAll(); closeMenu(); toast('Workshop reset'); }).catch(e => toast('Reset failed: ' + e.message)); }
-  else { state = blank(); save(); renderAll(); closeMenu(); toast('Browser data deleted'); }
-}
-
-/* ---------- start ---------- */
-document.querySelectorAll('.version').forEach(e => e.textContent = VERSION);
-$('#sources').innerHTML = SOURCES.map(s => `<li><a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a></li>`).join('');
-renderAll();
-(async () => {
-  if (!REMOTE_OK) return;
-  let code = null; try { code = localStorage.getItem(SKEY); } catch(e) {}
-  if (code) { try { await signIn(code); renderAll(); if (session.role === 'viewer') setView('results'); return; } catch(e) { try { localStorage.removeItem(SKEY); } catch(_) {} } }
-  if (!ui.explore) showLogin();
-})();
+render();

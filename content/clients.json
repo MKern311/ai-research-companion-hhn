@@ -1,0 +1,979 @@
+{
+  "checked": "2026-11-07",
+  "clients": [
+    {
+      "id": "claude",
+      "name": "Claude (claude.ai & Desktop)",
+      "caps": {
+        "skill": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Open Settings > Capabilities and switch on Code execution and file creation (newer layout: Create and edit files).",
+              "Package the skill folder as a ZIP file – the folder name must match the skill name and the folder must contain SKILL.md.",
+              "Open Customize > Skills, click +, then + Create skill.",
+              "Select Upload a skill and choose the ZIP file.",
+              "Toggle the skill on in the list."
+            ],
+            "de": [
+              "Öffnen Sie Settings > Capabilities und aktivieren Sie Code execution and file creation (neues Layout: Create and edit files).",
+              "Packen Sie den Skill-Ordner als ZIP-Datei – der Ordnername muss dem Skill-Namen entsprechen und SKILL.md enthalten.",
+              "Öffnen Sie Customize > Skills, klicken Sie auf + und dann auf + Create skill.",
+              "Wählen Sie Upload a skill und laden Sie die ZIP-Datei hoch.",
+              "Aktivieren Sie den Skill in der Liste."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Free, Pro, Max, Ultra, Team and Enterprise. Code execution must be enabled. Enterprise: owners must enable code execution and Skills under Organization settings > Plugins & skills (Policy tab). Team: enabled by default.",
+            "de": "Free, Pro, Max, Ultra, Team und Enterprise. Code-Ausführung muss aktiviert sein. Enterprise: Owner müssen Code-Ausführung und Skills unter Organization settings > Plugins & skills (Tab Policy) freischalten. Team: standardmäßig aktiv."
+          },
+          "docs": ["https://support.claude.com/en/articles/12512180-using-skills-in-claude"]
+        },
+        "assistant": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Open Projects in the left sidebar (or claude.ai/projects) and click + New Project.",
+              "Enter a name and description – Claude does not see these.",
+              "Click Set project instructions, enter your standing instructions and click Save instructions.",
+              "Start chats inside the project – the instructions apply to every chat there."
+            ],
+            "de": [
+              "Öffnen Sie Projects in der linken Seitenleiste (oder claude.ai/projects) und klicken Sie auf + New Project.",
+              "Geben Sie Name und Beschreibung ein – Claude sieht diese Angaben nicht.",
+              "Klicken Sie auf Set project instructions, geben Sie Ihre dauerhaften Anweisungen ein und klicken Sie auf Save instructions.",
+              "Starten Sie Chats im Projekt – die Anweisungen gelten für jeden Chat darin."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "All plans, including Free (Free: up to five projects). No character limit for instructions is documented.",
+            "de": "Alle Tarife, auch Free (Free: bis zu fünf Projekte). Eine Zeichengrenze für Anweisungen ist nicht dokumentiert."
+          },
+          "docs": [
+            "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects",
+            "https://support.claude.com/en/articles/9517075-what-are-projects"
+          ]
+        },
+        "project": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Create a project via Projects > + New Project.",
+              "In the project knowledge area on the right, click + to add documents, text or code.",
+              "Add instructions via Set project instructions.",
+              "Team and Enterprise: choose Keep it private or Share with your broader organization."
+            ],
+            "de": [
+              "Legen Sie über Projects > + New Project ein Projekt an.",
+              "Klicken Sie im Bereich Projektwissen rechts auf +, um Dokumente, Text oder Code hinzuzufügen.",
+              "Ergänzen Sie Anweisungen über Set project instructions.",
+              "Team und Enterprise: Wählen Sie Keep it private oder Share with your broader organization."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "All plans. Paid plans switch to RAG automatically when knowledge nears the context limit (up to 10x capacity). File size and count limits are not documented. Sharing requires Team or Enterprise.",
+            "de": "Alle Tarife. Bezahlte Tarife wechseln automatisch in den RAG-Modus, wenn das Projektwissen das Kontextlimit erreicht (bis zu 10-fache Kapazität). Grenzen für Dateigröße und -anzahl sind nicht dokumentiert. Teilen erfordert Team oder Enterprise."
+          },
+          "docs": [
+            "https://support.claude.com/en/articles/9517075-what-are-projects",
+            "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects"
+          ]
+        },
+        "mcpRemote": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Pro/Max: open Customize > Connectors, click + Add, then Add custom connector.",
+              "Team/Enterprise: an Owner opens Organization settings > Connectors, clicks Add, hovers over Custom and selects Web.",
+              "Enter a name and the remote MCP server URL.",
+              "Review the authentication settings (Sign in now, Sign in when needed or No sign in; optional request headers for API keys) and click Add.",
+              "Team/Enterprise members: open Customize > Connectors and click Connect."
+            ],
+            "de": [
+              "Pro/Max: Öffnen Sie Customize > Connectors, klicken Sie auf + Add und dann auf Add custom connector.",
+              "Team/Enterprise: Ein Owner öffnet Organization settings > Connectors, klickt auf Add, zeigt auf Custom und wählt Web.",
+              "Geben Sie einen Namen und die URL des Remote-MCP-Servers ein.",
+              "Prüfen Sie die Authentifizierung (Sign in now, Sign in when needed oder No sign in; optional Request-Header für API-Schlüssel) und klicken Sie auf Add.",
+              "Mitglieder in Team/Enterprise: Öffnen Sie Customize > Connectors und klicken Sie auf Connect."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Free (one custom connector), Pro, Max, Ultra, Team, Enterprise; works in claude.ai, Desktop and Cowork. On Team only Owners/Primary Owners can add connectors. The connection runs from Anthropic's cloud, not your device.",
+            "de": "Free (ein eigener Connector), Pro, Max, Ultra, Team, Enterprise; funktioniert in claude.ai, Desktop und Cowork. In Team dürfen nur Owner/Primary Owner Connectoren hinzufügen. Die Verbindung läuft über die Cloud von Anthropic, nicht über Ihr Gerät."
+          },
+          "docs": ["https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp"]
+        },
+        "mcpLocal": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Claude Desktop only: click the Claude menu in the system menu bar and select Settings... (not the settings inside the window).",
+              "Open the Developer tab and click Edit Config.",
+              "Add the server under mcpServers in claude_desktop_config.json – macOS: ~/Library/Application Support/Claude/claude_desktop_config.json, Windows: %APPDATA%\\Claude\\claude_desktop_config.json.",
+              "Quit Claude Desktop completely and restart it.",
+              "Alternative: install a desktop extension (.mcpb) via Settings > Desktop app > Manage next to Extensions."
+            ],
+            "de": [
+              "Nur Claude Desktop: Klicken Sie in der Menüleiste des Systems auf das Claude-Menü und wählen Sie Settings... (nicht die Einstellungen im Fenster).",
+              "Öffnen Sie den Tab Developer und klicken Sie auf Edit Config.",
+              "Tragen Sie den Server unter mcpServers in claude_desktop_config.json ein – macOS: ~/Library/Application Support/Claude/claude_desktop_config.json, Windows: %APPDATA%\\Claude\\claude_desktop_config.json.",
+              "Beenden Sie Claude Desktop vollständig und starten Sie es neu.",
+              "Alternative: Installieren Sie eine Desktop-Erweiterung (.mcpb) über Settings > Desktop app > Manage neben Extensions."
+            ]
+          },
+          "template": "{\n  \"mcpServers\": {\n    \"{name}\": {\n      \"command\": \"{command}\",\n      \"args\": {args}\n    }\n  }\n}",
+          "requires": {
+            "en": "Claude Desktop (macOS, Windows, Linux). Local servers are not available in claude.ai or Cowork. The server runs with your user permissions. Team/Enterprise owners can allow or block desktop extensions.",
+            "de": "Claude Desktop (macOS, Windows, Linux). Lokale Server stehen in claude.ai und Cowork nicht zur Verfügung. Der Server läuft mit Ihren Benutzerrechten. Owner in Team/Enterprise können Desktop-Erweiterungen erlauben oder sperren."
+          },
+          "docs": [
+            "https://modelcontextprotocol.io/docs/develop/connect-local-servers",
+            "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop",
+            "https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp"
+          ]
+        },
+        "repo": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Chat: click + in the lower left of the chat box and select Add from GitHub.",
+              "Project: click + in the project knowledge section and select GitHub.",
+              "Search your repositories or paste the repository URL, then pick files and folders.",
+              "Use the Sync icon to fetch the latest version and Configure files to change the selection.",
+              "Private repositories: grant access via the Claude GitHub App – organisation repositories need GitHub admin approval."
+            ],
+            "de": [
+              "Chat: Klicken Sie unten links im Eingabefeld auf + und wählen Sie Add from GitHub.",
+              "Projekt: Klicken Sie im Bereich Projektwissen auf + und wählen Sie GitHub.",
+              "Suchen Sie Ihr Repository oder fügen Sie die URL ein und wählen Sie Dateien und Ordner aus.",
+              "Holen Sie über das Sync-Symbol den neuesten Stand und ändern Sie die Auswahl über Configure files.",
+              "Private Repositories: Gewähren Sie Zugriff über die Claude GitHub App – Organisations-Repositories erfordern die Freigabe durch GitHub-Admins."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "GitHub must be enabled as a connector. Only file names and contents of one branch are synced – no commit history or pull requests. Content must fit into the context window.",
+            "de": "GitHub muss als Connector aktiviert sein. Synchronisiert werden nur Dateinamen und -inhalte eines Branches – keine Commit-Historie oder Pull Requests. Der Inhalt muss in das Kontextfenster passen."
+          },
+          "docs": ["https://support.claude.com/en/articles/10167454-using-the-github-integration"]
+        },
+        "notes": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Team/Enterprise: only Owners (Enterprise also custom roles with Manage access to Libraries) add custom connectors – each member then connects individually.",
+              "Custom connectors are not verified by Anthropic – connect only trusted servers, disable write tools you do not need and be careful with Allow always.",
+              "Shared credentials (API keys) on Team/Enterprise give everyone the same access – use a limited-scope credential.",
+              "Servers on private networks must allow Anthropic's IP addresses."
+            ],
+            "de": [
+              "Team/Enterprise: Nur Owner (in Enterprise auch eigene Rollen mit Manage access to Libraries) fügen eigene Connectoren hinzu – jedes Mitglied verbindet sich danach selbst.",
+              "Eigene Connectoren werden von Anthropic nicht geprüft – verbinden Sie nur vertrauenswürdige Server, deaktivieren Sie nicht benötigte Schreibwerkzeuge und nutzen Sie Allow always zurückhaltend.",
+              "Gemeinsame Zugangsdaten (API-Schlüssel) geben in Team/Enterprise allen denselben Zugriff – verwenden Sie Zugangsdaten mit eingeschränkten Rechten.",
+              "Server in privaten Netzen müssen die IP-Adressen von Anthropic zulassen."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Skills, projects and custom connectors exist on all plans with plan-specific limits; sharing projects requires Team or Enterprise.",
+            "de": "Skills, Projekte und eigene Connectoren gibt es in allen Tarifen mit tarifabhängigen Grenzen; das Teilen von Projekten erfordert Team oder Enterprise."
+          },
+          "docs": [
+            "https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp",
+            "https://support.claude.com/en/articles/12512180-using-skills-in-claude"
+          ]
+        }
+      },
+      "unverified": [
+        "Exact SKILL.md requirements and ZIP size limit for claude.ai uploads – the skills article only lists failure causes and points to a separate article 'How to create custom skills', which was not opened.",
+        "Character limit for project instructions and file size/count limits for project knowledge – not stated in the opened articles.",
+        "Which plans include the GitHub integration – the GitHub article does not say.",
+        "Linux path for claude_desktop_config.json (~/.config/Claude/claude_desktop_config.json) is given on modelcontextprotocol.io only, not on support.claude.com.",
+        "German UI labels – all menu labels were verified in the English interface only."
+      ]
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code (CLI)",
+      "caps": {
+        "skill": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Personal skill (all projects): create ~/.claude/skills/<skill-name>/SKILL.md.",
+              "Project skill (one repository): create .claude/skills/<skill-name>/SKILL.md in the project and commit it to share it.",
+              "Start the file with YAML frontmatter between --- lines: description (recommended) and name (optional, defaults to the folder name).",
+              "Call the skill with /<skill-name> or let Claude load it automatically when the description matches.",
+              "Skills from plugins are called as /<plugin>:<skill>."
+            ],
+            "de": [
+              "Persönlicher Skill (alle Projekte): Legen Sie ~/.claude/skills/<skill-name>/SKILL.md an.",
+              "Projekt-Skill (ein Repository): Legen Sie .claude/skills/<skill-name>/SKILL.md im Projekt an und committen Sie die Datei, um sie zu teilen.",
+              "Beginnen Sie die Datei mit YAML-Frontmatter zwischen ---: description (empfohlen) und name (optional, Standard ist der Ordnername).",
+              "Rufen Sie den Skill mit /<skill-name> auf oder lassen Sie Claude ihn automatisch laden, wenn die Beschreibung passt.",
+              "Skills aus Plugins rufen Sie mit /<plugin>:<skill> auf."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Claude Code with a Pro, Max, Ultra, Team, Enterprise or Console account (the free claude.ai plan does not include Claude Code). Skills enabled on claude.ai sync to ~/.claude/skills/synced/.",
+            "de": "Claude Code mit Pro-, Max-, Ultra-, Team-, Enterprise- oder Console-Konto (der kostenlose claude.ai-Tarif enthält Claude Code nicht). In claude.ai aktivierte Skills werden nach ~/.claude/skills/synced/ synchronisiert."
+          },
+          "docs": [
+            "https://code.claude.com/docs/en/skills",
+            "https://code.claude.com/docs/en/setup"
+          ]
+        },
+        "assistant": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Personal instructions for all projects: write them into ~/.claude/CLAUDE.md.",
+              "Project instructions: create ./CLAUDE.md or ./.claude/CLAUDE.md in the project root – or run /init to generate a first version.",
+              "Private project notes: use ./CLAUDE.local.md and add it to .gitignore.",
+              "An existing AGENTS.md is read when no CLAUDE.md exists in the working directory or above.",
+              "Keep each CLAUDE.md under about 200 lines."
+            ],
+            "de": [
+              "Persönliche Anweisungen für alle Projekte: Schreiben Sie diese in ~/.claude/CLAUDE.md.",
+              "Projektanweisungen: Legen Sie ./CLAUDE.md oder ./.claude/CLAUDE.md im Projektstamm an – oder erzeugen Sie mit /init eine erste Fassung.",
+              "Private Projektnotizen: Nutzen Sie ./CLAUDE.local.md und tragen Sie die Datei in .gitignore ein.",
+              "Eine vorhandene AGENTS.md wird gelesen, wenn im Arbeitsverzeichnis oder darüber keine CLAUDE.md liegt.",
+              "Halten Sie jede CLAUDE.md unter etwa 200 Zeilen."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Claude Code account as above. Reading AGENTS.md directly requires Claude Code v2.1.277 or later. The 200-line target is a recommendation, not a hard limit.",
+            "de": "Claude-Code-Konto wie oben. Das direkte Lesen von AGENTS.md erfordert Claude Code v2.1.277 oder neuer. Die 200 Zeilen sind eine Empfehlung, keine feste Grenze."
+          },
+          "docs": ["https://code.claude.com/docs/en/memory"]
+        },
+        "project": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Use a project folder as workspace – place your files there.",
+              "Add CLAUDE.md with standing instructions and .claude/skills/ for project skills.",
+              "Open a terminal in the folder and run claude.",
+              "Optional: share MCP servers with the team via .mcp.json in the project root."
+            ],
+            "de": [
+              "Nutzen Sie einen Projektordner als Arbeitsbereich – legen Sie Ihre Dateien dort ab.",
+              "Ergänzen Sie CLAUDE.md mit dauerhaften Anweisungen und .claude/skills/ für Projekt-Skills.",
+              "Öffnen Sie ein Terminal im Ordner und starten Sie claude.",
+              "Optional: Teilen Sie MCP-Server mit dem Team über .mcp.json im Projektstamm."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Claude Code works directly on local files – no upload or file limit applies; the context window limits what is read at once.",
+            "de": "Claude Code arbeitet direkt mit lokalen Dateien – es gibt keinen Upload und keine Dateigrenze; das Kontextfenster begrenzt, was gleichzeitig gelesen wird."
+          },
+          "docs": [
+            "https://code.claude.com/docs/en/setup",
+            "https://code.claude.com/docs/en/memory"
+          ]
+        },
+        "mcpRemote": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Run the command below in your terminal.",
+              "Choose a scope with --scope local (default, this project, only you), project (stored in .mcp.json, shared via Git) or user (all your projects).",
+              "For OAuth servers, run /mcp inside Claude Code and sign in via the browser.",
+              "For token-based servers, add --header \"Authorization: Bearer <token>\".",
+              "Check with claude mcp list."
+            ],
+            "de": [
+              "Führen Sie den Befehl unten im Terminal aus.",
+              "Wählen Sie einen Geltungsbereich mit --scope local (Standard, dieses Projekt, nur Sie), project (in .mcp.json, über Git geteilt) oder user (alle Ihre Projekte).",
+              "Bei OAuth-Servern führen Sie in Claude Code /mcp aus und melden sich im Browser an.",
+              "Bei Token-basierten Servern ergänzen Sie --header \"Authorization: Bearer <token>\".",
+              "Prüfen Sie mit claude mcp list."
+            ]
+          },
+          "template": "claude mcp add --transport http {name} {url}",
+          "requires": {
+            "en": "Claude Code account. Local and user scope are stored in ~/.claude.json, project scope in .mcp.json; Claude Code asks for approval before using project-scoped servers.",
+            "de": "Claude-Code-Konto. Local und user werden in ~/.claude.json gespeichert, project in .mcp.json; vor der Nutzung projektweiter Server fragt Claude Code nach Ihrer Freigabe."
+          },
+          "docs": ["https://code.claude.com/docs/en/mcp"]
+        },
+        "mcpLocal": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Run the command below – everything after -- is the server command and its arguments, separated by spaces.",
+              "Pass environment variables with --env KEY=value before the --.",
+              "Choose a scope with --scope local, project or user.",
+              "Check with claude mcp list."
+            ],
+            "de": [
+              "Führen Sie den Befehl unten aus – alles nach -- ist der Serverbefehl mit seinen Argumenten, durch Leerzeichen getrennt.",
+              "Übergeben Sie Umgebungsvariablen mit --env KEY=value vor dem --.",
+              "Wählen Sie einen Geltungsbereich mit --scope local, project oder user.",
+              "Prüfen Sie mit claude mcp list."
+            ]
+          },
+          "template": "claude mcp add --transport stdio {name} -- {command} {args}",
+          "requires": {
+            "en": "Claude Code account; the server program (e.g. Node.js for npx) must be installed locally. {args} here are space-separated, not a JSON array.",
+            "de": "Claude-Code-Konto; das Serverprogramm (z. B. Node.js für npx) muss lokal installiert sein. {args} sind hier durch Leerzeichen getrennt, kein JSON-Array."
+          },
+          "docs": ["https://code.claude.com/docs/en/mcp"]
+        },
+        "repo": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Clone the repository with Git, open a terminal in the folder and run claude – CLAUDE.md, .claude/skills/ and .mcp.json in the repo load automatically.",
+              "To install skills from a plugin marketplace repo, run /plugin marketplace add owner/repo (or a full https:// Git URL).",
+              "Then run /plugin install <plugin>@<marketplace> and choose a scope (you, all collaborators, or you in this repo only).",
+              "Type / and look for /<plugin>:<skill> to confirm."
+            ],
+            "de": [
+              "Klonen Sie das Repository mit Git, öffnen Sie ein Terminal im Ordner und starten Sie claude – CLAUDE.md, .claude/skills/ und .mcp.json im Repo werden automatisch geladen.",
+              "Um Skills aus einem Plugin-Marketplace-Repo zu installieren, führen Sie /plugin marketplace add owner/repo aus (oder eine vollständige https://-Git-URL).",
+              "Führen Sie dann /plugin install <plugin>@<marketplace> aus und wählen Sie den Geltungsbereich (Sie, alle Mitwirkenden oder nur Sie in diesem Repo).",
+              "Tippen Sie / und prüfen Sie, ob /<plugin>:<skill> erscheint."
+            ]
+          },
+          "template": "claude plugin marketplace add {url}",
+          "requires": {
+            "en": "Claude Code account; Git is optional for Claude Code but needed to clone. Private marketplaces use the Git credentials already on your machine. The repo must contain .claude-plugin/marketplace.json to work as a marketplace.",
+            "de": "Claude-Code-Konto; Git ist für Claude Code optional, zum Klonen aber nötig. Private Marketplaces nutzen die bereits vorhandenen Git-Zugangsdaten. Das Repo muss .claude-plugin/marketplace.json enthalten, um als Marketplace zu dienen."
+          },
+          "docs": [
+            "https://code.claude.com/docs/en/discover-plugins",
+            "https://code.claude.com/docs/en/setup"
+          ]
+        },
+        "notes": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Requires a Pro, Max, Ultra, Team, Enterprise or Console account – or a provider such as Amazon Bedrock, Google Cloud or Microsoft Foundry.",
+              "Plugins can run hooks and MCP servers – read the details pane before installing from an unknown marketplace.",
+              "Project-scoped MCP servers in a cloned repo need your approval before first use.",
+              "Organisations can enforce instructions, plugins and settings via managed policy files."
+            ],
+            "de": [
+              "Erfordert ein Pro-, Max-, Ultra-, Team-, Enterprise- oder Console-Konto – oder einen Anbieter wie Amazon Bedrock, Google Cloud oder Microsoft Foundry.",
+              "Plugins können Hooks und MCP-Server ausführen – lesen Sie die Detailansicht, bevor Sie aus einem unbekannten Marketplace installieren.",
+              "Projektweite MCP-Server in einem geklonten Repo brauchen vor der ersten Nutzung Ihre Freigabe.",
+              "Organisationen können Anweisungen, Plugins und Einstellungen über verwaltete Richtliniendateien vorgeben."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "The free claude.ai plan does not include Claude Code.",
+            "de": "Der kostenlose claude.ai-Tarif enthält Claude Code nicht."
+          },
+          "docs": [
+            "https://code.claude.com/docs/en/setup",
+            "https://code.claude.com/docs/en/discover-plugins",
+            "https://code.claude.com/docs/en/mcp"
+          ]
+        }
+      },
+      "unverified": [
+        "Windows paths: the skills and memory docs use ~ only; that ~/.claude maps to %USERPROFILE%\\.claude is inferred from the uninstall section of the setup page.",
+        "git clone itself is not documented by Claude Code – only starting claude inside a project folder is."
+      ]
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT (web & desktop)",
+      "caps": {
+        "skill": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Select Plugins in the sidebar and open the Skills tab in the Plugin Directory.",
+              "Select Create, then Upload from your computer.",
+              "Wait for the scan – skills can be marked Needs Review or Blocked.",
+              "Alternatively select Create with chat or Create with editor.",
+              "ChatGPT uses installed skills automatically when they fit – or mention them with @."
+            ],
+            "de": [
+              "Wählen Sie in der Seitenleiste Plugins und öffnen Sie im Plugin Directory den Tab Skills.",
+              "Wählen Sie Create und dann Upload from your computer.",
+              "Warten Sie den Scan ab – Skills können als Needs Review oder Blocked markiert werden.",
+              "Alternativ wählen Sie Create with chat oder Create with editor.",
+              "ChatGPT nutzt installierte Skills automatisch, wenn sie passen – oder Sie erwähnen sie mit @."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Eligible ChatGPT Business, Enterprise, Healthcare and Edu users. Enterprise/Edu admins control Enable skills, Enable skill uploading, Share skills, Publish skills to workspace and Enable skills installing under Permissions & roles.",
+            "de": "Berechtigte Nutzende von ChatGPT Business, Enterprise, Healthcare und Edu. Admins in Enterprise/Edu steuern unter Permissions & roles Enable skills, Enable skill uploading, Share skills, Publish skills to workspace und Enable skills installing."
+          },
+          "docs": ["https://help.openai.com/en/articles/20001066-skills-in-chatgpt"]
+        },
+        "assistant": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Custom GPTs are being retired (standard retirement 11 December 2026) – new GPTs cannot be created on Free, Go, Plus or Pro.",
+              "For standing instructions in all chats: open Settings > Personalization, switch on Enable customization and fill in Custom Instructions.",
+              "For a topic-specific assistant: create a project and add instructions via ••• > Project settings.",
+              "For reusable packaged workflows: create a plugin with a skill via Plugins > Add (+) or @plugin-creator."
+            ],
+            "de": [
+              "Individuelle GPTs werden eingestellt (regulär zum 11. Dezember 2026) – in Free, Go, Plus und Pro lassen sich keine neuen GPTs mehr anlegen.",
+              "Für dauerhafte Anweisungen in allen Chats: Öffnen Sie Settings > Personalization, aktivieren Sie Enable customization und füllen Sie Custom Instructions aus.",
+              "Für einen themenspezifischen Assistenten: Legen Sie ein Projekt an und ergänzen Sie Anweisungen über ••• > Project settings.",
+              "Für wiederverwendbare Arbeitsabläufe: Erstellen Sie ein Plugin mit Skill über Plugins > Add (+) oder @plugin-creator."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Custom instructions: all plans; up to 1,500 characters (Free, Go) or 5,000 characters (Plus, Pro, Business, Enterprise, Edu). Project instructions override custom instructions within the project.",
+            "de": "Custom Instructions: alle Tarife; bis zu 1.500 Zeichen (Free, Go) bzw. 5.000 Zeichen (Plus, Pro, Business, Enterprise, Edu). Projektanweisungen überschreiben im Projekt die Custom Instructions."
+          },
+          "docs": [
+            "https://help.openai.com/en/articles/8554397-creating-and-editing-gpts",
+            "https://help.openai.com/de-de/articles/20001519-custom-gpt-retirement-and-migration-faq",
+            "https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions",
+            "https://help.openai.com/en/articles/10169521-projects-in-chatgpt"
+          ]
+        },
+        "project": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Select New project in the sidebar, enter a name and choose icon and colour.",
+              "Add files (PDFs, spreadsheets, docs, images) or paste text – at most 10 files per upload.",
+              "Add instructions via ••• > Project settings.",
+              "Under Memory, choose Default memory or Project-only memory and select Save.",
+              "Optional: select Share to invite people with chat or edit access."
+            ],
+            "de": [
+              "Wählen Sie in der Seitenleiste New project, geben Sie einen Namen ein und wählen Sie Symbol und Farbe.",
+              "Fügen Sie Dateien (PDFs, Tabellen, Dokumente, Bilder) hinzu oder Text ein – höchstens 10 Dateien pro Upload.",
+              "Ergänzen Sie Anweisungen über ••• > Project settings.",
+              "Wählen Sie unter Memory Default memory oder Project-only memory und dann Save.",
+              "Optional: Wählen Sie Share, um Personen mit Chat- oder Bearbeitungsrechten einzuladen."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "All signed-in users; unlimited projects. Files per project: Free 5, Go/Plus 25, Edu/Pro/Business/Enterprise 40. Shared projects always use project-only memory.",
+            "de": "Alle angemeldeten Nutzenden; beliebig viele Projekte. Dateien pro Projekt: Free 5, Go/Plus 25, Edu/Pro/Business/Enterprise 40. Geteilte Projekte nutzen immer projektbezogenes Gedächtnis."
+          },
+          "docs": ["https://help.openai.com/en/articles/10169521-projects-in-chatgpt"]
+        },
+        "mcpRemote": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Go to Plugins, select the plus button, then Add custom MCP server.",
+              "Enter a name and optionally a description.",
+              "Under Connection, enter the public HTTPS MCP endpoint URL (or select Tunnel for a Secure MCP Tunnel).",
+              "Configure authentication, tick I understand and want to continue and select Create as a plugin.",
+              "Install the resulting plugin, start a new chat, type @ and select it."
+            ],
+            "de": [
+              "Öffnen Sie Plugins, wählen Sie das Plus-Symbol und dann Add custom MCP server.",
+              "Geben Sie einen Namen und optional eine Beschreibung ein.",
+              "Tragen Sie unter Connection die öffentliche HTTPS-MCP-URL ein (oder wählen Sie Tunnel für einen Secure MCP Tunnel).",
+              "Richten Sie die Authentifizierung ein, setzen Sie das Häkchen bei I understand and want to continue und wählen Sie Create as a plugin.",
+              "Installieren Sie das entstandene Plugin, starten Sie einen neuen Chat, tippen Sie @ und wählen Sie es aus."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Full MCP: ChatGPT Business, Enterprise and Edu on the web (not mobile). Business: only admins/owners create and publish; Enterprise/Edu: admins/owners or members granted Create plugins with MCPs via RBAC. Pro: read/fetch only.",
+            "de": "Volles MCP: ChatGPT Business, Enterprise und Edu im Web (nicht mobil). Business: nur Admins/Owner erstellen und veröffentlichen; Enterprise/Edu: Admins/Owner oder per RBAC freigeschaltete Mitglieder (Create plugins with MCPs). Pro: nur Lesen/Abrufen."
+          },
+          "docs": ["https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt"]
+        },
+        "mcpLocal": {
+          "supported": false,
+          "steps": {
+            "en": [
+              "ChatGPT does not connect to local MCP servers directly – it connects to remote servers only.",
+              "To reach a server on your machine or a private network, use Secure MCP Tunnel when adding a custom MCP server.",
+              "Plugins can include local MCP apps that run on ChatGPT Desktop – these are not available on web or mobile."
+            ],
+            "de": [
+              "ChatGPT verbindet sich nicht direkt mit lokalen MCP-Servern – nur mit Remote-Servern.",
+              "Um einen Server auf Ihrem Rechner oder in einem privaten Netz zu erreichen, nutzen Sie beim Hinzufügen den Secure MCP Tunnel.",
+              "Plugins können lokale MCP-Apps enthalten, die in ChatGPT Desktop laufen – im Web und mobil stehen diese nicht zur Verfügung."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Secure MCP Tunnel and local plugin apps depend on plan and workspace permissions.",
+            "de": "Secure MCP Tunnel und lokale Plugin-Apps hängen von Tarif und Workspace-Berechtigungen ab."
+          },
+          "docs": [
+            "https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt",
+            "https://help.openai.com/en/articles/20001256-plugins-in-chatgpt"
+          ]
+        },
+        "repo": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Open Settings > Plugins and select GitHub.",
+              "Install and authorise the ChatGPT app on GitHub and select the repositories ChatGPT may access.",
+              "Ask about your code in chat, deep research or agent mode – include the repository name.",
+              "Change repository access later via Settings > Plugins > GitHub."
+            ],
+            "de": [
+              "Öffnen Sie Settings > Plugins und wählen Sie GitHub.",
+              "Installieren und autorisieren Sie die ChatGPT-App auf GitHub und wählen Sie die Repositories, auf die ChatGPT zugreifen darf.",
+              "Fragen Sie im Chat, in Deep Research oder im Agentenmodus nach Ihrem Code – nennen Sie den Repository-Namen.",
+              "Ändern Sie den Repository-Zugriff später über Settings > Plugins > GitHub."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Availability varies by plan and surface (some plans only in deep research or agent mode). Read-only – no push; repositories take about 5 minutes to appear. Organisations may require GitHub admin approval. Workspace admins can import plugin marketplaces from GitHub.",
+            "de": "Verfügbarkeit hängt von Tarif und Oberfläche ab (in manchen Tarifen nur in Deep Research oder im Agentenmodus). Nur Lesen – kein Push; Repositories erscheinen nach etwa 5 Minuten. Organisationen können eine Freigabe durch GitHub-Admins verlangen. Workspace-Admins können Plugin-Marketplaces aus GitHub importieren."
+          },
+          "docs": [
+            "https://help.openai.com/en/articles/11145903-connecting-github-to-chatgpt",
+            "https://help.openai.com/en/articles/20001256-plugins-in-chatgpt"
+          ]
+        },
+        "notes": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Business, Enterprise and Edu content is not used for model training by default; on personal accounts this depends on Improve the model for everyone.",
+              "Custom instructions on personal accounts may be used to improve model performance.",
+              "In managed workspaces, admins control plugins, skills and MCP under Workspace settings > Permissions & roles (e.g. Upload plugins and Create plugins with MCPs are off by default for Enterprise).",
+              "Custom MCP servers are your responsibility – connect only trusted servers because of prompt-injection risks."
+            ],
+            "de": [
+              "Inhalte aus Business, Enterprise und Edu werden standardmäßig nicht für das Modelltraining genutzt; bei persönlichen Konten hängt dies von Improve the model for everyone ab.",
+              "Custom Instructions persönlicher Konten können zur Verbesserung des Modells genutzt werden.",
+              "In verwalteten Workspaces steuern Admins Plugins, Skills und MCP unter Workspace settings > Permissions & roles (z. B. sind Upload plugins und Create plugins with MCPs in Enterprise standardmäßig aus).",
+              "Für eigene MCP-Server tragen Sie die Verantwortung – verbinden Sie wegen Prompt-Injection-Risiken nur vertrauenswürdige Server."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Custom GPTs retire on 11 December 2026 (FedRAMP and approved deferrals: 11 February 2027); migrate to plugins via My GPTs > Migrate to plugin.",
+            "de": "Individuelle GPTs werden am 11. Dezember 2026 eingestellt (FedRAMP und genehmigter Aufschub: 11. Februar 2027); migrieren Sie über My GPTs > Migrate to plugin zu Plugins."
+          },
+          "docs": [
+            "https://help.openai.com/en/articles/10169521-projects-in-chatgpt",
+            "https://help.openai.com/en/articles/20001256-plugins-in-chatgpt",
+            "https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions",
+            "https://help.openai.com/de-de/articles/20001519-custom-gpt-retirement-and-migration-faq"
+          ]
+        }
+      },
+      "unverified": [
+        "Upload format for ChatGPT skills (ZIP vs. folder, SKILL.md frontmatter rules, size limits) – the help article does not specify it; the 50 MB/500-file limits found in search apply to the OpenAI API, not the ChatGPT UI, and were not opened.",
+        "Whether Free, Go, Plus or Pro users can use skills directly – the skills article names only Business, Enterprise, Healthcare and Edu, while plugins with skills are said to be available 'across ChatGPT plans'.",
+        "Exact steps for adding local MCP apps to a desktop plugin – no config file or template is documented.",
+        "English label 'Migrate to plugin' – only the German FAQ ('Zu Plugin migrieren') was read.",
+        "Plan matrix for the GitHub app in standard chat – the article only says it varies by plan."
+      ]
+    },
+    {
+      "id": "copilot",
+      "name": "Microsoft 365 Copilot",
+      "caps": {
+        "skill": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Package the skill as a .zip containing SKILL.md (name and description in the YAML frontmatter) plus optional resources and scripts – do not upload SKILL.md alone.",
+              "In Copilot Chat select Agents & Skills, then New agent (or open an existing agent in Agent Builder).",
+              "On the Configure tab, expand Skills and select Add.",
+              "Upload the .zip and review name, description, instructions and files.",
+              "Test the skill on the Try it tab."
+            ],
+            "de": [
+              "Packen Sie den Skill als .zip mit SKILL.md (name und description im YAML-Frontmatter) sowie optionalen Ressourcen und Skripten – laden Sie SKILL.md nicht einzeln hoch.",
+              "Wählen Sie in Copilot Chat Agents & Skills und dann New agent (oder öffnen Sie einen vorhandenen Agenten im Agent Builder).",
+              "Klappen Sie im Tab Configure den Bereich Skills auf und wählen Sie Add.",
+              "Laden Sie die .zip hoch und prüfen Sie Name, Beschreibung, Anweisungen und Dateien.",
+              "Testen Sie den Skill im Tab Try it."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Qualifying Microsoft 365 Copilot licence or pay-as-you-go access. Up to 8 skills per agent, each .zip up to 50 MB, skill instructions under 20,000 characters. In tenants with Purview Information Barriers, end users cannot add skills.",
+            "de": "Passende Microsoft-365-Copilot-Lizenz oder Pay-as-you-go-Zugang. Bis zu 8 Skills pro Agent, je .zip bis 50 MB, Skill-Anweisungen unter 20.000 Zeichen. In Tenants mit Purview Information Barriers können Endnutzende keine Skills hinzufügen."
+          },
+          "docs": ["https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills"]
+        },
+        "assistant": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "In Microsoft 365 Copilot (microsoft365.com/chat, office.com/chat or Teams) select New agent.",
+              "Describe the agent in natural language – or select Skip to configure.",
+              "On the Configure tab, fill in Name, Description, Instructions, Knowledge and Starter Prompts.",
+              "Optional: switch on Create documents, charts, and code or Create images.",
+              "Test on the Try it tab, then create and share the agent."
+            ],
+            "de": [
+              "Wählen Sie in Microsoft 365 Copilot (microsoft365.com/chat, office.com/chat oder Teams) New agent.",
+              "Beschreiben Sie den Agenten in natürlicher Sprache – oder wählen Sie Skip to configure.",
+              "Füllen Sie im Tab Configure Name, Description, Instructions, Knowledge und Starter Prompts aus.",
+              "Optional: Aktivieren Sie Create documents, charts, and code oder Create images.",
+              "Testen Sie im Tab Try it und erstellen und teilen Sie den Agenten anschließend."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Name max. 30, Description max. 1,000, Instructions max. 8,000 characters. Copilot Chat without licence: instructions and web knowledge only; SharePoint, embedded files and connectors need pay-as-you-go or a Copilot licence; email, Teams and people data need a licence. Not available on mobile; admins can disable Agent Builder.",
+            "de": "Name max. 30, Description max. 1.000, Instructions max. 8.000 Zeichen. Copilot Chat ohne Lizenz: nur Anweisungen und Web-Wissen; SharePoint, eingebettete Dateien und Connectoren erfordern Pay-as-you-go oder eine Copilot-Lizenz; E-Mail, Teams und Personendaten erfordern eine Lizenz. Nicht mobil verfügbar; Admins können den Agent Builder sperren."
+          },
+          "docs": [
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents",
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder",
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites",
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge"
+          ]
+        },
+        "project": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Open the Microsoft Copilot app (m365.cloud.microsoft) and select Notebooks in the left navigation.",
+              "Select New notebook and enter a name.",
+              "Under Add content to References, search, upload, pick from OneDrive or drag files in, then select Create.",
+              "Add instructions via More options (...) > Instructions and select Save."
+            ],
+            "de": [
+              "Öffnen Sie die Microsoft-Copilot-App (m365.cloud.microsoft) und wählen Sie in der linken Navigation Notebooks.",
+              "Wählen Sie New notebook und geben Sie einen Namen ein.",
+              "Fügen Sie unter Add content to References Inhalte per Suche, Upload, aus OneDrive oder per Drag-and-drop hinzu und wählen Sie Create.",
+              "Ergänzen Sie Anweisungen über More options (...) > Instructions und wählen Sie Save."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Microsoft Copilot or Copilot Chat licence plus a SharePoint or OneDrive service plan. Copilot Chat (free): up to 50 references, web URLs only as entities. Licensed: more than 300 references, the first 300 used for grounding. Files: .docx, .pptx, .xlsx, .pdf, .loop, .page, OneNote, .txt, .md.",
+            "de": "Microsoft-Copilot- oder Copilot-Chat-Lizenz plus SharePoint- oder OneDrive-Serviceplan. Copilot Chat (kostenlos): bis zu 50 Referenzen, als Entitäten nur Web-URLs. Mit Lizenz: mehr als 300 Referenzen, die ersten 300 dienen der Fundierung. Dateien: .docx, .pptx, .xlsx, .pdf, .loop, .page, OneNote, .txt, .md."
+          },
+          "docs": [
+            "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-notebooks",
+            "https://support.microsoft.com/en-us/microsoft-365-copilot/get-answers-and-insights-about-your-microsoft-365-copilot-notebook",
+            "https://support.microsoft.com/en-us/microsoft-365-copilot/provide-custom-instructions-for-your-microsoft-365-copilot-notebook"
+          ]
+        },
+        "mcpRemote": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Agent Builder cannot add MCP servers – copy the agent to Microsoft Copilot Studio or create it there.",
+              "In Copilot Studio, open the agent's Tools page and select Add a tool > New tool.",
+              "Under Create new, select Model Context Protocol.",
+              "Fill in Server name, Server description and Server URL and choose None, API key or OAuth 2.0.",
+              "Select Create, then Create a new connection and Add to agent."
+            ],
+            "de": [
+              "Im Agent Builder lassen sich keine MCP-Server hinzufügen – kopieren Sie den Agenten nach Microsoft Copilot Studio oder erstellen Sie ihn dort.",
+              "Öffnen Sie in Copilot Studio die Seite Tools des Agenten und wählen Sie Add a tool > New tool.",
+              "Wählen Sie unter Create new Model Context Protocol.",
+              "Füllen Sie Server name, Server description und Server URL aus und wählen Sie None, API key oder OAuth 2.0.",
+              "Wählen Sie Create, dann Create a new connection und Add to agent."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Copilot Studio with Streamable HTTP transport only (SSE no longer supported). Power Platform admins must enable generative AI features; Power Platform data policies also govern MCP servers. Licensing/billing depends on the tenant.",
+            "de": "Copilot Studio, nur Streamable-HTTP-Transport (SSE nicht mehr unterstützt). Power-Platform-Admins müssen generative KI-Funktionen aktivieren; Datenrichtlinien der Power Platform gelten auch für MCP-Server. Lizenz/Abrechnung hängt vom Tenant ab."
+          },
+          "docs": [
+            "https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-add-existing-server-to-agent",
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder",
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites"
+          ]
+        },
+        "mcpLocal": {
+          "supported": false,
+          "steps": {
+            "en": [
+              "Microsoft 365 Copilot and Copilot Studio connect to MCP servers via Streamable HTTP only – a local stdio server cannot be added.",
+              "Host the server remotely (HTTPS) and add it in Copilot Studio instead."
+            ],
+            "de": [
+              "Microsoft 365 Copilot und Copilot Studio verbinden sich nur über Streamable HTTP mit MCP-Servern – ein lokaler stdio-Server lässt sich nicht hinzufügen.",
+              "Betreiben Sie den Server stattdessen remote (HTTPS) und fügen Sie ihn in Copilot Studio hinzu."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Not supported.",
+            "de": "Nicht unterstützt."
+          },
+          "docs": ["https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-add-existing-server-to-agent"]
+        },
+        "repo": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Ask your administrator to enable a GitHub Copilot connector (e.g. GitHub Cloud Knowledge, Issues or Pull Requests) in the Microsoft 365 admin center.",
+              "In Agent Builder, open the Configure tab and, under Knowledge > Choose other data sources, select the GitHub connector.",
+              "Add the relevant connection and scope it to a repository.",
+              "Test on the Try it tab."
+            ],
+            "de": [
+              "Bitten Sie Ihre Administration, einen GitHub-Copilot-Connector (z. B. GitHub Cloud Knowledge, Issues oder Pull Requests) im Microsoft 365 Admin Center zu aktivieren.",
+              "Öffnen Sie im Agent Builder den Tab Configure und wählen Sie unter Knowledge > Choose other data sources den GitHub-Connector.",
+              "Fügen Sie die passende Verbindung hinzu und beschränken Sie sie auf ein Repository.",
+              "Testen Sie im Tab Try it."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Copilot connectors require admin setup and pay-as-you-go billing or a Microsoft 365 Copilot licence.",
+            "de": "Copilot-Connectoren erfordern Einrichtung durch die Administration sowie Pay-as-you-go-Abrechnung oder eine Microsoft-365-Copilot-Lizenz."
+          },
+          "docs": [
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge",
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites"
+          ]
+        },
+        "notes": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Copilot Chat (no licence) agents can use instructions and web knowledge; organisational data needs pay-as-you-go or a Microsoft 365 Copilot licence.",
+              "Files uploaded to an agent are visible in answers to everyone who can use the agent – Information Barriers do not apply to embedded files.",
+              "Embedded files are stored in the tenant's default geography; files with password protection or certain sensitivity labels are not supported.",
+              "Agent Builder data is processed by Copilot Studio; admins can disable Agent Builder and must enable connectors."
+            ],
+            "de": [
+              "Agenten in Copilot Chat (ohne Lizenz) nutzen Anweisungen und Web-Wissen; Organisationsdaten erfordern Pay-as-you-go oder eine Microsoft-365-Copilot-Lizenz.",
+              "In einen Agenten hochgeladene Dateien sind in Antworten für alle sichtbar, die den Agenten nutzen können – Information Barriers gelten für eingebettete Dateien nicht.",
+              "Eingebettete Dateien werden in der Standardregion des Tenants gespeichert; Dateien mit Passwortschutz oder bestimmten Vertraulichkeitsbezeichnungen werden nicht unterstützt.",
+              "Agent-Builder-Daten verarbeitet Copilot Studio; Admins können den Agent Builder sperren und müssen Connectoren freischalten."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Capabilities depend on the licences assigned in the tenant (Copilot Chat, pay-as-you-go, Microsoft 365 Copilot).",
+            "de": "Die Funktionen hängen von den im Tenant zugewiesenen Lizenzen ab (Copilot Chat, Pay-as-you-go, Microsoft 365 Copilot)."
+          },
+          "docs": [
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites",
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge",
+            "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder"
+          ]
+        }
+      },
+      "unverified": [
+        "Entry point label: the skills article says Agents & Skills > New agent, the build article says New agent – the UI may differ by rollout.",
+        "Copilot Studio licensing for adding MCP tools – the prerequisites page says Copilot Studio is available to all Microsoft 365 users but also that a Copilot licence is required for authoring agents in Copilot Studio; check with your tenant admin.",
+        "Copilot Notebooks: no character limit for notebook instructions is documented; Microsoft Q&A reports of a 20-reference cap contradict the official table and were not used.",
+        "Local MCP: Microsoft states only that Streamable transport is supported; there is no explicit 'local servers not supported' sentence.",
+        "Whether skills can be used directly in Copilot Chat outside an agent – not covered by the opened pages."
+      ]
+    },
+    {
+      "id": "vscode",
+      "name": "VS Code with GitHub Copilot",
+      "caps": {
+        "skill": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Project skill: create .github/skills/<skill-name>/SKILL.md in the workspace (.claude/skills/ and .agents/skills/ are also read).",
+              "Personal skill: create ~/.copilot/skills/<skill-name>/SKILL.md (~/.claude/skills/ and ~/.agents/skills/ are also read).",
+              "Add YAML frontmatter with name (lowercase, digits, hyphens, max. 64 characters, must match the folder name) and description (max. 1,024 characters).",
+              "In chat, type / and select the skill – or let Copilot load it automatically when the description matches."
+            ],
+            "de": [
+              "Projekt-Skill: Legen Sie .github/skills/<skill-name>/SKILL.md im Workspace an (.claude/skills/ und .agents/skills/ werden ebenfalls gelesen).",
+              "Persönlicher Skill: Legen Sie ~/.copilot/skills/<skill-name>/SKILL.md an (~/.claude/skills/ und ~/.agents/skills/ werden ebenfalls gelesen).",
+              "Ergänzen Sie YAML-Frontmatter mit name (Kleinbuchstaben, Ziffern, Bindestriche, max. 64 Zeichen, identisch mit dem Ordnernamen) und description (max. 1.024 Zeichen).",
+              "Tippen Sie im Chat / und wählen Sie den Skill – oder lassen Sie Copilot ihn automatisch laden, wenn die Beschreibung passt."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "GitHub account with Copilot (signing in enrols eligible accounts in Copilot Free). Invalid names make the skill fail silently. Type /create-skill to generate one.",
+            "de": "GitHub-Konto mit Copilot (bei der Anmeldung werden berechtigte Konten in Copilot Free aufgenommen). Ungültige Namen lassen den Skill stillschweigend scheitern. Mit /create-skill lässt sich ein Skill erzeugen."
+          },
+          "docs": [
+            "https://code.visualstudio.com/docs/copilot/customization/agent-skills",
+            "https://code.visualstudio.com/docs/copilot/setup"
+          ]
+        },
+        "assistant": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Always-on project instructions: add .github/copilot-instructions.md or AGENTS.md at the repository root.",
+              "File-specific rules: add .github/instructions/<name>.instructions.md with applyTo in the frontmatter.",
+              "Custom agent (role with own instructions and tools): run Chat: New Custom Agent or create .github/agents/<name>.agent.md with name, description and tools.",
+              "Or run Chat: Open Customizations and use the Instructions or Agents tab."
+            ],
+            "de": [
+              "Dauerhafte Projektanweisungen: Legen Sie .github/copilot-instructions.md oder AGENTS.md im Repository-Stamm an.",
+              "Dateispezifische Regeln: Legen Sie .github/instructions/<name>.instructions.md mit applyTo im Frontmatter an.",
+              "Eigener Agent (Rolle mit eigenen Anweisungen und Werkzeugen): Führen Sie Chat: New Custom Agent aus oder legen Sie .github/agents/<name>.agent.md mit name, description und tools an.",
+              "Oder führen Sie Chat: Open Customizations aus und nutzen Sie den Tab Instructions bzw. Agents."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "GitHub Copilot in VS Code. No character limit is documented. User-level locations depend on the selected harness.",
+            "de": "GitHub Copilot in VS Code. Eine Zeichengrenze ist nicht dokumentiert. Speicherorte auf Benutzerebene hängen vom gewählten Harness ab."
+          },
+          "docs": [
+            "https://code.visualstudio.com/docs/copilot/customization/custom-instructions",
+            "https://code.visualstudio.com/docs/copilot/customization/custom-agents"
+          ]
+        },
+        "project": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Open your project folder in VS Code (File > Open Folder).",
+              "Keep your files in the folder – Copilot works on the workspace directly.",
+              "Add .github/copilot-instructions.md or AGENTS.md for instructions and .github/skills/ for skills.",
+              "Commit the folder to Git to share it with your team."
+            ],
+            "de": [
+              "Öffnen Sie Ihren Projektordner in VS Code (File > Open Folder).",
+              "Legen Sie Ihre Dateien im Ordner ab – Copilot arbeitet direkt im Workspace.",
+              "Ergänzen Sie .github/copilot-instructions.md oder AGENTS.md für Anweisungen und .github/skills/ für Skills.",
+              "Committen Sie den Ordner in Git, um ihn mit Ihrem Team zu teilen."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "A local folder is the workspace – there is no upload limit.",
+            "de": "Ein lokaler Ordner ist der Arbeitsbereich – es gibt keine Upload-Grenze."
+          },
+          "docs": [
+            "https://code.visualstudio.com/docs/copilot/customization/custom-instructions",
+            "https://code.visualstudio.com/docs/copilot/customization/agent-skills"
+          ]
+        },
+        "mcpRemote": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Run MCP: Add Server from the Command Palette.",
+              "Choose HTTP (HTTP or Server-Sent Events), enter the URL and a unique server ID.",
+              "Choose the destination: Global writes to ~/.copilot/mcp-config.json (or $COPILOT_HOME/mcp-config.json).",
+              "Or add the JSON below to that file manually – it uses the portable mcpServers format.",
+              "Sign in when the server asks – a browser window opens for OAuth."
+            ],
+            "de": [
+              "Führen Sie in der Befehlspalette MCP: Add Server aus.",
+              "Wählen Sie HTTP (HTTP or Server-Sent Events), geben Sie die URL und eine eindeutige Server-ID ein.",
+              "Wählen Sie das Ziel: Global schreibt nach ~/.copilot/mcp-config.json (oder $COPILOT_HOME/mcp-config.json).",
+              "Oder tragen Sie das JSON unten manuell in diese Datei ein – es nutzt das portable Format mcpServers.",
+              "Melden Sie sich an, wenn der Server danach fragt – für OAuth öffnet sich ein Browserfenster."
+            ]
+          },
+          "template": "{\n  \"mcpServers\": {\n    \"{name}\": {\n      \"type\": \"http\",\n      \"url\": \"{url}\"\n    }\n  }\n}",
+          "requires": {
+            "en": "GitHub Copilot in VS Code. In organisations, the GitHub policy MCP servers in Copilot must be enabled. .vscode/mcp.json (key servers) still works but is labelled deprecated; a workspace-root .mcp.json needs the experimental setting chat.mcp.workspaceRootConfig.enabled. Do not paste credentials into chat or commit them.",
+            "de": "GitHub Copilot in VS Code. In Organisationen muss die GitHub-Richtlinie MCP servers in Copilot aktiviert sein. .vscode/mcp.json (Schlüssel servers) funktioniert weiter, gilt aber als veraltet; eine .mcp.json im Workspace-Stamm erfordert die experimentelle Einstellung chat.mcp.workspaceRootConfig.enabled. Fügen Sie keine Zugangsdaten in den Chat ein und committen Sie sie nicht."
+          },
+          "docs": [
+            "https://code.visualstudio.com/docs/copilot/customization/mcp-servers",
+            "https://code.visualstudio.com/docs/copilot/reference/mcp-configuration",
+            "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-mcp-server-access"
+          ]
+        },
+        "mcpLocal": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Run MCP: Add Server from the Command Palette.",
+              "Choose Command (stdio), enter the command with its arguments and a unique server ID.",
+              "Choose Global to write to ~/.copilot/mcp-config.json – or add the JSON below manually.",
+              "Alternative from the terminal: code --add-mcp with a JSON object (writes to the VS Code user profile)."
+            ],
+            "de": [
+              "Führen Sie in der Befehlspalette MCP: Add Server aus.",
+              "Wählen Sie Command (stdio), geben Sie den Befehl mit Argumenten und eine eindeutige Server-ID ein.",
+              "Wählen Sie Global, um nach ~/.copilot/mcp-config.json zu schreiben – oder tragen Sie das JSON unten manuell ein.",
+              "Alternative im Terminal: code --add-mcp mit einem JSON-Objekt (schreibt in das VS-Code-Benutzerprofil)."
+            ]
+          },
+          "template": "{\n  \"mcpServers\": {\n    \"{name}\": {\n      \"command\": \"{command}\",\n      \"args\": {args}\n    }\n  }\n}",
+          "requires": {
+            "en": "GitHub Copilot in VS Code; the server program must be installed locally. Organisation policy MCP servers in Copilot applies.",
+            "de": "GitHub Copilot in VS Code; das Serverprogramm muss lokal installiert sein. Die Organisationsrichtlinie MCP servers in Copilot gilt."
+          },
+          "docs": [
+            "https://code.visualstudio.com/docs/copilot/customization/mcp-servers",
+            "https://code.visualstudio.com/docs/copilot/reference/mcp-configuration"
+          ]
+        },
+        "repo": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Run Git: Clone from the Command Palette (or select Clone Repository in the Source Control view).",
+              "Enter the repository URL or select Clone from GitHub and sign in.",
+              "Choose a local folder and open the cloned repository.",
+              "Skills, instructions and agents in .github/ (also .claude/skills/) are picked up automatically."
+            ],
+            "de": [
+              "Führen Sie in der Befehlspalette Git: Clone aus (oder wählen Sie Clone Repository in der Ansicht Source Control).",
+              "Geben Sie die Repository-URL ein oder wählen Sie Clone from GitHub und melden Sie sich an.",
+              "Wählen Sie einen lokalen Ordner und öffnen Sie das geklonte Repository.",
+              "Skills, Anweisungen und Agenten in .github/ (auch .claude/skills/) werden automatisch erkannt."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "Git must be installed. Cloning a public repository by URL generally needs no sign-in.",
+            "de": "Git muss installiert sein. Ein öffentliches Repository per URL zu klonen erfordert in der Regel keine Anmeldung."
+          },
+          "docs": [
+            "https://code.visualstudio.com/docs/sourcecontrol/repos-remotes",
+            "https://code.visualstudio.com/docs/sourcecontrol/overview",
+            "https://code.visualstudio.com/docs/copilot/customization/agent-skills"
+          ]
+        },
+        "notes": {
+          "supported": true,
+          "steps": {
+            "en": [
+              "Sign in via the Copilot icon in the Status Bar > Use AI Features; without a plan, eligible accounts get Copilot Free.",
+              "If your employer provides Copilot, use the organisation account – its policies apply (e.g. MCP servers in Copilot).",
+              "Claude and Codex harnesses are disabled when Copilot enterprise-managed settings apply.",
+              "chat.disableAIFeatures switches AI features off for a user or workspace."
+            ],
+            "de": [
+              "Melden Sie sich über das Copilot-Symbol in der Statusleiste > Use AI Features an; ohne Tarif erhalten berechtigte Konten Copilot Free.",
+              "Stellt Ihr Arbeitgeber Copilot bereit, nutzen Sie das Organisationskonto – dessen Richtlinien gelten (z. B. MCP servers in Copilot).",
+              "Die Harnesses für Claude und Codex sind deaktiviert, wenn verwaltete Copilot-Enterprise-Einstellungen gelten.",
+              "chat.disableAIFeatures schaltet KI-Funktionen für Benutzer oder Workspace ab."
+            ]
+          },
+          "template": null,
+          "requires": {
+            "en": "GitHub account with a Copilot plan (Free, or via organisation).",
+            "de": "GitHub-Konto mit Copilot-Tarif (Free oder über die Organisation)."
+          },
+          "docs": [
+            "https://code.visualstudio.com/docs/copilot/setup",
+            "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-mcp-server-access"
+          ]
+        }
+      },
+      "unverified": [
+        "Default state of the GitHub policy MCP servers in Copilot for Business/Enterprise and whether it affects Copilot Free/Pro – not stated on the opened GitHub page.",
+        "Windows equivalents of ~/.copilot/mcp-config.json and ~/.copilot/skills/ – not documented on the opened pages.",
+        "User-level paths for custom instructions and custom agents – the pages refer to a separate file-locations reference that was not opened.",
+        "Installing skills from a repository via the Customization Marketplace (labelled Preview) – not researched in detail.",
+        "File > Open Folder is standard VS Code UI but was not checked on an opened page."
+      ]
+    }
+  ]
+}

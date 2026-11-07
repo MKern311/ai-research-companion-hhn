@@ -1,0 +1,9 @@
+{
+  "name": "ai-research-en",
+  "description": "AI use cases along the research process as skills – from the HHN knowledge base “AI in the Research Process” (English).",
+  "version": "2.0.0",
+  "author": {
+    "name": "Manuel Kern"
+  },
+  "homepage": "https://mkern311.github.io/ai-research-companion-hhn/"
+}

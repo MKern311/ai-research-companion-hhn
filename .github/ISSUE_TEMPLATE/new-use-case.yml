@@ -1,0 +1,33 @@
+name: New use case / Neuer Use Case
+description: Suggest a use case for the HHN knowledge base / Einen Use Case für die HHN-Wissensbasis vorschlagen
+title: "New use case: "
+labels: ["use case"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you! Please do not include personal or confidential data. / Danke! Bitte keine personenbezogenen oder vertraulichen Daten eintragen.
+        The fields below are pre-filled when you use “Suggest to HHN” in the tool. / Mit „Der HHN vorschlagen“ im Tool sind die Felder vorausgefüllt.
+  - type: input
+    id: phase
+    attributes:
+      label: Phase of the research process / Phase des Forschungsprozesses
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What should AI do – and what do you check? / Was soll die KI tun – und was prüfen Sie?
+    validations:
+      required: true
+  - type: textarea
+    id: markdown
+    attributes:
+      label: Use case file (Markdown) / Use-Case-Datei (Markdown)
+      description: Format of content/usecases/<lang>/<id>.md
+      render: markdown
+  - type: textarea
+    id: experience
+    attributes:
+      label: Your experience (optional) / Ihre Erfahrung (optional)
+      description: Which AI application did you use, what worked, what did not? / Welche KI-Anwendung, was hat funktioniert, was nicht?

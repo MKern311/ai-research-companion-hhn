@@ -1,0 +1,67 @@
+---
+name: qualitative-coding
+description: "Propose a coding frame, do first-pass coding, suggest candidate themes and verify every quote – with human validation. Check whether this fits your approach: saturation checks belong to codebook or grounded-theory approaches, and reflexive thematic analysis is critical of AI coding. Use when the user works on: Qualitative coding."
+---
+
+# Qualitative coding
+
+> From the knowledge base “AI in the Research Process” (Heilbronn University of Applied Sciences) – https://mkern311.github.io/ai-research-companion-hhn/#/uc/analyse-2
+
+## Goal
+
+Propose a coding frame, do first-pass coding, suggest candidate themes and verify every quote – with human validation. Check whether this fits your approach: saturation checks belong to codebook or grounded-theory approaches, and reflexive thematic analysis is critical of AI coding.
+
+A draft coding frame with definitions and verbatim evidence that you test against your own reading – a sparring partner for coding that leaves interpretation and theme development with you.
+
+## When to use
+
+First-pass coding takes weeks, and alone it is hard to tell whether codes are applied consistently, whether themes are more than topic summaries, or when new data stop adding codes.
+
+## Procedure
+
+1. Paste the starter prompt with your research question and the excerpts.
+2. Check that each code has a clear definition and a fitting example quote.
+3. Ask how the codes group into candidate themes; in a codebook approach, also ask whether the last excerpt still added new codes.
+4. Compare with your own reading and note what the assistant missed, flattened or over-interpreted.
+
+## Working rules
+
+- Never invent sources, quotes, numbers or DOIs; say when you are not sure.
+- Mark clearly what comes from the user’s material and what is your own suggestion.
+- Stop and ask when the material is missing or ambiguous.
+- Create a configured assistant, for example "Qualitative coding helper" (e.g. a Copilot agent, custom GPT, Gemini Gem or Claude project). Add your coding frame as a knowledge file (if your tool does not support knowledge files, attach it in the chat). In the standing instructions, state your approach (e.g. codebook thematic analysis) and the rules: quote word for word with page or line, stay within the text, flag ambiguous passages, never invent quotes or themes. Starter prompt: "Code this excerpt with my frame and flag every borderline passage." Reusable for each new document – only approved, anonymised material goes in, and you check every coded segment.
+
+## Starter prompt
+
+```text
+I am a qualitative researcher in [discipline]. My research question is: [question]. Below are [number] short excerpts for practice. Propose a coding frame of 5–8 codes, each with a one-line definition and an example quote. Then code each excerpt, showing the exact passage for every code applied. Finally, suggest how the codes might group into 2–3 candidate themes and point out where an excerpt could be read in more than one way. [Only for codebook or grounded-theory approaches: say whether the last excerpt still produced new codes.] Do not go beyond what the text says. Excerpts: [paste text]
+```
+
+## Quality check
+
+Every quoted passage appears word for word in the excerpts and you can name at least one code you would define differently. In reflexive thematic analysis, treat the output as a prompt for your own thinking, not as coding, and do not use saturation as a stopping rule.
+
+## Limits
+
+- Risk: Personal or sensitive data, or decisions that feed directly into your results.
+
+## Key concepts
+
+- **Braun & Clarke reflexive thematic analysis** – Six phases: familiarisation, coding, generating themes, reviewing, defining and naming, writing up (Braun & Clarke, 2006), named reflexive thematic analysis in 2019. Themes are patterns of shared meaning the researcher constructs, not topic summaries; as subjectivity is treated as a resource, AI output can only prompt your reflection.
+- **Grounded theory coding** – Developed by Glaser and Strauss and later Charmaz: initial (open) coding close to the data, focused coding of the most significant codes, then theoretical coding, linked by constant comparison and memo-writing. Use it when building theory from data.
+- **Codes and themes; first- and second-cycle coding** – A code labels a feature of a data segment; a theme is a broader pattern of meaning around a central concept. Saldaña distinguishes first-cycle methods (e.g. descriptive, in vivo) from second-cycle methods (e.g. pattern coding).
+- **Saturation** – Code saturation – the point at which new data add no new codes – belongs to codebook and grounded-theory approaches. Guest et al. (2006) found most codes within the first twelve interviews of a fairly homogeneous sample, not a universal rule; grounded theory speaks of theoretical saturation of categories. Braun and Clarke (2021) reject saturation for reflexive thematic analysis, where meaning is generated by the researcher, not found in the data.
+
+## Key references
+
+- Braun, V., & Clarke, V. (2006). Using thematic analysis in psychology. Qualitative Research in Psychology, 3(2), 77–101. https://doi.org/10.1191/1478088706qp063oa
+- Braun, V., & Clarke, V. (2019). Reflecting on reflexive thematic analysis. Qualitative Research in Sport, Exercise and Health, 11(4), 589–597. https://doi.org/10.1080/2159676X.2019.1628806
+- Braun, V., & Clarke, V. (2021). To saturate or not to saturate? Questioning data saturation as a useful concept for thematic analysis and sample-size rationales. Qualitative Research in Sport, Exercise and Health, 13(2), 201–216. https://doi.org/10.1080/2159676X.2019.1704846
+- Glaser, B. G., & Strauss, A. L. (1967). The discovery of grounded theory: Strategies for qualitative research. Aldine.
+- Charmaz, K. (2014). Constructing grounded theory (2nd ed.). SAGE.
+- Guest, G., Bunce, A., & Johnson, L. (2006). How many interviews are enough? An experiment with data saturation and variability. Field Methods, 18(1), 59–82. https://doi.org/10.1177/1525822X05279903
+- Saldaña, J. (2021). The coding manual for qualitative researchers (4th ed.). SAGE.
+
+## Tools that help
+
+NVivo · MAXQDA · Taguette

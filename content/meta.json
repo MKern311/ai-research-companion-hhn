@@ -1,0 +1,228 @@
+{
+ "risk": {
+  "1": {
+   "label": {
+    "en": "Low risk",
+    "de": "Niedriges Risiko"
+   },
+   "def": {
+    "en": "Public or your own non-sensitive material; errors are easy to spot.",
+    "de": "Öffentliches oder eigenes, nicht sensibles Material; Fehler sind leicht zu erkennen."
+   }
+  },
+  "2": {
+   "label": {
+    "en": "Medium risk",
+    "de": "Mittleres Risiko"
+   },
+   "def": {
+    "en": "Your own unpublished drafts, reviews or third-party content.",
+    "de": "Eigene unveröffentlichte Entwürfe, Gutachten oder Inhalte Dritter."
+   }
+  },
+  "3": {
+   "label": {
+    "en": "High risk",
+    "de": "Hohes Risiko"
+   },
+   "def": {
+    "en": "Personal or sensitive data, or decisions that feed directly into your results.",
+    "de": "Personenbezogene oder sensible Daten oder Entscheidungen, die direkt in Ihre Ergebnisse einfließen."
+   }
+  }
+ },
+ "modes": {
+  "Assist": {
+   "en": "You lead; AI provides suggestions on request.",
+   "de": "Sie führen; die KI macht auf Wunsch Vorschläge."
+  },
+  "Co-create": {
+   "en": "You and AI develop the result iteratively together.",
+   "de": "Sie und die KI entwickeln das Ergebnis gemeinsam und iterativ."
+  },
+  "Delegate": {
+   "en": "AI carries out a sub-task; you check the result at defined points.",
+   "de": "Die KI übernimmt eine Teilaufgabe; Sie prüfen das Ergebnis an festgelegten Stellen."
+  }
+ },
+ "gains": [
+  {
+   "id": "time",
+   "en": "Saves time",
+   "de": "Spart Zeit"
+  },
+  {
+   "id": "quality",
+   "en": "Better quality",
+   "de": "Bessere Qualität"
+  },
+  {
+   "id": "new",
+   "en": "New possibility",
+   "de": "Neue Möglichkeit"
+  },
+  {
+   "id": "learn",
+   "en": "I learn",
+   "de": "Ich lerne dazu"
+  }
+ ],
+ "clusters": [
+  {
+   "ph": [
+    "idee",
+    "literatur"
+   ],
+   "en": "Literature and research question",
+   "de": "Literatur und Forschungsfrage"
+  },
+  {
+   "ph": [
+    "design",
+    "erhebung"
+   ],
+   "en": "Data collection",
+   "de": "Datenerhebung"
+  },
+  {
+   "ph": [
+    "analyse"
+   ],
+   "en": "Analysis",
+   "de": "Analyse"
+  },
+  {
+   "ph": [
+    "publikation",
+    "transfer"
+   ],
+   "en": "Writing and publishing",
+   "de": "Schreiben und Publizieren"
+  },
+  {
+   "ph": [
+    "querschnitt"
+   ],
+   "en": "Research toolkit",
+   "de": "Werkzeugkasten"
+  }
+ ],
+ "levels": [
+  {
+   "id": "chat",
+   "name": {
+    "en": "Chat",
+    "de": "Chat"
+   },
+   "desc": {
+    "en": "One conversation: prompt, pasted text or uploaded files. Most assistants read PDFs, Word, Excel, CSV and images, and many can run Python on data – for R, Stata or SPSS they write the code and you run it in your own software.",
+    "de": "Ein Gespräch: Prompt, eingefügter Text oder hochgeladene Dateien. Die meisten Assistenten lesen PDF, Word, Excel, CSV und Bilder, und viele können Python auf Daten ausführen – für R, Stata oder SPSS schreiben sie den Code, und Sie führen ihn in Ihrer eigenen Software aus."
+   }
+  },
+  {
+   "id": "project",
+   "name": {
+    "en": "Project / Notebook",
+    "de": "Projekt / Notebook"
+   },
+   "desc": {
+    "en": "A workspace that keeps your files, notes, instructions and chats together – for work you return to (e.g. Copilot Notebooks, ChatGPT or Claude Projects, NotebookLM). Depending on the tool it answers only from the files you add or can also search the web.",
+    "de": "Ein Arbeitsbereich, der Ihre Dateien, Notizen, Anweisungen und Chats zusammenhält – für Arbeit, zu der Sie zurückkehren (z. B. Copilot Notebooks, ChatGPT- oder Claude-Projekte, NotebookLM). Je nach Werkzeug antwortet er nur aus den von Ihnen hinzugefügten Dateien oder kann auch im Web suchen."
+   }
+  },
+  {
+   "id": "assistant",
+   "name": {
+    "en": "Custom assistant",
+    "de": "Eigener Assistent"
+   },
+   "desc": {
+    "en": "Your own configured assistant: standing instructions, knowledge files and, where available, code execution (e.g. a Copilot agent, a custom GPT, a Gemini Gem). Reusable for every new paper, dataset or draft.",
+    "de": "Ihr eigener konfigurierter Assistent: feste Anweisungen, Wissensdateien und, wo verfügbar, Codeausführung (z. B. ein Copilot-Agent, ein Custom GPT, ein Gemini Gem). Wiederverwendbar für jeden neuen Aufsatz, Datensatz oder Entwurf."
+   }
+  },
+  {
+   "id": "automation",
+   "name": {
+    "en": "Automation / own code",
+    "de": "Automatisierung / eigener Code"
+   },
+   "desc": {
+    "en": "For anything an assistant cannot hold: connecting databases and tools via MCP or APIs – e.g. OpenAlex, scite, GitHub – in an automation platform or as your own code on GitHub. Check data protection and approval with your university first.",
+    "de": "Für alles, was ein Assistent nicht fassen kann: Datenbanken und Werkzeuge per MCP oder API anbinden – z. B. OpenAlex, scite, GitHub – in einer Automatisierungsplattform oder als eigener Code auf GitHub. Prüfen Sie Datenschutz und Freigabe vorher mit Ihrer Hochschule."
+   }
+  }
+ ],
+ "routes": {
+  "chat": {
+   "label": {
+    "en": "AI chat",
+    "de": "KI-Chat"
+   },
+   "desc": {
+    "en": "A prompt and text you paste",
+    "de": "Ein Prompt und Text, den Sie einfügen"
+   }
+  },
+  "files": {
+   "label": {
+    "en": "AI chat + files",
+    "de": "KI-Chat + Dateien"
+   },
+   "desc": {
+    "en": "Upload your own or the practice files",
+    "de": "Eigene Dateien oder die Übungsdateien hochladen"
+   }
+  },
+  "connected": {
+   "label": {
+    "en": "AI + connected tool",
+    "de": "KI + angebundenes Werkzeug"
+   },
+   "desc": {
+    "en": "MCP server, connector or API – check with your university first",
+    "de": "MCP-Server, Connector oder API – vorher mit Ihrer Hochschule klären"
+   }
+  },
+  "external": {
+   "label": {
+    "en": "Specialist tool or open source",
+    "de": "Spezialwerkzeug oder Open Source"
+   },
+   "desc": {
+    "en": "Academic extension or tool, R/Python package or agent skill",
+    "de": "Wissenschaftliche Erweiterung oder Werkzeug, R/Python-Paket oder Agent Skill"
+   }
+  }
+ },
+ "sources": [
+  {
+   "title": {
+    "en": "European Commission – Living guidelines on the responsible use of generative AI in research",
+    "de": "Europäische Kommission – Living Guidelines zum verantwortungsvollen Einsatz generativer KI in der Forschung"
+   },
+   "url": "https://research-and-innovation.ec.europa.eu/document/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en"
+  },
+  {
+   "title": {
+    "en": "DFG – Guidelines for dealing with generative models for text and image creation (2023)",
+    "de": "DFG – Stellungnahme zu generativen Modellen für Text- und Bilderstellung (2023)"
+   },
+   "url": "https://www.dfg.de/en/news/news-topics/announcements-proposals/2023/info-wissenschaft-23-72"
+  },
+  {
+   "title": {
+    "en": "DFG – Good research practice (Code of Conduct)",
+    "de": "DFG – Gute wissenschaftliche Praxis (Kodex)"
+   },
+   "url": "https://www.dfg.de/en/basics-topics/basics-and-principles-of-funding/good-scientific-practice"
+  },
+  {
+   "title": {
+    "en": "Model Context Protocol – introduction",
+    "de": "Model Context Protocol – Einführung"
+   },
+   "url": "https://modelcontextprotocol.io/introduction"
+  }
+ ]
+}
